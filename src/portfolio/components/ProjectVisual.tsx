@@ -38,7 +38,7 @@ export function ProjectVisual({
   return (
     <div
       className={cn(
-        "relative flex aspect-[16/10] items-center justify-center overflow-hidden border-b border-border/70",
+        "relative flex items-center justify-center overflow-hidden border-b border-border/70",
         className,
       )}
     >

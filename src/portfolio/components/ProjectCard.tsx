@@ -3,10 +3,33 @@ import { ArrowUpRight, FolderGit2 } from "lucide-react";
 import type { Project } from "../types";
 import { ProjectVisual } from "./ProjectVisual";
 
-export function ProjectCard({ project, index = 0 }: { project: Project; index?: number }) {
+interface ProjectCardProps {
+  project: Project;
+  index?: number;
+  onOpen: (project: Project) => void;
+}
+
+export function ProjectCard({ project, index = 0, onOpen }: ProjectCardProps) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/70 bg-card transition-all duration-500 hover:-translate-y-1.5 hover:border-ember/50 hover:shadow-[0_20px_60px_-20px_color-mix(in_oklch,var(--ember)_35%,transparent)]">
-      <ProjectVisual title={project.title} index={index} />
+    <article
+      role="button"
+      tabIndex={0}
+      onClick={() => onOpen(project)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onOpen(project);
+        }
+      }}
+      className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border/70 bg-card transition-all duration-500 hover:-translate-y-1.5 hover:border-ember/50 hover:shadow-[0_20px_60px_-20px_color-mix(in_oklch,var(--ember)_35%,transparent)] focus-visible:ring-2 focus-visible:ring-ring"
+    >
+      <div className="relative">
+        <ProjectVisual title={project.title} index={index} className="aspect-[16/10]" />
+        {/* View-details hint */}
+        <span className="absolute right-3 bottom-3 flex items-center gap-1.5 rounded-full border border-border/60 bg-background/80 px-3 py-1.5 text-[11px] font-semibold text-foreground/80 opacity-0 backdrop-blur transition-all duration-300 translate-y-1 group-hover:translate-y-0 group-hover:opacity-100">
+          View details <ArrowUpRight className="size-3.5 text-ember" />
+        </span>
+      </div>
 
       <div className="flex flex-1 flex-col gap-4 p-6">
         <div className="flex flex-wrap gap-2">
@@ -36,6 +59,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3.5 py-1.5 text-xs font-semibold text-primary-foreground transition-all duration-300 hover:brightness-110"
             >
               Live demo <ArrowUpRight className="size-3.5" />
@@ -46,6 +70,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-1.5 rounded-full border border-border/80 px-3.5 py-1.5 text-xs font-semibold text-foreground/80 transition-all duration-300 hover:border-ember/60 hover:text-ember"
             >
               <FolderGit2 className="size-3.5" /> Code

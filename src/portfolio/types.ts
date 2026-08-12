@@ -29,6 +29,10 @@ export interface Project {
   repoUrl?: string;
   featured: boolean;
   order: number;
+  overview?: string;
+  features?: string[];
+  role?: string;
+  year?: string;
 }
 
 export interface ExperienceEntry {

@@ -70,6 +70,11 @@ const schema = defineSchema(
       repoUrl: v.optional(v.string()),
       featured: v.boolean(),
       order: v.number(),
+      // Rich detail shown when a project is clicked.
+      overview: v.optional(v.string()),
+      features: v.optional(v.array(v.string())),
+      role: v.optional(v.string()),
+      year: v.optional(v.string()),
     }).index("by_order", ["order"]),
 
     // Work experience timeline entries.

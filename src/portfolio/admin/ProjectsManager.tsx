@@ -40,6 +40,10 @@ interface FormState {
   repoUrl: string;
   featured: boolean;
   order: number;
+  overview: string;
+  features: string;
+  role: string;
+  year: string;
 }
 
 function toForm(project?: Project): FormState {
@@ -53,6 +57,10 @@ function toForm(project?: Project): FormState {
     repoUrl: project?.repoUrl ?? "",
     featured: project?.featured ?? false,
     order: project?.order ?? 0,
+    overview: project?.overview ?? "",
+    features: project?.features?.join("\n") ?? "",
+    role: project?.role ?? "",
+    year: project?.year ?? "",
   };
 }
 
@@ -97,6 +105,13 @@ export function ProjectsManager({ projects }: { projects: Project[] }) {
         repoUrl: form.repoUrl.trim() || undefined,
         featured: form.featured,
         order: form.order,
+        overview: form.overview.trim() || undefined,
+        features: form.features
+          .split("\n")
+          .map((line) => line.trim())
+          .filter(Boolean),
+        role: form.role.trim() || undefined,
+        year: form.year.trim() || undefined,
       });
       toast.success(form.id ? "Project updated" : "Project added");
       setOpen(false);
@@ -226,18 +241,45 @@ export function ProjectsManager({ projects }: { projects: Project[] }) {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="project-desc">Description</Label>
+              <Label htmlFor="project-desc">Short description</Label>
               <Textarea
                 id="project-desc"
                 value={form.description}
                 onChange={(e) => set("description", e.target.value)}
-                placeholder="What did you build and what was the impact?"
+                placeholder="One or two lines shown on the project card"
+                rows={3}
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="project-overview">
+                Overview{" "}
+                <span className="text-muted-foreground">(full case-study text)</span>
+              </Label>
+              <Textarea
+                id="project-overview"
+                value={form.overview}
+                onChange={(e) => set("overview", e.target.value)}
+                placeholder="What is this project, who is it for, and what problem does it solve?"
+                rows={5}
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="project-features">
+                Key features{" "}
+                <span className="text-muted-foreground">(one per line)</span>
+              </Label>
+              <Textarea
+                id="project-features"
+                value={form.features}
+                onChange={(e) => set("features", e.target.value)}
+                placeholder={"Clerk-powered authentication\nCart, checkout & order tracking"}
                 rows={4}
               />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="project-tags">
-                Tags <span className="text-muted-foreground">(comma separated)</span>
+                Tech tags{" "}
+                <span className="text-muted-foreground">(comma separated)</span>
               </Label>
               <Input
                 id="project-tags"
@@ -245,6 +287,26 @@ export function ProjectsManager({ projects }: { projects: Project[] }) {
                 onChange={(e) => set("tags", e.target.value)}
                 placeholder="React, TypeScript, Node.js"
               />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="grid gap-2">
+                <Label htmlFor="project-role">Your role</Label>
+                <Input
+                  id="project-role"
+                  value={form.role}
+                  onChange={(e) => set("role", e.target.value)}
+                  placeholder="Full Stack Developer"
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="project-year">Year</Label>
+                <Input
+                  id="project-year"
+                  value={form.year}
+                  onChange={(e) => set("year", e.target.value)}
+                  placeholder="2024"
+                />
+              </div>
             </div>
             <div className="grid gap-2">
               <Label htmlFor="project-image">Image URL (optional)</Label>
