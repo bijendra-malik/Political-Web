@@ -4,7 +4,7 @@ import { Footer } from "@/portfolio/components/Footer";
 import { Marquee } from "@/portfolio/components/Marquee";
 import { Navbar } from "@/portfolio/components/Navbar";
 import { usePortfolio } from "@/portfolio/hooks/use-portfolio";
-import { useThemeCustomization } from "@/portfolio/hooks/use-theme-customization";
+import { useAppearance } from "@/portfolio/hooks/use-appearance";
 import { About } from "@/portfolio/sections/About";
 import { Contact } from "@/portfolio/sections/Contact";
 import { Experience } from "@/portfolio/sections/Experience";
@@ -14,7 +14,7 @@ import { Skills } from "@/portfolio/sections/Skills";
 
 export default function Landing() {
   const { profile, projects, experience, skills } = usePortfolio();
-  useThemeCustomization(profile);
+  const { appearance, update, reset } = useAppearance(profile);
 
   return (
     <motion.div
@@ -24,7 +24,12 @@ export default function Landing() {
       className="relative min-h-screen scroll-smooth bg-background text-foreground antialiased"
     >
       <CursorGlow />
-      <Navbar profile={profile} />
+      <Navbar
+        profile={profile}
+        appearance={appearance}
+        onAppearanceChange={update}
+        onAppearanceReset={reset}
+      />
 
       <main>
         <Hero profile={profile} />

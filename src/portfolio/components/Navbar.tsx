@@ -5,8 +5,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, LayoutDashboard, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import type { AppearanceSettings } from "../hooks/use-appearance";
 import type { PortfolioProfile } from "../types";
-import { ThemeToggle } from "./ThemeToggle";
+import { AppearancePanel } from "./AppearancePanel";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -18,9 +19,17 @@ const NAV_LINKS = [
 
 interface NavbarProps {
   profile: PortfolioProfile;
+  appearance: AppearanceSettings;
+  onAppearanceChange: (patch: Partial<AppearanceSettings>) => void;
+  onAppearanceReset: () => void;
 }
 
-export function Navbar({ profile }: NavbarProps) {
+export function Navbar({
+  profile,
+  appearance,
+  onAppearanceChange,
+  onAppearanceReset,
+}: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { isAuthenticated, isLoading } = useAuth();
@@ -80,7 +89,11 @@ export function Navbar({ profile }: NavbarProps) {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
+          <AppearancePanel
+            appearance={appearance}
+            onChange={onAppearanceChange}
+            onReset={onAppearanceReset}
+          />
           <Button
             type="button"
             variant="outline"

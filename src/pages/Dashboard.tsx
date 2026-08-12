@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/tabs";
 import { api } from "@/convex/_generated/api";
 import { useAuth } from "@/hooks/use-auth";
-import { useThemeCustomization } from "@/portfolio/hooks/use-theme-customization";
+import { useAppearance } from "@/portfolio/hooks/use-appearance";
 import { ExperienceManager } from "@/portfolio/admin/ExperienceManager";
 import { ProfileManager } from "@/portfolio/admin/ProfileManager";
 import { ProjectsManager } from "@/portfolio/admin/ProjectsManager";
@@ -35,7 +35,7 @@ export default function Dashboard() {
   const seed = useMutation(api.portfolio.seedPortfolio);
   const [seeding, setSeeding] = useState(false);
 
-  useThemeCustomization(data?.profile);
+  useAppearance(data?.profile);
 
   const isEmpty = data !== undefined && !data.profile;
 
