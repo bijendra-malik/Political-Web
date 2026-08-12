@@ -211,3 +211,23 @@
 .marquee-track:hover .marquee-inner {
   animation-play-state: paused;
 }
+
+/* Responsive sizing for the animated StrokeText banner heading */
+.stroke-text-responsive svg {
+  height: 48px;
+}
+@media (min-width: 420px) {
+  .stroke-text-responsive svg {
+    height: 60px;
+  }
+}
+@media (min-width: 640px) {
+  .stroke-text-responsive svg {
+    height: 84px;
+  }
+}
+@media (min-width: 1024px) {
+  .stroke-text-responsive svg {
+    height: 110px;
+  }
+}

@@ -4,6 +4,7 @@ import { Footer } from "@/portfolio/components/Footer";
 import { Marquee } from "@/portfolio/components/Marquee";
 import { Navbar } from "@/portfolio/components/Navbar";
 import { usePortfolio } from "@/portfolio/hooks/use-portfolio";
+import { useThemeCustomization } from "@/portfolio/hooks/use-theme-customization";
 import { About } from "@/portfolio/sections/About";
 import { Contact } from "@/portfolio/sections/Contact";
 import { Experience } from "@/portfolio/sections/Experience";
@@ -13,6 +14,7 @@ import { Skills } from "@/portfolio/sections/Skills";
 
 export default function Landing() {
   const { profile, projects, experience, skills } = usePortfolio();
+  useThemeCustomization(profile);
 
   return (
     <motion.div

@@ -53,6 +53,11 @@ const schema = defineSchema(
       avatar: v.optional(v.string()),
       yearsExperience: v.number(),
       available: v.boolean(),
+      // Optional site-wide theme customization (hex colors). When set, these
+      // are applied as CSS variables so the whole site recolors instantly.
+      accentColor: v.optional(v.string()),
+      textColor: v.optional(v.string()),
+      backgroundColor: v.optional(v.string()),
     }),
 
     // Portfolio projects, shown in the Projects section.

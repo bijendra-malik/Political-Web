@@ -3,15 +3,25 @@ import { motion } from "framer-motion";
 import {
   ArrowDown,
   ArrowUpRight,
+  Braces,
+  Code2,
+  Cpu,
+  Database,
   Download,
   Github,
+  GitBranch,
+  Globe,
+  Layers,
   Linkedin,
   Mail,
   MapPin,
+  Terminal,
   Twitter,
+  type LucideIcon,
 } from "lucide-react";
 import type { PortfolioProfile } from "../types";
 import { StatCounter } from "../components/StatCounter";
+import StrokeText from "../components/StrokeText";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -31,18 +41,44 @@ const item = {
 
 const TERMINAL_LINES = [
   { text: "const developer = {", indent: "" },
-  { text: 'name: "Ananya Sharma",', indent: "  " },
-  { text: 'role: "Full-Stack Dev & UI/UX",', indent: "  " },
+  { text: 'name: "KM Prabha",', indent: "  " },
+  { text: 'role: "Full Stack Developer",', indent: "  " },
   { text: "yearsOfExperience: 8+,", indent: "  " },
   { text: 'stack: ["React", "Node", "Design"],', indent: "  " },
   { text: "};", indent: "" },
 ];
 
+/** Floating developer icons scattered behind the banner. */
+const TECH_ICONS: { icon: LucideIcon; className: string; delay: string }[] = [
+  { icon: Code2, className: "left-[6%] top-[22%] size-10 -rotate-12", delay: "0s" },
+  { icon: Braces, className: "left-[14%] bottom-[30%] size-8 rotate-6", delay: "1.2s" },
+  { icon: Terminal, className: "left-[42%] top-[18%] size-9 rotate-3", delay: "2.1s" },
+  { icon: Database, className: "right-[10%] top-[26%] size-11 rotate-12", delay: "0.7s" },
+  { icon: Globe, className: "right-[24%] bottom-[24%] size-9 -rotate-6", delay: "1.7s" },
+  { icon: Layers, className: "left-[30%] bottom-[14%] size-8 rotate-12", delay: "2.6s" },
+  { icon: Cpu, className: "right-[4%] bottom-[40%] size-8 -rotate-12", delay: "0.4s" },
+  { icon: GitBranch, className: "right-[38%] top-[38%] size-7 rotate-6", delay: "2.9s" },
+];
+
+interface Social {
+  href: string;
+  icon: LucideIcon;
+  label: string;
+}
+
+/** Resolve a CSS variable to its current computed color value. */
+function cssVar(name: string): string {
+  if (typeof window === "undefined") return "";
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue(name)
+    .trim();
+}
+
 function SocialLinks({ profile }: { profile: PortfolioProfile }) {
-  const links = [
+  const links: Social[] = [
     { href: profile.github, icon: Github, label: "GitHub" },
     { href: profile.linkedin, icon: Linkedin, label: "LinkedIn" },
-    { href: profile.twitter, icon: Twitter, label: "Twitter" },
+    { href: profile.twitter ?? "", icon: Twitter, label: "Twitter" },
     { href: `mailto:${profile.email}`, icon: Mail, label: "Email" },
   ].filter((link) => link.href);
 
@@ -72,6 +108,32 @@ export function Hero({ profile }: { profile: PortfolioProfile }) {
       <div className="absolute -top-32 left-1/2 h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-ember/12 blur-[130px]" />
       <div className="grain absolute inset-0" />
 
+      {/* Floating developer icons */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 hidden select-none md:block">
+        {TECH_ICONS.map((tech, index) => (
+          <span
+            key={index}
+            className={`animate-float absolute text-ember/15 transition-colors duration-300 ${tech.className}`}
+            style={{ animationDelay: tech.delay }}
+          >
+            <tech.icon className="size-full" />
+          </span>
+        ))}
+        {/* Faint code-snippet decoration */}
+        <span className="font-mono absolute right-[6%] top-[58%] hidden -rotate-3 text-[11px] leading-5 text-foreground/10 lg:block">
+          {"<div className=\"hero\">"}
+          <br />
+          {"  <h1>Hello World</h1>"}
+          <br />
+          {"</div>"}
+        </span>
+        <span className="font-mono absolute bottom-[16%] left-[4%] hidden rotate-2 text-[11px] leading-5 text-foreground/10 lg:block">
+          {"$ npm run deploy"}
+          <br />
+          {"✔ Deployed in 42s"}
+        </span>
+      </div>
+
       <div className="relative mx-auto max-w-6xl px-4 pt-32 pb-16 sm:px-6 md:pt-40 md:pb-20">
         <motion.div
           variants={container}
@@ -94,29 +156,27 @@ export function Hero({ profile }: { profile: PortfolioProfile }) {
               </span>
             </motion.div>
 
-            <motion.div variants={item} className="flex flex-col gap-3">
+            <motion.div variants={item} className="flex flex-col gap-4">
               <span className="font-mono text-sm font-medium tracking-[0.2em] text-foreground/60 uppercase">
                 Hello, I&apos;m
               </span>
-              <h1 className="font-display text-5xl leading-[1.02] font-bold tracking-tight sm:text-6xl lg:text-7xl">
-                {profile.name.split(" ")[0]}{" "}
-                <span className="relative whitespace-nowrap text-ember">
-                  {profile.name.split(" ").slice(1).join(" ") || "Dev"}
-                  <svg
-                    aria-hidden
-                    viewBox="0 0 220 12"
-                    fill="none"
-                    className="absolute -bottom-1 left-0 w-full text-ember/50"
-                  >
-                    <path
-                      d="M3 9C60 3 160 3 217 9"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
-              </h1>
+              {/* Animated stroke-text name heading */}
+              <StrokeText
+                text={profile.name}
+                strokeColor={cssVar("--ember") || "#f59e0b"}
+                fillColor={cssVar("--foreground") || "#e7e5e4"}
+                strokeWidth={1.8}
+                drawDuration={1.9}
+                fillDelay={0.35}
+                stagger={0.09}
+                ease="power2.out"
+                trigger="mount"
+                fillMode="wipe"
+                fontSize={96}
+                fontWeight={700}
+                letterSpacing={-3}
+                responsive
+              />
               <p className="font-display text-lg font-medium text-foreground/85 sm:text-xl">
                 {profile.role}
               </p>

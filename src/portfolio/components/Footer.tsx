@@ -1,16 +1,30 @@
 import { useAuth } from "@/hooks/use-auth";
-import { Github, Heart, LayoutDashboard, Linkedin, Mail, Twitter } from "lucide-react";
+import {
+  Github,
+  Heart,
+  LayoutDashboard,
+  Linkedin,
+  Mail,
+  Twitter,
+  type LucideIcon,
+} from "lucide-react";
 import { useNavigate } from "react-router";
 import type { PortfolioProfile } from "../types";
+
+interface Social {
+  href: string;
+  icon: LucideIcon;
+  label: string;
+}
 
 export function Footer({ profile }: { profile: PortfolioProfile }) {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  const socials = [
+  const socials: Social[] = [
     { href: profile.github, icon: Github, label: "GitHub" },
     { href: profile.linkedin, icon: Linkedin, label: "LinkedIn" },
-    { href: profile.twitter, icon: Twitter, label: "Twitter / X" },
+    { href: profile.twitter ?? "", icon: Twitter, label: "Twitter / X" },
     { href: `mailto:${profile.email}`, icon: Mail, label: "Email" },
   ].filter((social) => social.href);
 

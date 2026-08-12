@@ -14,6 +14,9 @@ export interface PortfolioProfile {
   avatar?: string;
   yearsExperience: number;
   available: boolean;
+  accentColor?: string;
+  textColor?: string;
+  backgroundColor?: string;
 }
 
 export interface Project {

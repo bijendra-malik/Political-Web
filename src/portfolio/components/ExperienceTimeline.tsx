@@ -10,7 +10,7 @@ export function ExperienceTimeline({
   isLast?: boolean;
 }) {
   return (
-    <div className="relative flex gap-5 sm:gap-8">
+    <div className="group relative flex gap-5 sm:gap-8">
       {/* Timeline rail */}
       <div className="flex flex-col items-center">
         <span className="relative z-10 mt-1.5 flex size-9 shrink-0 items-center justify-center rounded-full border border-ember/50 bg-ember/10 text-ember transition-all duration-300 group-hover:bg-ember group-hover:text-primary-foreground">
@@ -25,7 +25,7 @@ export function ExperienceTimeline({
       </div>
 
       {/* Content */}
-      <div className="group flex-1 pb-10">
+      <div className="flex-1 pb-10">
         <div className="rounded-2xl border border-border/60 bg-card/50 p-5 transition-all duration-300 group-hover:border-ember/40 group-hover:bg-card sm:p-6">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <h3 className="font-display text-lg font-semibold tracking-tight">

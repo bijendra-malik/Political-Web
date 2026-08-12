@@ -7,18 +7,18 @@ import type { PortfolioData } from "./types";
  */
 export const DEFAULT_PORTFOLIO: PortfolioData = {
   profile: {
-    name: "Ananya Sharma",
-    role: "Full-Stack Developer & UI/UX Designer",
+    name: "KM Prabha",
+    role: "Full Stack Developer",
     tagline:
       "I design and build premium digital products — 8+ years of turning complex problems into elegant, high-performance web experiences.",
     bio: "I'm a full-stack developer with 8+ years of experience shipping products for startups and enterprises. My sweet spot is the intersection of design and engineering: pixel-perfect UI, buttery-smooth animations, and architecture that scales. I've led teams, mentored juniors, and shipped 40+ production projects used by millions of users.",
     location: "Bengaluru, India",
-    email: "hello@ananyasharma.dev",
+    email: "hello@kmprabha.dev",
     phone: "+91 98765 43210",
-    github: "https://github.com/ananyasharma",
-    linkedin: "https://linkedin.com/in/ananyasharma",
-    twitter: "https://x.com/ananyasharma",
-    website: "https://ananyasharma.dev",
+    github: "https://github.com/kmprabha",
+    linkedin: "https://linkedin.com/in/kmprabha",
+    twitter: "https://x.com/kmprabha",
+    website: "https://kmprabha.dev",
     resumeUrl: "",
     avatar: "",
     yearsExperience: 8,
