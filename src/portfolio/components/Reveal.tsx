@@ -1,0 +1,42 @@
+import { motion, type Variants } from "framer-motion";
+import type { ReactNode } from "react";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const variants: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: EASE, delay },
+  }),
+};
+
+interface RevealProps {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+  y?: number;
+}
+
+/** Fades + slides children in when they scroll into view. */
+export function Reveal({ children, delay = 0, className, y = 28 }: RevealProps) {
+  return (
+    <motion.div
+      className={className}
+      variants={{
+        hidden: { opacity: 0, y },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.65, ease: EASE, delay },
+        },
+      }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-80px" }}
+    >
+      {children}
+    </motion.div>
+  );
+}
