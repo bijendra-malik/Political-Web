@@ -26,6 +26,10 @@ export function usePortfolio(): PortfolioData {
       data.experience.length > 0
         ? data.experience
         : DEFAULT_PORTFOLIO.experience,
+    education:
+      data.education.length > 0
+        ? data.education
+        : DEFAULT_PORTFOLIO.education,
     skills: data.skills.length > 0 ? data.skills : DEFAULT_PORTFOLIO.skills,
   };
 }

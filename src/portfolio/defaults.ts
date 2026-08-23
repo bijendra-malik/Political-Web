@@ -213,6 +213,24 @@ export const DEFAULT_PORTFOLIO: PortfolioData = {
       order: 2,
     },
   ],
+  education: [
+    {
+      institution: "Dr. A.P.J. Abdul Kalam Technical University (AKTU)",
+      degree: "Master of Computer Applications (MCA) — Pursuing",
+      period: "2024 — 2026",
+      location: "Greater Noida, IN",
+      details: "CGPA: 7.4 · Specializing in full-stack web development, software engineering, and modern web technologies.",
+      order: 0,
+    },
+    {
+      institution: "Board of Technical Education, Uttar Pradesh (BTEUP)",
+      degree: "Diploma in Computer Science",
+      period: "2021 — 2024",
+      location: "Noida, IN",
+      details: "Focused on programming fundamentals, data structures, web development, and database management.",
+      order: 1,
+    },
+  ],
   skills: [
     { name: "JavaScript", level: 95, category: "Languages", order: 0 },
     { name: "HTML5 / CSS3", level: 97, category: "Languages", order: 1 },

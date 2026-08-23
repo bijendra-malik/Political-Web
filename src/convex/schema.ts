@@ -88,6 +88,16 @@ const schema = defineSchema(
       order: v.number(),
     }).index("by_order", ["order"]),
 
+    // Education entries.
+    education: defineTable({
+      institution: v.string(),
+      degree: v.string(),
+      period: v.string(),
+      location: v.optional(v.string()),
+      details: v.optional(v.string()),
+      order: v.number(),
+    }).index("by_order", ["order"]),
+
     // Skills with a proficiency level (0-100) and a category.
     skills: defineTable({
       name: v.string(),

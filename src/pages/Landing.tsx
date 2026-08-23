@@ -7,13 +7,14 @@ import { usePortfolio } from "@/portfolio/hooks/use-portfolio";
 import { useAppearance } from "@/portfolio/hooks/use-appearance";
 import { About } from "@/portfolio/sections/About";
 import { Contact } from "@/portfolio/sections/Contact";
+import { Education } from "@/portfolio/sections/Education";
 import { Experience } from "@/portfolio/sections/Experience";
 import { Hero } from "@/portfolio/sections/Hero";
 import { Projects } from "@/portfolio/sections/Projects";
 import { Skills } from "@/portfolio/sections/Skills";
 
 export default function Landing() {
-  const { profile, projects, experience, skills } = usePortfolio();
+  const { profile, projects, experience, education, skills } = usePortfolio();
   const { appearance, update, reset } = useAppearance(profile);
 
   return (
@@ -35,6 +36,7 @@ export default function Landing() {
         <Hero profile={profile} />
         <Marquee items={skills.map((skill) => skill.name)} />
         <About profile={profile} />
+        <Education entries={education} />
         <Skills skills={skills} />
         <Experience entries={experience} />
         <Projects projects={projects} />

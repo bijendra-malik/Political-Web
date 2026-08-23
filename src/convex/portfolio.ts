@@ -17,6 +17,10 @@ export const getPortfolio = query({
       .query("experience")
       .withIndex("by_order")
       .collect();
+    const education = await ctx.db
+      .query("education")
+      .withIndex("by_order")
+      .collect();
     const skills = await ctx.db.query("skills").withIndex("by_order").collect();
 
     const sortByOrder = (a: { order: number }, b: { order: number }) =>
@@ -26,6 +30,7 @@ export const getPortfolio = query({
       profile,
       projects: [...projects].sort(sortByOrder),
       experience: [...experience].sort(sortByOrder),
+      education: [...education].sort(sortByOrder),
       skills: [...skills].sort(sortByOrder),
     };
   },
@@ -158,6 +163,41 @@ export const upsertExperience = mutation({
 
 export const deleteExperience = mutation({
   args: { id: v.id("experience") },
+  handler: async (ctx, { id }) => {
+    await requireUser(ctx);
+    await ctx.db.delete(id);
+  },
+});
+
+// ---------------------------------------------------------------------------
+// Education
+// ---------------------------------------------------------------------------
+
+export const upsertEducation = mutation({
+  args: {
+    id: v.optional(v.id("education")),
+    institution: v.string(),
+    degree: v.string(),
+    period: v.string(),
+    location: v.optional(v.string()),
+    details: v.optional(v.string()),
+    order: v.number(),
+  },
+  handler: async (ctx, args) => {
+    await requireUser(ctx);
+    const { id, ...data } = args;
+    if (id) {
+      const existing = await ctx.db.get(id);
+      if (!existing) throw new Error("Education entry not found.");
+      await ctx.db.patch(id, data);
+      return id;
+    }
+    return await ctx.db.insert("education", data);
+  },
+});
+
+export const deleteEducation = mutation({
+  args: { id: v.id("education") },
   handler: async (ctx, { id }) => {
     await requireUser(ctx);
     await ctx.db.delete(id);
@@ -430,6 +470,31 @@ export const seedPortfolio = mutation({
       ];
       for (const item of experience) {
         await ctx.db.insert("experience", item);
+      }
+    }
+
+    const existingEducation = await ctx.db.query("education").collect();
+    if (existingEducation.length === 0) {
+      const education = [
+        {
+          institution: "Dr. A.P.J. Abdul Kalam Technical University (AKTU)",
+          degree: "Master of Computer Applications (MCA) — Pursuing",
+          period: "2024 — 2026",
+          location: "Greater Noida, IN",
+          details: "CGPA: 7.4 · Specializing in full-stack web development, software engineering, and modern web technologies.",
+          order: 0,
+        },
+        {
+          institution: "Board of Technical Education, Uttar Pradesh (BTEUP)",
+          degree: "Diploma in Computer Science",
+          period: "2021 — 2024",
+          location: "Noida, IN",
+          details: "Focused on programming fundamentals, data structures, web development, and database management.",
+          order: 1,
+        },
+      ];
+      for (const item of education) {
+        await ctx.db.insert("education", item);
       }
     }
 

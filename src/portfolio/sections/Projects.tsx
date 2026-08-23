@@ -19,7 +19,7 @@ export function Projects({ projects }: { projects: Project[] }) {
       <div className="grain absolute inset-0" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
-          index="04"
+          index="05"
           eyebrow="Selected work"
           title="Projects that moved the needle."
           description="A mix of flagship builds and the ones I'm proudest of — click any project to see the full case study, tech stack, and what it does."

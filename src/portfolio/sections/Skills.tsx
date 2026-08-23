@@ -44,7 +44,7 @@ export function Skills({ skills }: { skills: Skill[] }) {
       <div className="grain absolute inset-0" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
-          index="02"
+          index="03"
           eyebrow="Skills"
           title="A toolkit refined over 8+ years."
           description="Deep expertise across the full stack — from design systems and frontend architecture to backend services and cloud infrastructure."

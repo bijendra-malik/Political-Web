@@ -9,6 +9,7 @@ import {
 import { api } from "@/convex/_generated/api";
 import { useAuth } from "@/hooks/use-auth";
 import { useAppearance } from "@/portfolio/hooks/use-appearance";
+import { EducationManager } from "@/portfolio/admin/EducationManager";
 import { ExperienceManager } from "@/portfolio/admin/ExperienceManager";
 import { ProfileManager } from "@/portfolio/admin/ProfileManager";
 import { ProjectsManager } from "@/portfolio/admin/ProjectsManager";
@@ -17,6 +18,7 @@ import { useMutation, useQuery } from "convex/react";
 import {
   Briefcase,
   ExternalLink,
+  GraduationCap,
   LayoutDashboard,
   LogOut,
   Palette,
@@ -68,6 +70,12 @@ export default function Dashboard() {
       label: "Experience",
       icon: Briefcase,
       content: <ExperienceManager entries={data?.experience ?? []} />,
+    },
+    {
+      value: "education",
+      label: "Education",
+      icon: GraduationCap,
+      content: <EducationManager entries={data?.education ?? []} />,
     },
     {
       value: "skills",

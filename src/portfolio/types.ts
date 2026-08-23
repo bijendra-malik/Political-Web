@@ -46,6 +46,16 @@ export interface ExperienceEntry {
   order: number;
 }
 
+export interface EducationEntry {
+  _id?: string;
+  institution: string;
+  degree: string;
+  period: string;
+  location?: string;
+  details?: string;
+  order: number;
+}
+
 export interface Skill {
   _id?: string;
   name: string;
@@ -58,6 +68,7 @@ export interface PortfolioData {
   profile: PortfolioProfile;
   projects: Project[];
   experience: ExperienceEntry[];
+  education: EducationEntry[];
   skills: Skill[];
 }
 
