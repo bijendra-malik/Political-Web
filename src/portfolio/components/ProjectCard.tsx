@@ -30,7 +30,7 @@ export function ProjectCard({ project, index = 0, onOpen }: ProjectCardProps) {
         className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-500 hover:-translate-y-1.5 hover:border-ember/50 hover:shadow-[0_20px_60px_-20px_color-mix(in_oklch,var(--ember)_35%,transparent)] focus-visible:ring-2 focus-visible:ring-ring"
       >
         <div className="relative">
-          <ProjectVisual title={project.title} index={index} className="aspect-[16/10]" />
+          <ProjectVisual title={project.title} index={index} imageUrl={project.image} className="aspect-[16/10]" />
           {/* View-details hint */}
           <span className="absolute right-3 bottom-3 flex items-center gap-1.5 rounded-full border border-border/60 bg-background/80 px-3 py-1.5 text-[11px] font-semibold text-foreground/80 opacity-0 backdrop-blur transition-all duration-300 translate-y-1 group-hover:translate-y-0 group-hover:opacity-100">
             View details <ArrowUpRight className="size-3.5 text-ember" />

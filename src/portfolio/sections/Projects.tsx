@@ -46,6 +46,7 @@ export function Projects({ projects }: { projects: Project[] }) {
                   <ProjectVisual
                     title={project.title}
                     index={index}
+                    imageUrl={project.image}
                     className="aspect-[16/10] border-b lg:aspect-auto lg:h-full lg:border-r lg:border-b-0"
                   />
                 </div>
