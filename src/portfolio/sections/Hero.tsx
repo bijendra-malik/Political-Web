@@ -226,6 +226,20 @@ export function Hero({ profile }: { profile: PortfolioProfile }) {
             </motion.div>
           </div>
 
+          {/* Profile photo — shown on larger screens */}
+          {profile.avatar && (
+            <motion.div variants={item} className="absolute -right-4 top-0 hidden xl:block">
+              <div className="relative">
+                <div className="absolute -inset-3 rounded-full bg-gradient-to-tr from-ember/30 via-orange-500/20 to-transparent blur-xl" />
+                <img
+                  src={profile.avatar}
+                  alt={profile.name}
+                  className="relative size-20 rounded-full border-2 border-border/60 object-cover shadow-2xl"
+                />
+              </div>
+            </motion.div>
+          )}
+
           {/* Terminal mockup */}
           <motion.div
             variants={item}

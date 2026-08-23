@@ -94,18 +94,21 @@ export function About({ profile }: { profile: PortfolioProfile }) {
                 <div className="blueprint-grid absolute inset-0 opacity-30" />
                 <div className="relative flex flex-col items-center gap-4">
                   <div className="relative">
-                    <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-ember via-orange-500/40 to-transparent blur-[6px] opacity-70" />
+                    <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-ember via-orange-500/40 to-amber-300/30 blur-[10px] opacity-70" />
                     {profile.avatar ? (
                       <img
                         src={profile.avatar}
                         alt={profile.name}
-                        className="relative size-28 rounded-full border-2 border-background object-cover"
+                        className="relative size-32 rounded-full border-2 border-background object-cover shadow-lg"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                          (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
+                        }}
                       />
-                    ) : (
-                      <span className="font-display relative flex size-28 items-center justify-center rounded-full border-2 border-background bg-gradient-to-br from-ember/80 to-orange-500/80 text-3xl font-bold text-primary-foreground">
-                        {initials}
-                      </span>
-                    )}
+                    ) : null}
+                    <span className={`font-display relative flex size-32 items-center justify-center rounded-full border-2 border-background bg-gradient-to-br from-ember/80 to-orange-500/80 text-3xl font-bold text-primary-foreground shadow-lg ${profile.avatar ? 'hidden' : ''}`}>
+                      {initials}
+                    </span>
                     <span className="absolute right-1 bottom-1 flex size-5 items-center justify-center rounded-full border-2 border-card bg-emerald-500">
                       <span className="size-1.5 rounded-full bg-white" />
                     </span>

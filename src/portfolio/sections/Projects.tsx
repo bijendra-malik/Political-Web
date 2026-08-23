@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import type { Project } from "../types";
+import { MeteorImpactBorder } from "../components/MeteorImpactBorder";
 import { ProjectCard } from "../components/ProjectCard";
 import { ProjectDetailDialog } from "../components/ProjectDetailDialog";
 import { ProjectVisual } from "../components/ProjectVisual";
@@ -28,6 +29,7 @@ export function Projects({ projects }: { projects: Project[] }) {
         <div className="mb-14 flex flex-col gap-10">
           {featured.map((project, index) => (
             <Reveal key={project.title} delay={index * 0.06}>
+              <MeteorImpactBorder glowColor="var(--ember, #f59e0b)" speed={5} className="rounded-3xl">
               <article
                 role="button"
                 tabIndex={0}
@@ -38,7 +40,7 @@ export function Projects({ projects }: { projects: Project[] }) {
                     setSelected(project);
                   }
                 }}
-                className="group grid cursor-pointer overflow-hidden rounded-3xl border border-border/70 bg-card transition-all duration-500 hover:border-ember/50 hover:shadow-[0_24px_80px_-24px_color-mix(in_oklch,var(--ember)_35%,transparent)] focus-visible:ring-2 focus-visible:ring-ring lg:grid-cols-2"
+                className="group grid cursor-pointer overflow-hidden rounded-3xl border border-border/50 bg-card transition-all duration-500 hover:border-ember/50 hover:shadow-[0_24px_80px_-24px_color-mix(in_oklch,var(--ember)_35%,transparent)] focus-visible:ring-2 focus-visible:ring-ring lg:grid-cols-2"
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                   <ProjectVisual
@@ -86,6 +88,7 @@ export function Projects({ projects }: { projects: Project[] }) {
                   </div>
                 </div>
               </article>
+              </MeteorImpactBorder>
             </Reveal>
           ))}
         </div>
