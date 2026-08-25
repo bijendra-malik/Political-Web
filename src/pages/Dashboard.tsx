@@ -11,6 +11,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { useAppearance } from "@/portfolio/hooks/use-appearance";
 import { EducationManager } from "@/portfolio/admin/EducationManager";
 import { ExperienceManager } from "@/portfolio/admin/ExperienceManager";
+import { HostingManager } from "@/portfolio/admin/HostingManager";
 import { ProfileManager } from "@/portfolio/admin/ProfileManager";
 import { ProjectsManager } from "@/portfolio/admin/ProjectsManager";
 import { SkillsManager } from "@/portfolio/admin/SkillsManager";
@@ -19,6 +20,7 @@ import {
   Briefcase,
   ExternalLink,
   GraduationCap,
+  Globe,
   LayoutDashboard,
   LogOut,
   Palette,
@@ -82,6 +84,12 @@ export default function Dashboard() {
       label: "Skills",
       icon: Wrench,
       content: <SkillsManager skills={data?.skills ?? []} />,
+    },
+    {
+      value: "hosting",
+      label: "Hosting & Domain",
+      icon: Globe,
+      content: <HostingManager />,
     },
     {
       value: "profile",
