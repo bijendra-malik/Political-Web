@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { ToggleTheme } from "@/components/toggle-theme";
 import { useAuth } from "@/hooks/use-auth";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -90,7 +89,6 @@ export function Navbar({
         </nav>
 
         <div className="flex items-center gap-2">
-          <ToggleTheme animationType="circle-spread" duration={500} />
           <AppearancePanel
             appearance={appearance}
             onChange={onAppearanceChange}
