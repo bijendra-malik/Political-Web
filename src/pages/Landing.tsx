@@ -6,12 +6,12 @@ import { Navbar } from "@/portfolio/components/Navbar";
 import { usePortfolio } from "@/portfolio/hooks/use-portfolio";
 import { useAppearance } from "@/portfolio/hooks/use-appearance";
 import { About } from "@/portfolio/sections/About";
-import { Contact } from "@/portfolio/sections/Contact";
 import { Education } from "@/portfolio/sections/Education";
 import { Experience } from "@/portfolio/sections/Experience";
 import { Hero } from "@/portfolio/sections/Hero";
 import { Projects } from "@/portfolio/sections/Projects";
 import { Skills } from "@/portfolio/sections/Skills";
+import { MouseMotionSection } from "@/portfolio/components/MouseMotionSection";
 
 export default function Landing() {
   const { profile, projects, experience, education, skills } = usePortfolio();
@@ -40,7 +40,7 @@ export default function Landing() {
         <Skills skills={skills} />
         <Experience entries={experience} />
         <Projects projects={projects} />
-        <Contact profile={profile} />
+        <MouseMotionSection />
       </main>
 
       <Footer profile={profile} />

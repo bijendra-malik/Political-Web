@@ -202,7 +202,7 @@ export function Hero({ profile }: { profile: PortfolioProfile }) {
                 variant="outline"
                 className="group rounded-full border-border/80 px-6"
               >
-                <a href="#contact">
+                <a href="/contact">
                   Get in touch
                   <ArrowUpRight className="ml-2 size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </a>

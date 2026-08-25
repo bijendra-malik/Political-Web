@@ -125,7 +125,7 @@ export function Navbar({
             size="sm"
             className="hidden rounded-full md:inline-flex"
           >
-            <a href="#contact">
+            <a href="/contact">
               Hire me <ArrowUpRight className="size-3.5" />
             </a>
           </Button>
@@ -188,7 +188,7 @@ export function Navbar({
                   size="sm"
                   className="flex-1 rounded-full"
                 >
-                  <a href="#contact" onClick={() => setOpen(false)}>
+                  <a href="/contact" onClick={() => setOpen(false)}>
                     Hire me
                   </a>
                 </Button>
