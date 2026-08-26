@@ -509,18 +509,21 @@ export const seedPortfolio = mutation({
     if (existingSkills.length === 0) {
       const skills = [
         { name: "JavaScript", level: 95, category: "Languages", order: 0 },
-        { name: "HTML5 / CSS3", level: 97, category: "Languages", order: 1 },
-        { name: "React.js", level: 95, category: "Frontend", order: 2 },
-        { name: "React Native", level: 80, category: "Frontend", order: 3 },
-        { name: "Next.js", level: 92, category: "Frontend", order: 4 },
-        { name: "Tailwind CSS", level: 96, category: "Frontend", order: 4 },
-        { name: "Material UI / Bootstrap", level: 88, category: "Frontend", order: 5 },
-        { name: "Node.js / Express.js", level: 88, category: "Backend", order: 6 },
-        { name: "MongoDB", level: 85, category: "Backend", order: 7 },
-        { name: "REST APIs / JWT Auth", level: 92, category: "Backend", order: 8 },
-        { name: "Git / GitHub", level: 90, category: "Tools", order: 9 },
-        { name: "Vercel / Docker", level: 82, category: "Tools", order: 10 },
-        { name: "Figma / Canva", level: 85, category: "Design", order: 11 },
+        { name: "TypeScript", level: 88, category: "Languages", order: 1 },
+        { name: "HTML5 / CSS3", level: 97, category: "Languages", order: 2 },
+        { name: "React.js", level: 95, category: "Frontend", order: 3 },
+        { name: "React Native", level: 80, category: "Frontend", order: 4 },
+        { name: "Next.js", level: 92, category: "Frontend", order: 5 },
+        { name: "Tailwind CSS", level: 96, category: "Frontend", order: 6 },
+        { name: "Material UI / Bootstrap", level: 88, category: "Frontend", order: 7 },
+        { name: "Node.js / Express.js", level: 88, category: "Backend", order: 8 },
+        { name: "MongoDB", level: 85, category: "Backend", order: 9 },
+        { name: "REST APIs / JWT Auth", level: 92, category: "Backend", order: 10 },
+        { name: "Git / GitHub", level: 90, category: "Tools", order: 11 },
+        { name: "FileZilla / FTP Deploy", level: 88, category: "Tools", order: 12 },
+        { name: "Vercel / Docker", level: 82, category: "Tools", order: 13 },
+        { name: "Postman / API Testing", level: 90, category: "Tools", order: 14 },
+        { name: "Figma / Canva", level: 85, category: "Design", order: 15 },
       ];
       for (const skill of skills) {
         await ctx.db.insert("skills", skill);

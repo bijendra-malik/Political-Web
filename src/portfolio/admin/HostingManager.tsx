@@ -18,6 +18,11 @@ import {
   AlertCircle,
   Settings,
   Copy,
+  Download,
+  FolderOpen,
+  Upload,
+  Key,
+  Wifi,
 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -368,6 +373,183 @@ export function HostingManager() {
                 rel="noopener noreferrer"
               >
                 <ExternalLink className="mr-1 size-3" /> Hostinger Tutorials
+              </a>
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* FileZilla FTP Connection Guide */}
+      <Card>
+        <CardHeader className="pb-4">
+          <CardTitle className="flex items-center gap-2 text-base">
+            <Upload className="size-4 text-ember" />
+            FileZilla — FTP Deployment
+          </CardTitle>
+          <CardDescription>
+            Deploy your site to Hostinger using FileZilla FTP client. Connect,
+            upload files to public_html, and go live.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-4">
+          {/* Connection Details */}
+          <div className="rounded-xl border border-border/60 p-4">
+            <p className="font-mono text-[11px] font-medium tracking-widest text-muted-foreground uppercase mb-3">
+              Connection Details
+            </p>
+            <div className="grid gap-1.5">
+              <div className="flex items-center gap-2 rounded-lg border border-border/50 bg-muted/30 px-3 py-2">
+                <Wifi className="size-3.5 shrink-0 text-ember" />
+                <span className="text-xs text-muted-foreground w-20">Host</span>
+                <span className="font-mono text-xs font-medium">ftp://indexiagroup.com</span>
+                <button
+                  type="button"
+                  onClick={() => handleCopy("ftp://indexiagroup.com")}
+                  className="ml-auto shrink-0 text-muted-foreground hover:text-foreground"
+                  title="Copy"
+                >
+                  <Copy className="size-3" />
+                </button>
+              </div>
+              <div className="flex items-center gap-2 rounded-lg border border-border/50 bg-muted/30 px-3 py-2">
+                <Globe className="size-3.5 shrink-0 text-ember" />
+                <span className="text-xs text-muted-foreground w-20">Username</span>
+                <span className="font-mono text-xs font-medium">indexiagroup.com</span>
+                <button
+                  type="button"
+                  onClick={() => handleCopy("indexiagroup.com")}
+                  className="ml-auto shrink-0 text-muted-foreground hover:text-foreground"
+                  title="Copy"
+                >
+                  <Copy className="size-3" />
+                </button>
+              </div>
+              <div className="flex items-center gap-2 rounded-lg border border-border/50 bg-muted/30 px-3 py-2">
+                <Key className="size-3.5 shrink-0 text-ember" />
+                <span className="text-xs text-muted-foreground w-20">Password</span>
+                <span className="font-mono text-xs font-medium">•••••••• (your hPanel password)</span>
+              </div>
+              <div className="flex items-center gap-2 rounded-lg border border-border/50 bg-muted/30 px-3 py-2">
+                <Server className="size-3.5 shrink-0 text-ember" />
+                <span className="text-xs text-muted-foreground w-20">Port</span>
+                <span className="font-mono text-xs font-medium">21 (FTP) or 22 (SFTP)</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Steps */}
+          <div className="rounded-xl border border-border/60 p-4">
+            <p className="font-mono text-[11px] font-medium tracking-widest text-muted-foreground uppercase mb-3">
+              Deployment Steps
+            </p>
+            <ol className="grid gap-2.5 text-sm">
+              {[
+                {
+                  step: 1,
+                  title: "Open FileZilla & enter credentials",
+                  desc: "Host: ftp://indexiagroup.com · Username: indexiagroup.com · Password: your hPanel password · Port: 21",
+                  icon: Wifi,
+                },
+                {
+                  step: 2,
+                  title: "Connect to server",
+                  desc: "Click Quickconnect. Accept the certificate if prompted. You'll see your server files on the right panel.",
+                  icon: Server,
+                },
+                {
+                  step: 3,
+                  title: "Navigate to public_html",
+                  desc: "On the remote site (right panel), open the public_html folder — this is your website root.",
+                  icon: FolderOpen,
+                },
+                {
+                  step: 4,
+                  title: "Upload your built files",
+                  desc: "Drag your build folder contents (dist/ or out/) into public_html. Overwrite existing files if updating.",
+                  icon: Upload,
+                },
+                {
+                  step: 5,
+                  title: "Verify & go live",
+                  desc: "Visit https://indexiagroup.com to confirm your site is live. Clear browser cache if needed.",
+                  icon: CheckCircle2,
+                },
+              ].map((item) => (
+                <li
+                  key={item.step}
+                  className="flex items-start gap-3 rounded-lg border border-border/50 bg-muted/30 p-3"
+                >
+                  <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-ember/15 text-xs font-bold text-ember">
+                    {item.step}
+                  </span>
+                  <div>
+                    <p className="flex items-center gap-1.5 font-semibold">
+                      <item.icon className="size-3.5 text-ember" />
+                      {item.title}
+                    </p>
+                    <p className="mt-0.5 text-xs text-muted-foreground">
+                      {item.desc}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          {/* Tips */}
+          <div className="rounded-xl border border-ember/30 bg-ember/5 p-4">
+            <p className="font-mono text-[11px] font-medium tracking-widest text-ember uppercase mb-2">
+              Pro Tips
+n            </p>
+            <ul className="grid gap-1.5 text-xs text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="size-3 shrink-0 mt-0.5 text-ember" />
+                Always use <span className="font-semibold">SFTP</span> (port 22) instead of FTP for encrypted file transfers
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="size-3 shrink-0 mt-0.5 text-ember" />
+                Keep a backup of your current public_html before uploading new files
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="size-3 shrink-0 mt-0.5 text-ember" />
+                Use FileZilla's <span className="font-semibold">Site Manager</span> to save connection details for quick access
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="size-3 shrink-0 mt-0.5 text-ember" />
+                For large uploads, enable <span className="font-semibold">recursive overwrite</span> in transfer settings
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              className="rounded-full text-xs"
+              asChild
+            >
+              <a
+                href="https://filezilla-project.org/download.php"
+                target="blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="mr-1 size-3" /> Download FileZilla
+              </a>
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              className="rounded-full text-xs"
+              asChild
+            >
+              <a
+                href="https://filezilla-project.org/wiki/index.php/Protocol:GettingStarted"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="mr-1 size-3" /> FileZilla Guide
               </a>
             </Button>
           </div>
