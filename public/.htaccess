@@ -1,0 +1,20 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Handle front controller
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
+
+# Allow access to all files
+<FilesMatch "\.(html|htm|css|js|json|png|jpg|jpeg|gif|svg|ico|mp4|webp|woff|woff2|ttf|eot)$">
+    Require all granted
+</FilesMatch>
+
+# Directory indexing
+Options -MultiViews
+
+# CORS headers
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
