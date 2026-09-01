@@ -2,7 +2,7 @@
 
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Images } from "lucide-react";
 
 const journeySteps = [
   { icon: "📚", title: "Education", desc: "Shaped with strong academic values and a vision to make a positive difference.", color: "#066a9c" },
@@ -35,7 +35,7 @@ export default function AboutPage() {
         title="People First,"
         titleHighlight="Always"
         description="A leader. An entrepreneur. A committed citizen working for a stronger, inclusive India."
-        bgImage="/images/profile-bijendra-malik.jpg"
+        bgImage="/images/join-mission-img.png"
       />
 
       {/* Who I Am — Split layout */}
@@ -45,7 +45,7 @@ export default function AboutPage() {
             {/* Left — Photo */}
             <div className="relative w-full lg:w-[48%] flex-shrink-0">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Images
                   src="/about-main.png"
                   alt="Bijendra Malik — Political Leader & Entrepreneur"
                   className="w-full h-[380px] sm:h-[440px] lg:h-[500px] object-contain object-bottom"

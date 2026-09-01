@@ -4,7 +4,11 @@ import { Users, TrendingUp, Shield } from "lucide-react";
 
 export default function OurValuesBar() {
   return (
-    <div className="mt-12 bg-gradient-to-r from-[#f0fdf9] to-white rounded-2xl p-6 lg:p-8 border border-gray-100 relative overflow-hidden">
+    <div className="mt-0 bg-gradient-to-r from-[#f0fdf9] to-white rounded-2xl p-6 lg:p-8 border border-gray-100 relative overflow-hidden">
+      {/* City Skyline at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none opacity-20">
+        <img src="/images/about-decor-skyline.png" alt="" className="w-full h-full object-cover object-bottom" />
+      </div>
       {/* Decorative circle */}
       <div className="absolute -right-10 -bottom-10 w-32 h-32 bg-[#26ae90]/5 rounded-full pointer-events-none" />
 
