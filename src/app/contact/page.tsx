@@ -17,7 +17,7 @@ export default function ContactPage() {
 
   const contactInfo = [
     { Icon: Phone, label: "Phone", value: "+91 98765 43210", color: "#26ae90" },
-    { Icon: Mail, label: "Email", value: "bijendramalikofficial@gmail.com", color: "#f28c28" },
+    { Icon: Mail, label: "Email", value: "contactus.bijendramalik@gmail.com", color: "#f28c28" },
     { Icon: MapPin, label: "Location", value: "Shamli, Uttar Pradesh, India", color: "#066a9c" },
   ];
 

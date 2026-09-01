@@ -44,7 +44,7 @@ export default function Contact() {
             <h3 className="font-[var(--font-poppins)] text-xl font-bold text-white mb-4">Contact Information</h3>
             <div className="space-y-5">
               {[
-                { icon: "📧", label: "Email", value: "bijendramalikofficial@gmail.com" },
+                { icon: "📧", label: "Email", value: "contactus.bijendramalik@gmail.com" },
                 { icon: "📍", label: "Location", value: "Shamli, Uttar Pradesh, India" },
                 { icon: "📞", label: "Phone", value: "+91 98765 43210" },
               ].map((c,i) => (
