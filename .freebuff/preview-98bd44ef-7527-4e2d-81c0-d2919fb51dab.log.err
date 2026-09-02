@@ -1,0 +1,262 @@
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="page.tsx">
+                  <SegmentTrieNode>
+                  <Home>
+                    <main className="flex-1">
+                      <Hero>
+                      <About>
+                        <section id="about" className="scroll-mt-...">
+                          <div ref={{current:null}} className="relative o...">
+                            <svg className="absolute t..." viewBox="0 0 200 200" fill="none" xmlns="http://www..." ...>
+                              <circle>
+                              <circle>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line>
+                              <line
+                                x1="100"
+                                y1="100"
+                                x2={54.99999999999996}
++                               y2={22.057713659400548}
+-                               y2="22.057713659400534"
+                                stroke="#066a9c"
+                                strokeWidth="1.5"
+                              >
+                              ...
+                            ...
+                          ...
+                      ...
+                ...
+              ...
+ 
+[browser] ./src/components/About.tsx:196:5
+Error: Expression expected
+  194 |         <OurValuesBar />
+  195 |       </div>
+> 196 |     </section>
+      |     ^
+  197 |   );
+  198 | }
+  199 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/About.tsx:196:6
+Error: Unterminated regexp literal
+  194 |         <OurValuesBar />
+  195 |       </div>
+> 196 |     </section>
+      |      ^^^^^^^^^
+  197 |   );
+  198 | }
+  199 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx 
+[browser] Invalid DOM property `class`. Did you mean `className`? 
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[browser] ./src/components/About.tsx:189:9
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  187 |           </div>
+  188 |         </div>
+> 189 |       ))}
+      |         ^
+  190 |
+  191 |       {/* Our Values Bar */}
+  192 |       <div className="py-0 lg:py-0">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx 
+⨯ ./src/components/About.tsx:189:9
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  [90m187 |[0m           </div>
+  [90m188 |[0m         </div>
+[31m[1m>[0m [90m189 |[0m       ))}
+  [90m    |[0m         [31m[1m^[0m
+  [90m190 |[0m
+  [90m191 |[0m       {[90m/* Our Values Bar */[0m}
+  [90m192 |[0m       <div className=[32m"py-0 lg:py-0"[0m>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx
+
+
+[browser] ./src/components/About.tsx:189:9
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  187 |           </div>
+  188 |         </div>
+> 189 |       ))}
+      |         ^
+  190 |
+  191 |       {/* Our Values Bar */}
+  192 |       <div className="py-0 lg:py-0">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/About.tsx:189:9
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  187 |           </div>
+  188 |         </div>
+> 189 |       ))}
+      |         ^
+  190 |
+  191 |       {/* Our Values Bar */}
+  192 |       <div className="py-0 lg:py-0">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/About.tsx:189:9
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  187 |           </div>
+  188 |         </div>
+> 189 |       ))}
+      |         ^
+  190 |
+  191 |       {/* Our Values Bar */}
+  192 |       <div className="py-0 lg:py-0">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx 
+[browser] Uncaught Error: ./src/components/About.tsx:189:9
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  187 |           </div>
+  188 |         </div>
+> 189 |       ))}
+      |         ^
+  190 |
+  191 |       {/* Our Values Bar */}
+  192 |       <div className="py-0 lg:py-0">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx
+
+
+    at <unknown> (Error: ./src/components/About.tsx:189:9)
+    at <unknown> (Error: (./src/components/About.tsx:189:9)
+[browser] ./src/components/About.tsx:189:9
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  187 |           </div>
+  188 |         </div>
+> 189 |       ))}
+      |         ^
+  190 |
+  191 |       {/* Our Values Bar */}
+  192 |       <div className="py-0 lg:py-0">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/About.tsx:189:9
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  187 |           </div>
+  188 |         </div>
+> 189 |       ))}
+      |         ^
+  190 |
+  191 |       {/* Our Values Bar */}
+  192 |       <div className="py-0 lg:py-0">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/About.tsx:189:9
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  187 |           </div>
+  188 |         </div>
+> 189 |       ))}
+      |         ^
+  190 |
+  191 |       {/* Our Values Bar */}
+  192 |       <div className="py-0 lg:py-0">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx 
+[browser] ./src/components/About.tsx:189:9
+Error: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  187 |           </div>
+  188 |         </div>
+> 189 |       ))}
+      |         ^
+  190 |
+  191 |       {/* Our Values Bar */}
+  192 |       <div className="py-0 lg:py-0">
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/About.tsx
+    ./src/app/page.tsx 

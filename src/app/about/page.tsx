@@ -45,7 +45,7 @@ export default function AboutPage() {
             {/* Left — Photo */}
             <div className="relative w-full lg:w-[48%] flex-shrink-0">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <Images
+                <img
                   src="/about-main.png"
                   alt="Bijendra Malik — Political Leader & Entrepreneur"
                   className="w-full h-[380px] sm:h-[440px] lg:h-[500px] object-contain object-bottom"
