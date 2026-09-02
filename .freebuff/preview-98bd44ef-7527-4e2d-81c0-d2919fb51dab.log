@@ -175,3 +175,15 @@
  GET / 200 in 102ms (next.js: 15ms, application-code: 87ms)
 ✓ Compiled in 277ms
  GET / 200 in 271ms (next.js: 44ms, application-code: 228ms)
+▲ Next.js 16.3.2 (Turbopack)
+- Local:         http://localhost:55182
+- Network:       http://192.168.1.4:55182
+✓ Ready in 1319ms
+✓ Running next.config.ts took 119ms
+
+ GET / 200 in 2.7s (next.js: 1594ms, application-code: 1116ms)
+▲ Next.js 16.3.2 (Turbopack)
+- Local:         http://localhost:55182
+- Network:       http://192.168.1.4:55182
+✓ Ready in 804ms
+[?25h

@@ -260,3 +260,23 @@ Import trace:
   Server Component:
     ./src/components/About.tsx
     ./src/app/page.tsx 
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+⨯ Failed to load next.config.ts, see more info here https://nextjs.org/docs/messages/next-config-error
+[Error:   x Unexpected token `ident`. Expected ... , *,  (, [, :, , ?, =, an identifier, public, protected, private, readonly, <.
+   ,-[5:1]
+ 2 | 
+ 3 | const nextConfig: NextConfig = {
+ 4 |   output: "export",
+ 5 |   GitHub Pages pe direct URL access ke liye — /about -> /about/index.html
+   :          ^^^^^
+ 6 |   trailingSlash: true,
+ 7 | };
+ 7 | 
+   `----
+
+
+Caused by:
+    Syntax Error] {
+  code: 'GenericFailure'
+}
