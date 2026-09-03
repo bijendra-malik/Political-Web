@@ -21,7 +21,7 @@ const values = [
 ];
 
 const stats = [
-  { number: "15+", label: "Years of Experience" },
+  { number: "5+", label: "Years of Experience" },
   { number: "50+", label: "Initiatives Led" },
   { number: "100+", label: "Villages Reached" },
   { number: "50K+", label: "Lives Impacted" },
@@ -35,7 +35,9 @@ export default function AboutPage() {
         title="People First,"
         titleHighlight="Always"
         description="A leader. An entrepreneur. A committed citizen working for a stronger, inclusive India."
-        bgImage="/images/about-banner-sunrise.png"
+        bgImage="/images/infrastructure-visit.jpg"
+        bgPosition="top"
+        strongOverlay
       />
 
       {/* Who I Am — Split layout */}
@@ -54,7 +56,7 @@ export default function AboutPage() {
               </div>
               {/* Floating accent card */}
               <div className="absolute -bottom-5 -right-5 sm:-right-10 bg-white rounded-2xl  px-3 py-2 border border-gray-100 max-w-[180px]">
-                <div className="text-[#26ae90] text-5xl font-bold font-[var(--font-poppins)]">15+</div>
+                <div className="text-[#26ae90] text-5xl font-bold font-[var(--font-poppins)]">5+</div>
                 <div className="text-[#066a9c] text-[10px] mt-1">Years of leadership </div>
               </div>
               {/* Decorative */}

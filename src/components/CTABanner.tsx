@@ -13,14 +13,14 @@ export default function CTABanner() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/images/join-mission-img.png"
+          src="/images/infrastructure-visit.jpg"
           alt="Join the Mission"
-          className="w-full h-full object-cover object-center scale-110"
+          className="w-full h-full object-cover object-center"
         />
       </div>
       {/* Gradient overlay — gray tone */}
       <div className="absolute inset-0 bg-gray-900/70" />
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/50 to-gray-900/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/40 via-gray-900/30 to-gray-900/40" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">

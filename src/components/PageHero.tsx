@@ -9,18 +9,28 @@ interface PageHeroProps {
   bgImage?: string;
   backgroundImage?: string;
   bgPosition?: string;
+  strongOverlay?: boolean;
 }
 
-export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "center" }: PageHeroProps) {
+export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "center", strongOverlay = false }: PageHeroProps) {
   const bg = backgroundImage || bgImage || "/images/public-rally.jpg";
 
   return (
-    <section className="relative min-h-[420px] lg:min-h-[480px] flex items-center overflow-hidden">
+    <section className="relative min-h-[420px] lg:min-h-[550px] flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img src={bg} alt="" className="w-full h-full object-cover" style={{ objectPosition: bgPosition }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071525]/80 via-[#071525]/30 to-[#071525]/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071525]/60 to-transparent" />
+        {strongOverlay ? (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#071525]/50 via-[#071525]/50 to-[#071525]/30" />
+            {/* <div className="absolute inset-0 bg-gradient-to-r from-[#071525]/90 via-[#071525]/50 to-[#071525]/15" /> */}
+          </>
+        ) : (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#071525]/80 via-[#071525]/30 to-[#071525]/10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#071525]/60 to-transparent" />
+          </>
+        )}
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
