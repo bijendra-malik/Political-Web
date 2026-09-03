@@ -231,3 +231,10 @@
  GET / 200 in 311ms (next.js: 19ms, application-code: 292ms)
  GET / 200 in 294ms (next.js: 16ms, application-code: 278ms)
  GET /social-work/ 200 in 105ms (next.js: 7ms, application-code: 98ms)
+ GET /social-work/ 200 in 95ms (next.js: 18ms, application-code: 77ms)
+ GET /social-work/ 200 in 215ms (next.js: 22ms, application-code: 193ms)
+✓ Compiled in 245ms
+ GET /social-work/ 200 in 120ms (next.js: 28ms, application-code: 92ms)
+ GET /social-work/ 200 in 89ms (next.js: 14ms, application-code: 75ms)
+ GET /social-work/ 200 in 181ms (next.js: 16ms, application-code: 166ms)
+ GET /social-work/ 200 in 322ms (next.js: 14ms, application-code: 308ms)
