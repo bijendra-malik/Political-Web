@@ -31,7 +31,7 @@ const profiles = [
     description:
       "Working for change with honesty, dedication and a vision to create opportunities and a better tomorrow for every citizen.",
     image: "/images/about-me0mg/about-banner.png",
-    accentColor: "#f28c28",
+    accentColor: "#26ae90",
     imageOnLeft: false,
     fullDescription: [
       "Sanjay Singh is a senior leader of the Aam Aadmi Party and serves as its National Spokesperson. Known for his articulate communication and strong advocacy for public causes, he has been instrumental in shaping the party's narrative and connecting with citizens across India.",
@@ -51,16 +51,16 @@ const profiles = [
     description:
       "Committed to grassroots development and public welfare with a focus on people, progress and integrity.",
     image: "/images/about-me0mg/manishi-sosdiya-removebg-preview.png",
-    accentColor: "#066a9c",
+    accentColor: "#26ae90",
     imageOnLeft: true,
     fullDescription: [
-      "Manish Sisodia is a prominent leader of the Aam Aadmi Party and has served as the Deputy Chief Minister of Delhi. Known for his transformative work in education and healthcare, he has been a champion of grassroots development and public welfare initiatives.",
+      "Manish Sisodia is a senior leader of the Aam Aadmi Party. Known for his transformative work in education and healthcare, he has been a champion of grassroots development and public welfare initiatives.",
       "His commitment to improving public services and empowering communities has made him a respected leader. Working alongside dedicated party members like Bijendra Malik, he continues to focus on people, progress and integrity in governance.",
     ],
     achievements: [
       { icon: Users, title: "Education Reform", desc: "Transforming schools" },
       { icon: Flag, title: "Healthcare", desc: "Mohalla clinics" },
-      { icon: Award, title: "Deputy CM", desc: "Former Delhi Deputy CM" },
+      { icon: Award, title: "Senior Leader", desc: "AAP leadership" },
       { icon: Heart, title: "Community Work", desc: "Grassroots development" },
     ],
   },

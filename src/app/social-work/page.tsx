@@ -109,7 +109,7 @@ export default function SocialWorkPage() {
       </section>
 
       {/* Initiatives */}
-      <section className="py-16 lg:py-24 bg-[#f5f7fa]">
+      <section className="py-12 lg:py-12 bg-[#f5f7fa]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 mb-3">
@@ -162,7 +162,7 @@ export default function SocialWorkPage() {
       </section>
 
       {/* Photo Gallery */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-8 lg:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-14">
             <div className="text-center flex-1">

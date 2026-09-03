@@ -8,16 +8,17 @@ interface PageHeroProps {
   description?: string;
   bgImage?: string;
   backgroundImage?: string;
+  bgPosition?: string;
 }
 
-export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage }: PageHeroProps) {
+export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "center" }: PageHeroProps) {
   const bg = backgroundImage || bgImage || "/images/public-rally.jpg";
 
   return (
     <section className="relative min-h-[420px] lg:min-h-[480px] flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={bg} alt="" className="w-full h-full object-cover" />
+        <img src={bg} alt="" className="w-full h-full object-cover" style={{ objectPosition: bgPosition }} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#071525]/80 via-[#071525]/30 to-[#071525]/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071525]/60 to-transparent" />
       </div>

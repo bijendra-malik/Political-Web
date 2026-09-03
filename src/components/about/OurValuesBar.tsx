@@ -4,20 +4,20 @@ import { Users, TrendingUp, Shield } from "lucide-react";
 
 export default function OurValuesBar() {
   return (
-    <div className="relative w-full overflow-hidden" style={{ minHeight: "120px" }}>
+    <div className="relative w-full overflow-hidden" style={{ minHeight: "120px", backgroundColor: "#f0fdf9" }}>
 
-      {/* Background — skyline full cover, vertically centered */}
+      {/* Background — skyline full cover, vertically centered (large screens only; hidden on mobile/tablet where the strip is tall and narrow) */}
       <img
         src="/images/about-decor-skyline.png"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="hidden lg:block absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      {/* Light overlay so text stays readable */}
-      <div className="absolute inset-0 bg-[#f0fdf9]/80" />
+      {/* Light overlay so text stays readable (large screens only) */}
+      <div className="hidden lg:block absolute inset-0 bg-[#f0fdf9]/80" />
 
       {/* Content — absolutely centered in the image */}
-      <div className="relative z-10 flex flex-row items-center gap-8 px-8 sm:px-12 lg:px-16 py-8">
+      <div className="relative z-10 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:gap-8 px-8 sm:px-12 lg:px-16 py-8">
 
         {/* Left — icon + heading */}
         <div className="flex items-center gap-4 flex-shrink-0">
@@ -38,7 +38,7 @@ export default function OurValuesBar() {
         <div className="hidden lg:block w-px self-stretch bg-gradient-to-b from-transparent via-gray-300 to-transparent flex-shrink-0" />
 
         {/* 3 values inline */}
-        <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="w-full min-w-0 flex-1 grid grid-cols-1 sm:grid-cols-3 gap-6">
 
           <div className="flex flex-col group/item">
             <div className="flex items-center gap-3 mb-1">

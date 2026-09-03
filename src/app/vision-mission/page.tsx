@@ -48,7 +48,7 @@ export default function VisionMissionPage() {
       />
 
       {/* Vision & Mission — Split with images */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-12 lg:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={headerRef} className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-3">
@@ -147,9 +147,9 @@ export default function VisionMissionPage() {
       </section>
 
       {/* Focus Areas — With animated progress bars */}
-      <section className="py-16 lg:py-20 bg-[#f5f7fa]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+      <section className="py-10 lg:py-8 bg-[#f5f7fa]">
+        <div className="max-w-7xl mx-auto px-0 sm:px-2 lg:px-0">
+          <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 mb-3">
               <div className="w-8 h-[2px] bg-[#26ae90]" />
               <span className="text-[#26ae90] font-semibold text-sm uppercase tracking-[0.2em]">Focus Areas</span>

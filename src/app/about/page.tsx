@@ -35,7 +35,7 @@ export default function AboutPage() {
         title="People First,"
         titleHighlight="Always"
         description="A leader. An entrepreneur. A committed citizen working for a stronger, inclusive India."
-        bgImage="/images/join-mission-img.png"
+        bgImage="/images/about-banner-sunrise.png"
       />
 
       {/* Who I Am — Split layout */}

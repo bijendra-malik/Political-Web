@@ -26,7 +26,7 @@ const profiles = [
     description2:
       "His dedication to honest governance and people-centric policies has made him a respected figure in Indian politics.",
     image: "/images/about-me0mg/about-banner.png",
-    accentColor: "#f28c28",
+    accentColor: "#26ae90",
     imageOnLeft: false,
     decorImage: "",
   },
@@ -34,11 +34,11 @@ const profiles = [
     role: "SENIOR LEADER, AAM AADMI PARTY",
     name: "Manish Sisodia",
     description:
-      "Manish Sisodia is a prominent leader of the Aam Aadmi Party and has served as the Deputy Chief Minister of Delhi. Known for his transformative work in education and healthcare, he has been a champion of grassroots development and public welfare initiatives.",
+      "Manish Sisodia is a senior leader of the Aam Aadmi Party. Known for his transformative work in education and healthcare, he has been a champion of grassroots development and public welfare initiatives.",
     description2:
       "His commitment to improving public services and empowering communities has made him a respected leader.",
     image: "/images/about-me0mg/manishi-sosdiya-removebg-preview.png",
-    accentColor: "#066a9c",
+    accentColor: "#26ae90",
     imageOnLeft: true,
     decorImage: "/images/about-decor-lotus.png",
   },
@@ -55,13 +55,13 @@ const values = [
     title: "Inclusive Development",
     description: "Working for equal opportunities and balanced growth for all.",
     icon: Building2,
-    accentColor: "#f28c28",
+    accentColor: "#26ae90",
   },
   {
     title: "Transparent Leadership",
     description: "Upholding honesty, integrity and accountability always.",
     icon: ShieldCheck,
-    accentColor: "#066a9c",
+    accentColor: "#26ae90",
   },
   {
     title: "Empowering Communities",
@@ -273,10 +273,6 @@ export default function About() {
                     <h3 className="font-[var(--font-poppins)] text-4xl lg:text-5xl font-bold text-[#066a9c] leading-tight">
                       {profile.name}
                     </h3>
-                    <div
-                      className="w-14 h-1 rounded-full"
-                      style={{ backgroundColor: profile.accentColor }}
-                    />
                   </div>
 
                   <div className="space-y-4 text-gray-600 leading-relaxed text-[15px]">

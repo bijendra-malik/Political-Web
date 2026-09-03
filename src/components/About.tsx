@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import Link from "next/link";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ArrowRight, Users, ShieldCheck, Building2, Heart } from "lucide-react";
@@ -7,9 +8,14 @@ import OurValuesBar from "@/components/about/OurValuesBar";
 
 const profiles = [
   {
-    role: "NATIONAL CONVENER, AAM AADMI PARTY",
     name: "Arvind Kejriwal",
-    title: "National Convener, Aam Aadmi Party",
+    url: "https://archive.aamaadmiparty.org/teams/arvind-kejriwal/",
+    title: (
+      <>
+        Ex Chief Minister, Delhi
+        <br />National Convener, Aam Aadmi Party
+      </>
+    ),
     description:
       "Arvind Kejriwal is a prominent Indian politician and the National Convener of the Aam Aadmi Party (AAP). Known for his commitment to transparent governance and anti-corruption activism, he has been a driving force behind reforms aimed at improving public services and empowering citizens.",
     description2:
@@ -20,32 +26,74 @@ const profiles = [
     decorImage: "/images/about-decor-india-gate.png",
   },
   {
-    role: "NATIONAL SPOKESPERSON, AAM AADMI PARTY",
     name: "Sanjay Singh",
-    title: "National Spokesperson, Aam Aadmi Party",
+    url: "https://delhi.gov.in/profile/shri-sanjay-singh",
+    title: (
+      <>
+        Member of Parliament, Rajya Sabha
+        <br />National Spokesperson, Aam Aadmi Party
+      </>
+    ),
     description:
       "Sanjay Singh is a senior leader of the Aam Aadmi Party and serves as its National Spokesperson. Known for his articulate communication and strong advocacy for public issues, he has been instrumental in shaping the party narrative.",
     description2:
       "His dedication to honest governance and people-centric policies has made him a respected figure in Indian politics.",
     image: "/images/about-me0mg/about-banner.png",
-    accentColor: "#f28c28",
+    accentColor: "#26ae90",
     imageOnLeft: false,
     decorImage: "",
   },
   {
-    role: "SENIOR LEADER, AAM AADMI PARTY",
     name: "Manish Sisodia",
-    title: "Senior Leader, Aam Aadmi Party",
+    url: "https://archive.aamaadmiparty.org/teams/manish-sisodia/",
+    title: (
+      <>
+        Ex Deputy Chief Minister, Delhi
+        <br />Senior Leader, Aam Aadmi Party
+      </>
+    ),
     description:
-      "Manish Sisodia is a prominent leader of the Aam Aadmi Party and has served as the Deputy Chief Minister of Delhi. Known for his transformative work in education and healthcare.",
+      "Manish Sisodia is a senior leader of the Aam Aadmi Party. Known for his transformative work in education and healthcare.",
     description2:
       "His commitment to improving public services and empowering communities has made him a respected leader.",
     image: "/images/about-me0mg/manishi-sosdiya-removebg-preview.png",
-    accentColor: "#066a9c",
+    accentColor: "#26ae90",
     imageOnLeft: true,
     decorImage: "/images/about-decor-lotus.png",
   },
 ];
+
+const PARTY_SITE_URL = "https://aamaadmiparty.org/";
+
+const linkClassName =
+  "font-medium text-[#066a9c] underline underline-offset-2 transition-colors duration-300 hover:text-[#26ae90] cursor-pointer";
+
+function LinkedText({ text, name, url }: { text: string; name: string; url: string }) {
+  // Link the leader's name (→ their profile) and "Aam Aadmi Party" (→ party site) inside the description,
+  // the same way "Aam Aadmi Party" is linked — leaving the surrounding text untouched.
+  const parts = text.split(new RegExp(`(${name}|Aam Aadmi Party)`, "g"));
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (part === "Aam Aadmi Party") {
+          return (
+            <a key={i} href={PARTY_SITE_URL} target="_blank" rel="noopener noreferrer" className={linkClassName}>
+              Aam Aadmi Party
+            </a>
+          );
+        }
+        if (part === name) {
+          return (
+            <a key={i} href={url} target="_blank" rel="noopener noreferrer" className={linkClassName}>
+              {name}
+            </a>
+          );
+        }
+        return <Fragment key={i}>{part}</Fragment>;
+      })}
+    </>
+  );
+}
 
 function ValueCard({
   title,
@@ -112,9 +160,9 @@ export default function About() {
           <div className="grid lg:grid-cols-3 gap-8 items-center">
             <div className="lg:col-span-2 grid md:grid-cols-2 gap-4">
               <ValueCard title="People First Approach" desc="Putting people's needs at the center of every decision." icon={Users} color="#26ae90" />
-              <ValueCard title="Transparent Leadership" desc="Upholding honesty, integrity and accountability always." icon={ShieldCheck} color="#066a9c" />
-              <ValueCard title="Inclusive Development" desc="Working for equal opportunities and balanced growth for all." icon={Building2} color="#f28c28" />
-              <ValueCard title="Empowering Communities" desc="Strengthening communities through education, health and self-reliance." icon={Heart} color="#0f5c4a" />
+              <ValueCard title="Transparent Leadership" desc="Upholding honesty, integrity and accountability always." icon={ShieldCheck} color="#26ae90" />
+              <ValueCard title="Inclusive Development" desc="Working for equal opportunities and balanced growth for all." icon={Building2} color="#26ae90" />
+              <ValueCard title="Empowering Communities" desc="Strengthening communities through education, health and self-reliance." icon={Heart} color="#26ae90" />
             </div>
 
             <div className="flex flex-col items-center lg:items-end gap-3">
@@ -134,10 +182,6 @@ export default function About() {
       {profiles.map((profile, index) => (
         <div key={profile.name} className="py-8 lg:py-12" style={{ backgroundColor: index % 2 === 0 ? "#f3faf9" : "#ffffff" }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-8 inline-block px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.15em]" style={{ backgroundColor: `${profile.accentColor}15`, color: profile.accentColor }}>
-              {profile.role}
-            </div>
-
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
               {/* Image Side */}
               <div ref={profile.imageOnLeft ? leftRef : rightRef} className={`relative ${profile.imageOnLeft ? "lg:order-first" : "lg:order-last"}`}>
@@ -174,11 +218,10 @@ export default function About() {
                 <div className="relative z-10 space-y-5">
                   <div className="space-y-2">
                     <h3 className="font-[var(--font-poppins)] text-4xl lg:text-5xl font-bold text-[#066a9c] leading-tight">{profile.name}</h3>
-                    <div className="w-16 h-1 rounded-full" style={{ backgroundColor: profile.accentColor }} />
                   </div>
                   <p className="text-base font-semibold" style={{ color: profile.accentColor }}>{profile.title}</p>
                   <div className="space-y-4 text-gray-600 leading-relaxed text-[15px]">
-                    <p>{profile.description}</p>
+                    <p><LinkedText text={profile.description} name={profile.name} url={profile.url} /></p>
                     <p>{profile.description2}</p>
                   </div>
                 </div>

@@ -72,11 +72,12 @@ export default function PoliticalJourneyPage() {
         titleHighlight="Dedication & Service"
         subtitle="My Political Journey"
         description="From a commitment to society to taking responsibility in public life — every step guided by the vision for a stronger, inclusive India."
-        bgImage="/images/about-banner-img.png"
+        bgImage="/images/journey-hero.png"
+        bgPosition="top"
       />
 
       {/* Intro text */}
-      <section className="py-12 lg:py-16 bg-white">
+      <section className="py-12 lg:py-8 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div ref={headerRef}>
             <div className="inline-flex items-center gap-2 mb-4">
@@ -155,11 +156,10 @@ export default function PoliticalJourneyPage() {
       {/* Quote + Stats */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/about-banner-img.png" alt="" className="w-full h-full object-cover object-center" />
+          <img src="/images/journey-quote-bg.png" alt="" className="w-full h-full object-cover object-center" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071525]/90 via-[#071525]/75 to-[#071525]/90" />
 
-        <div className="relative z-10 py-14 lg:py-16">
+        <div className="relative z-10 py-14 lg:py-5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
               {/* Quote */}
