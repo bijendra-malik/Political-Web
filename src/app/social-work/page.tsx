@@ -77,7 +77,7 @@ export default function SocialWorkPage() {
         titleHighlight="Community Initiatives"
         subtitle="Giving Back to Society"
         description="Working together to build a stronger, inclusive and empowered society."
-        bgImage="/images/social-work01-img.png"
+        bgImage="/images/education-initiative.jpg"
       />
 
       {/* Principles */}

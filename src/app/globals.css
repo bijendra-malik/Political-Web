@@ -238,6 +238,19 @@ body {
   animation: dot-ping 1.5s ease-out 1;
 }
 
+/* Traveling pointer dot — one-shot ring burst each time a milestone is reached */
+@keyframes milestone-ring {
+  0% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(3); opacity: 0; }
+}
+.milestone-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+  animation: milestone-ring 0.9s ease-out forwards;
+}
+
 /* Hide scrollbar */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

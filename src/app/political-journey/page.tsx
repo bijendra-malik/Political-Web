@@ -1,69 +1,123 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
-import { Users, Flag, Award, Landmark, Zap, Quote, ArrowRight, ChevronRight, Calendar, MapPin, Target } from "lucide-react";
+import { Users, Flag, Award, Landmark, Quote, ArrowRight, ChevronRight, MapPin, Target } from "lucide-react";
 import { useScrollReveal, useScrollStagger } from "@/hooks/useScrollReveal";
 
 const milestones = [
   {
-    year: "2005",
-    title: "Entrepreneurial Journey Begins",
-    subtitle: "Indexia Group Founded",
-    desc: "Started my journey in the business world with a vision to create value and opportunities. Founded Indexia Group of Companies with a mission to build diverse, innovative businesses.",
-    icon: Zap,
-    color: "#066a9c",
-    image: "/images/business-leadership.jpg",
-  },
-  {
-    year: "2010",
-    title: "Active Social Work",
-    subtitle: "Community Welfare",
-    desc: "Began working closely with communities — organized health camps, educational drives and public awareness campaigns for rural and urban development.",
-    icon: Users,
-    color: "#26ae90",
-    image: "/images/community-meeting.jpg",
-  },
-  {
-    year: "2015",
-    title: "Entered Politics",
+    year: "2021",
+    title: "Beginning the Political Journey",
     subtitle: "Aam Aadmi Party",
-    desc: "Took the step into active politics with a commitment to serve the people. Became National Spokesperson for Aam Aadmi Party, advocating for transparent governance.",
+    desc: "Began my political journey with the Aam Aadmi Party and contested the Assembly election from Shamli, carrying a commitment to public service, development and accountable governance.",
     icon: Flag,
     color: "#f28c28",
-    image: "/images/political-campaign.jpg",
+    image: "/images/campaign-event.jpg",
   },
   {
     year: "2022",
-    title: "MLA Candidate — Shamli",
-    subtitle: "Election 2022",
-    desc: "Contested as MLA Candidate from Shamli Constituency with the goal of development, transparency and good governance for all.",
+    title: "District Organisational Responsibilities",
+    subtitle: "Muzaffarnagar & Shamli",
+    desc: "Served as District Prabhari in Muzaffarnagar and Shamli, working with party workers and strengthening organisational engagement at the grassroots.",
+    icon: Users,
+    color: "#26ae90",
+    image: "/images/infrastructure-visit.jpg",
+  },
+  {
+    year: "2023",
+    title: "Saharanpur & Party Spokesperson",
+    subtitle: "Growing Responsibilities",
+    desc: "Served as District Prabhari for Saharanpur and took on responsibilities as a party spokesperson, communicating the party's vision and engaging with people on public issues.",
+    icon: Award,
+    color: "#066a9c",
+    image: "/images/media-interview.jpg",
+  },
+  {
+    year: "2024",
+    title: "Kairana & Shamli",
+    subtitle: "Grassroots Organisation",
+    desc: "Worked across Kairana and Shamli with party workers and local communities, focusing on organisational strengthening and public engagement.",
     icon: Landmark,
     color: "#286090",
     image: "/images/public-rally-shamli.jpg",
   },
   {
-    year: "Present",
-    title: "Continuing the Mission",
-    subtitle: "Building a Better Tomorrow",
-    desc: "Leading initiatives in education, healthcare, employment and digital development. Working for a stronger, inclusive and progressive society.",
-    icon: Award,
-    color: "#066a9c",
-    image: "/images/arvind-kejriwal-meeting.jpg",
+    year: "2025",
+    title: "Expanding Field Responsibilities",
+    subtitle: "Serving on the Ground",
+    desc: "Continued field-level organisational and public engagement responsibilities across different areas, working closely with communities and party workers.",
+    icon: Target,
+    color: "#26ae90",
+    image: "/images/public-rally.jpg",
+  },
+  {
+    year: "2026",
+    title: "UP-Wide Padayatra",
+    subtitle: "Rojgaar Do, Samajik Nyaay Do",
+    desc: "Participated in the 'Rojgaar Do, Samajik Nyaay Do' padayatra across Uttar Pradesh, engaging with people and raising issues related to employment and social justice.",
+    icon: MapPin,
+    color: "#f28c28",
+    image: "/images/education-drive.jpg",
   },
 ];
 
 const stats = [
-  { value: "20+", label: "Years of Public Service", icon: Calendar },
-  { value: "5+", label: "Years in Politics", icon: Flag },
-  { value: "50+", label: "Community Initiatives", icon: Target },
-  { value: "100+", label: "Villages Reached", icon: MapPin },
+  { value: "2021", label: "Political Journey Began", icon: Flag },
+  { value: "2022", label: "District-Level Responsibilities", icon: Users },
+  { value: "2023", label: "Party Spokesperson", icon: Award },
+  { value: "2026", label: "UP-Wide Padayatra", icon: MapPin },
 ];
 
 export default function PoliticalJourneyPage() {
   const headerRef = useScrollReveal<HTMLDivElement>({ direction: "up" });
   const timelineRef = useScrollReveal<HTMLDivElement>({ direction: "up", delay: 200 });
   const statsRef = useScrollStagger<HTMLDivElement>({ direction: "up", delay: 100 });
+  const lineFillRef = useRef<HTMLDivElement>(null);
+  const lineDotRef = useRef<HTMLDivElement>(null);
+  // Current milestone the traveling dot is on — drives its color and re-fires the pulse ring.
+  const [dotMilestone, setDotMilestone] = useState(0);
+  const dotMilestoneRef = useRef(0);
+
+  // Fill the timeline's center line progressively as the visitor scrolls through the milestones.
+  useEffect(() => {
+    const updateLineFill = () => {
+      const el = timelineRef.current;
+      const fill = lineFillRef.current;
+      const dot = lineDotRef.current;
+      if (!el || !fill || !dot) return;
+      // The line only renders on desktop (lg:block), so skip below the lg breakpoint.
+      if (window.innerWidth < 1024) {
+        fill.style.height = "0%";
+        dot.style.top = "0%";
+        return;
+      }
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      // 0% when the timeline's top reaches the bottom of the viewport,
+      // 100% when its bottom exits the top of the viewport.
+      const progress = Math.min(1, Math.max(0, (vh - rect.top) / (vh + rect.height)));
+      const pct = progress * 100;
+      fill.style.height = `${pct}%`;
+      // Pointer dot rides the tip of the fill; when it reaches a new milestone,
+      // update its color and re-fire the pulse ring (via state, keyed remount).
+      dot.style.top = `${pct}%`;
+      const idx = Math.min(milestones.length - 1, Math.max(0, Math.floor(progress * milestones.length)));
+      if (idx !== dotMilestoneRef.current) {
+        dotMilestoneRef.current = idx;
+        setDotMilestone(idx);
+      }
+    };
+
+    updateLineFill();
+    window.addEventListener("scroll", updateLineFill, { passive: true });
+    window.addEventListener("resize", updateLineFill);
+    return () => {
+      window.removeEventListener("scroll", updateLineFill);
+      window.removeEventListener("resize", updateLineFill);
+    };
+  }, []);
 
   return (
     <main className="flex-1">
@@ -74,6 +128,7 @@ export default function PoliticalJourneyPage() {
         description="From a commitment to society to taking responsibility in public life — every step guided by the vision for a stronger, inclusive India."
         bgImage="/images/journey-hero.png"
         bgPosition="top"
+        mobileBgPosition="left-top"
       />
 
       {/* Intro text */}
@@ -99,8 +154,32 @@ export default function PoliticalJourneyPage() {
       <section className="py-12 lg:py-20 bg-[#f8f9fb]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={timelineRef} className="relative">
-            {/* Center line — desktop */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 bg-gradient-to-b from-[#066a9c] via-[#26ae90] to-[#f28c28]" />
+            {/* Center line — desktop, green track that fills on scroll */}
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 overflow-hidden rounded-full bg-[#26ae90]/25">
+              <div
+                ref={lineFillRef}
+                className="w-full bg-gradient-to-b from-[#066a9c] via-[#26ae90] to-[#f28c28]"
+                style={{ height: "0%" }}
+              />
+            </div>
+            {/* Traveling pointer dot on the center line — pulses on each milestone */}
+            <div
+              ref={lineDotRef}
+              className="hidden lg:block absolute left-1/2 top-0 w-3.5 h-3.5 -translate-x-1/2 -translate-y-1/2 z-[5]"
+              style={{ top: "0%" }}
+            >
+              {/* Ring burst — remounts (key) every time a milestone is reached */}
+              <span
+                key={`dot-ring-${dotMilestone}`}
+                className="milestone-ring"
+                style={{ backgroundColor: milestones[dotMilestone].color }}
+              />
+              {/* Dot core — picks up the current milestone's color */}
+              <span
+                className="absolute inset-0 rounded-full border-[3px] border-white shadow-[0_0_0_1px_rgba(6,21,37,0.15),0_2px_6px_rgba(6,21,37,0.25)] transition-colors duration-300"
+                style={{ backgroundColor: milestones[dotMilestone].color }}
+              />
+            </div>
 
             <div className="space-y-12 lg:space-y-0">
               {milestones.map((m, i) => {

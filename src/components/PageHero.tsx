@@ -9,17 +9,32 @@ interface PageHeroProps {
   bgImage?: string;
   backgroundImage?: string;
   bgPosition?: string;
+  mobileBgPosition?: string;
   strongOverlay?: boolean;
 }
 
-export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "center", strongOverlay = false }: PageHeroProps) {
+// Mobile-only object-position overrides, applied through a CSS var so the
+// desktop objectPosition (bgPosition) is untouched on larger screens.
+const MOBILE_BG_POSITION_CLASS: Record<string, string> = {
+  "left-top": "max-md:[--pagehero-bg-pos:0%_0%]",
+  left: "max-md:[--pagehero-bg-pos:left]",
+  "right-top": "max-md:[--pagehero-bg-pos:100%_0%]",
+  center: "max-md:[--pagehero-bg-pos:center]",
+};
+
+export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "center", mobileBgPosition, strongOverlay = false }: PageHeroProps) {
   const bg = backgroundImage || bgImage || "/images/public-rally.jpg";
 
   return (
     <section className="relative min-h-[420px] lg:min-h-[550px] flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={bg} alt="" className="w-full h-full object-cover" style={{ objectPosition: bgPosition }} />
+        <img
+          src={bg}
+          alt=""
+          className={`w-full h-full object-cover ${mobileBgPosition ? MOBILE_BG_POSITION_CLASS[mobileBgPosition] ?? "" : ""}`}
+          style={{ objectPosition: mobileBgPosition ? `var(--pagehero-bg-pos, ${bgPosition})` : bgPosition }}
+        />
         {strongOverlay ? (
           <>
             <div className="absolute inset-0 bg-gradient-to-t from-[#071525]/50 via-[#071525]/50 to-[#071525]/30" />
