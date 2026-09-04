@@ -8,7 +8,7 @@ export default function OurValuesBar() {
 
       {/* Background — skyline full cover, vertically centered (large screens only; hidden on mobile/tablet where the strip is tall and narrow) */}
       <img
-        src="/images/about-decor-skyline.png"
+        src="/images/Imgs-AI/about-decor-skyline.png"
         alt=""
         className="hidden lg:block absolute inset-0 w-full h-full object-cover object-center"
       />

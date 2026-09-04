@@ -1,0 +1,334 @@
+
+> bijendra-malik-site@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.2 (Turbopack)
+- Local:         http://localhost:61981
+- Network:       http://192.168.1.4:61981
+✓ Ready in 14.4s
+✓ Running next.config.ts took 861ms
+
+○ Compiling / ...
+ GET / 200 in 7.0s (next.js: 5.3s, application-code: 1724ms)
+ GET / 200 in 5.2s (next.js: 3.6s, application-code: 1614ms)
+ GET / 200 in 497ms (next.js: 67ms, application-code: 430ms)
+ GET / 200 in 502ms (next.js: 29ms, application-code: 473ms)
+✓ Compiled in 673ms
+ GET / 200 in 220ms (next.js: 55ms, application-code: 164ms)
+✓ Compiled in 343ms
+ GET / 200 in 153ms (next.js: 33ms, application-code: 120ms)
+✓ Compiled in 550ms
+ GET / 200 in 194ms (next.js: 38ms, application-code: 156ms)
+ GET / 200 in 426ms (next.js: 26ms, application-code: 400ms)
+ GET /social-work/ 200 in 273ms (next.js: 160ms, application-code: 113ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+✓ Compiled in 300ms
+ GET /social-work/ 200 in 377ms (next.js: 35ms, application-code: 342ms)
+ GET / 200 in 199ms (next.js: 51ms, application-code: 148ms)
+ GET / 200 in 438ms (next.js: 32ms, application-code: 406ms)
+ GET /social-work/ 200 in 290ms (next.js: 94ms, application-code: 196ms)
+ GET / 200 in 302ms (next.js: 30ms, application-code: 272ms)
+ GET /social-work/ 200 in 163ms (next.js: 40ms, application-code: 123ms)
+ GET /social-work/ 200 in 402ms (next.js: 39ms, application-code: 363ms)
+ GET / 200 in 246ms (next.js: 56ms, application-code: 190ms)
+ GET /social-work/ 200 in 403ms (next.js: 24ms, application-code: 379ms)
+✓ Compiled in 276ms
+ GET / 200 in 336ms (next.js: 31ms, application-code: 305ms)
+ GET /social-work/ 200 in 177ms (next.js: 45ms, application-code: 132ms)
+✓ Compiled in 254ms
+ GET /social-work/ 200 in 437ms (next.js: 46ms, application-code: 391ms)
+ GET / 200 in 256ms (next.js: 46ms, application-code: 209ms)
+✓ Compiled in 283ms
+ GET / 200 in 320ms (next.js: 29ms, application-code: 291ms)
+ GET /social-work/ 200 in 178ms (next.js: 38ms, application-code: 140ms)
+ GET / 200 in 272ms (next.js: 31ms, application-code: 241ms)
+ GET /social-work/ 200 in 272ms (next.js: 121ms, application-code: 151ms)
+ GET / 200 in 286ms (next.js: 29ms, application-code: 257ms)
+ GET /social-work/ 200 in 153ms (next.js: 21ms, application-code: 133ms)
+ GET / 200 in 305ms (next.js: 30ms, application-code: 276ms)
+ GET /social-work/ 200 in 169ms (next.js: 24ms, application-code: 145ms)
+ GET /social-work/ 200 in 360ms (next.js: 36ms, application-code: 325ms)
+ GET / 200 in 187ms (next.js: 29ms, application-code: 158ms)
+ GET /social-work/ 200 in 388ms (next.js: 29ms, application-code: 358ms)
+ GET / 200 in 108ms (next.js: 25ms, application-code: 83ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /watch-intro/ 200 in 260ms (next.js: 163ms, application-code: 97ms)
+[browser] ⨯ unhandledRejection: NotSupportedError: The element has no supported sources.
+
+ GET /watch-intro/ 200 in 306ms (next.js: 41ms, application-code: 265ms)
+ GET / 200 in 157ms (next.js: 26ms, application-code: 131ms)
+ GET / 200 in 323ms (next.js: 32ms, application-code: 290ms)
+ GET /watch-intro/ 200 in 176ms (next.js: 35ms, application-code: 141ms)
+ GET / 200 in 327ms (next.js: 33ms, application-code: 294ms)
+ GET /watch-intro/ 200 in 163ms (next.js: 32ms, application-code: 130ms)
+ GET /watch-intro/ 200 in 337ms (next.js: 20ms, application-code: 318ms)
+✓ Compiled in 298ms
+ GET / 200 in 354ms (next.js: 55ms, application-code: 299ms)
+ GET /watch-intro/ 200 in 183ms (next.js: 34ms, application-code: 150ms)
+✓ Compiled in 301ms
+ GET / 200 in 386ms (next.js: 39ms, application-code: 347ms)
+ GET /watch-intro/ 200 in 223ms (next.js: 33ms, application-code: 190ms)
+ GET /watch-intro/ 200 in 308ms (next.js: 43ms, application-code: 265ms)
+✓ Compiled in 273ms
+ GET /watch-intro/ 200 in 299ms (next.js: 26ms, application-code: 273ms)
+ GET / 200 in 174ms (next.js: 36ms, application-code: 138ms)
+✓ Compiled in 209ms
+ GET / 200 in 311ms (next.js: 32ms, application-code: 279ms)
+ GET /watch-intro/ 200 in 170ms (next.js: 56ms, application-code: 115ms)
+✓ Compiled in 262ms
+ GET / 200 in 340ms (next.js: 32ms, application-code: 307ms)
+ GET /watch-intro/ 200 in 179ms (next.js: 23ms, application-code: 156ms)
+✓ Compiled in 279ms
+ GET /watch-intro/ 200 in 312ms (next.js: 29ms, application-code: 283ms)
+ GET / 200 in 171ms (next.js: 43ms, application-code: 127ms)
+✓ Compiled in 285ms
+ GET /watch-intro/ 200 in 241ms (next.js: 32ms, application-code: 208ms)
+ GET / 200 in 133ms (next.js: 32ms, application-code: 101ms)
+✓ Compiled in 237ms
+ GET / 200 in 111ms (next.js: 24ms, application-code: 87ms)
+ GET /watch-intro/ 200 in 122ms (next.js: 31ms, application-code: 91ms)
+ GET /about/ 200 in 413ms (next.js: 154ms, application-code: 259ms)
+ GET / 200 in 247ms (next.js: 16ms, application-code: 230ms)
+ GET /media/ 200 in 296ms (next.js: 80ms, application-code: 217ms)
+ GET /watch-intro/ 200 in 201ms (next.js: 11ms, application-code: 189ms)
+ GET /social-work/ 200 in 201ms (next.js: 15ms, application-code: 186ms)
+ GET /watch-intro/ 200 in 200ms (next.js: 14ms, application-code: 186ms)
+ GET / 200 in 69ms (next.js: 21ms, application-code: 48ms)
+ GET / 200 in 291ms (next.js: 20ms, application-code: 272ms)
+ GET /social-work/ 200 in 186ms (next.js: 34ms, application-code: 152ms)
+ GET / 200 in 157ms (next.js: 84ms, application-code: 73ms)
+ GET /social-work/ 200 in 162ms (next.js: 26ms, application-code: 136ms)
+ GET /social-work/ 200 in 156ms (next.js: 16ms, application-code: 140ms)
+ GET / 200 in 88ms (next.js: 16ms, application-code: 72ms)
+ GET /social-work/ 200 in 183ms (next.js: 15ms, application-code: 168ms)
+ GET / 200 in 108ms (next.js: 17ms, application-code: 91ms)
+ GET /social-work/ 200 in 155ms (next.js: 14ms, application-code: 141ms)
+ GET / 200 in 88ms (next.js: 18ms, application-code: 70ms)
+ GET /social-work/ 200 in 187ms (next.js: 15ms, application-code: 171ms)
+ GET / 200 in 109ms (next.js: 15ms, application-code: 94ms)
+ GET / 200 in 187ms (next.js: 86ms, application-code: 102ms)
+ GET /social-work/ 200 in 192ms (next.js: 26ms, application-code: 166ms)
+ GET / 200 in 277ms (next.js: 105ms, application-code: 172ms)
+ GET /social-work/ 200 in 105ms (next.js: 18ms, application-code: 87ms)
+ GET / 200 in 211ms (next.js: 23ms, application-code: 187ms)
+ GET /social-work/ 200 in 190ms (next.js: 87ms, application-code: 103ms)
+ GET /social-work/ 200 in 171ms (next.js: 13ms, application-code: 158ms)
+ GET / 200 in 99ms (next.js: 15ms, application-code: 83ms)
+ GET / 200 in 170ms (next.js: 18ms, application-code: 153ms)
+ GET /social-work/ 200 in 95ms (next.js: 17ms, application-code: 78ms)
+ GET / 200 in 164ms (next.js: 16ms, application-code: 148ms)
+ GET /social-work/ 200 in 88ms (next.js: 15ms, application-code: 72ms)
+ GET /social-work/ 200 in 187ms (next.js: 19ms, application-code: 169ms)
+ GET / 200 in 98ms (next.js: 20ms, application-code: 77ms)
+ GET / 200 in 180ms (next.js: 16ms, application-code: 164ms)
+ GET /social-work/ 200 in 107ms (next.js: 18ms, application-code: 89ms)
+ GET /social-work/ 200 in 191ms (next.js: 17ms, application-code: 174ms)
+ GET / 200 in 98ms (next.js: 17ms, application-code: 82ms)
+ GET / 200 in 259ms (next.js: 31ms, application-code: 228ms)
+ GET /social-work/ 200 in 259ms (next.js: 124ms, application-code: 135ms)
+ GET / 200 in 319ms (next.js: 30ms, application-code: 289ms)
+ GET /social-work/ 200 in 227ms (next.js: 108ms, application-code: 119ms)
+ GET /social-work/ 200 in 226ms (next.js: 19ms, application-code: 207ms)
+ GET / 200 in 151ms (next.js: 36ms, application-code: 114ms)
+ GET / 200 in 240ms (next.js: 21ms, application-code: 219ms)
+ GET /social-work/ 200 in 162ms (next.js: 26ms, application-code: 136ms)
+ GET /social-work/ 200 in 240ms (next.js: 25ms, application-code: 215ms)
+ GET / 200 in 140ms (next.js: 20ms, application-code: 120ms)
+ GET / 200 in 99ms (next.js: 16ms, application-code: 83ms)
+ GET /social-work/ 200 in 105ms (next.js: 41ms, application-code: 64ms)
+ GET / 200 in 201ms (next.js: 23ms, application-code: 178ms)
+ GET /social-work/ 200 in 117ms (next.js: 15ms, application-code: 102ms)
+ GET / 200 in 198ms (next.js: 20ms, application-code: 178ms)
+ GET /social-work/ 200 in 91ms (next.js: 15ms, application-code: 77ms)
+ GET / 200 in 194ms (next.js: 24ms, application-code: 170ms)
+ GET /social-work/ 200 in 111ms (next.js: 18ms, application-code: 93ms)
+ GET / 200 in 196ms (next.js: 31ms, application-code: 165ms)
+ GET /social-work/ 200 in 91ms (next.js: 20ms, application-code: 71ms)
+ GET /social-work/ 200 in 170ms (next.js: 14ms, application-code: 156ms)
+ GET / 200 in 98ms (next.js: 25ms, application-code: 73ms)
+ GET / 200 in 177ms (next.js: 28ms, application-code: 149ms)
+ GET /social-work/ 200 in 94ms (next.js: 11ms, application-code: 83ms)
+ GET / 200 in 263ms (next.js: 13ms, application-code: 249ms)
+✓ Compiled in 185ms
+ GET /social-work/ 200 in 180ms (next.js: 11ms, application-code: 169ms)
+ GET / 200 in 102ms (next.js: 20ms, application-code: 82ms)
+✓ Compiled in 182ms
+ GET / 200 in 162ms (next.js: 19ms, application-code: 143ms)
+ GET /social-work/ 200 in 85ms (next.js: 15ms, application-code: 70ms)
+✓ Compiled in 215ms
+ GET /social-work/ 200 in 170ms (next.js: 9ms, application-code: 161ms)
+ GET / 200 in 100ms (next.js: 19ms, application-code: 81ms)
+ GET /about/ 200 in 151ms (next.js: 41ms, application-code: 110ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /political-journey/ 200 in 402ms (next.js: 288ms, application-code: 114ms)
+ GET /political-journey/ 200 in 262ms (next.js: 23ms, application-code: 239ms)
+ GET /vision-mission/ 200 in 478ms (next.js: 371ms, application-code: 106ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /social-work/ 200 in 91ms (next.js: 28ms, application-code: 63ms)
+ GET / 200 in 121ms (next.js: 21ms, application-code: 99ms)
+ GET /social-work/ 200 in 23ms (next.js: 10ms, application-code: 13ms)
+ GET /social-work/ 200 in 27ms (next.js: 7ms, application-code: 20ms)
+ GET /WhatsApp%20Unknown%202026-09-04%20at%2012.06.52%20PM/WhatsApp%20Video%202026-09-04%20at%2011.02.09%20AM.mp4 404 in 439ms (next.js: 269ms, application-code: 170ms)
+ GET / 200 in 116ms (next.js: 24ms, application-code: 92ms)
+ GET / 200 in 147ms (next.js: 17ms, application-code: 130ms)
+ GET /media/ 200 in 351ms (next.js: 108ms, application-code: 243ms)
+ GET / 200 in 418ms (next.js: 27ms, application-code: 391ms)
+ GET /media/ 200 in 76ms (next.js: 18ms, application-code: 59ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+✓ Compiled in 208ms
+ GET /media/ 200 in 146ms (next.js: 31ms, application-code: 115ms)
+ GET /media/ 200 in 100ms (next.js: 14ms, application-code: 87ms)
+ GET /media/ 200 in 251ms (next.js: 14ms, application-code: 237ms)
+ GET /social-work/ 200 in 87ms (next.js: 28ms, application-code: 60ms)
+ GET /social-work/ 200 in 234ms (next.js: 18ms, application-code: 216ms)
+ GET /media/ 200 in 92ms (next.js: 19ms, application-code: 72ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /media/ 200 in 248ms (next.js: 23ms, application-code: 225ms)
+ GET / 200 in 127ms (next.js: 14ms, application-code: 112ms)
+ GET /media/ 200 in 40ms (next.js: 8ms, application-code: 31ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+✓ Compiled in 214ms
+ GET /media/ 200 in 214ms (next.js: 58ms, application-code: 156ms)
+✓ Compiled in 236ms
+ GET /media/ 200 in 172ms (next.js: 33ms, application-code: 140ms)
+✓ Compiled in 579ms
+ GET /media/ 200 in 129ms (next.js: 31ms, application-code: 98ms)
+✓ Compiled in 347ms
+ GET /media/ 200 in 158ms (next.js: 36ms, application-code: 122ms)
+ GET /media/ 200 in 155ms (next.js: 11ms, application-code: 144ms)
+ GET / 200 in 81ms (next.js: 23ms, application-code: 58ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+✓ Compiled in 181ms
+ GET /media/ 200 in 94ms (next.js: 10ms, application-code: 84ms)
+ GET / 200 in 46ms (next.js: 8ms, application-code: 38ms)
+✓ Compiled in 527ms
+ GET / 200 in 124ms (next.js: 36ms, application-code: 88ms)
+ GET /media/ 200 in 93ms (next.js: 17ms, application-code: 76ms)
+ GET /media/ 200 in 106ms (next.js: 40ms, application-code: 66ms)
+ GET /media/ 200 in 241ms (next.js: 16ms, application-code: 225ms)
+ GET /watch-intro/ 200 in 301ms (next.js: 120ms, application-code: 182ms)
+✓ Compiled in 450ms
+ GET /media/ 200 in 273ms (next.js: 36ms, application-code: 236ms)
+ GET /media/ 200 in 320ms (next.js: 19ms, application-code: 301ms)
+✓ Compiled in 316ms
+ GET /media/ 200 in 182ms (next.js: 36ms, application-code: 146ms)
+ GET /media/ 200 in 91ms (next.js: 14ms, application-code: 76ms)
+ GET /media/ 200 in 204ms (next.js: 22ms, application-code: 181ms)
+ GET /media/ 200 in 234ms (next.js: 22ms, application-code: 213ms)
+✓ Compiled in 105ms
+ GET /media/ 200 in 112ms (next.js: 11ms, application-code: 101ms)
+ GET /media/ 200 in 56ms (next.js: 10ms, application-code: 46ms)
+ GET /media/ 200 in 212ms (next.js: 18ms, application-code: 195ms)
+✓ Compiled in 369ms
+ GET /media/ 200 in 167ms (next.js: 32ms, application-code: 136ms)
+ GET /media/ 200 in 98ms (next.js: 14ms, application-code: 83ms)
+ GET /media/ 200 in 198ms (next.js: 18ms, application-code: 180ms)
+ GET /media/ 200 in 224ms (next.js: 20ms, application-code: 204ms)
+✓ Compiled in 167ms
+ GET /media/ 200 in 145ms (next.js: 11ms, application-code: 133ms)
+ GET /media/ 200 in 88ms (next.js: 17ms, application-code: 71ms)
+ GET /media/ 200 in 121ms (next.js: 8ms, application-code: 113ms)
+ GET /contact/ 200 in 1843ms (next.js: 1784ms, application-code: 59ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+✓ Compiled in 376ms
+ GET /contact/ 200 in 163ms (next.js: 27ms, application-code: 136ms)
+ GET /media/ 200 in 205ms (next.js: 36ms, application-code: 169ms)
+ GET /media/ 200 in 293ms (next.js: 17ms, application-code: 277ms)
+ GET /social-work/ 200 in 100ms (next.js: 28ms, application-code: 72ms)
+ GET /media/ 200 in 88ms (next.js: 18ms, application-code: 71ms)
+ GET / 200 in 100ms (next.js: 36ms, application-code: 64ms)
+✓ Compiled in 236ms
+ GET / 200 in 116ms (next.js: 18ms, application-code: 98ms)
+ GET /media/ 200 in 130ms (next.js: 45ms, application-code: 84ms)
+ GET / 200 in 318ms (next.js: 23ms, application-code: 295ms)
+ GET /media/ 200 in 291ms (next.js: 13ms, application-code: 278ms)
+✓ Compiled in 259ms
+ GET / 200 in 191ms (next.js: 99ms, application-code: 92ms)
+ GET /media/ 200 in 194ms (next.js: 41ms, application-code: 154ms)
+✓ Compiled in 182ms
+ GET / 200 in 168ms (next.js: 25ms, application-code: 143ms)
+ GET /media/ 200 in 79ms (next.js: 14ms, application-code: 66ms)
+✓ Compiled in 258ms
+ GET / 200 in 235ms (next.js: 21ms, application-code: 215ms)
+ GET /media/ 200 in 157ms (next.js: 13ms, application-code: 144ms)
+✓ Compiled in 264ms
+ GET / 200 in 180ms (next.js: 24ms, application-code: 156ms)
+ GET /media/ 200 in 95ms (next.js: 14ms, application-code: 81ms)
+✓ Compiled in 253ms
+ GET / 200 in 220ms (next.js: 27ms, application-code: 193ms)
+ GET /media/ 200 in 124ms (next.js: 17ms, application-code: 107ms)
+ GET /media/ 200 in 95ms (next.js: 21ms, application-code: 75ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+✓ Compiled in 213ms
+ GET /media/ 200 in 199ms (next.js: 34ms, application-code: 165ms)
+ GET /media/ 200 in 97ms (next.js: 13ms, application-code: 84ms)
+✓ Compiled in 206ms
+ GET /media/ 200 in 221ms (next.js: 23ms, application-code: 198ms)
+ GET /media/ 200 in 142ms (next.js: 27ms, application-code: 115ms)
+ GET /media/ 200 in 235ms (next.js: 16ms, application-code: 219ms)
+ GET / 200 in 40ms (next.js: 9ms, application-code: 31ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /contact/ 200 in 91ms (next.js: 17ms, application-code: 74ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /contact/ 200 in 267ms (next.js: 26ms, application-code: 241ms)
+ GET / 200 in 174ms (next.js: 35ms, application-code: 139ms)
+ GET / 200 in 77ms (next.js: 15ms, application-code: 62ms)
+ GET / 200 in 281ms (next.js: 19ms, application-code: 263ms)
+ GET /media/ 200 in 78ms (next.js: 28ms, application-code: 50ms)
+ GET /contact/ 200 in 68ms (next.js: 17ms, application-code: 51ms)
+ GET /social-work/ 200 in 94ms (next.js: 22ms, application-code: 72ms)
+ GET /media/ 200 in 107ms (next.js: 34ms, application-code: 73ms)
+ GET / 200 in 115ms (next.js: 34ms, application-code: 81ms)
+ GET / 200 in 284ms (next.js: 20ms, application-code: 264ms)
+✓ Compiled in 989ms
+ GET / 200 in 267ms (next.js: 72ms, application-code: 195ms)
+ GET / 200 in 87ms (next.js: 12ms, application-code: 75ms)
+ GET / 200 in 450ms (next.js: 17ms, application-code: 433ms)
+ GET / 200 in 272ms (next.js: 10ms, application-code: 261ms)
+ GET / 200 in 134ms (next.js: 19ms, application-code: 115ms)
+✓ Compiled in 196ms
+ GET / 200 in 172ms (next.js: 25ms, application-code: 147ms)
+ GET / 200 in 82ms (next.js: 12ms, application-code: 69ms)
+ GET / 200 in 294ms (next.js: 15ms, application-code: 279ms)
+✓ Compiled in 206ms
+ GET / 200 in 163ms (next.js: 25ms, application-code: 138ms)
+ GET / 200 in 75ms (next.js: 12ms, application-code: 63ms)
+✓ Compiled in 178ms
+ GET / 200 in 151ms (next.js: 16ms, application-code: 135ms)
+ GET / 200 in 81ms (next.js: 15ms, application-code: 66ms)
+✓ Compiled in 140ms
+ GET / 200 in 149ms (next.js: 17ms, application-code: 132ms)
+ GET / 200 in 79ms (next.js: 11ms, application-code: 67ms)
+✓ Compiled in 351ms
+ GET / 200 in 175ms (next.js: 20ms, application-code: 155ms)
+ GET / 200 in 103ms (next.js: 14ms, application-code: 89ms)
+ GET / 200 in 328ms (next.js: 9ms, application-code: 318ms)
+✓ Compiled in 182ms
+ GET / 200 in 196ms (next.js: 22ms, application-code: 174ms)
+ GET / 200 in 113ms (next.js: 12ms, application-code: 102ms)
+✓ Compiled in 241ms
+ GET / 200 in 191ms (next.js: 24ms, application-code: 167ms)
+ GET / 200 in 97ms (next.js: 17ms, application-code: 80ms)
+ GET / 200 in 291ms (next.js: 21ms, application-code: 270ms)
+✓ Compiled in 186ms
+ GET / 200 in 179ms (next.js: 30ms, application-code: 150ms)
+ GET / 200 in 86ms (next.js: 19ms, application-code: 67ms)
+✓ Compiled in 144ms
+ GET / 200 in 183ms (next.js: 22ms, application-code: 161ms)
+ GET / 200 in 90ms (next.js: 17ms, application-code: 73ms)
+✓ Compiled in 241ms
+ GET / 200 in 192ms (next.js: 23ms, application-code: 169ms)
+ GET / 200 in 106ms (next.js: 16ms, application-code: 89ms)
+✓ Compiled in 265ms
+ GET / 200 in 172ms (next.js: 20ms, application-code: 152ms)
+ GET / 200 in 91ms (next.js: 15ms, application-code: 76ms)
+✓ Compiled in 251ms
+ GET / 200 in 186ms (next.js: 19ms, application-code: 166ms)
+ GET / 200 in 114ms (next.js: 15ms, application-code: 99ms)
+ GET / 200 in 406ms (next.js: 18ms, application-code: 388ms)
+✓ Compiled in 171ms
+ GET / 200 in 162ms (next.js: 18ms, application-code: 144ms)
+ GET / 200 in 81ms (next.js: 10ms, application-code: 70ms)
+✓ Compiled in 117ms
+ GET / 200 in 170ms (next.js: 27ms, application-code: 143ms)
+ GET / 200 in 80ms (next.js: 12ms, application-code: 69ms)

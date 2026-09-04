@@ -7,32 +7,67 @@ import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 const tabs = ["All", "News Coverage", "Press Releases", "Interviews", "Videos", "Photos"];
 
 const newsItems = [
-  { image: "/images/youth-employment.jpg", title: "Focus on Youth & Employment", desc: "Bijendra Malik emphasizes the role of youth in building a stronger and self-reliant India.", date: "15 May 2024", source: "THE HINDU", category: "News Coverage" },
-  { image: "/images/youth-engagement.jpg", title: "Interview on Community Development", desc: "Discussion on the importance of grassroots development and community participation.", date: "02 April 2024", source: "Amar Ujala", category: "Interviews" },
-  { image: "/images/rural-development.jpg", title: "Working for a Better Tomorrow", desc: "Coverage of initiatives for education, healthcare and rural development in local communities.", date: "18 March 2024", source: "Dainik Jagran", category: "News Coverage" },
-  { image: "/images/public-welfare.jpg", title: "Commitment to Public Service", desc: "Article highlighting dedication towards transparent governance and public welfare.", date: "10 Feb 2024", source: "Navbharat Times", category: "Press Releases" },
-
-  { image: "/images/community-development.jpg", title: "Community Development Initiatives Launched", desc: "New development programs launched for rural and urban communities.", date: "15 Dec 2023", source: "Hindustan Times", category: "Press Releases" },
+  { image: "/images/procession-tricolour.jpg", title: "Rally March with Supporters", desc: "Bijendra Malik leads a public rally as supporters carry party flags and the national flag.", date: "04 Sep 2026", source: "Rally Coverage", category: "News Coverage" },
+  { image: "/images/ceremonial-scarf-honour.jpg", title: "Honoured by International Council of Jurists", desc: "Honoured as a Distinguished Member of the International Council of Jurists (London, U.K.).", date: "2026", source: "Honour Ceremony", category: "News Coverage" },
+  { image: "/images/akhada-wrestling-event.jpg", title: "Akhada Wrestling Event", desc: "Bijendra Malik attends a local wrestling (akhada) event alongside organisers and wrestlers.", date: "2026", source: "Event Coverage", category: "News Coverage" },
+  { image: "/images/community-members-group.jpg", title: "Evening Community Gathering", desc: "Interaction with community members during an evening gathering.", date: "04 Sep 2026", source: "Community Coverage", category: "News Coverage" },
+  { image: "/images/rally-march-yellow-flags.jpg", title: "Flag March through the Streets", desc: "Supporters march with party flags during the rally.", date: "04 Sep 2026", source: "Rally Coverage", category: "News Coverage" },
+  { image: "/images/supporters-celebration.jpg", title: "Supporters Celebrate", desc: "Supporters raise their hands in celebration during the rally.", date: "04 Sep 2026", source: "Rally Coverage", category: "News Coverage" },
 ];
 
 const videos = [
-  { id: "ivmAr-W9MU4", title: "Focus on Youth & Employment", desc: "Keynote address on the role of youth in building a stronger India.", date: "15 May 2024", duration: "05:12", category: "Videos" },
-  { id: "NwQw03R-pVM", title: "Interview on Community Development", desc: "Open discussion with citizens about grassroots development.", date: "02 April 2024", duration: "04:35", category: "Interviews" },
-  { id: "kaDcvoCTmiM", title: "Working for a Better Tomorrow", desc: "Coverage of education, healthcare and rural development initiatives.", date: "18 March 2024", duration: "06:48", category: "Videos" },
-  { id: "6arCanHc8wA", title: "Commitment to Public Service", desc: "Address on transparent governance and public welfare.", date: "10 Feb 2024", duration: "03:20", category: "Interviews" },
-  { id: "joRmPaeurb4", title: "Vision for Digital India", desc: "Speech on technology and digital empowerment.", date: "25 Jan 2024", duration: "05:55", category: "Videos" },
-  { id: "1FndZigExqk", title: "Youth Leadership Summit", desc: "Keynote at the National Youth Leadership Summit.", date: "12 Dec 2023", duration: "07:10", category: "Videos" },
-  { id: "v-hNOw-1GU8", title: "Community Welfare Initiative", desc: "Launch of community welfare programs.", date: "05 Nov 2023", duration: "04:22", category: "Press Releases" },
-  { id: "h6Y0moAjYh4", title: "Public Service Address", desc: "Annual public service address to constituents.", date: "20 Oct 2023", duration: "08:15", category: "News Coverage" },
+  { id: "ivmAr-W9MU4", title: "India Wants Answers from the BJP Government", desc: "Bijendra Malik on the questions India is asking the BJP government.", date: "26 Dec 2023", duration: "01:30", source: "Bijendra Malik", category: "Videos" },
+  { id: "NwQw03R-pVM", title: "Delhi Flood Situation — Bharat 24 News", desc: "Bijendra Malik on the Delhi flood situation.", date: "28 Dec 2023", duration: "01:09", source: "Bharat 24 News", category: "News Coverage" },
+  { id: "kaDcvoCTmiM", title: "Delhi Flooded in Continuous Rain — Red Alert", desc: "Heavy rain turned Delhi streets into ponds; red alert across states. Bijendra Malik, AAP.", date: "21 Dec 2023", duration: "36:24", source: "Bijendra Malik", category: "Videos" },
+  { id: "6arCanHc8wA", title: "UP vs Punjab — Law & Order Debate", desc: "Bijendra Malik on law and order in Uttar Pradesh vs Punjab (News State).", date: "28 Dec 2023", duration: "02:35", source: "News State", category: "Interviews" },
+  { id: "pJv7wnSHc9c", title: "Delhi Floods — 'A Planned Conspiracy'? Rubika Liyaquat's Reply", desc: "AAP's Bijendra Malik in conversation with Rubika Liyaquat (Bharat 24).", date: "14 Jul 2023", duration: "04:24", source: "Bharat 24", category: "Interviews" },
+  { id: "1FndZigExqk", title: "AAP vs Shehzad Poonawalla — Full Debate", desc: "Latest debate between AAP's Bijendra Malik and BJP's Shehzad Poonawalla.", date: "21 Dec 2023", duration: "03:18", source: "Bijendra Malik", category: "Interviews" },
+  { id: "v-hNOw-1GU8", title: "Satta Ka Temperature — Haryana Alert (Network10)", desc: "Network10's Satta Ka Temperature — alert on Haryana politics.", date: "21 Dec 2023", duration: "27:14", source: "Network10", category: "News Coverage" },
+  { id: "h6Y0moAjYh4", title: "UP Election 2022 — Shamli Journey & Interview", desc: "Aam Aadmi Party's Shamli candidate Bijendra Malik on the 2022 UP election trail.", date: "11 Dec 2023", duration: "19:11", source: "Bijendra Malik", category: "Videos" },
 ];
 
-const localVideos = [
-  { src: "/images/event-highlights.mp4", thumbnail: "/images/formal-dinner.jpg", title: "Event Highlights — Formal Dinner", desc: "Exclusive coverage from a recent formal event.", date: "22 Aug 2026", category: "Videos" },
-  { src: "/images/intro-video.mp4", thumbnail: "/images/profile-bijendra-malik.jpg", title: "Personal Introduction — Bijendra Malik", desc: "Meet Bijendra Malik and his vision for the people.", date: "26 Aug 2026", category: "Videos" },
-  { src: "/images/community-highlights.mp4", thumbnail: "/images/about-banner.png", title: "Community Welfare Initiatives", desc: "Working towards grassroots development and community participation.", date: "22 Aug 2026", category: "Videos" },
+const localVideos: { src?: string; youtube?: string; thumbnail?: string; title: string; desc: string; date: string; category: string }[] = [
+  { youtube: "pJv7wnSHc9c", title: "Bharat 24 — Delhi Floods Debate", desc: "AAP's Bijendra Malik calls the Delhi floods 'a planned conspiracy' — in conversation with Rubika Liyaquat.", date: "2026", category: "Videos" },
+  { src: "/media/videos/community-highlights.mp4", thumbnail: "/images/about-banner.png", title: "Community Welfare Initiatives", desc: "Working towards grassroots development and community participation.", date: "22 Aug 2026", category: "Videos" },
+  { src: "/media/videos/office-desk-address.mp4", thumbnail: "/images/ncr-samachar-interview.jpg", title: "Office Desk Address", desc: "Short address recorded from the office.", date: "04 Sep 2026", category: "Videos" },
+  { src: "/media/videos/public-rally-address.mp4", thumbnail: "/images/rally-march-yellow-flags.jpg", title: "Public Rally Address", desc: "Addressing supporters gathered at the public rally.", date: "04 Sep 2026", category: "Videos" },
+  { src: "/media/videos/inauguration-ribbon-cutting.mp4", thumbnail: "/images/memento-gift-ceremony.jpg", title: "Inauguration Ceremony", desc: "Ribbon-cutting ceremony at a new outlet.", date: "04 Sep 2026", category: "Videos" },
+  { src: "/media/videos/public-meeting-address.mp4", thumbnail: "/images/supporters-celebration.jpg", title: "Public Meeting Address", desc: "Addressing the crowd at a public meeting.", date: "04 Sep 2026", category: "Videos" },
+  { src: "/media/videos/intro-video.mp4", thumbnail: "/images/profile-bijendra-malik.jpg", title: "Personal Introduction — Bijendra Malik", desc: "Meet Bijendra Malik and his vision for the people.", date: "26 Aug 2026", category: "Videos" },
+  { src: "/media/videos/kejriwal-meeting-video.mp4", title: "Meeting with Arvind Kejriwal", desc: "Governance reforms and community welfare discussions.", date: "31 Aug 2026", category: "Videos" },
+  // Older coverage clips — 2026
+  { src: "/media/videos/video-1.mp4", title: "Public Meeting — Mass Gathering", desc: "Large community gathering outdoors at a public programme.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-2.mp4", title: "Crowd Rally — Raised Fists", desc: "Supporters raising slogans at a public rally.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-3.mp4", title: "Support Rally for Sanjay Singh", desc: "AAP supporters with 'We Are With You' placards at the Sanjay Singh protest.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-4.mp4", title: "Public Meeting — Stage Programme", desc: "Dignitaries seated on stage at a public function.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-5.mp4", title: "Procession with Dr. Ambedkar Portrait", desc: "March carrying Dr. Ambedkar's portrait with party flags.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-6.mp4", title: "Rally March — Flags", desc: "Supporters marching with party flags.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-7.mp4", title: "Independence Day Greetings", desc: "Happy Independence Day — warm wishes from Team Indexia Finance.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-9.mp4", title: "Public Event — Full Coverage", desc: "Extended coverage of the public gathering.", date: "2026", category: "Videos" },
 ];
 
 const photos = [
+  // Event & rally coverage — 04 Sep 2026
+  { image: "/images/ncr-samachar-interview.jpg", title: "Media Interview — NCR Samachar", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/outdoor-stage-meeting.jpg", title: "Public Meeting — Outdoor", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/indoor-lounge-meeting.jpg", title: "Community Interaction — Indoor", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/welcome-handshake-group.jpg", title: "Welcome — Group Greetings", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/community-members-group.jpg", title: "With Community Members", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/ceremonial-platters.jpg", title: "Ceremonial Offering", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/rally-march-yellow-flags.jpg", title: "Rally March with Flags", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/rally-march-supporters.jpg", title: "Rally March — Supporters", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/procession-tricolour.jpg", title: "Procession with Tricolour", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/rally-crowd-march.jpg", title: "Rally — Crowd March", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/green-flag-procession.jpg", title: "Procession — Green Flag", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/bouquet-presentation.jpg", title: "Bouquet Presentation", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/memento-gift-ceremony.jpg", title: "Memento Presentation", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/akhada-wrestling-event.jpg", title: "Akhada Wrestling Event", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/crowd-slogan-placards.jpg", title: "Public Gathering — Placards", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/judega-bharat-banner.jpg", title: "JudeGa Bharat Banner", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/ceremonial-scarf-honour.jpg", title: "Honoured with Ceremonial Scarf", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/supporters-celebration.jpg", title: "Supporters — Celebrations", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/marigold-garland-welcome.jpg", title: "Welcome — Marigold Garland", category: "Photos", date: "04 Sep 2026" },
+  { image: "/images/hotel-lounge-meeting-2.jpg", title: "Hotel Lounge Meeting", category: "Photos", date: "04 Sep 2026" },
   { image: "/images/formal-dinner.jpg", title: "Formal Dinner Event", category: "Photos", date: "2026" },
   { image: "/images/meeting-festive.jpg", title: "Meeting at Festive Event", category: "Photos", date: "2026" },
   { image: "/images/meeting-indoor.jpg", title: "Indoor Meeting", category: "Photos", date: "2026" },
@@ -54,7 +89,7 @@ const photos = [
   { image: "/images/education-initiative.jpg", title: "Education Initiative Launch", category: "Photos", date: "2023" },
   { image: "/images/health-camp.jpg", title: "Health Camp Organized", category: "Photos", date: "2023" },
 
-  { image: "/images/infrastructure-visit.jpg", title: "Infrastructure Development Visit", category: "Photos", date: "2022" },
+
   { image: "/images/social-welfare.jpg", title: "Social Welfare Distribution", category: "Photos", date: "2022" },
   { image: "/images/public-rally.jpg", title: "Public Rally", category: "Photos", date: "2023" },
   { image: "/images/political-campaign.jpg", title: "Political Campaign Event", category: "Photos", date: "2022" },
@@ -75,8 +110,10 @@ export default function MediaPage() {
   const filteredNews = activeTab === "All" || activeTab === "News Coverage" || activeTab === "Press Releases" || activeTab === "Interviews"
     ? newsItems.filter(i => activeTab === "All" || i.category === activeTab)
     : [];
-  const filteredVideos = activeTab === "All" || activeTab === "Videos" || activeTab === "Interviews"
-    ? videos.filter(i => activeTab === "All" || i.category === activeTab)
+  const filteredVideos = activeTab === "All" || activeTab === "Videos"
+    ? videos
+    : activeTab === "Interviews"
+    ? videos.filter(i => i.category === "Interviews")
     : [];
   const filteredLocalVideos = activeTab === "All" || activeTab === "Videos"
     ? localVideos.filter(i => activeTab === "All" || i.category === activeTab)
@@ -90,18 +127,28 @@ export default function MediaPage() {
   const nextPhoto = () => setLightboxPhoto(prev => prev !== null ? (prev + 1) % photos.length : null);
   const prevPhoto = () => setLightboxPhoto(prev => prev !== null ? (prev - 1 + photos.length) % photos.length : null);
 
-  const [playingLocalVideo, setPlayingLocalVideo] = useState<string | null>(null);
   const [photoPage, setPhotoPage] = useState(1);
-  const photosPerPage = 16;
+  const photosPerPage = 12;
   const totalPhotoPages = Math.ceil(filteredPhotos.length / photosPerPage);
   const paginatedPhotos = filteredPhotos.slice((photoPage - 1) * photosPerPage, photoPage * photosPerPage);
+
+  const [videoPage, setVideoPage] = useState(1);
+  const videosPerPage = 6;
+  const totalVideoPages = Math.ceil(filteredLocalVideos.length / videosPerPage);
+  const paginatedLocalVideos = filteredLocalVideos.slice((videoPage - 1) * videosPerPage, videoPage * videosPerPage);
+
+  const [ytPage, setYtPage] = useState(1);
+  const ytPerPage = 8;
+  const totalYtPages = Math.ceil(filteredVideos.length / ytPerPage);
+  const paginatedVideos = filteredVideos.slice((ytPage - 1) * ytPerPage, ytPage * ytPerPage);
 
   return (
     <main className="flex-1">
       <PageHero
         title="In the Media"
         subtitle="Latest News & Updates"
-        bgImage="/images/Media-01-img.png"
+        bgImage="/images/media-press-banner.png"
+        bgPosition="right"
       />
 
       {/* Filter Tabs */}
@@ -109,7 +156,7 @@ export default function MediaPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-10">
           <div className="bg-white rounded-2xl shadow-lg p-3 flex flex-wrap gap-2 border border-gray-100">
             {tabs.map((tab) => (
-              <button key={tab} onClick={() => { setActiveTab(tab); setPhotoPage(1); }}
+              <button key={tab} onClick={() => { setActiveTab(tab); setPhotoPage(1); setVideoPage(1); setYtPage(1); }}
                 className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === tab
                     ? "bg-[#066a9c] text-white shadow-md shadow-[#066a9c]/30"
@@ -134,7 +181,7 @@ export default function MediaPage() {
               {filteredNews.map((item, i) => (
                 <div key={i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-[#26ae90]/30 transition-all group">
                   <div className="relative h-44 overflow-hidden bg-gray-100 cursor-pointer" onClick={() => setLightboxNews(i)}>
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                       <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-lg transform scale-75 group-hover:scale-100">
@@ -164,13 +211,16 @@ export default function MediaPage() {
       {filteredVideos.length > 0 && (
         <section className="py-10 bg-[#f5f7fa]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-1.5 h-8 bg-[#26ae90] rounded-full" />
-              <h2 className="font-[var(--font-poppins)] text-2xl font-bold text-[#066a9c]">Videos</h2>
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-8 bg-[#26ae90] rounded-full" />
+                <h2 className="font-[var(--font-poppins)] text-2xl font-bold text-[#066a9c]">Videos</h2>
+              </div>
+              <span className="text-gray-400 text-sm font-medium">{filteredVideos.length} Videos</span>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {filteredVideos.map((v, i) => (
-                <div key={i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-[#26ae90]/30 transition-all group cursor-pointer" onClick={() => setPlayingVideo(v.id)}>
+              {paginatedVideos.map((v, i) => (
+                <div key={(ytPage - 1) * ytPerPage + i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-[#26ae90]/30 transition-all group cursor-pointer" onClick={() => setPlayingVideo(v.id)}>
                   <div className="relative h-44 overflow-hidden bg-gray-100">
                     <img src={`https://img.youtube.com/vi/${v.id}/mqdefault.jpg`} alt={v.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-[#066a9c]/30 group-hover:bg-[#066a9c]/50 transition-all flex items-center justify-center">
@@ -178,7 +228,7 @@ export default function MediaPage() {
                         <Play className="w-6 h-6 text-white ml-0.5" fill="currentColor" />
                       </div>
                     </div>
-                    <div className="absolute top-2 right-2 bg-[#26ae90] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">YouTube</div>
+                    <div className="absolute top-2 right-2 bg-[#26ae90] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">{v.source}</div>
                     <div className="absolute bottom-3 right-3 bg-[#066a9c]/80 text-white text-[10px] font-bold px-2 py-1 rounded">{v.duration}</div>
                   </div>
                   <div className="p-5">
@@ -194,6 +244,38 @@ export default function MediaPage() {
                 </div>
               ))}
             </div>
+
+            {/* Pagination */}
+            {totalYtPages > 1 && (
+              <div className="flex items-center justify-center gap-2 mt-8">
+                <button
+                  onClick={() => setYtPage(p => Math.max(1, p - 1))}
+                  disabled={ytPage === 1}
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${ytPage === 1 ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#26ae90] border border-gray-200 hover:bg-[#26ae90] hover:text-white hover:border-[#26ae90] shadow-sm"}`}
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                {Array.from({ length: totalYtPages }, (_, idx) => idx + 1).map(page => (
+                  <button
+                    key={page}
+                    onClick={() => setYtPage(page)}
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${ytPage === page ? "bg-[#26ae90] text-white shadow-md shadow-[#26ae90]/30" : "bg-white text-gray-500 border border-gray-200 hover:bg-[#26ae90]/10 hover:text-[#26ae90]"}`}
+                  >
+                    {page}
+                  </button>
+                ))}
+                <button
+                  onClick={() => setYtPage(p => Math.min(totalYtPages, p + 1))}
+                  disabled={ytPage === totalYtPages}
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${ytPage === totalYtPages ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#26ae90] border border-gray-200 hover:bg-[#26ae90] hover:text-white hover:border-[#26ae90] shadow-sm"}`}
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            )}
+            <div className="text-center mt-3">
+              <span className="text-gray-300 text-xs">Showing {(ytPage - 1) * ytPerPage + 1}–{Math.min(ytPage * ytPerPage, filteredVideos.length)} of {filteredVideos.length} videos</span>
+            </div>
           </div>
         </section>
       )}
@@ -202,35 +284,82 @@ export default function MediaPage() {
       {filteredLocalVideos.length > 0 && (
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-1.5 h-8 bg-[#f28c28] rounded-full" />
-              <h2 className="font-[var(--font-poppins)] text-2xl font-bold text-[#066a9c]">Event Highlights</h2>
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-8 bg-[#f28c28] rounded-full" />
+                <h2 className="font-[var(--font-poppins)] text-2xl font-bold text-[#066a9c]">Event Highlights</h2>
+              </div>
+              <span className="text-gray-400 text-sm font-medium">{filteredLocalVideos.length} Videos</span>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredLocalVideos.map((v, i) => (
-                <div key={i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-[#f28c28]/30 transition-all group cursor-pointer" onClick={() => setPlayingLocalVideo(v.src)}>
-                  <div className="relative h-52 overflow-hidden bg-gray-100">
-                    <img src={v.thumbnail} alt={v.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-[#066a9c]/30 group-hover:bg-[#066a9c]/50 transition-all flex items-center justify-center">
-                      <div className="w-16 h-16 bg-[#f28c28] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <Play className="w-7 h-7 text-white ml-0.5" fill="currentColor" />
-                      </div>
-                    </div>
-                    <div className="absolute top-2 right-2 bg-[#f28c28] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">Video</div>
-                    <div className="absolute bottom-3 right-3 bg-[#066a9c]/80 text-white text-[10px] font-bold px-2 py-1 rounded">Event</div>
+              {paginatedLocalVideos.map((v, i) => (
+                <div key={(videoPage - 1) * videosPerPage + i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-[#f28c28]/30 transition-all group flex flex-col">
+                  <div className="relative bg-black">
+                    {v.youtube ? (
+                      <>
+                        <iframe
+                          src={`https://www.youtube.com/embed/${v.youtube}?rel=0`}
+                          title={v.title}
+                          className="w-full aspect-video"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                        <div className="absolute top-2 right-2 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase pointer-events-none">YouTube</div>
+                      </>
+                    ) : (
+                      <>
+                        <video
+                          src={v.src}
+                          controls
+                          playsInline
+                          preload="metadata"
+                          className="w-full aspect-video object-contain"
+                        />
+                        <div className="absolute top-2 right-2 bg-[#f28c28] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase pointer-events-none">Video</div>
+                      </>
+                    )}
                   </div>
-                  <div className="p-5">
+                  <div className="p-5 flex-1">
                     <h3 className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-sm mb-2 group-hover:text-[#f28c28] transition-colors leading-snug">{v.title}</h3>
                     <p className="text-gray-400 text-xs leading-relaxed mb-3">{v.desc}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-gray-300 text-xs">{v.date}</span>
-                      <span className="text-[#f28c28] text-xs font-semibold flex items-center gap-1">
-                        Watch Now <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                      </span>
                     </div>
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Pagination */}
+            {totalVideoPages > 1 && (
+              <div className="flex items-center justify-center gap-2 mt-8">
+                <button
+                  onClick={() => setVideoPage(p => Math.max(1, p - 1))}
+                  disabled={videoPage === 1}
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${videoPage === 1 ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#f28c28] border border-gray-200 hover:bg-[#f28c28] hover:text-white hover:border-[#f28c28] shadow-sm"}`}
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                {Array.from({ length: totalVideoPages }, (_, idx) => idx + 1).map(page => (
+                  <button
+                    key={page}
+                    onClick={() => setVideoPage(page)}
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${videoPage === page ? "bg-[#f28c28] text-white shadow-md shadow-[#f28c28]/30" : "bg-white text-gray-500 border border-gray-200 hover:bg-[#f28c28]/10 hover:text-[#f28c28]"}`}
+                  >
+                    {page}
+                  </button>
+                ))}
+                <button
+                  onClick={() => setVideoPage(p => Math.min(totalVideoPages, p + 1))}
+                  disabled={videoPage === totalVideoPages}
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${videoPage === totalVideoPages ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#f28c28] border border-gray-200 hover:bg-[#f28c28] hover:text-white hover:border-[#f28c28] shadow-sm"}`}
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            )}
+            <div className="text-center mt-3">
+              <span className="text-gray-300 text-xs">Showing {(videoPage - 1) * videosPerPage + 1}–{Math.min(videoPage * videosPerPage, filteredLocalVideos.length)} of {filteredLocalVideos.length} videos</span>
             </div>
           </div>
         </section>
@@ -286,7 +415,7 @@ export default function MediaPage() {
                 {Array.from({ length: totalPhotoPages }, (_, idx) => idx + 1).map(page => (
                   <button
                     key={page}
-                    onClick={() => { setPhotoPage(page); window.scrollTo({ top: document.querySelector('[class*="bg-white"]')?.closest('section')?.offsetTop || 0, behavior: 'smooth' }); }}
+                    onClick={() => setPhotoPage(page)}
                     className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${
                       photoPage === page
                         ? "bg-[#066a9c] text-white shadow-md shadow-[#066a9c]/30"
@@ -404,24 +533,6 @@ export default function MediaPage() {
         </div>
       )}
 
-      {/* Local Video Modal */}
-      {playingLocalVideo && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" onClick={() => setPlayingLocalVideo(null)}>
-          <div className="relative w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setPlayingLocalVideo(null)} className="absolute -top-12 right-0 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center text-white transition-colors">
-              <X className="w-5 h-5" />
-            </button>
-            <div className="aspect-video rounded-xl overflow-hidden shadow-2xl bg-black">
-              <video
-                src={playingLocalVideo}
-                controls
-                autoPlay
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }

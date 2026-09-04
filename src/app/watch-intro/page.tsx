@@ -15,10 +15,9 @@ const education = [
   { degree: "Political Science", school: "Vaish Degree College, Shamli, UP" },
 ];
 
-const allVideos = [
-  { src: "/images/event-highlights.mp4", thumb: "/images/formal-dinner.jpg", title: "Event Highlights — Formal Dinner", desc: "Exclusive coverage from a recent formal event with community leaders.", tag: "Event" },
-  { src: "/images/intro-video.mp4", thumb: "/images/profile-bijendra-malik.jpg", title: "Personal Introduction", desc: "Meet Bijendra Malik — his vision and mission for the people.", tag: "Featured" },
-  { src: "/images/community-highlights.mp4", thumb: "/images/about-banner.png", title: "Community Welfare Initiatives", desc: "Working towards grassroots development and community participation.", tag: "Social" },
+const allVideos: { src?: string; youtube?: string; thumb?: string; title: string; desc: string; tag: string }[] = [
+  { youtube: "pJv7wnSHc9c", title: "Delhi Floods — Bharat 24 Debate", desc: "Bijendra Malik on the Delhi floods, in conversation with Rubika Liyaquat (Bharat 24).", tag: "Interview" },
+  { src: "/media/videos/community-highlights.mp4", thumb: "/images/about-banner.png", title: "Community Welfare Initiatives", desc: "Working towards grassroots development and community participation.", tag: "Social" },
 ];
 
 const timeline = [
@@ -132,7 +131,7 @@ export default function WatchIntroPage() {
               <div className="relative h-full min-h-[480px] lg:max-h-0 rounded-2xl overflow-hidden shadow-2xl group bg-[#071525]">
                 <video
                   ref={mainVideoRef}
-                  src="/images/kejriwal-meeting-video.mp4"
+                  src="/media/videos/kejriwal-meeting-video.mp4"
                   poster="/images/about-me0mg/arvind-kejriwal-meeting-removebg-preview.png"
                   className="absolute inset-0 w-full h-full object-cover object-top cursor-pointer"
                   playsInline
@@ -281,28 +280,45 @@ export default function WatchIntroPage() {
             {allVideos.map((v, i) => (
               <div key={i} className="bg-[#f8f9fb] rounded-2xl overflow-hidden border border-gray-100 hover:border-[#26ae90]/30 hover:shadow-xl transition-all group">
                 <div className="relative aspect-video bg-black">
-                  <video
-                    ref={(el) => { videoRefs.current[i] = el; }}
-                    src={v.src}
-                    poster={v.thumb}
-                    className="w-full h-full object-cover"
-                    playsInline
-                    onClick={() => playMoreVideo(i)}
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className="bg-[#26ae90]/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">{v.tag}</span>
-                  </div>
-                  {activeVideo !== i && (
-                    <button onClick={() => playMoreVideo(i)} className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/50 to-transparent hover:from-black/60 transition-all">
-                      <div className="w-14 h-14 bg-[#26ae90] rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                        <Play className="w-6 h-6 text-white ml-0.5" fill="currentColor" />
+                  {v.youtube ? (
+                    <>
+                      <iframe
+                        src={`https://www.youtube.com/embed/${v.youtube}?rel=0`}
+                        title={v.title}
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                      <div className="absolute top-3 left-3">
+                        <span className="bg-red-600/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full pointer-events-none">{v.tag}</span>
                       </div>
-                    </button>
-                  )}
-                  {activeVideo === i && (
-                    <button onClick={() => playMoreVideo(i)} className="absolute bottom-3 right-3 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors">
-                      <Pause className="w-4 h-4 text-white" />
-                    </button>
+                    </>
+                  ) : (
+                    <>
+                      <video
+                        ref={(el) => { videoRefs.current[i] = el; }}
+                        src={v.src}
+                        poster={v.thumb}
+                        className="w-full h-full object-cover"
+                        playsInline
+                        onClick={() => playMoreVideo(i)}
+                      />
+                      <div className="absolute top-3 left-3">
+                        <span className="bg-[#26ae90]/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">{v.tag}</span>
+                      </div>
+                      {activeVideo !== i && (
+                        <button onClick={() => playMoreVideo(i)} className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/50 to-transparent hover:from-black/60 transition-all">
+                          <div className="w-14 h-14 bg-[#26ae90] rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                            <Play className="w-6 h-6 text-white ml-0.5" fill="currentColor" />
+                          </div>
+                        </button>
+                      )}
+                      {activeVideo === i && (
+                        <button onClick={() => playMoreVideo(i)} className="absolute bottom-3 right-3 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors">
+                          <Pause className="w-4 h-4 text-white" />
+                        </button>
+                      )}
+                    </>
                   )}
                 </div>
                 <div className="p-4">

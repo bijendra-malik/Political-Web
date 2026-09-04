@@ -16,7 +16,7 @@ const profiles = [
     image: "/images/about-me0mg/arvind-kejriwal-meeting-removebg-preview.png",
     accentColor: "#26ae90",
     imageOnLeft: true,
-    decorImage: "/images/about-decor-india-gate.png",
+    decorImage: "/images/Imgs-AI/about-decor-india-gate.png",
   },
   {
     role: "NATIONAL SPOKESPERSON, AAM AADMI PARTY",
@@ -40,7 +40,7 @@ const profiles = [
     image: "/images/about-me0mg/manishi-sosdiya-removebg-preview.png",
     accentColor: "#26ae90",
     imageOnLeft: true,
-    decorImage: "/images/about-decor-lotus.png",
+    decorImage: "/images/Imgs-AI/about-decor-lotus.png",
   },
 ];
 
@@ -182,7 +182,7 @@ export default function About() {
             <div className="lg:col-span-2 relative">
               <div className="relative rounded-3xl overflow-hidden h-full min-h-[420px] shadow-[0_20px_50px_rgb(0,0,0,0.15)]">
                 <img
-                  src="/images/about-bg-parliament.png"
+                  src="/images/Imgs-AI/about-bg-parliament.png"
                   alt="Parliament Building"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
@@ -296,7 +296,7 @@ export default function About() {
       {/* ============ Closing decorative skyline strip ============ */}
       <div className="relative h-20 sm:h-28 overflow-hidden opacity-25 pointer-events-none" style={{ backgroundColor: "#f3faf8" }}>
         <img
-          src="/images/about-decor-skyline.png"
+          src="/images/Imgs-AI/about-decor-skyline.png"
           alt=""
           className="w-full h-full object-cover object-bottom"
         />

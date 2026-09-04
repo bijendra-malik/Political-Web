@@ -35,7 +35,7 @@ export default function ContactPage() {
         titleHighlight="Connect"
         subtitle="Contact Us"
         description="Your suggestions, support and participation are always welcome."
-        bgImage="/images/contact-img.png"
+        bgImage="/images/Imgs-AI/contact-img.png"
       />
 
       {/* Contact Form + Info */}

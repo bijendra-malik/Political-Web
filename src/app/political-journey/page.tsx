@@ -235,7 +235,7 @@ export default function PoliticalJourneyPage() {
       {/* Quote + Stats */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/journey-quote-bg.png" alt="" className="w-full h-full object-cover object-center" />
+          <img src="/images/Imgs-AI/journey-quote-bg.png" alt="" className="w-full h-full object-cover object-center" />
         </div>
 
         <div className="relative z-10 py-14 lg:py-5">
@@ -285,7 +285,7 @@ export default function PoliticalJourneyPage() {
       {/* CTA */}
       <section className="relative py-16 lg:py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/join-mission-img.png" alt="" className="w-full h-full object-cover object-center scale-110" />
+          <img src="/images/Imgs-AI/join-mission-img.png" alt="" className="w-full h-full object-cover object-center scale-110" />
         </div>
         <div className="absolute inset-0 bg-gray-900/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/50 to-gray-900/80" />

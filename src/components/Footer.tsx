@@ -25,7 +25,7 @@ export default function Footer() {
     <footer className="relative bg-[#0a1a2a] overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
-        <img src="/images/footer-bg.png" alt="" className="w-full h-full object-cover object-center" />
+        <img src="/images/Imgs-AI/footer-bg.png" alt="" className="w-full h-full object-cover object-center" />
       </div>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a1a2a]/70 via-[#0a1a2a]/85 to-[#0a1a2a]/95" />

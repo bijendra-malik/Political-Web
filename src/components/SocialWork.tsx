@@ -87,7 +87,7 @@ export default function SocialWork() {
             {initiatives.map((item, i) => (
               <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition-all group relative">
                 <div className="relative h-44 overflow-hidden">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#066a9c]/60 via-transparent to-transparent" />
                   <div className="absolute top-3 left-3 w-9 h-9 rounded-full flex items-center justify-center" style={{ backgroundColor: `${item.color}90` }}>
                     <span className="text-white text-xs font-bold">{i + 1}</span>

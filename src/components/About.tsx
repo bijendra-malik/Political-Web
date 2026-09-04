@@ -23,7 +23,7 @@ const profiles = [
     image: "/images/about-me0mg/arvind-kejriwal-meeting-removebg-preview.png",
     accentColor: "#26ae90",
     imageOnLeft: true,
-    decorImage: "/images/about-decor-india-gate.png",
+    decorImage: "/images/Imgs-AI/about-decor-india-gate.png",
   },
   {
     name: "Sanjay Singh",
@@ -59,7 +59,7 @@ const profiles = [
     image: "/images/about-me0mg/manishi-sosdiya-removebg-preview.png",
     accentColor: "#26ae90",
     imageOnLeft: true,
-    decorImage: "/images/about-decor-lotus.png",
+    decorImage: "/images/Imgs-AI/about-decor-lotus.png",
   },
 ];
 
@@ -136,7 +136,7 @@ export default function About() {
     <section id="about" className="scroll-mt-20 bg-white relative overflow-hidden">
       {/* Main About Content with Parliament Background */}
       <div ref={mainRef} className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden">
-        <img src="/images/about-bg-parliament.png" alt="Parliament Building" className="absolute inset-0 w-full h-full object-cover object-bottom" />
+        <img src="/images/Imgs-AI/about-bg-parliament.png" alt="Parliament Building" className="absolute inset-0 w-full h-full object-cover object-bottom" />
         <div className="absolute inset-0 " />
         <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white/70" />
 

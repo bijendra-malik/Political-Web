@@ -44,7 +44,7 @@ export default function VisionMissionPage() {
         titleHighlight="Mission"
         subtitle="Building a Progressive India"
         description="A vision for inclusive growth and a mission to empower every citizen."
-        bgImage="/images/vision-mission-img-01.png"
+        bgImage="/images/Imgs-AI/vision-mission-img-01.png"
       />
 
       {/* Vision & Mission — Split with images */}
@@ -65,7 +65,7 @@ export default function VisionMissionPage() {
           <div ref={visionRef} className="mb-16">
             <div className="relative rounded-3xl overflow-hidden group">
               <div className="absolute inset-0">
-                <img src="/images/vision-img01.jpg" alt="" className="w-full h-full object-cover" />
+                <img src="/images/Imgs-AI/vision-img01.jpg" alt="" className="w-full h-full object-cover" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-[#071525]/95 via-[#071525]/80 to-[#071525]/40" />
               <div className="relative z-10 p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-10">
@@ -104,7 +104,7 @@ export default function VisionMissionPage() {
           <div ref={missionRef}>
             <div className="relative rounded-3xl overflow-hidden group">
               <div className="absolute inset-0">
-                <img src="/images/vision-mission-img-01.png" alt="" className="w-full h-full object-cover" />
+                <img src="/images/Imgs-AI/vision-mission-img-01.png" alt="" className="w-full h-full object-cover" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-l from-[#071525]/95 via-[#071525]/80 to-[#071525]/40" />
               <div className="relative z-10 p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row-reverse items-center gap-10">
@@ -185,7 +185,7 @@ export default function VisionMissionPage() {
       {/* Quote + CTA */}
       <section className="bg-[#066a9c] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src="/images/vision-mission-img-01.png" alt="" className="w-full h-full object-cover" />
+          <img src="/images/Imgs-AI/vision-mission-img-01.png" alt="" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#066a9c]/95 to-[#066a9c]/80" />
         <div className="relative z-10 py-14 lg:py-16">

@@ -238,3 +238,4 @@
  GET /social-work/ 200 in 89ms (next.js: 14ms, application-code: 75ms)
  GET /social-work/ 200 in 181ms (next.js: 16ms, application-code: 166ms)
  GET /social-work/ 200 in 322ms (next.js: 14ms, application-code: 308ms)
+ GET /media/ 200 in 1093ms (next.js: 1035ms, application-code: 57ms)

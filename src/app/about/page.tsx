@@ -108,7 +108,7 @@ export default function AboutPage() {
       {/* Stats Bar — with banner background */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/banner-im.png" alt="" className="w-full h-full object-cover object-center" />
+          <img src="/images/Imgs-AI/banner-im.png" alt="" className="w-full h-full object-cover object-center" />
         </div>
         <div className="absolute inset-0 bg-[#066a9c]/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#066a9c]/90 via-[#066a9c]/70 to-[#066a9c]/90" />

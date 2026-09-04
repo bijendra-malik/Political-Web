@@ -32,10 +32,10 @@ export default function Hero() {
     <section id="home" className="relative min-h-[80%] flex flex-col overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src="/images/banner-im.png" alt="" className="w-full h-full object-cover" style={{ opacity: 0.6 }} />
+        <img src="/images/Imgs-AI/banner-im.png" alt="" className="w-full h-full object-cover" style={{ opacity: 0.6 }} />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#066a9c]/50 via-[#066a9c]/30 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#066a9c]/40 via-transparent to-[#066a9c]/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#066a9c]/20 via-[#066a9c]/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#066a9c]/20 via-transparent to-[#066a9c]/10" />
 
       {/* Main Content */}
       <div className="relative z-10 flex-1 flex flex-col">
@@ -44,6 +44,7 @@ export default function Hero() {
 
             {/* MOBILE — text centered + portrait below + highlight cards */}
             <div ref={textRef} className="md:hidden space-y-2 px-2 text-center" style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
+              <div className="bg-black/20 backdrop-blur-xs rounded-xl px-3 py-3 space-y-2">
               <div className="inline-flex items-center gap-1">
                 <div className="w-4 h-[2px] bg-[#f2f231] animate-pulse" />
                 <span className="text-[#f2f231] font-semibold text-[9px] uppercase tracking-[0.15em] drop-shadow-lg">Dedicated to Public Service</span>
@@ -59,6 +60,7 @@ export default function Hero() {
                 <Link href="/watch-intro" className="inline-flex items-center gap-1 border border-white/30 text-white font-medium px-3 py-2 rounded-md text-[10px] hover:bg-white/10 hover:border-white/50 hover:scale-105 transition-all duration-300">
                   <Play className="w-3 h-3" fill="currentColor" /> Watch Intro
                 </Link>
+              </div>
               </div>
               {/* Portrait image on mobile */}
               <div className="flex justify-center">
@@ -82,7 +84,7 @@ export default function Hero() {
 
             {/* DESKTOP + TABLET — portrait on right + highlight cards below portrait */}
             <div className="hidden md:flex items-center gap-6 lg:gap-10">
-              <div ref={textRef} className="flex-1 space-y-4" style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
+              <div ref={textRef} className="flex-1 space-y-4 bg-black/50 backdrop-blur-sm rounded-2xl p-4 lg:p-6" style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
                 <div className="inline-flex items-center gap-2">
                   <div className="w-8 h-[2px] bg-[#f2f231] animate-pulse" />
                   <span className="text-[#f2f231] font-semibold text-xs uppercase tracking-[0.2em] drop-shadow-lg">Dedicated to Public Service</span>
@@ -105,7 +107,7 @@ export default function Hero() {
                   <img src="/bg-remove.png" alt="Bijendra Malik — Political Leader & Entrepreneur" className="w-full h-auto object-contain" />
                 </div>
                 {/* Highlight cards — right below portrait */}
-                <div className="flex gap-6 mb-6 w-full max-w-[450px] lg:max-w-[480px]">
+                <div className="flex gap-6  w-full max-w-[450px] lg:max-w-[480px]">
                   {highlights.map((h, i) => (
                     <div key={i} className="flex-1 bg-[#066a9c]/90 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/5 transition-all group cursor-default px-4 py-4 lg:p-4">
                       <div className="flex items-center gap-2">
