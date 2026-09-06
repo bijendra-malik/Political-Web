@@ -1,0 +1,223 @@
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] ./src/app/vision-mission/page.tsx:150:17
+Error: Expected '</', got 'jsx text'
+  148 |             </div>
+  149 |           </div>
+> 150 |           </div>
+      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 151 |         </div>
+      | ^^^^^^^^
+  152 |       </section>
+  153 |
+  154 |       {/* Focus Areas — With animated progress bars */}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/app/vision-mission/page.tsx:150:17
+Error: Expected '</', got 'jsx text'
+  148 |             </div>
+  149 |           </div>
+> 150 |           </div>
+      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 151 |         </div>
+      | ^^^^^^^^
+  152 |       </section>
+  153 |
+  154 |       {/* Focus Areas — With animated progress bars */}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/app/vision-mission/page.tsx:150:17
+Error: Expected '</', got 'jsx text'
+  148 |             </div>
+  149 |           </div>
+> 150 |           </div>
+      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 151 |         </div>
+      | ^^^^^^^^
+  152 |       </section>
+  153 |
+  154 |       {/* Focus Areas — With animated progress bars */}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/app/vision-mission/page.tsx:150:17
+Error: Expected '</', got 'jsx text'
+  148 |             </div>
+  149 |           </div>
+> 150 |           </div>
+      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 151 |         </div>
+      | ^^^^^^^^
+  152 |       </section>
+  153 |
+  154 |       {/* Focus Areas — With animated progress bars */}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/app/vision-mission/page.tsx:150:17
+Error: Expected '</', got 'jsx text'
+  148 |             </div>
+  149 |           </div>
+> 150 |           </div>
+      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 151 |         </div>
+      | ^^^^^^^^
+  152 |       </section>
+  153 |
+  154 |       {/* Focus Areas — With animated progress bars */}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/app/vision-mission/page.tsx:150:17
+Error: Expected '</', got 'jsx text'
+  148 |             </div>
+  149 |           </div>
+> 150 |           </div>
+      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 151 |         </div>
+      | ^^^^^^^^
+  152 |       </section>
+  153 |
+  154 |       {/* Focus Areas — With animated progress bars */}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/app/vision-mission/page.tsx:149:17
+Error: Expected '</', got 'jsx text'
+  147 |             </div>            </div>
+  148 |           </div>
+> 149 |           </div>
+      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 150 |         </div>
+      | ^^^^^^^^
+  151 |       </section>
+  152 |
+  153 |       {/* Focus Areas — With animated progress bars */}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/app/vision-mission/page.tsx:149:17
+Error: Expected '</', got 'jsx text'
+  147 |             </div>            </div>
+  148 |           </div>
+> 149 |           </div>
+      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 150 |         </div>
+      | ^^^^^^^^
+  151 |       </section>
+  152 |
+  153 |       {/* Focus Areas — With animated progress bars */}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/app/vision-mission/page.tsx:149:17
+Error: Expected '</', got 'jsx text'
+  147 |             </div>            </div>
+  148 |           </div>
+> 149 |           </div>
+      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 150 |         </div>
+      | ^^^^^^^^
+  151 |       </section>
+  152 |
+  153 |       {/* Focus Areas — With animated progress bars */}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/app/vision-mission/page.tsx:149:17
+Error: Expected '</', got 'jsx text'
+  147 |             </div>            </div>
+  148 |           </div>
+> 149 |           </div>
+      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 150 |         </div>
+      | ^^^^^^^^
+  151 |       </section>
+  152 |
+  153 |       {/* Focus Areas — With animated progress bars */}
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 

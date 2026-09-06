@@ -332,3 +332,4 @@
 ✓ Compiled in 117ms
  GET / 200 in 170ms (next.js: 27ms, application-code: 143ms)
  GET / 200 in 80ms (next.js: 12ms, application-code: 69ms)
+[?25h

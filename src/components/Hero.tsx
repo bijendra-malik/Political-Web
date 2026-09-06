@@ -18,11 +18,13 @@ const socials = [
 
 export default function Hero() {
   const textRef = useRef<HTMLDivElement>(null);
+  const mobileTextRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       if (textRef.current) { textRef.current.style.opacity = "1"; textRef.current.style.transform = "translateY(0)"; }
+      if (mobileTextRef.current) { mobileTextRef.current.style.opacity = "1"; mobileTextRef.current.style.transform = "translateY(0)"; }
       setTimeout(() => { if (imgRef.current) { imgRef.current.style.opacity = "1"; imgRef.current.style.transform = "translateX(0)"; } }, 200);
     }, 100);
     return () => clearTimeout(timer);
@@ -43,7 +45,7 @@ export default function Hero() {
           <div className="w-full px-4 sm:px-8 lg:pl-16 lg:pr-10 xl:px-45 mt-24">
 
             {/* MOBILE — text centered + portrait below + highlight cards */}
-            <div ref={textRef} className="md:hidden space-y-2 px-2 text-center" style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
+            <div ref={mobileTextRef} className="md:hidden space-y-2 px-2 text-center" style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
               <div className="bg-black/20 backdrop-blur-xs rounded-xl px-3 py-3 space-y-2">
               <div className="inline-flex items-center gap-1">
                 <div className="w-4 h-[2px] bg-[#f2f231] animate-pulse" />
@@ -83,8 +85,8 @@ export default function Hero() {
             </div>
 
             {/* DESKTOP + TABLET — portrait on right + highlight cards below portrait */}
-            <div className="hidden md:flex items-center gap-6 lg:gap-10">
-              <div ref={textRef} className="flex-1 space-y-4 bg-black/50 backdrop-blur-sm rounded-2xl p-4 lg:p-6" style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
+            <div className="hidden md:flex items-center justify-between gap-4 lg:gap-8">
+              <div ref={textRef} className="w-fit max-w-full space-y-4 bg-black/50 backdrop-blur-sm rounded-2xl p-4 lg:p-6" style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
                 <div className="inline-flex items-center gap-2">
                   <div className="w-8 h-[2px] bg-[#f2f231] animate-pulse" />
                   <span className="text-[#f2f231] font-semibold text-xs uppercase tracking-[0.2em] drop-shadow-lg">Dedicated to Public Service</span>
@@ -103,11 +105,11 @@ export default function Hero() {
               </div>
               {/* Right side — portrait + highlight cards stacked */}
               <div ref={imgRef} className="flex-shrink-0 flex flex-col items-center" style={{ opacity: 1, transform: "translateX(30px)", transition: "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s" }}>
-                <div className="relative w-[400px] md:w-[480px] lg:w-[400px] xl:w-[420px]">
+                <div className="relative w-[400px] md:w-[300px] lg:w-[400px] xl:w-[420px]">
                   <img src="/bg-remove.png" alt="Bijendra Malik — Political Leader & Entrepreneur" className="w-full h-auto object-contain" />
                 </div>
                 {/* Highlight cards — right below portrait */}
-                <div className="flex gap-6  w-full max-w-[450px] lg:max-w-[480px]">
+                <div className="flex gap-6  w-full max-w-[450px] md:max-w-[300px] lg:max-w-[480px]">
                   {highlights.map((h, i) => (
                     <div key={i} className="flex-1 bg-[#066a9c]/90 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/5 transition-all group cursor-default px-4 py-4 lg:p-4">
                       <div className="flex items-center gap-2">

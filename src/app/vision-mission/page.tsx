@@ -44,10 +44,11 @@ export default function VisionMissionPage() {
         titleHighlight="Mission"
         subtitle="Building a Progressive India"
         description="A vision for inclusive growth and a mission to empower every citizen."
-        bgImage="/images/Imgs-AI/vision-mission-img-01.png"
+        bgImage="/images/rally-march-yellow-flags.jpg"
+        bgPosition="top"
       />
 
-      {/* Vision & Mission — Split with images */}
+      {/* Vision & Mission */}
       <section className="py-12 lg:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={headerRef} className="text-center mb-16">
@@ -61,83 +62,86 @@ export default function VisionMissionPage() {
             </h2>
           </div>
 
-          {/* Vision — Full width image + text overlay */}
-          <div ref={visionRef} className="mb-16">
-            <div className="relative rounded-3xl overflow-hidden group">
-              <div className="absolute inset-0">
-                <img src="/images/Imgs-AI/vision-img01.jpg" alt="" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#071525]/95 via-[#071525]/80 to-[#071525]/40" />
-              <div className="relative z-10 p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-10">
-                <div className="flex-1">
-                  <div className="inline-flex items-center gap-3 mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-[#066a9c] to-[#26ae90] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Eye className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-[#f2f231] font-semibold text-xs uppercase tracking-[0.2em]">Our Vision</div>
-                      <div className="text-white/30 text-[10px] uppercase tracking-wider">What we aspire to achieve</div>
-                    </div>
-                  </div>
-                  <h3 className="font-[var(--font-poppins)] text-2xl sm:text-3xl font-bold text-white leading-snug mb-4">
-                    To build an inclusive, prosperous and developed India where every citizen has equal opportunities.
-                  </h3>
-                  <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-xl">
-                    A vision rooted in the belief that real development happens when we work together with honesty, dedication and a clear vision for the future.
-                  </p>
+          {/* Vision & Mission — Side-by-side cards */}
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+            {/* Our Vision card */}
+            <div ref={visionRef} className="h-full">
+              <div className="relative rounded-3xl overflow-hidden group h-full">
+                <div className="absolute inset-0">
+                  <img src="/images/community-members-group.jpg" alt="" className="w-full h-full object-cover" style={{ objectPosition: "top" }} />
                 </div>
-                <div className="flex-shrink-0 w-full lg:w-[380px]">
-                  <div className="space-y-3">
-                    {visionPoints.map((p, i) => (
-                      <div key={i} className="flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/10 hover:bg-white/10 transition-all">
-                        <span className="text-xl">{p.icon}</span>
-                        <span className="text-white/80 text-sm font-medium">{p.text}</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#071525]/95 via-[#071525]/85 to-[#071525]/60" />
+                <div className="relative z-10 p-8 sm:p-10 lg:p-8 flex flex-col items-start gap-8">
+                  <div>
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-14 h-14 bg-gradient-to-br from-[#066a9c] to-[#26ae90] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Eye className="w-7 h-7 text-white" />
                       </div>
-                    ))}
+                      <div>
+                        <div className="text-[#f2f231] font-semibold text-xs uppercase tracking-[0.2em]">Our Vision</div>
+                        <div className="text-white/30 text-[10px] uppercase tracking-wider">What we aspire to achieve</div>
+                      </div>
+                    </div>
+                    <h3 className="font-[var(--font-poppins)] text-2xl sm:text-3xl font-bold text-white leading-snug mb-4">
+                      To build an inclusive, prosperous and developed India where every citizen has equal opportunities.
+                    </h3>
+                    <p className="text-white/50 text-sm leading-relaxed max-w-xl">
+                      A vision rooted in the belief that real development happens when we work together with honesty, dedication and a clear vision for the future.
+                    </p>
+                  </div>
+                  <div className="w-full">
+                    <div className="space-y-3">
+                      {visionPoints.map((p, i) => (
+                        <div key={i} className="flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/10 hover:bg-white/10 transition-all">
+                          <span className="text-xl">{p.icon}</span>
+                          <span className="text-white/80 text-sm font-medium">{p.text}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Mission — Full width image + text overlay (reversed) */}
-          <div ref={missionRef}>
-            <div className="relative rounded-3xl overflow-hidden group">
-              <div className="absolute inset-0">
-                <img src="/images/Imgs-AI/vision-mission-img-01.png" alt="" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-l from-[#071525]/95 via-[#071525]/80 to-[#071525]/40" />
-              <div className="relative z-10 p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row-reverse items-center gap-10">
-                <div className="flex-1">
-                  <div className="inline-flex items-center gap-3 mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-[#f28c28] to-[#f2f231] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Zap className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-[#f2f231] font-semibold text-xs uppercase tracking-[0.2em]">Our Mission</div>
-                      <div className="text-white/30 text-[10px] uppercase tracking-wider">How we make it happen</div>
-                    </div>
-                  </div>
-                  <h3 className="font-[var(--font-poppins)] text-2xl sm:text-3xl font-bold text-white leading-snug mb-4">
-                    To work with dedication and honesty towards creating opportunities and ensuring progress for all.
-                  </h3>
-                  <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-xl">
-                    Every initiative is driven by a commitment to improve lives, build stronger communities and create lasting impact.
-                  </p>
+            {/* Our Mission card */}
+            <div ref={missionRef} className="h-full">
+              <div className="relative rounded-3xl overflow-hidden group h-full">
+                <div className="absolute inset-0">
+                  <img src="/images/procession-tricolour.jpg" alt="" className="w-full h-full object-cover" style={{ objectPosition: "top" }} />
                 </div>
-                <div className="flex-shrink-0 w-full lg:w-[380px]">
-                  <div className="space-y-3">
-                    {missionSteps.map((s, i) => (
-                      <div key={i} className="flex items-start gap-3 bg-white/5 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/10 hover:bg-white/10 transition-all">
-                        <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-bold" style={{ backgroundColor: `${s.color}40` }}>
-                          <span className="text-white">{s.num}</span>
-                        </div>
-                        <div>
-                          <div className="text-white font-semibold text-sm">{s.title}</div>
-                          <div className="text-white/40 text-xs leading-relaxed mt-0.5">{s.desc}</div>
-                        </div>
+                <div className="absolute inset-0 bg-gradient-to-l from-[#071525]/95 via-[#071525]/85 to-[#071525]/60" />
+                <div className="relative z-10 p-8 sm:p-10 lg:p-8 flex flex-col items-start gap-8">
+                  <div>
+                    <div className="inline-flex items-center gap-3 mb-6">
+                      <div className="w-14 h-14 bg-gradient-to-br from-[#f28c28] to-[#f2f231] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Zap className="w-7 h-7 text-white" />
                       </div>
-                    ))}
+                      <div>
+                        <div className="text-[#f2f231] font-semibold text-xs uppercase tracking-[0.2em]">Our Mission</div>
+                        <div className="text-white/30 text-[10px] uppercase tracking-wider">How we make it happen</div>
+                      </div>
+                    </div>
+                    <h3 className="font-[var(--font-poppins)] text-2xl sm:text-3xl font-bold text-white leading-snug mb-4">
+                      To work with dedication and honesty towards creating opportunities and ensuring progress for all.
+                    </h3>
+                    <p className="text-white/50 text-sm leading-relaxed max-w-xl">
+                      Every initiative is driven by a commitment to improve lives, build stronger communities and create lasting impact.
+                    </p>
+                  </div>
+                  <div className="w-full">
+                    <div className="space-y-3">
+                      {missionSteps.map((s, i) => (
+                        <div key={i} className="flex items-start gap-3 bg-white/5 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/10 hover:bg-white/10 transition-all">
+                          <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-bold" style={{ backgroundColor: `${s.color}40` }}>
+                            <span className="text-white">{s.num}</span>
+                          </div>
+                          <div>
+                            <div className="text-white font-semibold text-sm">{s.title}</div>
+                            <div className="text-white/40 text-xs leading-relaxed mt-0.5">{s.desc}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -185,7 +189,7 @@ export default function VisionMissionPage() {
       {/* Quote + CTA */}
       <section className="bg-[#066a9c] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src="/images/Imgs-AI/vision-mission-img-01.png" alt="" className="w-full h-full object-cover" />
+          <img src="/images/crowd-slogan-placards.jpg" alt="" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#066a9c]/95 to-[#066a9c]/80" />
         <div className="relative z-10 py-14 lg:py-16">

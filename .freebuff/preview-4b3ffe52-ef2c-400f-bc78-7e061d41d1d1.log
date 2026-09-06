@@ -1,0 +1,47 @@
+
+> bijendra-malik-site@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.2 (Turbopack)
+- Local:         http://localhost:65372
+- Network:       http://192.168.18.143:65372
+✓ Ready in 11.1s
+✓ Running next.config.ts took 417ms
+
+ GET / 200 in 3.5s (next.js: 2.2s, application-code: 1260ms)
+ GET / 200 in 287ms (next.js: 28ms, application-code: 259ms)
+ GET / 200 in 209ms (next.js: 18ms, application-code: 191ms)
+ GET / 200 in 187ms (next.js: 14ms, application-code: 173ms)
+ GET / 200 in 550ms (next.js: 15ms, application-code: 535ms)
+ GET /contact/ 200 in 348ms (next.js: 224ms, application-code: 124ms)
+ GET /contact/ 200 in 360ms (next.js: 27ms, application-code: 334ms)
+ GET /contact/ 200 in 307ms (next.js: 27ms, application-code: 280ms)
+ GET /social-work/ 200 in 412ms (next.js: 244ms, application-code: 168ms)
+ GET /vision-mission/ 200 in 384ms (next.js: 282ms, application-code: 102ms)
+ GET /political-journey/ 200 in 333ms (next.js: 225ms, application-code: 108ms)
+ GET /vision-mission/ 200 in 104ms (next.js: 22ms, application-code: 82ms)
+ GET /social-work/ 200 in 113ms (next.js: 25ms, application-code: 88ms)
+ GET /vision-mission/ 200 in 126ms (next.js: 45ms, application-code: 80ms)
+ GET /political-journey/ 200 in 112ms (next.js: 26ms, application-code: 87ms)
+ GET /about/ 200 in 340ms (next.js: 251ms, application-code: 89ms)
+ GET /vision-mission/ 200 in 107ms (next.js: 20ms, application-code: 88ms)
+ GET /vision-mission/ 200 in 190ms (next.js: 20ms, application-code: 169ms)
+✓ Compiled in 5.4s
+ GET /vision-mission/ 200 in 283ms (next.js: 29ms, application-code: 253ms)
+ GET /vision-mission/ 200 in 163ms (next.js: 19ms, application-code: 144ms)
+ GET /vision-mission/ 200 in 211ms (next.js: 55ms, application-code: 155ms)
+ GET /vision-mission/ 200 in 119ms (next.js: 11ms, application-code: 109ms)
+ GET / 200 in 124ms (next.js: 28ms, application-code: 96ms)
+ GET /vision-mission/ 200 in 102ms (next.js: 18ms, application-code: 85ms)
+✓ Compiled in 1038ms
+ GET /vision-mission/ 200 in 263ms (next.js: 103ms, application-code: 160ms)
+ GET /vision-mission/ 200 in 213ms (next.js: 22ms, application-code: 191ms)
+ GET /vision-mission/ 200 in 387ms (next.js: 91ms, application-code: 296ms)
+✓ Compiled in 397ms
+✓ Compiled in 265ms
+ GET /vision-mission/ 200 in 146ms (next.js: 23ms, application-code: 123ms)
+ GET /vision-mission/ 200 in 62ms (next.js: 10ms, application-code: 52ms)
+ GET /vision-mission/ 200 in 188ms (next.js: 52ms, application-code: 137ms)
+ GET /vision-mission/ 200 in 285ms (next.js: 21ms, application-code: 264ms)
+ GET / 200 in 209ms (next.js: 13ms, application-code: 196ms)
+[?25h
