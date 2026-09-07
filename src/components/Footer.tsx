@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, Globe, Users, ShieldCheck, Building2, Heart } from "lucide-react";
+import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube } from "react-icons/fa6";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -50,16 +51,14 @@ export default function Footer() {
             <div className="w-12 h-[3px] bg-[#f28c28] mb-5" />
             <div className="flex gap-3">
               {[
-                { name: "Facebook", href: "https://www.facebook.com/indexia.finance.3", path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" },
-                { name: "X", href: "https://x.com/FinanceIndexia", path: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" },
-                { name: "Instagram", href: "#", path: "M16 4H8a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V8a4 4 0 00-4-4zm-4 11a3 3 0 110-6 3 3 0 010 6zm4.5-7.5a1 1 0 110-2 1 1 0 010 2z" },
-                { name: "YouTube", href: "https://www.youtube.com/@FinanceIndexia", path: "M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z" },
+                { name: "Facebook", href: "https://www.facebook.com/indexia.finance.3", color: "#1877F2", Icon: FaFacebookF },
+                { name: "X", href: "https://x.com/FinanceIndexia", color: "#FFFFFF", Icon: FaXTwitter },
+                { name: "Instagram", href: "#", color: "#E4405F", Icon: FaInstagram },
+                { name: "YouTube", href: "https://www.youtube.com/@FinanceIndexia", color: "#FF0000", Icon: FaYoutube },
               ].map((s) => (
                 <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-[#26ae90] hover:border-[#26ae90] transition-all group" aria-label={s.name}>
-                  <svg className="w-4 h-4 text-white/60 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={s.path} />
-                  </svg>
+                  <s.Icon className="w-4 h-4" style={{ color: s.color }} />
                 </a>
               ))}
             </div>
@@ -110,7 +109,7 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
-                <span className="text-white/70 text-sm">info@bijendramalik.in</span>
+                <span className="text-white/70 text-sm">contactus.bijendramalik@gmail.com</span>
               </div>
               <div className="flex items-start gap-3">
                 <Globe className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />

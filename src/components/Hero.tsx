@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Play } from "lucide-react";
+import { FaFacebookF, FaXTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
 
 const highlights = [
   { icon: "🏛️", label: "Political Leader", sub: "MLA Candidate — Shamli Constituency 2022" },
@@ -10,10 +11,10 @@ const highlights = [
 ];
 
 const socials = [
-  { name: "Facebook", href: "https://www.facebook.com/indexia.finance.3", path: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" },
-  { name: "X", href: "https://x.com/FinanceIndexia", path: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" },
-  { name: "YouTube", href: "https://www.youtube.com/@FinanceIndexia", path: "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" },
-  { name: "LinkedIn", href: "https://in.linkedin.com/company/indexiafinance", path: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" },
+  { name: "Facebook", href: "https://www.facebook.com/indexia.finance.3", color: "#1877F2", tip: "#1877F2", Icon: FaFacebookF },
+  { name: "X", href: "https://x.com/FinanceIndexia", color: "#FFFFFF", tip: "#000000", Icon: FaXTwitter },
+  { name: "YouTube", href: "https://www.youtube.com/@FinanceIndexia", color: "#FF0000", tip: "#FF0000", Icon: FaYoutube },
+  { name: "LinkedIn", href: "https://in.linkedin.com/company/indexiafinance", color: "#0A66C2", tip: "#0A66C2", Icon: FaLinkedinIn },
 ];
 
 export default function Hero() {
@@ -131,16 +132,16 @@ export default function Hero() {
         <div className="flex absolute right-2 sm:right-4 lg:right-6 top-1/2 -translate-y-1/2 flex-col gap-1 sm:gap-2 lg:gap-3 z-20">
           {socials.map((s) => (
             <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="group relative w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 flex items-center justify-center" aria-label={s.name}>
-              {/* Tooltip */}
-              <div className="absolute right-full mr-2 sm:mr-3 px-2 sm:px-3 py-1 sm:py-1.5 bg-[#066a9c]/90 backdrop-blur-sm text-white text-[9px] sm:text-[11px] font-semibold rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:-translate-x-0 translate-x-2 transition-all duration-300 pointer-events-none shadow-lg border border-white/10">
+              {/* Tooltip — brand-colored */}
+              <div className="absolute right-full mr-2 sm:mr-3 px-2 sm:px-3 py-1 sm:py-1.5 backdrop-blur-sm text-white text-[9px] sm:text-[11px] font-semibold rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:-translate-x-0 translate-x-2 transition-all duration-300 pointer-events-none shadow-lg border border-white/10" style={{ background: s.tip }}>
                 {s.name}
-                <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#066a9c]/90 rotate-45 border-r border-b border-white/10" />
+                <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 rotate-45 border-r border-b border-white/10" style={{ background: s.tip }} />
               </div>
               {/* Animated rotating border */}
               <div className="absolute inset-0 rounded-full" style={{ background: "conic-gradient(from 0deg, #f2f231, #26ae90, #066a9c, #f2f231)", animation: "spin 3s linear infinite" }} />
-              <div className="absolute inset-[2px] rounded-full bg-[#066a9c]/80 backdrop-blur-sm" />
-              {/* Icon — solid brand logo (no stroke border) */}
-              <svg className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 text-white/60 group-hover:text-[#f2f231] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d={s.path} /></svg>
+              <div className="absolute inset-[2px] rounded-full bg-[#0ac5b2db] backdrop-blur-sm" />
+              {/* Icon — react-icons brand logo in its brand color */}
+              <s.Icon className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4" style={{ color: s.color }} />
             </a>
           ))}
         </div>

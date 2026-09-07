@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { Users, Heart, Megaphone, Wifi, GraduationCap, Stethoscope, Leaf, Building2, X, ChevronLeft, ChevronRight, Quote, ArrowUpRight, ArrowRight } from "lucide-react";
+import { Users, Heart, Megaphone, Wifi, GraduationCap, Stethoscope, Leaf, Building2, X, ChevronLeft, ChevronRight, ArrowUpRight, ArrowRight } from "lucide-react";
 
 const principles = [
   { Icon: Users, title: "People First", desc: "Every initiative is inspired by the well-being of people.", color: "#066a9c" },
@@ -17,58 +18,24 @@ const initiatives = [
   { image: "/images/youth-engagement.jpg", title: "Youth Empowerment", desc: "Encouraging skills, leadership and employment opportunities for the youth.", Icon: Users, color: "#f28c28" },
   { image: "/images/healthcare-meeting.jpg", title: "Women Empowerment", desc: "Empowering women through education, skill development and financial independence.", Icon: Heart, color: "#286090" },
   { image: "/images/health-camp.jpg", title: "Community Development", desc: "Infrastructure improvement, clean water, sanitation and better living conditions.", Icon: Building2, color: "#066a9c" },
-  { image: "/images/public-welfare.jpg", title: "Environmental Care", desc: "Promoting tree plantation, clean environment and sustainable living.", Icon: Leaf, color: "#26ae90" },
+  { image: "/images/green-flag-procession.jpg", title: "Environmental Care", desc: "Promoting tree plantation, clean environment and sustainable living.", Icon: Leaf, color: "#26ae90" },
   { image: "/images/social-welfare.jpg", title: "Skill Development", desc: "Training programs for vocational skills and self-employment opportunities.", Icon: Megaphone, color: "#f28c28" },
   { image: "/images/political-campaign.jpg", title: "Public Awareness", desc: "Campaigns on health, hygiene, digital literacy and civic responsibility.", Icon: Wifi, color: "#286090" },
 ];
 
-const stats = [
-  { number: "50+", label: "Initiatives", Icon: Megaphone },
-  { number: "100+", label: "Villages Reached", Icon: Building2 },
-  { number: "50000+", label: "People Benefited", Icon: Users },
-  { number: "15+", label: "Years of Service", Icon: Heart },
-];
-
-const gallery = [
-  { image: "/images/formal-dinner.jpg", title: "Formal Dinner Event" },
-  { image: "/images/meeting-festive.jpg", title: "Meeting at Festive Event" },
-  { image: "/images/meeting-indoor.jpg", title: "Indoor Meeting" },
-  { image: "/images/meeting-sports-jersey.jpg", title: "Meeting with Sports Memorabilia" },
-  { image: "/images/meeting-garden.jpg", title: "Garden Discussion" },
-  { image: "/images/media-interview.jpg", title: "Media Interview" },
-  { image: "/images/political-rally-sanjay-singh.jpg", title: "Political Rally with Sanjay Singh" },
-  { image: "/images/meeting-dining.jpg", title: "Dining Meeting" },
-  { image: "/images/meeting-hotel.jpg", title: "Hotel Meeting" },
-  { image: "/images/arvind-kejriwal-meeting.jpg", title: "Meeting with Arvind Kejriwal" },
-  { image: "/images/profile-bijendra-malik.jpg", title: "Bijendra Malik — Profile" },
-  { image: "/images/official-portrait.jpg", title: "Official Portrait" },
-  { image: "/images/profile-alt.jpg", title: "Alternate Profile" },
-  { image: "/images/profile-shot.jpg", title: "Profile Shot" },
-  { image: "/images/business-leadership.jpg", title: "Business Leadership" },
-  { image: "/images/campaign-event.jpg", title: "Campaign Event" },
-  { image: "/images/public-rally-shamli.jpg", title: "Public Rally — Shamli" },
-  { image: "/images/community-meeting.jpg", title: "Community Meeting" },
-  { image: "/images/rural-development.jpg", title: "Rural Development" },
-  { image: "/images/infrastructure-visit.jpg", title: "Infrastructure Visit" },
-  { image: "/images/public-rally.jpg", title: "Public Rally" },
-  { image: "/images/education-drive.jpg", title: "Education Drive" },
-  { image: "/images/health-camp-event.jpg", title: "Health Camp" },
-  { image: "/images/social-gathering.jpg", title: "Social Gathering" },
-  { image: "/images/community-welfare.jpg", title: "Community Welfare" },
-  { image: "/images/development-visit.jpg", title: "Development Visit" },
+const helpCards = [
+  { Icon: Users, color: "#066a9c", title: "Volunteer With Us", desc: "Join our team of volunteers for health camps, education drives and community programmes across the region." },
+  { Icon: Heart, color: "#f28c28", title: "Support an Initiative", desc: "Partner with or support an initiative in education, healthcare, women empowerment or the environment." },
+  { Icon: Megaphone, color: "#26ae90", title: "Invite Us / Request Support", desc: "Invite us to your village or community programme, or request support for a cause that matters to you." },
 ];
 
 export default function SocialWorkPage() {
   const [lightbox, setLightbox] = useState<number | null>(null);
-  const [galleryPage, setGalleryPage] = useState(1);
-  const galleryPerPage = 16;
-  const totalGalleryPages = Math.ceil(gallery.length / galleryPerPage);
-  const paginatedGallery = gallery.slice((galleryPage - 1) * galleryPerPage, galleryPage * galleryPerPage);
 
   const openLightbox = (index: number) => setLightbox(index);
   const closeLightbox = () => setLightbox(null);
-  const nextImage = () => setLightbox(prev => prev !== null ? (prev + 1) % gallery.length : null);
-  const prevImage = () => setLightbox(prev => prev !== null ? (prev - 1 + gallery.length) % gallery.length : null);
+  const nextImage = () => setLightbox(prev => prev !== null ? (prev + 1) % initiatives.length : null);
+  const prevImage = () => setLightbox(prev => prev !== null ? (prev - 1 + initiatives.length) % initiatives.length : null);
 
   return (
     <main className="flex-1">
@@ -167,86 +134,33 @@ export default function SocialWorkPage() {
         </div>
       </section>
 
-      {/* Photo Gallery */}
+      {/* How You Can Help — get involved */}
       <section className="py-8 lg:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-14">
-            <div className="text-center flex-1">
-              <div className="inline-flex items-center gap-2 mb-3">
-                <div className="w-8 h-[2px] bg-[#26ae90]" />
-                <span className="text-[#26ae90] font-semibold text-sm uppercase tracking-[0.2em]">Gallery</span>
-                <div className="w-8 h-[2px] bg-[#26ae90]" />
-              </div>
-              <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#066a9c]">
-                Our <span className="text-[#26ae90]">Journey</span> in Pictures
-              </h2>
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <div className="w-8 h-[2px] bg-[#26ae90]" />
+              <span className="text-[#26ae90] font-semibold text-sm uppercase tracking-[0.2em]">Get Involved</span>
+              <div className="w-8 h-[2px] bg-[#26ae90]" />
             </div>
-            <span className="text-gray-400 text-sm font-medium hidden sm:block">{gallery.length} Photos</span>
+            <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#066a9c]">
+              How You Can <span className="text-[#26ae90]">Help</span>
+            </h2>
+            <p className="text-gray-400 text-sm mt-3 max-w-2xl mx-auto">Every hand matters. Join us in bringing education, healthcare and opportunity to every community.</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {paginatedGallery.map((item, i) => {
-              const globalIndex = (galleryPage - 1) * galleryPerPage + i;
-              return (
-                <div key={globalIndex} className="group cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100 hover:border-[#26ae90]/30" onClick={() => openLightbox(globalIndex)}>
-                  <div className="relative aspect-square overflow-hidden">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover object-top  group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                        <svg className="w-5 h-5 text-[#066a9c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
-                      </div>
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
-                      <h4 className="font-[var(--font-poppins)] font-bold text-white text-xs leading-snug">{item.title}</h4>
-                    </div>
-                  </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {helpCards.map((c, i) => (
+              <div key={i} className="bg-[#f5f7fa] rounded-2xl p-6 border border-gray-100 hover:shadow-xl hover:border-[#26ae90]/30 transition-all group text-center">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform" style={{ backgroundColor: `${c.color}18` }}>
+                  <c.Icon className="w-7 h-7" style={{ color: c.color }} />
                 </div>
-              );
-            })}
-          </div>
-
-          {/* Pagination */}
-          {totalGalleryPages > 1 && (
-            <div className="flex items-center justify-center gap-2 mt-8">
-              <button
-                onClick={() => setGalleryPage(p => Math.max(1, p - 1))}
-                disabled={galleryPage === 1}
-                className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${
-                  galleryPage === 1
-                    ? "bg-gray-100 text-gray-300 cursor-not-allowed"
-                    : "bg-white text-[#066a9c] border border-gray-200 hover:bg-[#066a9c] hover:text-white hover:border-[#066a9c] shadow-sm"
-                }`}
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              {Array.from({ length: totalGalleryPages }, (_, idx) => idx + 1).map(page => (
-                <button
-                  key={page}
-                  onClick={() => setGalleryPage(page)}
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${
-                    galleryPage === page
-                      ? "bg-[#066a9c] text-white shadow-md shadow-[#066a9c]/30"
-                      : "bg-white text-gray-500 border border-gray-200 hover:bg-[#066a9c]/10 hover:text-[#066a9c]"
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
-              <button
-                onClick={() => setGalleryPage(p => Math.min(totalGalleryPages, p + 1))}
-                disabled={galleryPage === totalGalleryPages}
-                className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${
-                  galleryPage === totalGalleryPages
-                    ? "bg-gray-100 text-gray-300 cursor-not-allowed"
-                    : "bg-white text-[#066a9c] border border-gray-200 hover:bg-[#066a9c] hover:text-white hover:border-[#066a9c] shadow-sm"
-                }`}
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-          )}
-          <div className="text-center mt-3">
-            <span className="text-gray-300 text-xs">Showing {(galleryPage - 1) * galleryPerPage + 1}–{Math.min(galleryPage * galleryPerPage, gallery.length)} of {gallery.length}</span>
+                <h3 className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-base mb-2">{c.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">{c.desc}</p>
+                <Link href="/contact" className="inline-flex items-center gap-1.5 bg-[#26ae90] hover:bg-[#26ae90]/90 text-white font-semibold px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider transition-all hover:shadow-lg hover:shadow-[#26ae90]/30">
+                  Get In Touch <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -280,47 +194,6 @@ export default function SocialWorkPage() {
         </div>
       </section>
 
-      {/* Stats with background image — improved */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/images/social-work01-img.png" alt="" className="w-full h-full object-cover" />
-        </div>
-        <div className="absolute inset-0 bg-[#066a9c]/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#066a9c]/90 via-[#066a9c]/70 to-[#066a9c]/90" />
-        
-        <div className="relative z-10 py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 mb-3">
-                <div className="w-8 h-[2px] bg-[#f2f231]" />
-                <span className="text-[#f2f231] font-semibold text-sm uppercase tracking-[0.2em]">Our Impact</span>
-                <div className="w-8 h-[2px] bg-[#f2f231]" />
-              </div>
-              <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-white">
-                Making a <span className="text-[#f2f231]">Difference</span>
-              </h2>
-            </div>
-            
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-              {stats.map((s, i) => {
-                const Icon = s.Icon;
-                return (
-                  <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/10 hover:bg-white/15 transition-all group text-center">
-                    <div className="w-16 h-16 bg-[#f2f231]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-[#f2f231]/30 transition-all">
-                      <Icon className="w-8 h-8 text-[#f2f231]" />
-                    </div>
-                    <div className="font-[var(--font-poppins)] text-3xl lg:text-4xl font-bold text-white mb-1">{s.number}</div>
-                    <div className="text-white/60 text-xs uppercase tracking-wider font-medium">{s.label}</div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-        
-        <div className="h-1 bg-gradient-to-r from-[#26ae90] via-[#f2f231] to-[#26ae90] relative z-10" />
-      </section>
-
       {/* Lightbox Modal */}
       {lightbox !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={closeLightbox}>
@@ -334,10 +207,10 @@ export default function SocialWorkPage() {
             <ChevronRight className="w-6 h-6" />
           </button>
           <div className="max-w-5xl max-h-[85vh] px-4" onClick={(e) => e.stopPropagation()}>
-            <img src={gallery[lightbox].image} alt={gallery[lightbox].title} className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl" />
+            <img src={initiatives[lightbox].image} alt={initiatives[lightbox].title} className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl" />
             <div className="text-center mt-4">
-              <h3 className="text-white font-[var(--font-poppins)] font-semibold text-lg">{gallery[lightbox].title}</h3>
-              <p className="text-white/50 text-sm mt-1">{lightbox + 1} / {gallery.length}</p>
+              <h3 className="text-white font-[var(--font-poppins)] font-semibold text-lg">{initiatives[lightbox].title}</h3>
+              <p className="text-white/50 text-sm mt-1">{lightbox + 1} / {initiatives.length}</p>
             </div>
           </div>
         </div>

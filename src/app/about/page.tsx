@@ -34,9 +34,10 @@ export default function AboutPage() {
         label="About Me"
         title="People First,"
         titleHighlight="Always"
-        description="A leader. An entrepreneur. A committed citizen working for a stronger, inclusive India."
+        description={["A leader.", "An entrepreneur.", "A committed citizen working for a stronger, inclusive India."]}
         bgImage="/images/infrastructure-visit.jpg"
         panelPosition="bottom-left"
+        panelAlign="center"
         bgPosition="top"
         strongOverlay
       />

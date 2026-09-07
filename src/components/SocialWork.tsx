@@ -16,7 +16,7 @@ const initiatives = [
   { image: "/images/political-rally-sanjay-singh.jpg", title: "Youth Empowerment", desc: "Encouraging skills, leadership and employment opportunities for the youth.", color: "#f28c28" },
   { image: "/images/healthcare-meeting.jpg", title: "Women Empowerment", desc: "Empowering women through education, skill development and financial independence.", color: "#286090" },
   { image: "/images/health-camp.jpg", title: "Community Development", desc: "Infrastructure improvement, clean water, sanitation and better living conditions.", color: "#066a9c" },
-  { image: "/images/public-welfare.jpg", title: "Environmental Care", desc: "Promoting tree plantation, clean environment and sustainable living.", color: "#26ae90" },
+  { image: "/images/green-flag-procession.jpg", title: "Environmental Care", desc: "Promoting tree plantation, clean environment and sustainable living.", color: "#26ae90" },
   { image: "/images/formal-dinner.jpg", title: "Formal Events & Networking", desc: "Building connections at formal events for community development and partnerships.", color: "#f28c28" },
   { image: "/images/political-campaign.jpg", title: "Public Awareness", desc: "Campaigns on health, hygiene, digital literacy and civic responsibility.", color: "#286090" },
 ];

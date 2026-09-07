@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import PageHero from "@/components/PageHero";
 import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -28,12 +28,12 @@ const videos = [
 
 const localVideos: { src?: string; youtube?: string; thumbnail?: string; title: string; desc: string; date: string; category: string }[] = [
   { youtube: "pJv7wnSHc9c", title: "Bharat 24 — Delhi Floods Debate", desc: "AAP's Bijendra Malik calls the Delhi floods 'a planned conspiracy' — in conversation with Rubika Liyaquat.", date: "2026", category: "Videos" },
-  { src: "/media/videos/community-highlights.mp4", thumbnail: "/images/about-banner.png", title: "Community Welfare Initiatives", desc: "Working towards grassroots development and community participation.", date: "22 Aug 2026", category: "Videos" },
-  { src: "/media/videos/office-desk-address.mp4", thumbnail: "/images/ncr-samachar-interview.jpg", title: "Office Desk Address", desc: "Short address recorded from the office.", date: "04 Sep 2026", category: "Videos" },
-  { src: "/media/videos/public-rally-address.mp4", thumbnail: "/images/rally-march-yellow-flags.jpg", title: "Public Rally Address", desc: "Addressing supporters gathered at the public rally.", date: "04 Sep 2026", category: "Videos" },
-  { src: "/media/videos/inauguration-ribbon-cutting.mp4", thumbnail: "/images/memento-gift-ceremony.jpg", title: "Inauguration Ceremony", desc: "Ribbon-cutting ceremony at a new outlet.", date: "04 Sep 2026", category: "Videos" },
-  { src: "/media/videos/public-meeting-address.mp4", thumbnail: "/images/supporters-celebration.jpg", title: "Public Meeting Address", desc: "Addressing the crowd at a public meeting.", date: "04 Sep 2026", category: "Videos" },
-  { src: "/media/videos/intro-video.mp4", thumbnail: "/images/profile-bijendra-malik.jpg", title: "Personal Introduction — Bijendra Malik", desc: "Meet Bijendra Malik and his vision for the people.", date: "26 Aug 2026", category: "Videos" },
+  { src: "/media/videos/community-highlights.mp4", thumbnail: "/images/video-thumbs/sanjay-singh-release-protest.jpg", title: "Community Welfare Initiatives", desc: "Working towards grassroots development and community participation.", date: "22 Aug 2026", category: "Videos" },
+  { src: "/media/videos/office-desk-address.mp4", thumbnail: "/images/video-thumbs/office-desk-address.jpg", title: "Office Desk Address", desc: "Short address recorded from the office.", date: "04 Sep 2026", category: "Videos" },
+  { src: "/media/videos/public-rally-address.mp4", thumbnail: "/images/video-thumbs/public-rally-address.jpg", title: "Public Rally Address", desc: "Addressing supporters gathered at the public rally.", date: "04 Sep 2026", category: "Videos" },
+  { src: "/media/videos/inauguration-ribbon-cutting.mp4", thumbnail: "/images/video-thumbs/inauguration-ribbon-cutting.jpg", title: "Inauguration Ceremony", desc: "Ribbon-cutting ceremony at a new outlet.", date: "04 Sep 2026", category: "Videos" },
+  { src: "/media/videos/public-meeting-address.mp4", thumbnail: "/images/video-thumbs/public-meeting-address.jpg", title: "Public Meeting Address", desc: "Addressing the crowd at a public meeting.", date: "04 Sep 2026", category: "Videos" },
+  { src: "/media/videos/intro-video.mp4", thumbnail: "/images/video-thumbs/intro-video.jpg", title: "Personal Introduction — Bijendra Malik", desc: "Meet Bijendra Malik and his vision for the people.", date: "26 Aug 2026", category: "Videos" },
   { src: "/media/videos/kejriwal-meeting-video.mp4", thumbnail: "/images/video-thumbs/kejriwal-meeting.jpg", title: "Meeting with Arvind Kejriwal", desc: "Governance reforms and community welfare discussions.", date: "31 Aug 2026", category: "Videos" },
   { src: "/media/videos/supporters-celebration-aug-2025.mp4", thumbnail: "/images/video-thumbs/supporters-celebration.jpg", title: "Supporters Celebration Programme", desc: "Celebration and greetings with supporters at the party programme.", date: "31 Aug 2025", category: "Videos" },
   // Older coverage clips — 2026
@@ -49,6 +49,7 @@ const localVideos: { src?: string; youtube?: string; thumbnail?: string; title: 
 
 const photos = [
   // Jan 2025 additions
+  { image: "/images/public-welfare.jpg", title: "Meeting with Senior Leader & Supporters", category: "Photos", date: "2026" },
   { image: "/images/kejriwal-garden-address.jpg", title: "Arvind Kejriwal Garden Address", category: "Photos", date: "13 Jan 2025" },
   { image: "/images/kejriwal-garden-greeting.jpg", title: "Welcoming Arvind Kejriwal", category: "Photos", date: "13 Jan 2025" },
   { image: "/images/lobby-meeting-jan-2025.jpg", title: "Lobby Meeting — Formal Reception", category: "Photos", date: "2025" },
@@ -113,6 +114,15 @@ export default function MediaPage() {
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
   const [lightboxNews, setLightboxNews] = useState<number | null>(null);
   const [lightboxPhoto, setLightboxPhoto] = useState<number | null>(null);
+  // Event Highlights: video stays covered by its thumbnail until clicked —
+  // then the overlay disappears and the video plays with controls.
+  const [activeLocalVideo, setActiveLocalVideo] = useState<number | null>(null);
+  const videoRefs = useRef<Record<number, HTMLVideoElement | null>>({});
+  const playLocalVideo = (idx: number) => {
+    Object.entries(videoRefs.current).forEach(([k, vid]) => { if (Number(k) !== idx) vid?.pause(); });
+    setActiveLocalVideo(idx);
+    videoRefs.current[idx]?.play();
+  };
 
   const filteredNews = activeTab === "All" || activeTab === "News Coverage" || activeTab === "Press Releases" || activeTab === "Interviews"
     ? newsItems.filter(i => activeTab === "All" || i.category === activeTab)
@@ -155,8 +165,9 @@ export default function MediaPage() {
         title="In the Media"
         subtitle="Latest News & Updates"
         bgImage="/images/media-press-banner.png"
-        bgPosition="right"
-        panelPosition="left"
+        bgPosition="end"
+        panelPosition="bottom-left"
+        panelAlign="center"
       />
 
       {/* Filter Tabs */}
@@ -317,13 +328,25 @@ export default function MediaPage() {
                     ) : (
                       <>
                         <video
+                          ref={el => { videoRefs.current[(videoPage - 1) * videosPerPage + i] = el; }}
                           src={v.src}
                           poster={v.thumbnail}
-                          controls
+                          controls={activeLocalVideo === (videoPage - 1) * videosPerPage + i}
                           playsInline
                           preload="metadata"
-                          className="w-full aspect-video object-cover"
+                          onEnded={() => setActiveLocalVideo(null)}
+                          className="w-full aspect-video object-cover object-top"
                         />
+                        {activeLocalVideo !== (videoPage - 1) * videosPerPage + i && (
+                          <button type="button" aria-label={`Play ${v.title}`} onClick={() => playLocalVideo((videoPage - 1) * videosPerPage + i)} className="absolute inset-0 cursor-pointer group/th">
+                            <img src={v.thumbnail} alt={v.title} className="w-full aspect-video object-cover object-top" />
+                            <span className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover/th:bg-black/5 transition-colors">
+                              <span className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover/th:scale-110 transition-transform">
+                                <Play className="w-6 h-6 text-[#066a9c] ml-0.5" fill="currentColor" />
+                              </span>
+                            </span>
+                          </button>
+                        )}
                         <div className="absolute top-2 right-2 bg-[#f28c28] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase pointer-events-none">Video</div>
                       </>
                     )}

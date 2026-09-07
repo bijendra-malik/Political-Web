@@ -130,6 +130,8 @@ export default function PoliticalJourneyPage() {
         panelPosition="center"
         bgPosition="top"
         mobileBgPosition="left-top"
+        mobileJustify="end"
+        mobileDimImage
       />
 
       {/* Intro text */}
@@ -286,10 +288,10 @@ export default function PoliticalJourneyPage() {
       {/* CTA */}
       <section className="relative py-16 lg:py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/Imgs-AI/join-mission-img.png" alt="" className="w-full h-full object-cover object-center scale-110" />
+          <img src="/images/aap-supporters-celebrate.jpg" alt="" className="w-full h-full object-cover object-center" style={{ objectPosition: "center " }} />
         </div>
-        <div className="absolute inset-0 bg-gray-900/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/50 to-gray-900/80" />
+        <div className="absolute inset-0 " />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/40 via-gray-900/30 to-gray-900/30" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-white mb-4">
             Join the <span className="text-[#f2f231]">Mission</span>

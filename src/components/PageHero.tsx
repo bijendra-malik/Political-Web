@@ -5,7 +5,8 @@ interface PageHeroProps {
   title: string;
   titleHighlight?: string;
   subtitle?: string;
-  description?: string;
+  /** One string, or an array of lines — array items render on separate lines. */
+  description?: string | string[];
   bgImage?: string;
   backgroundImage?: string;
   bgPosition?: string;
@@ -22,12 +23,17 @@ interface PageHeroProps {
    *  Example: panelJustify="end" pushes the panel to the bottom. */
   panelJustify?: "start" | "center" | "end";
   panelAlign?: "start" | "center" | "end";
+  /** Vertical placement on MOBILE only (desktop uses panelJustify/panelPosition). Default center. */
+  mobileJustify?: "start" | "center" | "end";
+  /** Dims the background image on mobile only (desktop/tablet untouched). */
+  mobileDimImage?: boolean;
 }
 
 // Mobile-only object-position overrides, applied through a CSS var so the
 // desktop objectPosition (bgPosition) is untouched on larger screens.
 // Literal class maps so Tailwind JIT can see every value used.
 const JUSTIFY_CLASS: Record<string, string> = { start: "md:justify-start", center: "md:justify-center", end: "md:justify-end" };
+const MOBILE_JUSTIFY_CLASS: Record<string, string> = { start: "justify-start", center: "justify-center", end: "justify-end" };
 const ALIGN_CLASS: Record<string, string> = { start: "md:items-start", center: "md:items-center", end: "md:items-end" };
 
 const MOBILE_BG_POSITION_CLASS: Record<string, string> = {
@@ -37,7 +43,7 @@ const MOBILE_BG_POSITION_CLASS: Record<string, string> = {
   center: "max-md:[--pagehero-bg-pos:center]",
 };
 
-export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "center", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign }: PageHeroProps) {
+export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "center", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign, mobileJustify = "center", mobileDimImage = false }: PageHeroProps) {
   const bg = backgroundImage || bgImage || "/images/public-rally.jpg";
   // Desktop placement of the text panel — fully per-page custom (9 combos).
   // Direct panelJustify/panelAlign values win; otherwise derive from panelPosition:
@@ -47,22 +53,24 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
   const hAlignClass = panelAlign ? ALIGN_CLASS[panelAlign] : panelPosition.endsWith("right") ? "md:items-end" : panelPosition === "top" || panelPosition === "bottom" || panelPosition === "center" ? "md:items-center" : "md:items-start";
 
   return (
-    <section className="relative min-h-[420px] lg:min-h-[550px] flex items-center overflow-hidden">
+    <section className="relative min-h-[490px] lg:min-h-[650px] flex items-center overflow-hidden">
       {/* Background — image stays clear; readability comes from the text panel below */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 mt-4">
         <img
           src={bg}
           alt=""
           className={`w-full h-full object-cover ${mobileBgPosition ? MOBILE_BG_POSITION_CLASS[mobileBgPosition] ?? "" : ""}`}
           style={{ objectPosition: mobileBgPosition ? `var(--pagehero-bg-pos, ${bgPosition})` : bgPosition }}
         />
+        {/* Mobile-only image dim (desktop/tablet keep the image full brightness) */}
+        {mobileDimImage && <div className="absolute inset-0 bg-black/40 md:hidden" />}
         {/* Very subtle bottom fade only, so the hero blends into the page below */}
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 to-transparent" />
       </div>
       
       {/* Text layer — panel is positioned (left/top/bottom) on desktop, centered on mobile */}
       <div className="absolute inset-0 z-10 flex">
-        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center items-center py-16 lg:py-20 ${vAlignClass} ${hAlignClass}`}>
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col ${MOBILE_JUSTIFY_CLASS[mobileJustify]} items-center py-16 lg:py-20 ${vAlignClass} ${hAlignClass}`}>
         {/* Dark highlight panel behind the text only */}
         <div
           className={`w-fit max-w-full text-center md:text-left backdrop-blur-xs rounded-2xl border border-white/50 p-4 sm:p-3 lg:p-6 ${strongOverlay ? "bg-black/65" : "bg-black/50"} ${panelOffset ? "md:absolute" : ""}`}
@@ -84,7 +92,11 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
           <p className="text-white/70 mt-1 text-md font-[var(--font-poppins)] font-medium">{subtitle}</p>
         )}
         {description && (
-          <p className="text-white/60 mt-2 text-sm max-w-xl leading-relaxed">{description}</p>
+          <p className="text-white/60 mt-2 text-sm max-w-xl leading-relaxed">
+            {Array.isArray(description) ? description.map((line, i) => (
+              <span key={i}>{line}{i < description.length - 1 && <br />}</span>
+            )) : description}
+          </p>
         )}
         </div>
         </div>
