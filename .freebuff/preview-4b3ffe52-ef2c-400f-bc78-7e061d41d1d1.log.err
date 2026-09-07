@@ -1,223 +1,1430 @@
 [browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
 [browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] ./src/components/PageHero.tsx:50:10
+Error: Expected '</', got '}'
+  48 |             <span className="text-[#f28c28] font-semibold text-sm uppercase tracking-[0.2e...
+  49 |           </div>
+> 50 |         )}
+     |          ^
+  51 |         <h1 className="font-[var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bo...
+  52 |           {title}{" "}
+  53 |           {titleHighlight && (
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:50:10
+Error: Expected '</', got '}'
+  48 |             <span className="text-[#f28c28] font-semibold text-sm uppercase tracking-[0.2e...
+  49 |           </div>
+> 50 |         )}
+     |          ^
+  51 |         <h1 className="font-[var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bo...
+  52 |           {title}{" "}
+  53 |           {titleHighlight && (
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
 [browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[browser] ./src/app/vision-mission/page.tsx:150:17
-Error: Expected '</', got 'jsx text'
-  148 |             </div>
-  149 |           </div>
-> 150 |           </div>
-      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> 151 |         </div>
-      | ^^^^^^^^
-  152 |       </section>
-  153 |
-  154 |       {/* Focus Areas — With animated progress bars */}
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
 
 Parsing ecmascript source code failed
 
 Import traces:
   Client Component Browser:
-    ./src/app/vision-mission/page.tsx [Client Component Browser]
-    ./src/app/vision-mission/page.tsx [Server Component]
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
 
   Client Component SSR:
-    ./src/app/vision-mission/page.tsx [Client Component SSR]
-    ./src/app/vision-mission/page.tsx [Server Component] 
-[browser] ./src/app/vision-mission/page.tsx:150:17
-Error: Expected '</', got 'jsx text'
-  148 |             </div>
-  149 |           </div>
-> 150 |           </div>
-      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> 151 |         </div>
-      | ^^^^^^^^
-  152 |       </section>
-  153 |
-  154 |       {/* Focus Areas — With animated progress bars */}
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
 
 Parsing ecmascript source code failed
 
 Import traces:
   Client Component Browser:
-    ./src/app/vision-mission/page.tsx [Client Component Browser]
-    ./src/app/vision-mission/page.tsx [Server Component]
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
 
   Client Component SSR:
-    ./src/app/vision-mission/page.tsx [Client Component SSR]
-    ./src/app/vision-mission/page.tsx [Server Component] 
-[browser] ./src/app/vision-mission/page.tsx:150:17
-Error: Expected '</', got 'jsx text'
-  148 |             </div>
-  149 |           </div>
-> 150 |           </div>
-      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> 151 |         </div>
-      | ^^^^^^^^
-  152 |       </section>
-  153 |
-  154 |       {/* Focus Areas — With animated progress bars */}
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
 
 Parsing ecmascript source code failed
 
 Import traces:
   Client Component Browser:
-    ./src/app/vision-mission/page.tsx [Client Component Browser]
-    ./src/app/vision-mission/page.tsx [Server Component]
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Server Component]
 
   Client Component SSR:
-    ./src/app/vision-mission/page.tsx [Client Component SSR]
-    ./src/app/vision-mission/page.tsx [Server Component] 
-[browser] ./src/app/vision-mission/page.tsx:150:17
-Error: Expected '</', got 'jsx text'
-  148 |             </div>
-  149 |           </div>
-> 150 |           </div>
-      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> 151 |         </div>
-      | ^^^^^^^^
-  152 |       </section>
-  153 |
-  154 |       {/* Focus Areas — With animated progress bars */}
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
 
 Parsing ecmascript source code failed
 
 Import traces:
   Client Component Browser:
-    ./src/app/vision-mission/page.tsx [Client Component Browser]
-    ./src/app/vision-mission/page.tsx [Server Component]
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Server Component]
 
   Client Component SSR:
-    ./src/app/vision-mission/page.tsx [Client Component SSR]
-    ./src/app/vision-mission/page.tsx [Server Component] 
-[browser] ./src/app/vision-mission/page.tsx:150:17
-Error: Expected '</', got 'jsx text'
-  148 |             </div>
-  149 |           </div>
-> 150 |           </div>
-      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> 151 |         </div>
-      | ^^^^^^^^
-  152 |       </section>
-  153 |
-  154 |       {/* Focus Areas — With animated progress bars */}
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
 
 Parsing ecmascript source code failed
 
 Import traces:
   Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
     ./src/app/vision-mission/page.tsx [Client Component Browser]
     ./src/app/vision-mission/page.tsx [Server Component]
 
   Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
     ./src/app/vision-mission/page.tsx [Client Component SSR]
     ./src/app/vision-mission/page.tsx [Server Component] 
-[browser] ./src/app/vision-mission/page.tsx:150:17
-Error: Expected '</', got 'jsx text'
-  148 |             </div>
-  149 |           </div>
-> 150 |           </div>
-      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> 151 |         </div>
-      | ^^^^^^^^
-  152 |       </section>
-  153 |
-  154 |       {/* Focus Areas — With animated progress bars */}
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
 
 Parsing ecmascript source code failed
 
 Import traces:
   Client Component Browser:
-    ./src/app/vision-mission/page.tsx [Client Component Browser]
-    ./src/app/vision-mission/page.tsx [Server Component]
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Server Component]
 
   Client Component SSR:
-    ./src/app/vision-mission/page.tsx [Client Component SSR]
-    ./src/app/vision-mission/page.tsx [Server Component] 
-[browser] ./src/app/vision-mission/page.tsx:149:17
-Error: Expected '</', got 'jsx text'
-  147 |             </div>            </div>
-  148 |           </div>
-> 149 |           </div>
-      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> 150 |         </div>
-      | ^^^^^^^^
-  151 |       </section>
-  152 |
-  153 |       {/* Focus Areas — With animated progress bars */}
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
 
 Parsing ecmascript source code failed
 
 Import traces:
   Client Component Browser:
-    ./src/app/vision-mission/page.tsx [Client Component Browser]
-    ./src/app/vision-mission/page.tsx [Server Component]
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Server Component]
 
   Client Component SSR:
-    ./src/app/vision-mission/page.tsx [Client Component SSR]
-    ./src/app/vision-mission/page.tsx [Server Component] 
-[browser] ./src/app/vision-mission/page.tsx:149:17
-Error: Expected '</', got 'jsx text'
-  147 |             </div>            </div>
-  148 |           </div>
-> 149 |           </div>
-      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> 150 |         </div>
-      | ^^^^^^^^
-  151 |       </section>
-  152 |
-  153 |       {/* Focus Areas — With animated progress bars */}
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
 
 Parsing ecmascript source code failed
 
 Import traces:
   Client Component Browser:
-    ./src/app/vision-mission/page.tsx [Client Component Browser]
-    ./src/app/vision-mission/page.tsx [Server Component]
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
 
   Client Component SSR:
-    ./src/app/vision-mission/page.tsx [Client Component SSR]
-    ./src/app/vision-mission/page.tsx [Server Component] 
-[browser] ./src/app/vision-mission/page.tsx:149:17
-Error: Expected '</', got 'jsx text'
-  147 |             </div>            </div>
-  148 |           </div>
-> 149 |           </div>
-      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> 150 |         </div>
-      | ^^^^^^^^
-  151 |       </section>
-  152 |
-  153 |       {/* Focus Areas — With animated progress bars */}
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
 
 Parsing ecmascript source code failed
 
 Import traces:
   Client Component Browser:
-    ./src/app/vision-mission/page.tsx [Client Component Browser]
-    ./src/app/vision-mission/page.tsx [Server Component]
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
 
   Client Component SSR:
-    ./src/app/vision-mission/page.tsx [Client Component SSR]
-    ./src/app/vision-mission/page.tsx [Server Component] 
-[browser] ./src/app/vision-mission/page.tsx:149:17
-Error: Expected '</', got 'jsx text'
-  147 |             </div>            </div>
-  148 |           </div>
-> 149 |           </div>
-      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> 150 |         </div>
-      | ^^^^^^^^
-  151 |       </section>
-  152 |
-  153 |       {/* Focus Areas — With animated progress bars */}
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
 
 Parsing ecmascript source code failed
 
 Import traces:
   Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
     ./src/app/vision-mission/page.tsx [Client Component Browser]
     ./src/app/vision-mission/page.tsx [Server Component]
 
   Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
     ./src/app/vision-mission/page.tsx [Client Component SSR]
     ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Client Component Browser]
+    ./src/app/social-work/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Client Component SSR]
+    ./src/app/social-work/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Client Component Browser]
+    ./src/app/media/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Client Component SSR]
+    ./src/app/media/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Client Component Browser]
+    ./src/app/vision-mission/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Client Component SSR]
+    ./src/app/vision-mission/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Client Component Browser]
+    ./src/app/political-journey/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Client Component SSR]
+    ./src/app/political-journey/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:127
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ways centered. */
+> 15 | ..."bottom-left" | "bottom" | "bottom-right" |;
+     |                                               ^
+  16 | ...ered).
+  17 | ...k.
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] ./src/components/PageHero.tsx:15:128
+Error: Unexpected token `;`. Expected an identifier, void, yield, null, await, break, a string literal, a numeric literal, true, false, `, -, import, this, typeof, {, [, (
+  13 | ...
+  14 | ...ays centered. */
+> 15 | ...bottom-left" | "bottom" | "bottom-right" | ;
+     |                                               ^
+  16 | ...red).
+  17 | ....
+  18 | ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/components/PageHero.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/PageHero.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component] 
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

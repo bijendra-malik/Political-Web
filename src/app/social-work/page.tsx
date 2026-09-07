@@ -72,12 +72,18 @@ export default function SocialWorkPage() {
 
   return (
     <main className="flex-1">
+      {/* Panel position — set it yourself, per page (desktop only; mobile always centered):
+          panelJustify="start|center|end"  → justify-content (vertical: end = bottom, start = top)
+          panelAlign="start|center|end"    → align-items (horizontal: start = left, end = right)
+          panelOffset={{ top: "60px", left: "48px" }} → exact px/% placement (overrides both) */}
       <PageHero
         title="Social Work &"
         titleHighlight="Community Initiatives"
         subtitle="Giving Back to Society"
         description="Working together to build a stronger, inclusive and empowered society."
         bgImage="/images/social-work-banner.jpg"
+        panelJustify="end"
+        panelAlign="start"
       />
 
       {/* Principles */}

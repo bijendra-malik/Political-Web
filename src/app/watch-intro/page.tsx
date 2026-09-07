@@ -58,12 +58,13 @@ export default function WatchIntroPage() {
       <section className="relative min-h-[600px] lg:min-h-[650px] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/formal-dinner.jpg" alt="" className="w-full h-full object-cover " />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#071525] via-[#071525]/70 to-[#071525]/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#071525]/80 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 to-transparent" />
         </div>
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-32">
           <div className="flex flex-col lg:flex-row items-end gap-8">
             <div className="flex-1">
+              {/* Dark highlight panel behind the text only */}
+              <div className="w-fit max-w-full bg-black/50 backdrop-blur-sm rounded-2xl border border-white/10 p-5 sm:p-6 lg:p-7">
               <div className="inline-flex items-center gap-2 mb-4">
                 <div className="w-8 h-[2px] bg-[#f2f231]" />
                 <span className="text-[#f2f231] font-semibold text-sm uppercase tracking-[0.2em]">Watch Intro</span>
@@ -85,6 +86,7 @@ export default function WatchIntroPage() {
                 <Link href="/about" className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white font-medium px-6 py-3 rounded-lg transition-all text-sm hover:bg-white/5">
                   Full Profile <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
+              </div>
               </div>
             </div>
             {/* Portrait */}

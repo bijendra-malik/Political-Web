@@ -36,6 +36,7 @@ export default function ContactPage() {
         subtitle="Contact Us"
         description="Your suggestions, support and participation are always welcome."
         bgImage="/images/Imgs-AI/contact-banner.png"
+        panelPosition="top-right"
         bgPosition="center"
       />
 

@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Globe, Users, ShieldCheck, Building2, Heart } from
 const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About Me", href: "/about" },
-  { name: "Vision & Mission", href: "/vision-mission" },
+  { name: "Corruption Free India", href: "/vision-mission" },
   { name: "Initiatives", href: "/social-work" },
   { name: "Media", href: "/media" },
   { name: "Gallery", href: "/media" },

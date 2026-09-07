@@ -40,12 +40,13 @@ export default function VisionMissionPage() {
   return (
     <main className="flex-1">
       <PageHero
-        title="Vision &"
-        titleHighlight="Mission"
-        subtitle="Building a Progressive India"
+        title="Corruption Free"
+        titleHighlight="India"
+        subtitle="Our Vision & Mission — Building a Progressive India"
         description="A vision for inclusive growth and a mission to empower every citizen."
         bgImage="/images/rally-march-yellow-flags.jpg"
         bgPosition="top"
+        panelPosition="top-left"
       />
 
       {/* Vision & Mission */}

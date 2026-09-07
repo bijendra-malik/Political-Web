@@ -34,19 +34,26 @@ const localVideos: { src?: string; youtube?: string; thumbnail?: string; title: 
   { src: "/media/videos/inauguration-ribbon-cutting.mp4", thumbnail: "/images/memento-gift-ceremony.jpg", title: "Inauguration Ceremony", desc: "Ribbon-cutting ceremony at a new outlet.", date: "04 Sep 2026", category: "Videos" },
   { src: "/media/videos/public-meeting-address.mp4", thumbnail: "/images/supporters-celebration.jpg", title: "Public Meeting Address", desc: "Addressing the crowd at a public meeting.", date: "04 Sep 2026", category: "Videos" },
   { src: "/media/videos/intro-video.mp4", thumbnail: "/images/profile-bijendra-malik.jpg", title: "Personal Introduction — Bijendra Malik", desc: "Meet Bijendra Malik and his vision for the people.", date: "26 Aug 2026", category: "Videos" },
-  { src: "/media/videos/kejriwal-meeting-video.mp4", title: "Meeting with Arvind Kejriwal", desc: "Governance reforms and community welfare discussions.", date: "31 Aug 2026", category: "Videos" },
+  { src: "/media/videos/kejriwal-meeting-video.mp4", thumbnail: "/images/video-thumbs/kejriwal-meeting.jpg", title: "Meeting with Arvind Kejriwal", desc: "Governance reforms and community welfare discussions.", date: "31 Aug 2026", category: "Videos" },
+  { src: "/media/videos/supporters-celebration-aug-2025.mp4", thumbnail: "/images/video-thumbs/supporters-celebration.jpg", title: "Supporters Celebration Programme", desc: "Celebration and greetings with supporters at the party programme.", date: "31 Aug 2025", category: "Videos" },
   // Older coverage clips — 2026
-  { src: "/media/videos/video-1.mp4", title: "Public Meeting — Mass Gathering", desc: "Large community gathering outdoors at a public programme.", date: "2026", category: "Videos" },
-  { src: "/media/videos/video-2.mp4", title: "Crowd Rally — Raised Fists", desc: "Supporters raising slogans at a public rally.", date: "2026", category: "Videos" },
-  { src: "/media/videos/video-3.mp4", title: "Support Rally for Sanjay Singh", desc: "AAP supporters with 'We Are With You' placards at the Sanjay Singh protest.", date: "2026", category: "Videos" },
-  { src: "/media/videos/video-4.mp4", title: "Public Meeting — Stage Programme", desc: "Dignitaries seated on stage at a public function.", date: "2026", category: "Videos" },
-  { src: "/media/videos/video-5.mp4", title: "Procession with Dr. Ambedkar Portrait", desc: "March carrying Dr. Ambedkar's portrait with party flags.", date: "2026", category: "Videos" },
-  { src: "/media/videos/video-6.mp4", title: "Rally March — Flags", desc: "Supporters marching with party flags.", date: "2026", category: "Videos" },
-  { src: "/media/videos/video-7.mp4", title: "Independence Day Greetings", desc: "Happy Independence Day — warm wishes from Team Indexia Finance.", date: "2026", category: "Videos" },
-  { src: "/media/videos/video-9.mp4", title: "Public Event — Full Coverage", desc: "Extended coverage of the public gathering.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-1.mp4", thumbnail: "/images/video-thumbs/video-1.jpg", title: "Public Meeting — Mass Gathering", desc: "Large community gathering outdoors at a public programme.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-2.mp4", thumbnail: "/images/video-thumbs/video-2.jpg", title: "Crowd Rally — Raised Fists", desc: "Supporters raising slogans at a public rally.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-3.mp4", thumbnail: "/images/video-thumbs/video-3.jpg", title: "Support Rally for Sanjay Singh", desc: "AAP supporters with 'We Are With You' placards at the Sanjay Singh protest.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-4.mp4", thumbnail: "/images/video-thumbs/video-4.jpg", title: "Public Meeting — Stage Programme", desc: "Dignitaries seated on stage at a public function.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-5.mp4", thumbnail: "/images/video-thumbs/video-5.jpg", title: "Procession with Dr. Ambedkar Portrait", desc: "March carrying Dr. Ambedkar's portrait with party flags.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-6.mp4", thumbnail: "/images/video-thumbs/video-6.jpg", title: "Rally March — Flags", desc: "Supporters marching with party flags.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-7.mp4", thumbnail: "/images/video-thumbs/video-7.jpg", title: "Independence Day Greetings", desc: "Happy Independence Day — warm wishes from Team Indexia Finance.", date: "2026", category: "Videos" },
+  { src: "/media/videos/video-9.mp4", thumbnail: "/images/video-thumbs/video-9.jpg", title: "Public Event — Full Coverage", desc: "Extended coverage of the public gathering.", date: "2026", category: "Videos" },
 ];
 
 const photos = [
+  // Jan 2025 additions
+  { image: "/images/kejriwal-garden-address.jpg", title: "Arvind Kejriwal Garden Address", category: "Photos", date: "13 Jan 2025" },
+  { image: "/images/kejriwal-garden-greeting.jpg", title: "Welcoming Arvind Kejriwal", category: "Photos", date: "13 Jan 2025" },
+  { image: "/images/lobby-meeting-jan-2025.jpg", title: "Lobby Meeting — Formal Reception", category: "Photos", date: "2025" },
+  { image: "/images/sanjay-singh-release-protest.jpg", title: "Protest — Release of Sanjay Singh", category: "Photos", date: "2024" },
+  { image: "/images/aap-supporters-celebrate.jpg", title: "AAP Supporters — Victory Celebrations", category: "Photos", date: "2022" },
   // Event & rally coverage — 04 Sep 2026
   { image: "/images/ncr-samachar-interview.jpg", title: "Media Interview — NCR Samachar", category: "Photos", date: "04 Sep 2026" },
   { image: "/images/outdoor-stage-meeting.jpg", title: "Public Meeting — Outdoor", category: "Photos", date: "04 Sep 2026" },
@@ -149,6 +156,7 @@ export default function MediaPage() {
         subtitle="Latest News & Updates"
         bgImage="/images/media-press-banner.png"
         bgPosition="right"
+        panelPosition="left"
       />
 
       {/* Filter Tabs */}
@@ -310,10 +318,11 @@ export default function MediaPage() {
                       <>
                         <video
                           src={v.src}
+                          poster={v.thumbnail}
                           controls
                           playsInline
                           preload="metadata"
-                          className="w-full aspect-video object-contain"
+                          className="w-full aspect-video object-cover"
                         />
                         <div className="absolute top-2 right-2 bg-[#f28c28] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase pointer-events-none">Video</div>
                       </>

@@ -36,6 +36,7 @@ export default function AboutPage() {
         titleHighlight="Always"
         description="A leader. An entrepreneur. A committed citizen working for a stronger, inclusive India."
         bgImage="/images/infrastructure-visit.jpg"
+        panelPosition="bottom-left"
         bgPosition="top"
         strongOverlay
       />

@@ -127,6 +127,7 @@ export default function PoliticalJourneyPage() {
         subtitle="My Political Journey"
         description="From a commitment to society to taking responsibility in public life — every step guided by the vision for a stronger, inclusive India."
         bgImage="/images/journey-hero.png"
+        panelPosition="center"
         bgPosition="top"
         mobileBgPosition="left-top"
       />

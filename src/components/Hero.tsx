@@ -10,10 +10,10 @@ const highlights = [
 ];
 
 const socials = [
-  { name: "Facebook", href: "https://www.facebook.com/indexia.finance.3", path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" },
-  { name: "X", href: "https://x.com/FinanceIndexia", path: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" },
-  { name: "YouTube", href: "https://www.youtube.com/@FinanceIndexia", path: "M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z" },
-  { name: "LinkedIn", href: "https://in.linkedin.com/company/indexiafinance", path: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z" },
+  { name: "Facebook", href: "https://www.facebook.com/indexia.finance.3", path: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" },
+  { name: "X", href: "https://x.com/FinanceIndexia", path: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" },
+  { name: "YouTube", href: "https://www.youtube.com/@FinanceIndexia", path: "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" },
+  { name: "LinkedIn", href: "https://in.linkedin.com/company/indexiafinance", path: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" },
 ];
 
 export default function Hero() {
@@ -86,7 +86,7 @@ export default function Hero() {
 
             {/* DESKTOP + TABLET — portrait on right + highlight cards below portrait */}
             <div className="hidden md:flex items-center justify-between gap-4 lg:gap-8">
-              <div ref={textRef} className="w-fit max-w-full space-y-4 bg-black/50 backdrop-blur-sm rounded-2xl p-4 lg:p-6" style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
+              <div ref={textRef} className="w-fit max-w-full space-y-4 bg-black/50 backdrop-blur-xm border border-white/90 rounded-2xl p-4 lg:p-6" style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
                 <div className="inline-flex items-center gap-2">
                   <div className="w-8 h-[2px] bg-[#f2f231] animate-pulse" />
                   <span className="text-[#f2f231] font-semibold text-xs uppercase tracking-[0.2em] drop-shadow-lg">Dedicated to Public Service</span>
@@ -139,8 +139,8 @@ export default function Hero() {
               {/* Animated rotating border */}
               <div className="absolute inset-0 rounded-full" style={{ background: "conic-gradient(from 0deg, #f2f231, #26ae90, #066a9c, #f2f231)", animation: "spin 3s linear infinite" }} />
               <div className="absolute inset-[2px] rounded-full bg-[#066a9c]/80 backdrop-blur-sm" />
-              {/* Icon */}
-              <svg className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 text-white/60 group-hover:text-[#f2f231] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={s.path} /></svg>
+              {/* Icon — solid brand logo (no stroke border) */}
+              <svg className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 text-white/60 group-hover:text-[#f2f231] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d={s.path} /></svg>
             </a>
           ))}
         </div>

@@ -9,7 +9,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Political Journey", href: "/political-journey" },
-  { name: "Vision & Mission", href: "/vision-mission" },
+  { name: "Corruption Free India", href: "/vision-mission" },
   { name: "Social Work", href: "/social-work" },
   { name: "Media", href: "/media" },
   { name: "Contact", href: "/contact" },
