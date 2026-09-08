@@ -27,6 +27,9 @@ interface PageHeroProps {
   mobileJustify?: "start" | "center" | "end";
   /** Dims the background image on mobile only (desktop/tablet untouched). */
   mobileDimImage?: boolean;
+  /** Caps the panel width, e.g. panelWidth="400px" — useful when the banner has faces/subjects
+   *  on both sides and the panel must fit the clear strip between them. */
+  panelWidth?: string;
 }
 
 // Mobile-only object-position overrides, applied through a CSS var so the
@@ -43,7 +46,7 @@ const MOBILE_BG_POSITION_CLASS: Record<string, string> = {
   center: "max-md:[--pagehero-bg-pos:center]",
 };
 
-export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "center", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign, mobileJustify = "center", mobileDimImage = false }: PageHeroProps) {
+export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "center", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign, mobileJustify = "center", mobileDimImage = false, panelWidth }: PageHeroProps) {
   const bg = backgroundImage || bgImage || "/images/public-rally.jpg";
   // Desktop placement of the text panel — fully per-page custom (9 combos).
   // Direct panelJustify/panelAlign values win; otherwise derive from panelPosition:
@@ -53,7 +56,7 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
   const hAlignClass = panelAlign ? ALIGN_CLASS[panelAlign] : panelPosition.endsWith("right") ? "md:items-end" : panelPosition === "top" || panelPosition === "bottom" || panelPosition === "center" ? "md:items-center" : "md:items-start";
 
   return (
-    <section className="relative min-h-[490px] lg:min-h-[650px] flex items-center overflow-hidden">
+    <section className="relative min-h-[490px] lg:min-h-[700px] flex items-center overflow-hidden">
       {/* Background — image stays clear; readability comes from the text panel below */}
       <div className="absolute inset-0 mt-4">
         <img
@@ -74,7 +77,7 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
         {/* Dark highlight panel behind the text only */}
         <div
           className={`w-fit max-w-full text-center md:text-left backdrop-blur-xs rounded-2xl border border-white/50 p-4 sm:p-3 lg:p-6 ${strongOverlay ? "bg-black/65" : "bg-black/50"} ${panelOffset ? "md:absolute" : ""}`}
-          style={panelOffset ? { top: panelOffset.top, right: panelOffset.right, bottom: panelOffset.bottom, left: panelOffset.left } : undefined}
+          style={{ maxWidth: panelWidth, ...(panelOffset ? { top: panelOffset.top, right: panelOffset.right, bottom: panelOffset.bottom, left: panelOffset.left } : {}) }}
         >
         {label && (
           <div className="inline-flex items-center gap-2 mb-4">

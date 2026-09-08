@@ -123,14 +123,14 @@ export default function SparkleNavbar({
           href={item.href}
           ref={(el) => { tabRefs.current[i] = el; }}
           onClick={(e) => handleClick(i, e)}
-          className={`relative px-3 py-2 rounded-lg text-[12px] font-medium transition-colors duration-300 uppercase tracking-wider ${
+          className={`relative px-3 py-2 rounded-lg text-[12px] font-medium transition-all duration-300 uppercase tracking-wider ${
             activeIndex === i
               ? "text-white"
               : "text-white/50 hover:text-white/80"
           }`}
           style={
             activeIndex === i
-              ? { textShadow: `0 0 12px ${color}80`, color }
+              ? { textShadow: `0 0 12px ${color}80`, color, backgroundColor: `${color}26`, boxShadow: `inset 0 0 0 1px ${color}55` }
               : {}
           }
         >

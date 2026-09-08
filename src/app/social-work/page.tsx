@@ -50,7 +50,7 @@ export default function SocialWorkPage() {
         description="Working together to build a stronger, inclusive and empowered society."
         bgImage="/images/social-work-banner.jpg"
         panelJustify="end"
-        panelAlign="start"
+        panelAlign="center"
         mobileJustify="end"
       />
 

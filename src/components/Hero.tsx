@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Play } from "lucide-react";
-import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube } from "react-icons/fa6";
+import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
 
 const highlights = [
   { icon: "🏛️", label: "Political Leader", sub: "MLA Candidate — Shamli Constituency 2022" },
@@ -15,6 +15,7 @@ const socials = [
   { name: "Facebook", href: "https://www.facebook.com/TeamBijendraMalik/", color: "#1877F2", tip: "#1877F2", Icon: FaFacebookF },
   { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#FFFFFF", tip: "#000000", Icon: FaXTwitter },
   { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", tip: "#FF0000", Icon: FaYoutube },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/bijendra-malik-123456789/", color: "#0077B5", tip: "#0077B5", Icon: FaLinkedinIn },
 ];
 
 export default function Hero() {
@@ -50,7 +51,7 @@ export default function Hero() {
               <div className="bg-black/20 backdrop-blur-xs rounded-xl px-3 py-3 space-y-2">
               <div className="inline-flex items-center gap-1">
                 <div className="w-4 h-[2px] bg-[#f2f231] animate-pulse" />
-                <span className="text-[#f2f231] font-semibold text-[9px] uppercase tracking-[0.15em] drop-shadow-lg">Dedicated to Public Service</span>
+                <span className="text-[#f2f231] font-semibold text-xs tracking-[0.15em] drop-shadow-lg">Dedicated to Public Service</span>
                 <div className="w-4 h-[2px] bg-[#f2f231] animate-pulse" />
               </div>
               <h1 className="font-[var(--font-poppins)] font-bold text-white text-[22px] leading-[1.05] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">BIJENDRA MALIK</h1>
@@ -90,7 +91,7 @@ export default function Hero() {
               <div ref={textRef} className="w-fit max-w-full space-y-4 bg-black/50 backdrop-blur-xm border border-white/90 rounded-2xl p-4 lg:p-6" style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
                 <div className="inline-flex items-center gap-2">
                   <div className="w-8 h-[2px] bg-[#f2f231] animate-pulse" />
-                  <span className="text-[#f2f231] font-semibold text-xs uppercase tracking-[0.2em] drop-shadow-lg">Dedicated to Public Service</span>
+                  <span className="text-[#f2f231] font-semibold text-xs tracking-[0.2em] drop-shadow-lg">Dedicated to Public Service</span>
                 </div>
                 <h1 className="font-[var(--font-poppins)] font-bold text-white text-4xl lg:text-4xl xl:text-4xl leading-[1.05] whitespace-nowrap drop-shadow-[0_4px_20px_rgba(0,0,0,0.4)]">BIJENDRA MALIK</h1>
                 <p className="text-lg lg:text-xl text-white/90 font-[var(--font-poppins)] font-medium leading-snug">Political Leader. Entrepreneur. Social Contributor.</p>
@@ -116,8 +117,8 @@ export default function Hero() {
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#26ae90]/20 rounded-full flex items-center justify-center text-sm flex-shrink-0 group-hover:bg-[#26ae90]/30 transition-colors">{h.icon}</div>
                         <div className="min-w-0">
-                          <div className="font-[var(--font-poppins)] font-bold text-white text-[14px] sm:text-xs leading-tight">{h.label}</div>
-                          <div className="text-white/50 text-[9px] sm:text-[12px] mt-0.5 leading-snug font-medium line-clamp-1">{h.sub}</div>
+                          <div className="font-[var(--font-poppins)] font-bold text-white text-sm leading-tight">{h.label}</div>
+                          <div className="text-white/60 text-xs mt-0.5 leading-snug font-medium line-clamp-1">{h.sub}</div>
                         </div>
                       </div>
                     </div>
@@ -129,7 +130,7 @@ export default function Hero() {
         </div>
 
         {/* Social Icons — right side column (all screens, responsive) */}
-        <div className="flex absolute right-2 sm:right-4 lg:right-6 top-1/2 -translate-y-1/2 flex-col gap-1 sm:gap-2 lg:gap-3 z-20">
+        <div className="flex absolute right-2 sm:right-4 lg:right-6 top-1/2 -translate-y-1/2 flex-col gap-1 sm:gap-2 lg:gap-3 z-20 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/15 shadow-lg p-1.5 sm:p-2">
           {socials.map((s) => (
             <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="group relative w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 flex items-center justify-center" aria-label={s.name}>
               {/* Tooltip — brand-colored */}

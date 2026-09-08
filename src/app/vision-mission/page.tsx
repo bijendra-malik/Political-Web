@@ -111,7 +111,7 @@ export default function VisionMissionPage() {
             {/* Our Mission — light card */}
             <div ref={missionRef} className="h-full">
               <div className="relative rounded-3xl overflow-hidden h-full min-h-[400px] sm:min-h-[460px] bg-white border border-blue-100 shadow-xl">
-                <img src="/images/focus-education.png" alt="" className="absolute inset-y-0 right-0 w-1/2 sm:w-3/5 h-full object-cover" />
+                <img src="/images/education-drive.jpg" alt="" className="absolute inset-y-0 right-0 w-1/2 sm:w-3/5 h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/10" />
                 <div className="relative z-10 p-6 sm:p-7 lg:p-9 flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-5 sm:mb-6">

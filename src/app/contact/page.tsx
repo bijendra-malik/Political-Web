@@ -18,7 +18,7 @@ export default function ContactPage() {
 
   const contactInfo = [
     { Icon: Phone, label: "Phone", value: "+91 86918 86919", color: "#26ae90" },
-    { Icon: Mail, label: "Email", value: "contactus@bijendramalik.com", color: "#f28c28" },
+    { Icon: Mail, label: "Email", value: "contactus.bijendramalik@gmail.com", color: "#f28c28" },
     { Icon: MapPin, label: "Location", value: "Shamli, Uttar Pradesh, India", color: "#ffffff" },
   ];
 
@@ -169,7 +169,7 @@ export default function ContactPage() {
                     {socials.map((s) => (
                       <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer"
                         className="indexia-footer-social flex h-10 w-10 items-center justify-center rounded-full border shadow-[0_4px_14px_rgba(2,16,26,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white"
-                        aria-label={`Indexia Finance on ${s.name}`} style={{ backgroundColor: s.color, borderColor: `${s.color}80`, color: s.name === "X" ? "#f8fafc" : "#fff" }}>
+                        aria-label={`Bijendra Malik on ${s.name}`} style={{ backgroundColor: s.color, borderColor: `${s.color}80`, color: s.name === "X" ? "#f8fafc" : "#fff" }}>
                         <s.Icon className="h-5 w-5 transition-colors" />
                       </a>
                     ))}

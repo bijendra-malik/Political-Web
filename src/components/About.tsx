@@ -115,7 +115,7 @@ function ValueCard({
             <Icon className="w-4 h-4" style={{ color }} />
           </div>
           <div>
-            <h4 className="font-semibold text-gray-800 text-sm mb-0.5">{title}</h4>
+            <h3 className="font-semibold text-gray-800 text-sm mb-0.5">{title}</h3>
             <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
           </div>
         </div>
@@ -151,29 +151,25 @@ export default function About() {
               Committed to Serve.<br />
               Working for <span className="text-[#26ae90]">Change.</span>
             </h2>
-            <p className="text-gray-700 leading-relaxed text-md max-w-xl font-medium">
+            <p className="text-gray-700 leading-relaxed text-base max-w-xl font-medium">
               Dedicated to public service, inclusive development and creating opportunities for all. Building a stronger future through transparency, integrity, and people-centric governance.
             </p>
           </div>
 
-          {/* Values + Button Row */}
-          <div className="grid lg:grid-cols-3 gap-8 items-center">
-            <div className="lg:col-span-2 grid md:grid-cols-2 gap-4">
-              <ValueCard title="People First Approach" desc="Putting people's needs at the center of every decision." icon={Users} color="#26ae90" />
-              <ValueCard title="Transparent Leadership" desc="Upholding honesty, integrity and accountability always." icon={ShieldCheck} color="#26ae90" />
-              <ValueCard title="Inclusive Development" desc="Working for equal opportunities and balanced growth for all." icon={Building2} color="#26ae90" />
-              <ValueCard title="Empowering Communities" desc="Strengthening communities through education, health and self-reliance." icon={Heart} color="#26ae90" />
-            </div>
+          {/* Values grid — full width */}
+          <div className="grid md:grid-cols-2 gap-4">
+            <ValueCard title="People First Approach" desc="Putting people's needs at the center of every decision." icon={Users} color="#26ae90" />
+            <ValueCard title="Transparent Leadership" desc="Upholding honesty, integrity and accountability always." icon={ShieldCheck} color="#26ae90" />
+            <ValueCard title="Inclusive Development" desc="Working for equal opportunities and balanced growth for all." icon={Building2} color="#26ae90" />
+            <ValueCard title="Empowering Communities" desc="Strengthening communities through education, health and self-reliance." icon={Heart} color="#26ae90" />
+          </div>
 
-            <div className="flex flex-col items-center lg:items-end gap-3">
-              <Link href="/about" className="group inline-flex items-center justify-center gap-3 bg-[#0f5c4a] hover:bg-[#0f5c4a]/90 text-white font-bold px-8 py-5 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-[#26ae90]/25 text-sm uppercase tracking-wider">
-                Know More About Us
-                <div className="w-9 h-9 bg-white/25 rounded-full flex items-center justify-center group-hover:bg-white/40 transition-all duration-300">
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
-              </Link>
-              {/* <span className="text-[#066a9c] font-semibold text-sm hover:text-[#26ae90] transition-colors">View Complete Profile →</span> */}
-            </div>
+          {/* CTA — standard size, centered below the cards */}
+          <div className="flex justify-center mt-6">
+            <Link href="/about" className="group inline-flex items-center justify-center gap-2 bg-[#0f5c4a] hover:bg-[#0f5c4a]/90 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#26ae90]/25 text-xs tracking-wider">
+              Know More About Us
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </div>
         </div>
       </div>
@@ -220,7 +216,7 @@ export default function About() {
                     <h3 className="font-[var(--font-poppins)] text-4xl lg:text-5xl font-bold text-[#066a9c] leading-tight">{profile.name}</h3>
                   </div>
                   <p className="text-base font-semibold" style={{ color: profile.accentColor }}>{profile.title}</p>
-                  <div className="space-y-4 text-gray-600 leading-relaxed text-[15px]">
+                  <div className="space-y-4 text-gray-600 leading-relaxed text-base">
                     <p><LinkedText text={profile.description} name={profile.name} url={profile.url} /></p>
                     <p>{profile.description2}</p>
                   </div>

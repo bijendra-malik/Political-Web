@@ -58,7 +58,7 @@ export default function Footer() {
                 { name: "LinkedIn", href: "https://www.linkedin.com/in/bijendra-malik-123456789/", color: "#0077B5", Icon: FaLinkedinIn },
               ].map((s) => (
                 <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer"
-                  className="indexia-footer-social flex h-10 w-10 shrink-0 items-center justify-center rounded-full border shadow-[0_4px_14px_rgba(2,16,26,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white" aria-label={`Indexia Finance on ${s.name}`} style={{ backgroundColor: s.color, borderColor: `${s.color}80`, color: s.name === "X" ? "#f8fafc" : "#fff" }}>
+                  className="indexia-footer-social flex h-10 w-10 shrink-0 items-center justify-center rounded-full border shadow-[0_4px_14px_rgba(2,16,26,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white" aria-label={`Bijendra Malik on ${s.name}`} style={{ backgroundColor: s.color, borderColor: `${s.color}80`, color: s.name === "X" ? "#f8fafc" : "#fff" }}>
                   <s.Icon className="h-5 w-5 transition-colors" />
                 </a>
               ))}
@@ -110,7 +110,7 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
-                <span className="text-white/70 text-sm">contactus@bijendramalik.com</span>
+                <span className="text-white/70 text-sm">contactus.bijendramalik@gmail.com</span>
               </div>
               {/* <div className="flex items-start gap-3">
                 <Globe className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
