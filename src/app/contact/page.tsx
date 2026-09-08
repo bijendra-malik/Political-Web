@@ -3,6 +3,7 @@
 import { useState } from "react";
 import PageHero from "@/components/PageHero";
 import { Phone, Mail, MapPin, Send, Plus, User, MessageSquare, FileText } from "lucide-react";
+import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube } from "react-icons/fa6";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", subject: "", otherSubject: "", message: "" });
@@ -16,16 +17,16 @@ export default function ContactPage() {
   };
 
   const contactInfo = [
-    { Icon: Phone, label: "Phone", value: "+91 98765 43210", color: "#26ae90" },
-    { Icon: Mail, label: "Email", value: "contactus.bijendramalik@gmail.com", color: "#f28c28" },
-    { Icon: MapPin, label: "Location", value: "Shamli, Uttar Pradesh, India", color: "#066a9c" },
+    { Icon: Phone, label: "Phone", value: "+91 86918 86919", color: "#26ae90" },
+    { Icon: Mail, label: "Email", value: "contactus@bijendramalik.com", color: "#f28c28" },
+    { Icon: MapPin, label: "Location", value: "Shamli, Uttar Pradesh, India", color: "#ffffff" },
   ];
 
   const socials = [
-    { name: "Facebook", href: "https://www.facebook.com/indexia.finance.3", path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" },
-    { name: "X", href: "https://x.com/FinanceIndexia", path: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" },
-    { name: "YouTube", href: "https://www.youtube.com/@FinanceIndexia", path: "M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z" },
-    { name: "LinkedIn", href: "https://in.linkedin.com/company/indexiafinance", path: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z" },
+    { name: "Instagram", href: "https://www.instagram.com/mrbijendramalik/", color: "#E4405F", Icon: FaInstagram },
+    { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#111827", Icon: FaXTwitter },
+    { name: "Facebook", href: "https://www.facebook.com/TeamBijendraMalik/", color: "#1877F2", Icon: FaFacebookF },
+    { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", Icon: FaYoutube },
   ];
 
   return (
@@ -35,7 +36,7 @@ export default function ContactPage() {
         titleHighlight="Connect"
         subtitle="Contact Us"
         description="Your suggestions, support and participation are always welcome."
-        bgImage="/images/Imgs-AI/contact-banner.png"
+        bgImage="/images/banner-contact.png"
         panelPosition="top-right"
         bgPosition="center"
       />
@@ -150,7 +151,7 @@ export default function ContactPage() {
                     return (
                       <div key={i} className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg" style={{ backgroundColor: `${c.color}30` }}>
-                          <Icon className="w-5 h-5" style={{ color: c.color }} />
+                          <Icon className="w-5 h-5" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ color: c.color }} />
                         </div>
                         <div>
                           <div className="text-white/60 text-sm font-medium mb-0.5">{c.label}</div>
@@ -163,14 +164,12 @@ export default function ContactPage() {
 
                 <div className="mt-10 pt-8 border-t border-white/10">
                   <div className="text-white/60 text-sm font-medium mb-4">Follow Me</div>
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap items-center gap-4 sm:gap-5">
                     {socials.map((s) => (
                       <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer"
-                        className="w-11 h-11 border-2 border-white/20 rounded-full flex items-center justify-center hover:bg-[#f2f231] hover:border-[#f2f231] transition-all duration-300 group"
-                        aria-label={s.name}>
-                        <svg className="w-4 h-4 text-white/70 group-hover:text-[#066a9c] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={s.path} />
-                        </svg>
+                        className="indexia-footer-social flex h-10 w-10 items-center justify-center rounded-full border shadow-[0_4px_14px_rgba(2,16,26,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white"
+                        aria-label={`Indexia Finance on ${s.name}`} style={{ backgroundColor: s.color, borderColor: `${s.color}80`, color: s.name === "X" ? "#f8fafc" : "#fff" }}>
+                        <s.Icon className="h-5 w-5 transition-colors" />
                       </a>
                     ))}
                   </div>

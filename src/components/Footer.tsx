@@ -49,16 +49,16 @@ export default function Footer() {
               Committed to public service, inclusive development and building a stronger, better and self-reliant India.
             </p>
             <div className="w-12 h-[3px] bg-[#f28c28] mb-5" />
-            <div className="flex gap-3">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-5">
               {[
-                { name: "Facebook", href: "https://www.facebook.com/indexia.finance.3", color: "#1877F2", Icon: FaFacebookF },
-                { name: "X", href: "https://x.com/FinanceIndexia", color: "#FFFFFF", Icon: FaXTwitter },
-                { name: "Instagram", href: "#", color: "#E4405F", Icon: FaInstagram },
-                { name: "YouTube", href: "https://www.youtube.com/@FinanceIndexia", color: "#FF0000", Icon: FaYoutube },
+                { name: "Instagram", href: "https://www.instagram.com/mrbijendramalik/", color: "#E4405F", Icon: FaInstagram },
+                { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#111827", Icon: FaXTwitter },
+                { name: "Facebook", href: "https://www.facebook.com/TeamBijendraMalik/", color: "#1877F2", Icon: FaFacebookF },
+                { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", Icon: FaYoutube },
               ].map((s) => (
                 <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer"
-                  className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-[#26ae90] hover:border-[#26ae90] transition-all group" aria-label={s.name}>
-                  <s.Icon className="w-4 h-4" style={{ color: s.color }} />
+                  className="indexia-footer-social flex h-10 w-10 items-center justify-center rounded-full border shadow-[0_4px_14px_rgba(2,16,26,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white" aria-label={`Indexia Finance on ${s.name}`} style={{ backgroundColor: s.color, borderColor: `${s.color}80`, color: s.name === "X" ? "#f8fafc" : "#fff" }}>
+                  <s.Icon className="h-5 w-5 transition-colors" />
                 </a>
               ))}
             </div>
@@ -105,16 +105,16 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
-                <span className="text-white/70 text-sm">+91 98765 43210</span>
+                <span className="text-white/70 text-sm">+91 86918 86919</span>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
-                <span className="text-white/70 text-sm">contactus.bijendramalik@gmail.com</span>
+                <span className="text-white/70 text-sm">contactus@bijendramalik.com</span>
               </div>
-              <div className="flex items-start gap-3">
+              {/* <div className="flex items-start gap-3">
                 <Globe className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
                 <span className="text-white/70 text-sm">www.bijendramalik.in</span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@ export default function Footer() {
           <div className="flex items-center justify-center gap-3 text-center">
             <span className="text-[#f28c28] text-4xl font-serif leading-none">&ldquo;</span>
             <p className="text-white/80 text-sm italic font-medium">
-              Together, let&apos;s build a progressive and prosperous India for all.
+              Together, let&apos;s build a corruption free india.
             </p>
             <span className="text-[#f28c28] text-4xl font-serif leading-none">&rdquo;</span>
           </div>

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Play } from "lucide-react";
-import { FaFacebookF, FaXTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
+import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube } from "react-icons/fa6";
 
 const highlights = [
   { icon: "🏛️", label: "Political Leader", sub: "MLA Candidate — Shamli Constituency 2022" },
@@ -11,10 +11,10 @@ const highlights = [
 ];
 
 const socials = [
-  { name: "Facebook", href: "https://www.facebook.com/indexia.finance.3", color: "#1877F2", tip: "#1877F2", Icon: FaFacebookF },
-  { name: "X", href: "https://x.com/FinanceIndexia", color: "#FFFFFF", tip: "#000000", Icon: FaXTwitter },
-  { name: "YouTube", href: "https://www.youtube.com/@FinanceIndexia", color: "#FF0000", tip: "#FF0000", Icon: FaYoutube },
-  { name: "LinkedIn", href: "https://in.linkedin.com/company/indexiafinance", color: "#0A66C2", tip: "#0A66C2", Icon: FaLinkedinIn },
+  { name: "Instagram", href: "https://www.instagram.com/mrbijendramalik/", color: "#E4405F", tip: "#E4405F", Icon: FaInstagram },
+  { name: "Facebook", href: "https://www.facebook.com/TeamBijendraMalik/", color: "#1877F2", tip: "#1877F2", Icon: FaFacebookF },
+  { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#FFFFFF", tip: "#000000", Icon: FaXTwitter },
+  { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", tip: "#FF0000", Icon: FaYoutube },
 ];
 
 export default function Hero() {
@@ -37,8 +37,8 @@ export default function Hero() {
       <div className="absolute inset-0">
         <img src="/images/Imgs-AI/banner-im.png" alt="" className="w-full h-full object-cover" style={{ opacity: 0.6 }} />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#066a9c]/20 via-[#066a9c]/10 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#066a9c]/20 via-transparent to-[#066a9c]/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#066a9c]/0 via-[#066a9c]/0 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#066a9c]/0 via-transparent to-[#066a9c]/0" />
 
       {/* Main Content */}
       <div className="relative z-10 flex-1 flex flex-col">

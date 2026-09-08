@@ -147,11 +147,11 @@ export default function About() {
               <span className="text-gray-400 text-xs font-semibold">—</span>
               <span className="text-gray-500 font-bold text-xs uppercase tracking-[0.15em]">About Us</span>
             </div>
-            <h2 className="font-[var(--font-poppins)] text-5xl sm:text-6xl lg:text-6xl font-bold text-[#066a9c] leading-[1.1] mb-6">
+            <h2 className="font-[var(--font-poppins)] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#066a9c] leading-[1.1] mb-6">
               Committed to Serve.<br />
               Working for <span className="text-[#26ae90]">Change.</span>
             </h2>
-            <p className="text-gray-700 leading-relaxed text-lg max-w-2xl font-medium">
+            <p className="text-gray-700 leading-relaxed text-md max-w-xl font-medium">
               Dedicated to public service, inclusive development and creating opportunities for all. Building a stronger future through transparency, integrity, and people-centric governance.
             </p>
           </div>
