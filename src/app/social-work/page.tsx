@@ -51,6 +51,7 @@ export default function SocialWorkPage() {
         bgImage="/images/social-work-banner.jpg"
         panelJustify="end"
         panelAlign="start"
+        mobileJustify="end"
       />
 
       {/* Principles */}

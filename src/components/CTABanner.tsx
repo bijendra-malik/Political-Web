@@ -13,7 +13,7 @@ export default function CTABanner() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/images/infrastructure-visit.jpg"
+          src="/images/infrastructure-visit.png"
           alt="Join the Mission"
           className="w-full h-full object-cover object-center"
         />

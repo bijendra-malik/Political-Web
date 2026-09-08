@@ -35,7 +35,7 @@ export default function AboutPage() {
         title="People First,"
         titleHighlight="Always"
         description={["A leader.", "An entrepreneur.", "A committed citizen working for a stronger, inclusive India."]}
-        bgImage="/images/infrastructure-visit.jpg"
+        bgImage="/images/infrastructure-visit.png"
         panelPosition="bottom-left"
         panelAlign="center"
         bgPosition="top"

@@ -23,7 +23,7 @@ const milestones = [
     desc: "Served as District Prabhari in Muzaffarnagar and Shamli, working with party workers and strengthening organisational engagement at the grassroots.",
     icon: Users,
     color: "#26ae90",
-    image: "/images/infrastructure-visit.jpg",
+    image: "/images/infrastructure-visit.png",
   },
   {
     year: "2023",
