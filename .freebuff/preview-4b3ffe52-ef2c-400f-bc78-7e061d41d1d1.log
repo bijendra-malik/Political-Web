@@ -152,3 +152,7 @@
 ✓ Compiled in 377ms
  GET /about/ 200 in 315ms (next.js: 35ms, application-code: 279ms)
  GET /about/ 200 in 181ms (next.js: 24ms, application-code: 157ms)
+✓ Compiled in 337ms
+ GET /about/ 200 in 141ms (next.js: 27ms, application-code: 114ms)
+ GET /about/ 200 in 163ms (next.js: 21ms, application-code: 142ms)
+ GET /about/ 200 in 313ms (next.js: 24ms, application-code: 289ms)
