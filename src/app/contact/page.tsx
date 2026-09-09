@@ -2,18 +2,110 @@
 
 import { useState } from "react";
 import PageHero from "@/components/PageHero";
-import { Phone, Mail, MapPin, Send, Plus, User, MessageSquare, FileText } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Plus, User, MessageSquare, FileText, CheckCircle, AlertCircle } from "lucide-react";
 import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
 
-export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", subject: "", otherSubject: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  otherSubject: string;
+  message: string;
+  honeypot: string; // spam protection — must stay empty
+};
 
-  const handleSubmit = (e: React.FormEvent) => {
+type FormStatus = "idle" | "loading" | "success" | "error";
+
+const EMPTY_FORM: FormData = {
+  name: "",
+  email: "",
+  phone: "",
+  subject: "",
+  otherSubject: "",
+  message: "",
+  honeypot: "",
+};
+
+function validateEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+}
+
+function sanitize(value: string): string {
+  return value.trim().replace(/[<>]/g, "");
+}
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState<FormData>(EMPTY_FORM);
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<Partial<Record<keyof FormData, string>>>({});
+
+  const validate = (): boolean => {
+    const errors: Partial<Record<keyof FormData, string>> = {};
+
+    if (!formData.name.trim()) errors.name = "Full name is required.";
+    if (!formData.email.trim()) errors.email = "Email is required.";
+    else if (!validateEmail(formData.email)) errors.email = "Please enter a valid email address.";
+    if (!formData.phone.trim()) errors.phone = "Phone number is required.";
+    if (!formData.subject.trim()) errors.subject = "Please select or enter a subject.";
+    if (!formData.message.trim()) errors.message = "Message is required.";
+
+    setFieldErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: "", email: "", phone: "", subject: "", otherSubject: "", message: "" });
+
+    // Honeypot check — bots fill this, humans don't
+    if (formData.honeypot) return;
+
+    if (!validate()) return;
+
+    setStatus("loading");
+    setErrorMsg("");
+
+    const finalSubject = formData.subject === "other"
+      ? sanitize(formData.otherSubject) || "Other"
+      : sanitize(formData.subject);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          subject: `New Contact Form Submission - ${finalSubject}`,
+          from_name: "Bijendra Malik Website",
+          to: "contactus.bijendramalik@gmail.com",
+          "Full Name": sanitize(formData.name),
+          Subject: finalSubject,
+          Email: sanitize(formData.email),
+          Phone: sanitize(formData.phone),
+          Message: sanitize(formData.message),
+          // Redirect off — we handle success ourselves
+          redirect: "false",
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus("success");
+        setFormData(EMPTY_FORM);
+        setFieldErrors({});
+      } else {
+        throw new Error(data.message || "Submission failed.");
+      }
+    } catch (err: unknown) {
+      setStatus("error");
+      setErrorMsg(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again or email us directly."
+      );
+    }
   };
 
   const contactInfo = [
@@ -53,42 +145,93 @@ export default function ContactPage() {
               </div>
               <h2 className="font-[var(--font-poppins)] text-3xl font-bold text-[#066a9c] mb-2">Send a Message</h2>
               <p className="text-gray-400 text-sm mb-8">Feel free to reach out. I would love to hear from you.</p>
-              
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Name + Subject in one row */}
+
+              {/* Success banner */}
+              {status === "success" && (
+                <div className="flex items-start gap-3 bg-[#f0fdf9] border border-[#26ae90]/30 rounded-xl px-5 py-4 mb-6">
+                  <CheckCircle className="w-5 h-5 text-[#26ae90] flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-[#0f5c4a] font-semibold text-sm">Thank you! Your message has been sent successfully.</p>
+                    <p className="text-gray-500 text-xs mt-0.5">We will get back to you as soon as possible.</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Error banner */}
+              {status === "error" && (
+                <div className="flex items-start gap-3 bg-red-50 border border-red-200 rounded-xl px-5 py-4 mb-6">
+                  <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-red-700 font-semibold text-sm">Failed to send message.</p>
+                    <p className="text-red-500 text-xs mt-0.5">{errorMsg}</p>
+                  </div>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+
+                {/* Honeypot — hidden from humans, traps bots */}
+                <input
+                  type="text"
+                  name="bot-field"
+                  value={formData.honeypot}
+                  onChange={e => setFormData({ ...formData, honeypot: e.target.value })}
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+
+                {/* Name + Subject */}
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="text-gray-600 text-sm mb-1.5 flex items-center gap-2 font-medium">
                       <User className="w-4 h-4 text-[#26ae90]" /> Full Name *
                     </label>
-                    <input type="text" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})}
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all placeholder:text-gray-300"
-                      placeholder="Enter your full name" />
+                    <input
+                      type="text"
+                      value={formData.name}
+                      onChange={e => setFormData({ ...formData, name: e.target.value })}
+                      className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all placeholder:text-gray-300 ${fieldErrors.name ? "border-red-400" : "border-gray-200"}`}
+                      placeholder="Enter your full name"
+                    />
+                    {fieldErrors.name && <p className="text-red-500 text-xs mt-1">{fieldErrors.name}</p>}
                   </div>
                   <div>
                     <label className="text-gray-600 text-sm mb-1.5 flex items-center gap-2 font-medium">
                       <FileText className="w-4 h-4 text-[#26ae90]" /> Subject *
                     </label>
-                    <select value={formData.subject} onChange={e => setFormData({...formData, subject: e.target.value})}
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all text-gray-500">
+                    <select
+                      value={formData.subject}
+                      onChange={e => setFormData({ ...formData, subject: e.target.value })}
+                      className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all text-gray-500 ${fieldErrors.subject ? "border-red-400" : "border-gray-200"}`}
+                    >
                       <option value="">Select subject</option>
                       <option>Public Service</option>
                       <option>Political Inquiry</option>
                       <option>Business Collaboration</option>
-                      <option>Media & Press</option>
+                      <option>Media &amp; Press</option>
                       <option value="other">Other</option>
                     </select>
+                    {fieldErrors.subject && <p className="text-red-500 text-xs mt-1">{fieldErrors.subject}</p>}
                   </div>
                 </div>
 
                 {/* Other subject input */}
                 {formData.subject === "other" && (
                   <div className="flex gap-2">
-                    <input type="text" value={formData.otherSubject} onChange={e => setFormData({...formData, otherSubject: e.target.value})}
+                    <input
+                      type="text"
+                      value={formData.otherSubject}
+                      onChange={e => setFormData({ ...formData, otherSubject: e.target.value })}
                       className="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all placeholder:text-gray-300"
-                      placeholder="Enter your subject" />
-                    <button type="button" onClick={() => setFormData({...formData, subject: formData.otherSubject, otherSubject: "" })}
-                      className="bg-[#26ae90] hover:bg-[#26ae90]/90 text-white px-4 rounded-xl transition-all flex items-center gap-1 text-sm font-semibold">
+                      placeholder="Enter your subject"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, subject: formData.otherSubject, otherSubject: "" })}
+                      className="bg-[#26ae90] hover:bg-[#26ae90]/90 text-white px-4 rounded-xl transition-all flex items-center gap-1 text-sm font-semibold"
+                    >
                       <Plus className="w-4 h-4" /> Add
                     </button>
                   </div>
@@ -100,17 +243,27 @@ export default function ContactPage() {
                     <label className="text-gray-600 text-sm mb-1.5 flex items-center gap-2 font-medium">
                       <Mail className="w-4 h-4 text-[#26ae90]" /> Email *
                     </label>
-                    <input type="email" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})}
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all placeholder:text-gray-300"
-                      placeholder="Enter your email" />
+                    <input
+                      type="email"
+                      value={formData.email}
+                      onChange={e => setFormData({ ...formData, email: e.target.value })}
+                      className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all placeholder:text-gray-300 ${fieldErrors.email ? "border-red-400" : "border-gray-200"}`}
+                      placeholder="Enter your email"
+                    />
+                    {fieldErrors.email && <p className="text-red-500 text-xs mt-1">{fieldErrors.email}</p>}
                   </div>
                   <div>
                     <label className="text-gray-600 text-sm mb-1.5 flex items-center gap-2 font-medium">
                       <Phone className="w-4 h-4 text-[#26ae90]" /> Phone *
                     </label>
-                    <input type="tel" required value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})}
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all placeholder:text-gray-300"
-                      placeholder="Enter your phone" />
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                      className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all placeholder:text-gray-300 ${fieldErrors.phone ? "border-red-400" : "border-gray-200"}`}
+                      placeholder="Enter your phone"
+                    />
+                    {fieldErrors.phone && <p className="text-red-500 text-xs mt-1">{fieldErrors.phone}</p>}
                   </div>
                 </div>
 
@@ -119,20 +272,36 @@ export default function ContactPage() {
                   <label className="text-gray-600 text-sm mb-1.5 flex items-center gap-2 font-medium">
                     <MessageSquare className="w-4 h-4 text-[#26ae90]" /> Message *
                   </label>
-                  <textarea rows={5} required value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all resize-none placeholder:text-gray-300"
-                    placeholder="Write your message here..." />
+                  <textarea
+                    rows={5}
+                    value={formData.message}
+                    onChange={e => setFormData({ ...formData, message: e.target.value })}
+                    className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all resize-none placeholder:text-gray-300 ${fieldErrors.message ? "border-red-400" : "border-gray-200"}`}
+                    placeholder="Write your message here..."
+                  />
+                  {fieldErrors.message && <p className="text-red-500 text-xs mt-1">{fieldErrors.message}</p>}
                 </div>
 
-                <button type="submit"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#26ae90] to-[#26ae90]/90 text-white font-semibold px-10 py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-[#26ae90]/30 text-sm uppercase tracking-wider group">
-                  {submitted ? (
-                    <>✓ Message Sent!</>
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#26ae90] to-[#26ae90]/90 text-white font-semibold px-10 py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-[#26ae90]/30 text-sm uppercase tracking-wider group disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {status === "loading" ? (
+                    <>
+                      <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                      </svg>
+                      Sending...
+                    </>
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
                       Send Message
-                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
                     </>
                   )}
                 </button>
