@@ -73,18 +73,19 @@ export default function ContactPage() {
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
           subject: `New Contact Form Submission - ${finalSubject}`,
           from_name: "Bijendra Malik Website",
-          to: "contactus.bijendramalik@gmail.com",
           "Full Name": sanitize(formData.name),
           Subject: finalSubject,
           Email: sanitize(formData.email),
           Phone: sanitize(formData.phone),
           Message: sanitize(formData.message),
-          // Redirect off — we handle success ourselves
           redirect: "false",
         }),
       });
