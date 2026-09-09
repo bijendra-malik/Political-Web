@@ -3,6 +3,7 @@ import { Poppins, Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SocialDrawer from "@/components/SocialDrawer";
+import CommonPageLayout from "@/components/CommonPageLayout";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -18,6 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bijendramalik.com"),
   title: "Bijendra Malik | Political Leader • Entrepreneur • Public Representative",
   description:
     "Official website of Bijendra Malik — MLA Candidate Shamli, Aam Aadmi Party National Spokesperson, Founder Indexia Group of Companies. Discover his political journey, vision, social work and professional achievements.",
@@ -42,7 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <Header />
-        {children}
+        <CommonPageLayout>{children}</CommonPageLayout>
         <Footer />
 
         {/* Social Drawer */}
