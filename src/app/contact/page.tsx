@@ -33,8 +33,7 @@ export default function ContactPage() {
   return (
     <main className="flex-1">
       <PageHero
-        title="Let's"
-        titleHighlight="Connect"
+        title="Contact"
         subtitle="Contact Us"
         description="Your suggestions, support and participation are always welcome."
         bgImage="/images/banner-contact.png"

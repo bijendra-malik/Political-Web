@@ -122,8 +122,7 @@ export default function PoliticalJourneyPage() {
   return (
     <main className="flex-1">
       <PageHero
-        title="A Journey of"
-        titleHighlight="Dedication & Service"
+        title="Political Journey"
         subtitle="My Political Journey"
         description="From a commitment to society to taking responsibility in public life — every step guided by the vision for a stronger, inclusive India."
         bgImage="/images/journey-hero.png"

@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     "Official website of Bijendra Malik — MLA Candidate Shamli, Aam Aadmi Party National Spokesperson, Founder Indexia Group of Companies. Discover his political journey, vision, social work and professional achievements.",
   keywords:
     "Bijendra Malik, MLA Shamli, Aam Aadmi Party, Indexia Group, Political Leader, Entrepreneur, Social Work, Public Representative",
+  alternates: { canonical: "https://bijendramalik.com/" },
   icons: {
     icon: "/favicon.png",
   },
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     title: "Bijendra Malik | Political Leader • Entrepreneur • Public Representative",
     description:
       "Official website of Bijendra Malik — MLA Candidate Shamli, National Spokesperson, Founder Indexia Group.",
+    url: "https://bijendramalik.com/",
     type: "website",
   },
 };

@@ -32,8 +32,7 @@ export default function AboutPage() {
     <main className="flex-1">
       <PageHero
         label="About Me"
-        title="People First,"
-        titleHighlight="Always"
+        title="About Bijendra Malik"
         description={["A leader.", "An entrepreneur.", "A committed citizen working for a stronger, inclusive India."]}
         bgImage="/images/infrastructure-visit.png"
         panelPosition="bottom-left"
