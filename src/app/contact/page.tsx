@@ -129,7 +129,7 @@ export default function ContactPage() {
         title="Contact"
         subtitle="Contact Us"
         description="Your suggestions, support and participation are always welcome."
-        bgImage="/images/banner-contact.png"
+        bgImage="/images/banner-contactus.png"
         panelPosition="top-right"
         bgPosition="center"
       />

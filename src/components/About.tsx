@@ -156,8 +156,8 @@ export default function About() {
             </p>
           </div>
 
-          {/* Values grid — full width */}
-          <div className="grid md:grid-cols-2 gap-4">
+          {/* Values grid — one left-aligned column */}
+          <div className="grid grid-cols-1 max-w-xl gap-4">
             <ValueCard title="People First Approach" desc="Putting people's needs at the center of every decision." icon={Users} color="#26ae90" />
             <ValueCard title="Transparent Leadership" desc="Upholding honesty, integrity and accountability always." icon={ShieldCheck} color="#26ae90" />
             <ValueCard title="Inclusive Development" desc="Working for equal opportunities and balanced growth for all." icon={Building2} color="#26ae90" />
@@ -165,7 +165,7 @@ export default function About() {
           </div>
 
           {/* CTA — standard size, centered below the cards */}
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-end mt-6 max-w-xl">
             <Link href="/about" className="group inline-flex items-center justify-center gap-2 bg-[#0f5c4a] hover:bg-[#0f5c4a]/90 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#26ae90]/25 text-xs tracking-wider">
               Know More About Us
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -178,7 +178,7 @@ export default function About() {
       {profiles.map((profile, index) => (
         <div key={profile.name} className="py-8 lg:py-12" style={{ backgroundColor: index % 2 === 0 ? "#f3faf9" : "#ffffff" }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            <div className="grid grid-cols-1 gap-10 items-start">
               {/* Image Side */}
               <div ref={profile.imageOnLeft ? leftRef : rightRef} className={`relative ${profile.imageOnLeft ? "lg:order-first" : "lg:order-last"}`}>
                 <div className="absolute -left-4 top-8 w-16 h-16 opacity-30 pointer-events-none hidden lg:block">
