@@ -31,14 +31,14 @@ export default function AboutPage() {
   return (
     <main className="flex-1">
       <PageHero
-        label="About Me"
+        // label="About Me"
         title="About Bijendra Malik"
         description={["A leader.", "An entrepreneur.", "A committed citizen working for a stronger, inclusive India."]}
         bgImage="/images/infrastructure-visit.png"
-        panelPosition="bottom-left"
+        panelPosition="top"
         panelAlign="center"
         panelWidth="400px"
-        mobileJustify="end"
+        mobileJustify="start"
         panelOffset={{ left: "590px" }}
         bgPosition="top"
         strongOverlay

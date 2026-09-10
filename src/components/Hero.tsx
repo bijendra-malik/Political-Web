@@ -11,11 +11,11 @@ const highlights = [
 ];
 
 const socials = [
-  { name: "Instagram", href: "https://www.instagram.com/mrbijendramalik/", color: "#E4405F", tip: "#E4405F", Icon: FaInstagram },
   { name: "Facebook", href: "https://www.facebook.com/TeamBijendraMalik/", color: "#1877F2", tip: "#1877F2", Icon: FaFacebookF },
-  { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#FFFFFF", tip: "#000000", Icon: FaXTwitter },
-  { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", tip: "#FF0000", Icon: FaYoutube },
+  { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#111827", tip: "#000000", Icon: FaXTwitter },
+  { name: "Instagram", href: "https://www.instagram.com/mrbijendramalik/", color: "#E4405F", tip: "#E4405F", Icon: FaInstagram },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/bijendra-malik-123456789/", color: "#0077B5", tip: "#0077B5", Icon: FaLinkedinIn },
+  { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", tip: "#FF0000", Icon: FaYoutube },
 ];
 
 export default function Hero() {
@@ -130,19 +130,16 @@ export default function Hero() {
         </div>
 
         {/* Social Icons — right side column (all screens, responsive) */}
-        <div className="flex absolute right-2 sm:right-4 lg:right-6 top-1/2 -translate-y-1/2 flex-col gap-1 sm:gap-2 lg:gap-3 z-20 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/15 shadow-lg p-1.5 sm:p-2">
+        <div className="flex absolute right-2 sm:right-4 lg:right-6 top-1/2 -translate-y-1/2 flex-col gap-1 sm:gap-2 lg:gap-3 z-20  lg:mt-10 lg:mb-10 lg-5">
           {socials.map((s) => (
-            <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="group relative w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 flex items-center justify-center" aria-label={s.name}>
+            <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="group relative flex h-8 w-8 items-center justify-center rounded-full border shadow-[0_4px_14px_rgba(2,16,26,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white sm:h-10 sm:w-10 lg:h-11 lg:w-11" aria-label={s.name} style={{ backgroundColor: s.color, borderColor: `${s.color}80`, color: s.name === "X" ? "#f8fafc" : "#fff" }}>
               {/* Tooltip — brand-colored */}
               <div className="absolute right-full mr-2 sm:mr-3 px-2 sm:px-3 py-1 sm:py-1.5 backdrop-blur-sm text-white text-[9px] sm:text-[11px] font-semibold rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:-translate-x-0 translate-x-2 transition-all duration-300 pointer-events-none shadow-lg border border-white/10" style={{ background: s.tip }}>
                 {s.name}
                 <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 rotate-45 border-r border-b border-white/10" style={{ background: s.tip }} />
               </div>
-              {/* Animated rotating border */}
-              <div className="absolute inset-0 rounded-full" style={{ background: "conic-gradient(from 0deg, #f2f231, #26ae90, #066a9c, #f2f231)", animation: "spin 3s linear infinite" }} />
-              <div className="absolute inset-[2px] rounded-full bg-[#0ac5b2db] backdrop-blur-sm" />
-              {/* Icon — react-icons brand logo in its brand color */}
-              <s.Icon className="relative z-10 w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4" style={{ color: s.color }} />
+              {/* Icon — brand-colored circle with a light foreground */}
+              <s.Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5 lg:h-4 lg:w-4" />
             </a>
           ))}
         </div>

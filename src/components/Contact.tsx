@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { FaInstagram, FaFacebookF, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { FaInstagram, FaFacebookF, FaXTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
 
 const socials = [
-  { name: "Instagram", href: "https://www.instagram.com/mrbijendramalik/", color: "#E4405F", Icon: FaInstagram },
   { name: "Facebook", href: "https://www.facebook.com/TeamBijendraMalik/", color: "#1877F2", Icon: FaFacebookF },
   { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#FFFFFF", Icon: FaXTwitter },
+  { name: "Instagram", href: "https://www.instagram.com/mrbijendramalik/", color: "#E4405F", Icon: FaInstagram },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/bijendra-malik-123456789/", color: "#0077B5", Icon: FaLinkedinIn },
   { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", Icon: FaYoutube },
 ];
 
@@ -53,9 +54,9 @@ export default function Contact() {
             <h3 className="font-[var(--font-poppins)] text-xl font-bold text-white mb-4">Contact Information</h3>
             <div className="space-y-5">
               {[
-                { icon: "📧", label: "Email", value: "contactus.bijendramalik@gmail.com" },
+                { icon: "📧", label: "Email", value: "contactus@bijendramalik.com" },
                 { icon: "📍", label: "Location", value: "Shamli, Uttar Pradesh, India" },
-                { icon: "📞", label: "Phone", value: "+91 86918 86919" },
+                { icon: "📞", label: "Phone", value: "+91 86918 86919 , +91 11 4629 1155" },
               ].map((contact) => (
                 <div key={contact.label} className="flex items-start gap-3">
                   <span className="text-xl">{contact.icon}</span>

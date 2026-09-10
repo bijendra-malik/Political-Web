@@ -110,8 +110,8 @@ export default function ContactPage() {
   };
 
   const contactInfo = [
-    { Icon: Phone, label: "Phone", value: "+91 86918 86919", color: "#26ae90" },
-    { Icon: Mail, label: "Email", value: "contactus.bijendramalik@gmail.com", color: "#f28c28" },
+    { Icon: Phone, label: "Phone", value: "+91 86918 86919 , +91 11 4629 1155", color: "#26ae90" },
+    { Icon: Mail, label: "Email", value: "contactus@bijendramalik.com", color: "#f28c28" },
     { Icon: MapPin, label: "Location", value: "Shamli, Uttar Pradesh, India", color: "#ffffff" },
   ];
 

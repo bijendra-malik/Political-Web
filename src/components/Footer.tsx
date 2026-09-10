@@ -51,11 +51,11 @@ export default function Footer() {
             <div className="w-12 h-[3px] bg-[#f28c28] mb-5" />
             <div className="flex flex-nowrap items-center gap-3 overflow-x-auto pb-1">
               {[
-                { name: "Instagram", href: "https://www.instagram.com/mrbijendramalik/", color: "#E4405F", Icon: FaInstagram },
-                { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#111827", Icon: FaXTwitter },
                 { name: "Facebook", href: "https://www.facebook.com/TeamBijendraMalik/", color: "#1877F2", Icon: FaFacebookF },
-                { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", Icon: FaYoutube },
+                { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#111827", Icon: FaXTwitter },
+                { name: "Instagram", href: "https://www.instagram.com/mrbijendramalik/", color: "#E4405F", Icon: FaInstagram },
                 { name: "LinkedIn", href: "https://www.linkedin.com/in/bijendra-malik-123456789/", color: "#0077B5", Icon: FaLinkedinIn },
+                { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", Icon: FaYoutube },
               ].map((s) => (
                 <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer"
                   className="indexia-footer-social flex h-10 w-10 shrink-0 items-center justify-center rounded-full border shadow-[0_4px_14px_rgba(2,16,26,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white" aria-label={`Bijendra Malik on ${s.name}`} style={{ backgroundColor: s.color, borderColor: `${s.color}80`, color: s.name === "X" ? "#f8fafc" : "#fff" }}>
@@ -106,11 +106,11 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
-                <span className="text-white/70 text-sm">+91 86918 86919</span>
+                <span className="text-white/70 text-sm">+91 86918 86919 , +91 11 4629 1155</span>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
-                <span className="text-white/70 text-sm">contactus.bijendramalik@gmail.com</span>
+                <span className="text-white/70 text-sm">contactus@bijendramalik.com</span>
               </div>
               {/* <div className="flex items-start gap-3">
                 <Globe className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
