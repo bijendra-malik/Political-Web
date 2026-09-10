@@ -56,7 +56,7 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
   const hAlignClass = panelAlign ? ALIGN_CLASS[panelAlign] : panelPosition.endsWith("right") ? "md:items-end" : panelPosition === "top" || panelPosition === "bottom" || panelPosition === "center" ? "md:items-center" : "md:items-start";
 
   return (
-    <section className="relative min-h-[490px] lg:min-h-[700px] flex items-center overflow-hidden">
+    <section className="relative min-h-[490px] lg:min-h-[710px] flex items-center overflow-hidden">
       {/* Background — image stays clear; readability comes from the text panel below */}
       <div className="absolute inset-0 mt-4">
         <img

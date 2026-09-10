@@ -37,9 +37,9 @@ export default function AboutPage() {
         bgImage="/images/infrastructure-visit.png"
         panelPosition="top"
         panelAlign="center"
-        panelWidth="400px"
-        mobileJustify="start"
-        panelOffset={{ left: "590px" }}
+        // panelWidth="400px"
+        mobileJustify="center"
+        // panelOffset={{ left: "515px" }}
         bgPosition="top"
         strongOverlay
       />
