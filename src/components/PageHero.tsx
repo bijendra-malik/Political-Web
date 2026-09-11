@@ -56,13 +56,13 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
   const hAlignClass = panelAlign ? ALIGN_CLASS[panelAlign] : panelPosition.endsWith("right") ? "md:items-end" : panelPosition === "top" || panelPosition === "bottom" || panelPosition === "center" ? "md:items-center" : "md:items-start";
 
   return (
-    <section className="relative min-h-[490px] lg:min-h-[710px] flex items-center overflow-hidden">
+    <section className="relative flex min-h-[92svh] items-center overflow-hidden sm:min-h-screen">
       {/* Background — image stays clear; readability comes from the text panel below */}
-      <div className="absolute inset-0 mt-4">
+      <div className="absolute inset-0">
         <img
           src={bg}
           alt=""
-          className={`w-full h-full object-cover ${mobileBgPosition ? MOBILE_BG_POSITION_CLASS[mobileBgPosition] ?? "" : ""}`}
+          className={`absolute inset-0 h-full w-full object-cover object-center ${mobileBgPosition ? MOBILE_BG_POSITION_CLASS[mobileBgPosition] ?? "" : ""}`}
           style={{ objectPosition: mobileBgPosition ? `var(--pagehero-bg-pos, ${bgPosition})` : bgPosition }}
         />
         {/* Mobile-only image dim (desktop/tablet keep the image full brightness) */}
@@ -85,14 +85,14 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
             <span className="text-[#f28c28] font-semibold text-sm uppercase tracking-[0.2em]">{label}</span>
           </div>
         )}
-        <h1 className="font-[var(--font-poppins)] text-xl sm:text-xl lg:text-2xl font-bold text-white leading-tight max-w-xl">
+        <h1 className="font-[var(--font-poppins)] text-xl sm:text-xl lg:text-2xl font-bold text-[#26ae90] leading-tight max-w-xl">
           {title}{" "}
           {titleHighlight && (
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#26ae90] to-[#f2f231]">{titleHighlight}</span>
           )}
         </h1>
         {subtitle && (
-          <p className="text-white/70 mt-1 text-md font-[var(--font-poppins)] font-medium">{subtitle}</p>
+          <p className="text-white mt-1 text-md font-[var(--font-poppins)] font-medium">{subtitle}</p>
         )}
         {description && (
           <p className="text-white/60 mt-2 text-sm max-w-xl leading-relaxed">

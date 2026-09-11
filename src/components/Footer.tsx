@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Globe, Users, ShieldCheck, Building2, Heart } from "lucide-react";
+import { Phone, Mail, MapPin, Globe, Users, ShieldCheck, Building2, Heart, PhoneCall } from "lucide-react";
 import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
 
 const quickLinks = [
@@ -106,7 +106,16 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
-                <span className="text-white/70 text-sm">+91 86918 86919 , +91 11 4629 1155</span>
+                <span className="text-white/70 text-sm">+91 86918 86919</span>
+              </div>
+             
+              <div className="flex items-start gap-3">
+                <PhoneCall className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
+                <span className="text-white/70 text-sm">+91 11 4629 1155</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
+                <span className="text-white/70 text-sm">Shamli, Uttar Pradesh, India</span>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />

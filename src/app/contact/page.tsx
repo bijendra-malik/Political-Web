@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import PageHero from "@/components/PageHero";
-import { Phone, Mail, MapPin, Send, Plus, User, MessageSquare, FileText, CheckCircle, AlertCircle } from "lucide-react";
+import { Phone, PhoneCall, Mail, MapPin, Send, Plus, User, MessageSquare, FileText, CheckCircle, AlertCircle } from "lucide-react";
 import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa6";
 
 type FormData = {
@@ -110,17 +110,18 @@ export default function ContactPage() {
   };
 
   const contactInfo = [
-    { Icon: Phone, label: "Phone", value: "+91 86918 86919 , +91 11 4629 1155", color: "#26ae90" },
+    { Icon: Phone, label: "Phone", value: "+91 86918 86919", color: "#26ae90" },
+    { Icon: PhoneCall, label: "Landline", value: "+91 11 4629 1155", color: "#f2f231" },
     { Icon: Mail, label: "Email", value: "contactus@bijendramalik.com", color: "#f28c28" },
     { Icon: MapPin, label: "Location", value: "Shamli, Uttar Pradesh, India", color: "#ffffff" },
   ];
 
   const socials = [
-    { name: "Instagram", href: "https://www.instagram.com/mrbijendramalik/", color: "#E4405F", Icon: FaInstagram },
-    { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#111827", Icon: FaXTwitter },
     { name: "Facebook", href: "https://www.facebook.com/TeamBijendraMalik/", color: "#1877F2", Icon: FaFacebookF },
-    { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", Icon: FaYoutube },
+    { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#111827", Icon: FaXTwitter },
+    { name: "Instagram", href: "https://www.instagram.com/mrbijendramalik/", color: "#E4405F", Icon: FaInstagram },
     { name: "LinkedIn", href: "https://www.linkedin.com/in/bijendra-malik-123456789/", color: "#0077B5", Icon: FaLinkedinIn },
+    { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", Icon: FaYoutube },
   ];
 
   return (
@@ -129,7 +130,7 @@ export default function ContactPage() {
         title="Contact"
         subtitle="Contact Us"
         description="Your suggestions, support and participation are always welcome."
-        bgImage="/images/crop-img.jpg"
+        bgImage="/images/crop-img.png"
         panelPosition="top-right"
         bgPosition="center"
       />
