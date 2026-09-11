@@ -87,7 +87,7 @@ const photos = [
   { image: "/images/meeting-hotel.jpg", title: "Hotel Meeting", category: "Photos", date: "2026" },
   { image: "/images/arvind-kejriwal-meeting.jpg", title: "Meeting with Arvind Kejriwal", category: "Photos", date: "2024" },
   { image: "/images/profile-bijendra-malik.jpg", title: "Bijendra Malik — Profile", category: "Photos", date: "2024" },
-  { image: "/images/official-portrait.jpg", title: "Official Portrait", category: "Photos", date: "2024" },
+  { image: "/images/official-portrait.png", title: "Official Portrait", category: "Photos", date: "2024" },
   { image: "/images/profile-alt.jpg", title: "Bijendra Malik — Alternate Profile", category: "Photos", date: "2024" },
   { image: "/images/profile-shot.jpg", title: "Profile Shot", category: "Photos", date: "2024" },
 

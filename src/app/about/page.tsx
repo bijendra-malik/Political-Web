@@ -21,7 +21,7 @@ const values = [
 ];
 
 const stats = [
-  { number: "5+", label: "Years of Experience" },
+  { number: "Multiple", label: "Years of Experience" },
   { number: "50+", label: "Initiatives Led" },
   { number: "100+", label: "Villages Reached" },
   { number: "50K+", label: "Lives Impacted" },
@@ -31,15 +31,15 @@ export default function AboutPage() {
   return (
     <main className="flex-1">
       <PageHero
-        // label="About Me"
-        title="About Bijendra Malik"
-        description={["A leader.", "An entrepreneur.", "A committed citizen working for a stronger, inclusive India."]}
+        label="About Me"
+        title=" Bijendra Malik"
+        description={["A leader. An entrepreneur. A committed citizen."]}
         bgImage="/images/infrastructure-visit.png"
         panelPosition="top"
         panelAlign="center"
         // panelWidth="400px"
         mobileJustify="center"
-        // panelOffset={{ left: "515px" }}
+        panelOffset={{ left: "520px" }}
         bgPosition="top"
         strongOverlay
       />
@@ -59,10 +59,10 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#066a9c]/15 to-transparent" />
               </div>
               {/* Floating accent card */}
-              <div className="absolute -bottom-5 -right-5 sm:-right-10 bg-white rounded-2xl  px-3 py-2 border border-gray-100 max-w-[180px]">
+              {/* <div className="absolute -bottom-5 -right-5 sm:-right-10 bg-white rounded-2xl  px-3 py-2 border border-gray-100 max-w-[180px]">
                 <div className="text-[#26ae90] text-5xl font-bold font-[var(--font-poppins)]">5+</div>
                 <div className="text-[#066a9c] text-[10px] mt-1">Years of leadership </div>
-              </div>
+              </div> */}
               {/* Decorative */}
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#26ae90]/10 rounded-2xl -z-10" />
             </div>
@@ -100,10 +100,10 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-[#066a9c] hover:bg-[#066a9c]/90 text-white font-semibold px-7 py-3.5 rounded-lg transition-all hover:shadow-lg text-sm uppercase tracking-wider group mt-2">
+              {/* <Link href="/contact" className="inline-flex items-center gap-2 bg-[#066a9c] hover:bg-[#066a9c]/90 text-white font-semibold px-7 py-3.5 rounded-lg transition-all hover:shadow-lg text-sm uppercase tracking-wider group mt-2">
                 Get in Touch
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
@@ -210,24 +210,23 @@ export default function AboutPage() {
                 <svg className="w-8 h-8 text-[#f2f231]/40 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
-                <div>
-                  <p className="text-white text-lg sm:text-xl font-[var(--font-poppins)] font-light italic leading-relaxed">
-                    &ldquo;To build a stronger, progressive and inclusive India, where every
-                    citizen gets equal opportunities to grow, learn and live with dignity.&rdquo;
+                <div className="flex-1 max-w-2xl flex flex-col items-end">
+                  <p className="text-white text-lg sm:text-xl font-[var(--font-poppins)] font-light italic leading-relaxed text-left w-full">
+                    &ldquo;To build a stronger, progressive and creativityy free India,&rdquo;
                   </p>
-                  <div className="mt-4 text-[#f2f231] font-semibold font-[var(--font-poppins)] text-sm">— Bijendra Malik</div>
+                  <div className="mt-4 text-[#f2f231] font-semibold font-[var(--font-poppins)] text-sm text-right w-full">— Bijendra Malik</div>
                 </div>
               </div>
             </div>
             {/* Divider */}
             <div className="hidden lg:block w-[1px] h-20 bg-white/20 flex-shrink-0" />
             {/* Right — button */}
-            <div className="flex-shrink-0">
+            {/* <div className="flex-shrink-0">
               <Link href="/social-work" className="inline-flex items-center gap-2 bg-[#26ae90] hover:bg-[#26ae90]/90 text-white font-bold px-7 py-3.5 rounded-lg transition-all text-sm uppercase tracking-wider shadow-lg group">
                 View Social Work
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

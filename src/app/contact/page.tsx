@@ -17,6 +17,8 @@ type FormData = {
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
+const CONTACT_EMAIL = "contactus@bijendramalik.com";
+
 const EMPTY_FORM: FormData = {
   name: "",
   email: "",
@@ -112,7 +114,7 @@ export default function ContactPage() {
   const contactInfo = [
     { Icon: Phone, label: "Phone", value: "+91 86918 86919", color: "#26ae90" },
     { Icon: PhoneCall, label: "Landline", value: "+91 11 4629 1155", color: "#f2f231" },
-    { Icon: Mail, label: "Email", value: "contactus@bijendramalik.com", color: "#f28c28" },
+    { Icon: Mail, label: "Email", value: CONTACT_EMAIL, color: "#f28c28", href: `mailto:${CONTACT_EMAIL}` },
     { Icon: MapPin, label: "Location", value: "Shamli, Uttar Pradesh, India", color: "#ffffff" },
   ];
 
@@ -127,11 +129,11 @@ export default function ContactPage() {
   return (
     <main className="flex-1">
       <PageHero
-        title="Contact"
-        subtitle="Contact Us"
+        title="Contact Us"
+        subtitle="We'd love to hear from you!"
         description="Your suggestions, support and participation are always welcome."
-        bgImage="/images/crop-imgs.png"
-        panelPosition="top-right"
+        bgImage="/images/contact-imgs.png"
+        panelPosition="top"
         bgPosition="center"
       />
 
@@ -319,8 +321,8 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   {contactInfo.map((c, i) => {
                     const Icon = c.Icon;
-                    return (
-                      <div key={i} className="flex items-center gap-4">
+                    const content = (
+                      <>
                         <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg" style={{ backgroundColor: `${c.color}30` }}>
                           <Icon className="w-5 h-5" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ color: c.color }} />
                         </div>
@@ -328,6 +330,16 @@ export default function ContactPage() {
                           <div className="text-white/60 text-sm font-medium mb-0.5">{c.label}</div>
                           <div className="text-white text-sm font-semibold">{c.value}</div>
                         </div>
+                      </>
+                    );
+
+                    return c.href ? (
+                      <a key={i} href={c.href} className="flex items-center gap-4 transition-opacity hover:opacity-90">
+                        {content}
+                      </a>
+                    ) : (
+                      <div key={i} className="flex items-center gap-4">
+                        {content}
                       </div>
                     );
                   })}
