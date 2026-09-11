@@ -46,7 +46,7 @@ const MOBILE_BG_POSITION_CLASS: Record<string, string> = {
   center: "max-md:[--pagehero-bg-pos:center]",
 };
 
-export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "center", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign, mobileJustify = "center", mobileDimImage = false, panelWidth }: PageHeroProps) {
+export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "top", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign, mobileJustify = "center", mobileDimImage = false, panelWidth }: PageHeroProps) {
   const bg = backgroundImage || bgImage || "/images/public-rally.jpg";
   // Desktop placement of the text panel — fully per-page custom (9 combos).
   // Direct panelJustify/panelAlign values win; otherwise derive from panelPosition:

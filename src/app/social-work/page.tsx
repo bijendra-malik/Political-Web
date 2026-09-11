@@ -47,7 +47,7 @@ export default function SocialWorkPage() {
         title="Social Work & Community Initiatives"
         subtitle="Giving Back to Society"
         description="Working together to build a stronger, inclusive and empowered society."
-        bgImage="/images/social-work-banner.jpg"
+        bgImage="/images/crop-imgs.jpeg"
         panelJustify="end"
         panelAlign="center"
         mobileJustify="end"
