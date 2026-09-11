@@ -66,12 +66,24 @@ export default function Media() {
         {/* Carousel */}
         <div className="relative">
           {canScrollLeft && (
-            <button onClick={() => scroll("left")} className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-[#26ae90] hover:text-white transition-all border border-gray-200">
+            <button
+              type="button"
+              aria-label="Scroll media carousel left"
+              title="Scroll media carousel left"
+              onClick={() => scroll("left")}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-[#26ae90] hover:text-white transition-all border border-gray-200"
+            >
               <ChevronLeft className="w-5 h-5" />
             </button>
           )}
           {canScrollRight && (
-            <button onClick={() => scroll("right")} className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-[#26ae90] hover:text-white transition-all border border-gray-200">
+            <button
+              type="button"
+              aria-label="Scroll media carousel right"
+              title="Scroll media carousel right"
+              onClick={() => scroll("right")}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-[#26ae90] hover:text-white transition-all border border-gray-200"
+            >
               <ChevronRight className="w-5 h-5" />
             </button>
           )}

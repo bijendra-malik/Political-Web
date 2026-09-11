@@ -1,0 +1,21 @@
+# Bijendra Malik Website
+
+This file describes the public website for Bijendra Malik.
+
+## Website
+- Home: https://bijendramalik.com/
+- About: https://bijendramalik.com/about
+- Contact: https://bijendramalik.com/contact
+- Media: https://bijendramalik.com/media
+- Social Work: https://bijendramalik.com/social-work
+- Political Journey: https://bijendramalik.com/political-journey
+- Vision & Mission: https://bijendramalik.com/vision-mission
+
+## Content Overview
+- The website provides information about Bijendra Malik, including biography, political journey, social work, media, and contact details.
+- Contact information is available on the contact page.
+- Media content includes public updates and video coverage.
+
+## Use Policy
+- This site may be crawled for public information purposes.
+- Please respect copyright and public-information usage boundaries when using content from this site.
