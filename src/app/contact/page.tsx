@@ -73,28 +73,27 @@ export default function ContactPage() {
       : sanitize(formData.subject);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("https://formsubmit.co/ajax/contactus@bijendramalik.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
-          subject: `New Contact Form Submission - ${finalSubject}`,
-          from_name: "Bijendra Malik Website",
-          "Full Name": sanitize(formData.name),
-          Subject: finalSubject,
-          Email: sanitize(formData.email),
-          Phone: sanitize(formData.phone),
-          Message: sanitize(formData.message),
-          redirect: "false",
+          name: sanitize(formData.name),
+          email: sanitize(formData.email),
+          phone: sanitize(formData.phone),
+          subject: finalSubject,
+          message: sanitize(formData.message),
+          _subject: `New Contact Form Submission - ${finalSubject}`,
+          _template: "table",
+          _captcha: "false",
         }),
       });
 
       const data = await res.json();
 
-      if (data.success) {
+      if (data.success === "true" || data.success === true) {
         setStatus("success");
         setFormData(EMPTY_FORM);
         setFieldErrors({});
@@ -177,7 +176,7 @@ export default function ContactPage() {
                 {/* Honeypot — hidden from humans, traps bots */}
                 <input
                   type="text"
-                  name="bot-field"
+                  name="_honey"
                   value={formData.honeypot}
                   onChange={e => setFormData({ ...formData, honeypot: e.target.value })}
                   style={{ display: "none" }}

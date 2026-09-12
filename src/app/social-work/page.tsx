@@ -44,6 +44,7 @@ export default function SocialWorkPage() {
           panelAlign="start|center|end"    → align-items (horizontal: start = left, end = right)
           panelOffset={{ top: "60px", left: "48px" }} → exact px/% placement (overrides both) */}
       <PageHero
+        label = "social work & community initiatives "
         title="Social Work & Community Initiatives"
         subtitle="Giving Back to Society"
         description="Working together to build a stronger, inclusive and empowered society."
