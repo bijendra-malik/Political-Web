@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, Play, Quote, CheckCircle, Pause, Clock, Users, Award, ExternalLink } from "lucide-react";
+import PageHero from "@/components/PageHero";
+import { Play, Quote, CheckCircle, Pause, Clock, Users, Award, ExternalLink } from "lucide-react";
 import { useState, useRef } from "react";
+import CTABanner from "@/components/CTABanner";
 
 const roles = [
   { icon: "🏛️", label: "Political Leader", value: "National Spokesperson, AAP" },
@@ -54,51 +55,18 @@ export default function WatchIntroPage() {
 
   return (
     <main className="flex-1">
-      {/* Hero — Dark political profile header */}
-      <section className="relative min-h-[600px] lg:min-h-[650px] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/images/formal-dinner.jpg" alt="" className="w-full h-full object-cover " />
-          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 to-transparent" />
-        </div>
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-32">
-          <div className="flex flex-col lg:flex-row items-end gap-8">
-            <div className="flex-1">
-              {/* Dark highlight panel behind the text only */}
-              <div className="w-fit max-w-full bg-black/50 backdrop-blur-sm rounded-2xl border border-white/10 p-5 sm:p-6 lg:p-7">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <div className="w-8 h-[2px] bg-[#f2f231]" />
-                <span className="text-[#f2f231] font-semibold text-sm uppercase tracking-[0.2em]">Watch Intro</span>
-              </div>
-              <h1 className="font-[var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
-                Bijendra <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#26ae90] to-[#f2f231]">Malik</span>
-              </h1>
-              <p className="text-white/60 mt-4 text-base sm:text-lg max-w-xl leading-relaxed">
-                A leader, entrepreneur and social contributor — dedicated to building a stronger, more inclusive India.
-              </p>
-              <div className="flex flex-wrap gap-3 mt-6">
-                <button
-                  onClick={toggleMainVideo}
-                  className="inline-flex items-center gap-2 bg-[#26ae90] hover:bg-[#26ae90]/90 text-white font-semibold px-6 py-3 rounded-lg transition-all text-sm uppercase tracking-wider shadow-lg shadow-[#26ae90]/30 group"
-                >
-                  {mainPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" fill="currentColor" />}
-                  {mainPlaying ? "Pause Video" : "Watch Introduction"}
-                </button>
-                <Link href="/about" className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white font-medium px-6 py-3 rounded-lg transition-all text-sm hover:bg-white/5">
-                  Full Profile <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-              </div>
-            </div>
-            {/* Portrait */}
-            <div className="hidden lg:block flex-shrink-0">
-              <div className="w-[200px] h-[250px] rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl">
-                <img src="/images/profile-bijendra-malik.jpg" alt="Bijendra Malik" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#26ae90] via-[#f2f231] to-[#26ae90] z-20" />
-      </section>
+      <PageHero
+        label="Watch Intro"
+        title="Bijendra"
+        titleHighlight="Malik"
+        description="A leader, entrepreneur and social contributor — dedicated to building a stronger, more inclusive India."
+        bgImage="/images/community-members-group.jpg"
+        bgPosition="top center"
+        // panelPosition="center"
+        strongOverlay
+         panelPosition="top"
+        // bgPosition="center"
+      />
 
       {/* Main Video Section */}
       <section className="py-10 lg:py-16 bg-[#f8f9fb]">
@@ -238,14 +206,14 @@ export default function WatchIntroPage() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3 pt-3">
+              {/* <div className="flex flex-wrap gap-3 pt-3">
                 <Link href="/about" className="inline-flex items-center gap-2 bg-[#066a9c] hover:bg-[#066a9c]/90 text-white font-semibold px-6 py-3 rounded-lg transition-all text-sm uppercase tracking-wider group">
                   Full About <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link href="/contact" className="inline-flex items-center gap-2 border-2 border-[#26ae90] text-[#26ae90] hover:bg-[#26ae90] hover:text-white font-semibold px-6 py-3 rounded-lg transition-all text-sm uppercase tracking-wider group">
                   Get in Touch
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -342,7 +310,7 @@ export default function WatchIntroPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-16 bg-gradient-to-r from-[#071525] to-[#066a9c] overflow-hidden">
+      {/* <section className="relative py-16 bg-gradient-to-r from-[#071525] to-[#066a9c] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full" />
         </div>
@@ -362,7 +330,9 @@ export default function WatchIntroPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <CTABanner/>
     </main>
   );
 }

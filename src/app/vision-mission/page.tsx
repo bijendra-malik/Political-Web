@@ -217,14 +217,14 @@ export default function VisionMissionPage() {
                 <h3 className="font-[var(--font-poppins)] text-2xl font-bold text-white mb-3">
                   Join the <span className="text-[#f2f231]">Mission</span>
                 </h3>
-                <div className="flex flex-wrap justify-center lg:justify-end gap-3">
+                {/* <div className="flex flex-wrap justify-center lg:justify-end gap-3">
                   <Link href="/contact" className="inline-flex items-center gap-2 bg-[#26ae90] hover:bg-[#26ae90]/90 text-white font-semibold px-6 py-3 rounded-lg transition-all hover:shadow-lg hover:shadow-[#26ae90]/30 uppercase text-xs tracking-wider group">
                     Get In Touch <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Link href="/social-work" className="inline-flex items-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-lg transition-all uppercase text-xs tracking-wider">
                     View Social Work
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
