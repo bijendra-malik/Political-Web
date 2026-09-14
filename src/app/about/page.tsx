@@ -212,7 +212,7 @@ export default function AboutPage() {
                 </svg>
                 <div className="flex-1 max-w-2xl flex flex-col items-end">
                   <p className="text-white text-lg sm:text-xl font-[var(--font-poppins)] font-light italic leading-relaxed text-left w-full">
-                    &ldquo;To build a stronger, progressive and creativityy free India,&rdquo;
+                    &ldquo;To build a stronger, progressive and corruption free India,&rdquo;
                   </p>
                   <div className="mt-4 text-[#f2f231] font-semibold font-[var(--font-poppins)] text-sm text-right w-full">— Bijendra Malik</div>
                 </div>

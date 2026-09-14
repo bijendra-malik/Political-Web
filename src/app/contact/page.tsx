@@ -33,6 +33,10 @@ function validateEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 }
 
+function validatePhone(phone: string): boolean {
+  return /^\d{10}$/.test(phone.trim());
+}
+
 function sanitize(value: string): string {
   return value.trim().replace(/[<>]/g, "");
 }
@@ -50,6 +54,7 @@ export default function ContactPage() {
     if (!formData.email.trim()) errors.email = "Email is required.";
     else if (!validateEmail(formData.email)) errors.email = "Please enter a valid email address.";
     if (!formData.phone.trim()) errors.phone = "Phone number is required.";
+    else if (!validatePhone(formData.phone)) errors.phone = "Please enter a valid 10-digit phone number.";
     if (!formData.subject.trim()) errors.subject = "Please select or enter a subject.";
     if (!formData.message.trim()) errors.message = "Message is required.";
 
@@ -261,10 +266,12 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="tel"
+                      inputMode="numeric"
+                      maxLength={10}
                       value={formData.phone}
-                      onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                      onChange={e => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, "").slice(0, 10) })}
                       className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#26ae90] focus:ring-1 focus:ring-[#26ae90]/30 transition-all placeholder:text-gray-300 ${fieldErrors.phone ? "border-red-400" : "border-gray-200"}`}
-                      placeholder="Enter your phone"
+                      placeholder="Enter your 10-digit phone"
                     />
                     {fieldErrors.phone && <p className="text-red-500 text-xs mt-1">{fieldErrors.phone}</p>}
                   </div>
