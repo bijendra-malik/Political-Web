@@ -81,11 +81,11 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
         >
         {label && (
           <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-[2px] bg-[#f28c28]" />
-            <span className="text-[#f28c28] font-semibold text-sm uppercase tracking-[0.2em]">{label}</span>
+            <div className="w-8 h-[2px] bg-[var(--saffron)]" />
+            <span className="text-[var(--saffron)] font-semibold text-sm uppercase tracking-[0.2em]">{label}</span>
           </div>
         )}
-        <h1 className="font-[var(--font-poppins)] text-xl sm:text-xl lg:text-2xl font-bold text-[#f2f231] leading-tight max-w-xl">
+        <h1 className="font-[var(--font-poppins)] text-xl sm:text-xl lg:text-2xl font-bold text-white leading-tight max-w-xl">
           {title}{" "}
           {titleHighlight && (
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#26ae90] to-[#f2f231]">{titleHighlight}</span>
