@@ -33,7 +33,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-[80%] flex flex-col overflow-hidden">
+    <section id="home" className="relative flex min-h-[90svh] items-end overflow-hidden sm:min-h-screen">
       {/* Background */}
       <div className="absolute inset-0">
         <img src="/images/Imgs-AI/banner-im.png" alt="" className="w-full h-full object-cover" style={{ opacity: 0.6 }} />
@@ -56,7 +56,7 @@ export default function Hero() {
               </div>
               <h1 className="font-[var(--font-poppins)] font-bold text-white text-[22px] leading-[1.05] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">BIJENDRA MALIK</h1>
               <p className="text-[12px] text-white/90 font-[var(--font-poppins)] font-medium">Political Leader. Entrepreneur. Social Contributor.</p>
-              <p className="text-white/50 text-[10px] max-w-[260px] mx-auto">Working for the people, empowering communities and building a better tomorrow.</p>
+              <p className="text-white/80 text-[10px] max-w-[260px] mx-auto">Working for the people, empowering communities and building a better tomorrow.</p>
               <div className="flex justify-center gap-2 pt-1">
                 <Link href="/about" className="inline-flex items-center gap-1 bg-[#26ae90] text-white font-semibold px-3 py-2 rounded-md text-[10px] uppercase tracking-wider shadow-lg shadow-[#26ae90]/30 hover:shadow-xl hover:shadow-[#26ae90]/40 hover:scale-105 transition-all duration-300">
                   Explore My Journey <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
@@ -94,28 +94,28 @@ export default function Hero() {
                   <span className="text-[#f2f231] font-semibold text-xs tracking-[0.2em] drop-shadow-lg">Dedicated to Public Service</span>
                 </div>
                 <h1 className="font-[var(--font-poppins)] font-bold text-white text-4xl lg:text-4xl xl:text-4xl leading-[1.05] whitespace-nowrap drop-shadow-[0_4px_20px_rgba(0,0,0,0.4)]">BIJENDRA MALIK</h1>
-                <p className="text-lg lg:text-xl text-white/90 font-[var(--font-poppins)] font-medium leading-snug">Political Leader. Entrepreneur. Social Contributor.</p>
-                <p className="text-white/50 max-w-md text-sm lg:text-base leading-relaxed">Working for the people, empowering communities and building a better tomorrow.</p>
+                <p className="text-lg lg:text-xl text-white/95 font-[var(--font-poppins)] font-medium leading-snug">Political Leader. Entrepreneur. Social Contributor.</p>
+                <p className="text-white/90 max-w-md text-sm lg:text-base leading-relaxed">Working for the people, empowering communities and building a better tomorrow.</p>
                 <div className="flex flex-wrap gap-3 pt-1">
                   <Link href="/about" className="inline-flex items-center gap-2 bg-[#26ae90] hover:bg-[#26ae90]/90 text-white font-semibold px-6 py-3 lg:px-7 lg:py-3.5 rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-[#26ae90]/40 hover:scale-105 uppercase text-xs lg:text-sm tracking-wider group">
                     Explore My Journey <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                   </Link>
-                  <Link href="/watch-intro" className="inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white font-medium px-6 py-3 lg:px-7 lg:py-3.5 rounded-lg transition-all duration-300 text-xs lg:text-sm tracking-wider hover:bg-white/10 hover:scale-105">
+                  <Link href="/watch-intro" className="inline-flex items-center gap-2 border border-white/80 hover:border-[#f2f231]/80 hover:bg-white/90  hover:text-black/90 text-white font-medium px-6 py-3 lg:px-7 lg:py-3.5 rounded-lg transition-all duration-300 text-xs lg:text-sm tracking-wider  hover:scale-105 hover:-translate-y-1 group">
                     <Play className="w-4 h-4" fill="currentColor" /> Watch Intro
                   </Link>
                 </div>
               </div>
               {/* Right side — portrait + highlight cards stacked */}
-              <div ref={imgRef} className="flex-shrink-0 flex flex-col items-center" style={{ opacity: 1, transform: "translateX(30px)", transition: "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s" }}>
+              <div ref={imgRef} className="flex-shrink-0 flex flex-col items-center self-end" style={{ opacity: 1, transform: "translateX(30px)", transition: "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s" }}>
                 <div className="relative w-[400px] md:w-[300px] lg:w-[400px] xl:w-[420px]">
                   <img src="/bg-remove.png" alt="Bijendra Malik — Political Leader & Entrepreneur" className="w-full h-auto object-contain" />
                 </div>
                 {/* Highlight cards — right below portrait */}
-                <div className="flex gap-6  w-full max-w-[450px] md:max-w-[300px] lg:max-w-[480px]">
+                <div className="mt-2 flex gap-6 w-full max-w-[450px] md:max-w-[300px] lg:max-w-[480px]">
                   {highlights.map((h, i) => (
-                    <div key={i} className="flex-1 bg-[#066a9c]/90 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/5 transition-all group cursor-default px-4 py-4 lg:p-4">
+                    <div key={i} className="flex-1 bg-[#066a9c]/90 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-[#066a90]/50 transition-all group cursor-default px-4 py-4 lg:p-4">
                       <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#26ae90]/20 rounded-full flex items-center justify-center text-sm flex-shrink-0 group-hover:bg-[#26ae90]/30 transition-colors">{h.icon}</div>
+                        <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#26ae90]/20 rounded-full flex items-center justify-center text-sm flex-shrink-0 group-hover:bg-[#26ae90]/90 transition-colors">{h.icon}</div>
                         <div className="min-w-0">
                           <div className="font-[var(--font-poppins)] font-bold text-white text-sm leading-tight">{h.label}</div>
                           <div className="text-white/60 text-xs mt-0.5 leading-snug font-medium line-clamp-1">{h.sub}</div>

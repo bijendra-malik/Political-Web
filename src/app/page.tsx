@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Achievements from "@/components/Achievements";
+// import Achievements from "@/components/Achievements";
 import FocusAreas from "@/components/FocusAreas";
 import PoliticalJourney from "@/components/PoliticalJourney";
 import SocialWork from "@/components/SocialWork";
@@ -11,7 +11,7 @@ export default function Home() {
     <main className="flex-1">
         <Hero />
         <About />
-        <Achievements />
+        {/* <Achievements /> */}
         <FocusAreas />
         <PoliticalJourney />
         <SocialWork />

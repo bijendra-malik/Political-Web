@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import PageHero from "@/components/PageHero";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const tabs = ["All", "News Coverage", "Press Releases", "Interviews", "Videos", "Photos"];
@@ -111,6 +112,7 @@ const photos = [
 
 export default function MediaPage() {
   const [activeTab, setActiveTab] = useState("All");
+  const filterTabsRef = useScrollReveal<HTMLDivElement>({ direction: "up", delay: 100, duration: 600, threshold: 0.8, once: false });
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
   const [lightboxNews, setLightboxNews] = useState<number | null>(null);
   const [lightboxPhoto, setLightboxPhoto] = useState<number | null>(null);
@@ -174,7 +176,7 @@ export default function MediaPage() {
       {/* Filter Tabs */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-10">
-          <div className="bg-white rounded-2xl shadow-lg p-3 flex flex-wrap gap-2 border border-gray-100">
+          <div ref={filterTabsRef} className="opacity-0 bg-white rounded-2xl shadow-lg p-3 flex flex-wrap gap-2 border border-gray-100">
             {tabs.map((tab) => (
               <button key={tab} onClick={() => { setActiveTab(tab); setPhotoPage(1); setVideoPage(1); setYtPage(1); }}
                 className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
@@ -229,7 +231,7 @@ export default function MediaPage() {
 
       {/* Video Cards */}
       {filteredVideos.length > 0 && (
-        <section className="py-10 bg-[#f5f7fa]">
+        <section className="py-10 bg-[#066a9c]/6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
@@ -400,7 +402,7 @@ export default function MediaPage() {
 
       {/* Photo Gallery — with pagination + lightbox */}
       {filteredPhotos.length > 0 && (
-        <section className="py-10 bg-white">
+        <section className="py-10 bg-[#286090]/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">

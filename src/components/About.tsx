@@ -135,10 +135,10 @@ export default function About() {
   return (
     <section id="about" className="scroll-mt-20 bg-white relative overflow-hidden">
       {/* Main About Content with Parliament Background */}
-      <div ref={mainRef} className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden">
+      <div ref={mainRef} className="relative min-h-[600px] lg:min-h-[600px] overflow-hidden">
         <img src="/images/Imgs-AI/about-bg-parliament.png" alt="Parliament Building" className="absolute inset-0 w-full h-full object-cover object-bottom" />
         <div className="absolute inset-0 " />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-white/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative py-10 lg:py-10">
           {/* Left-aligned Header */}
@@ -157,7 +157,7 @@ export default function About() {
           </div>
 
           {/* Values grid — full width */}
-          <div className="grid grid-cols-1  max-w-xl  gap-4 ">
+          <div className="grid grid-cols-1  max-w-xl  gap-2 ">
             <ValueCard title="People First Approach" desc="Putting people's needs at the center of every decision." icon={Users} color="#26ae90" />
             <ValueCard title="Transparent Leadership" desc="Upholding honesty, integrity and accountability always." icon={ShieldCheck} color="#26ae90" />
             <ValueCard title="Inclusive Development" desc="Working for equal opportunities and balanced growth for all." icon={Building2} color="#26ae90" />
@@ -165,12 +165,12 @@ export default function About() {
           </div>
 
           {/* CTA — standard size, centered below the cards */}
-          <div className="flex justify-center mt-6">
+          {/* <div className="flex justify-center mt-6">
             <Link href="/about" className="group inline-flex items-center justify-center gap-2 bg-[#0f5c4a] hover:bg-[#0f5c4a]/90 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#26ae90]/25 text-xs tracking-wider">
               Know More About Us
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
 

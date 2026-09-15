@@ -58,7 +58,7 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
 export function useScrollStagger<T extends HTMLElement = HTMLDivElement>(
   options: Options = {}
 ) {
-  const { direction = "up", delay = 0, duration = 600, threshold = 0.1 } = options;
+  const { direction = "up", delay = 0, duration = 600, threshold = 0.1, once = true } = options;
   const ref = useRef<T>(null);
 
   useEffect(() => {
@@ -79,7 +79,12 @@ export function useScrollStagger<T extends HTMLElement = HTMLDivElement>(
             child.style.opacity = "1";
             child.style.transform = "none";
           });
-          obs.unobserve(el);
+          if (once) obs.unobserve(el);
+        } else if (!once) {
+          children.forEach((child) => {
+            child.style.opacity = "0";
+            child.style.transform = transforms[direction];
+          });
         }
       },
       { threshold }

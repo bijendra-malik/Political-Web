@@ -30,9 +30,26 @@ const stats = [
   { target: 15, suffix: "+", label: "Honors & Recognitions", Icon: Award },
 ];
 
-export default function Achievements() {
-  const counters = stats.map(s => useCount(s.target));
+function StatCounter({ stat }: { stat: (typeof stats)[number] }) {
+  const { val, ref } = useCount(stat.target);
+  const Icon = stat.Icon;
 
+  return (
+    <div ref={ref} className="flex items-center gap-4 text-center lg:text-left">
+      <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+        <Icon className="w-6 h-6 text-[#f2f231]" />
+      </div>
+      <div>
+        <div className="font-[var(--font-poppins)] text-2xl sm:text-3xl font-bold text-white">
+          {val}{stat.suffix}
+        </div>
+        <div className="text-white/60 text-xs uppercase tracking-wider mt-0.5 font-medium">{stat.label}</div>
+      </div>
+    </div>
+  );
+}
+
+export default function Achievements() {
   return (
     <section className="bg-[#066a9c]">
       {/* Top gradient line */}
@@ -40,22 +57,7 @@ export default function Achievements() {
       <div className="py-10 lg:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {stats.map((s, i) => {
-              const Icon = s.Icon;
-              return (
-                <div key={i} ref={counters[i].ref} className="flex items-center gap-4 text-center lg:text-left">
-                  <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-6 h-6 text-[#f2f231]" />
-                  </div>
-                  <div>
-                    <div className="font-[var(--font-poppins)] text-2xl sm:text-3xl font-bold text-white">
-                      {counters[i].val}{s.suffix}
-                    </div>
-                    <div className="text-white/60 text-xs uppercase tracking-wider mt-0.5 font-medium">{s.label}</div>
-                  </div>
-                </div>
-              );
-            })}
+            {stats.map((stat) => <StatCounter key={stat.label} stat={stat} />)}
           </div>
         </div>
       </div>

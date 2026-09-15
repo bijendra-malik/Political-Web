@@ -29,23 +29,16 @@ const timeline = [
 ];
 
 export default function WatchIntroPage() {
-  const mainVideoRef = useRef<HTMLVideoElement>(null);
   const [mainPlaying, setMainPlaying] = useState(false);
   const [activeVideo, setActiveVideo] = useState<number | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const toggleMainVideo = () => {
-    const v = mainVideoRef.current;
-    if (!v) return;
-    if (v.paused) { v.play(); setMainPlaying(true); }
-    else { v.pause(); setMainPlaying(false); }
+    setMainPlaying((playing) => !playing);
   };
 
   const playMoreVideo = (idx: number) => {
-    if (mainVideoRef.current && !mainVideoRef.current.paused) {
-      mainVideoRef.current.pause();
-      setMainPlaying(false);
-    }
+    if (mainPlaying) setMainPlaying(false);
     videoRefs.current.forEach((v, i) => { if (v && i !== idx && !v.paused) v.pause(); });
     const v = videoRefs.current[idx];
     if (!v) return;
@@ -69,7 +62,7 @@ export default function WatchIntroPage() {
       />
 
       {/* Main Video Section */}
-      <section className="py-10 lg:py-16 bg-[#f8f9fb]">
+      <section className="py-8 lg:py-10 bg-[#f8f9fb]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-1.5 h-8 bg-[#26ae90] rounded-full" />
@@ -99,16 +92,21 @@ export default function WatchIntroPage() {
             {/* Video Player — Right (main, fills remaining height) */}
             <div className="flex-1 min-w-0">
               <div className="relative h-full min-h-[480px] lg:max-h-0 rounded-2xl overflow-hidden shadow-2xl group bg-[#071525]">
-                <video
-                  ref={mainVideoRef}
-                  src="/media/videos/kejriwal-meeting-video.mp4"
-                  poster="/images/about-me0mg/arvind-kejriwal-meeting-removebg-preview.png"
-                  className="absolute inset-0 w-full h-full object-cover object-top cursor-pointer"
-                  playsInline
-                  preload="metadata"
-                  onEnded={() => setMainPlaying(false)}
-                  onClick={toggleMainVideo}
-                />
+                {mainPlaying ? (
+                  <iframe
+                    src="https://www.youtube.com/embed/pJv7wnSHc9c?autoplay=1&rel=0"
+                    title="Delhi Floods — Bharat 24 Debate"
+                    className="absolute inset-0 w-full h-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                ) : (
+                  <img
+                    src="/images/about-me0mg/arvind-kejriwal-meeting-removebg-preview.png"
+                    alt="Meeting with Arvind Kejriwal"
+                    className="absolute inset-0 w-full h-full object-cover object-top"
+                  />
+                )}
                 {!mainPlaying && (
                   <button onClick={toggleMainVideo} className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-[#071525]/70 via-[#071525]/10 to-[#071525]/30 hover:from-[#071525]/80 transition-all">
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#26ae90] via-[#f2f231] to-[#26ae90]" />
@@ -141,7 +139,7 @@ export default function WatchIntroPage() {
       </section>
 
       {/* Bio — Political Profile Style */}
-      <section className="py-10 lg:py-16 bg-white">
+      <section className="py-8 lg:py-10 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
             {/* Left — Photo + Quote */}
@@ -151,7 +149,7 @@ export default function WatchIntroPage() {
               </div>
               <div className="bg-gradient-to-br from-[#071525] to-[#066a9c] rounded-2xl p-6 relative overflow-hidden">
                 <div className="absolute top-3 left-4 text-white/10"><Quote className="w-12 h-12" /></div>
-                <p className="text-white text-sm sm:text-base font-[var(--font-poppins)] font-light italic leading-relaxed relative z-10">
+                <p className="text-white text-xs sm:text-base font-[var(--font-poppins)] font-light italic leading-relaxed relative z-10">
                   &ldquo;Many of life&apos;s failures are people who did not realize how close they were to success when they gave up.&rdquo;
                 </p>
                 <div className="mt-4 text-[#f2f231] font-semibold font-[var(--font-poppins)] text-sm">— Bijendra Malik</div>
@@ -167,23 +165,23 @@ export default function WatchIntroPage() {
               <h2 className="font-[var(--font-poppins)] text-2xl sm:text-3xl font-bold text-[#066a9c] leading-tight">
                 Hello, I am <span className="text-[#26ae90]">Bijendra Malik</span>
               </h2>
-              <p className="text-gray-500 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
                 An individual committed to driving positive change and contributing to the betterment of society. I am honoured to be MLA, Shamli Constituency Candidate 2022.
               </p>
-              <p className="text-gray-500 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
                 As a National Spokesperson of Aam Aadmi Party, I actively engage in advocating for the principles and values that define our vision for transparent governance and meaningful social impact.
               </p>
-              <p className="text-gray-500 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
                 In addition to my political endeavours, I am the Founder of Indexia Group of Companies, Director Indexia Finance — a venture that reflects my dedication to fostering financial well-being and providing tailored solutions.
               </p>
 
               {/* Role chips */}
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-0">
                 {roles.map((r, i) => (
-                  <div key={i} className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2.5 hover:border-[#26ae90]/30 hover:bg-[#26ae90]/5 transition-all">
+                  <div key={i} className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-full px-4 py-2 hover:border-[#26ae90]/30 hover:bg-[#26ae90]/5 transition-all">
                     <span className="text-base">{r.icon}</span>
                     <div>
-                      <div className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-[11px]">{r.label}</div>
+                      <div className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-[8px]">{r.label}</div>
                       <div className="text-gray-400 text-[9px]">{r.value}</div>
                     </div>
                   </div>
@@ -191,7 +189,7 @@ export default function WatchIntroPage() {
               </div>
 
               {/* Education */}
-              <div className="pt-2">
+              <div className="pt-0">
                 <h3 className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-sm mb-3">Education</h3>
                 <div className="space-y-2">
                   {education.map((e, i) => (
@@ -309,28 +307,6 @@ export default function WatchIntroPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      {/* <section className="relative py-16 bg-gradient-to-r from-[#071525] to-[#066a9c] overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full" />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-white mb-4">
-            Join the <span className="text-[#f2f231]">Mission</span>
-          </h2>
-          <p className="text-white/60 text-base max-w-xl mx-auto mb-8">
-            Your support and participation can bring the change we all wish to see. Together, let&apos;s build a better tomorrow.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#26ae90] hover:bg-[#26ae90]/90 text-white font-semibold px-7 py-3.5 rounded-lg transition-all uppercase text-sm tracking-wider group shadow-lg shadow-[#26ae90]/30">
-              Get in Touch <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link href="/social-work" className="inline-flex items-center gap-2 border border-white/30 text-white hover:bg-white/10 font-semibold px-7 py-3.5 rounded-lg transition-all uppercase text-sm tracking-wider">
-              View Social Work
-            </Link>
-          </div>
-        </div>
-      </section> */}
 
       <CTABanner/>
     </main>

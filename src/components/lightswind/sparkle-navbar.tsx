@@ -40,16 +40,12 @@ export default function SparkleNavbar({
     return idx >= 0 ? idx : 0;
   };
 
-  const [activeIndex, setActiveIndex] = useState(getActiveIndex);
+  const activeIndex = getActiveIndex();
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
   const tabRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
   const sparkleIdRef = useRef(0);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setActiveIndex(getActiveIndex());
-  }, [pathname]);
 
   useEffect(() => {
     const updateIndicator = () => {
@@ -87,10 +83,9 @@ export default function SparkleNavbar({
     }, 700);
   }, []);
 
-  const handleClick = (index: number, e: React.MouseEvent) => {
+  const handleClick = (e: React.MouseEvent) => {
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
     createSparkles(e.clientX - rect.left, e.clientY - rect.top);
-    setActiveIndex(index);
   };
 
   return (
@@ -122,11 +117,11 @@ export default function SparkleNavbar({
           key={item.href}
           href={item.href}
           ref={(el) => { tabRefs.current[i] = el; }}
-          onClick={(e) => handleClick(i, e)}
+          onClick={handleClick}
           className={`relative px-3 py-2 rounded-lg text-[12px] font-medium transition-all duration-300 uppercase tracking-wider ${
             activeIndex === i
               ? "text-white"
-              : "text-white/50 hover:text-white/80"
+              : "text-white hover:text-[#f2f231]/90"
           }`}
           style={
             activeIndex === i

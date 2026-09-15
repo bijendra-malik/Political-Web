@@ -56,18 +56,18 @@ export default function VisionMissionPage() {
       />
 
       {/* What We Stand For — Vision & Mission cards */}
-      <section className="py-12 lg:py-16 bg-white">
+      <section className="py-8 lg:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={headerRef} className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 mb-3">
+          <div ref={headerRef} className="text-center mb-6">
+            <div className="inline-flex items-center gap-2 mb-2">
               <div className="w-8 h-[2px] bg-[#26ae90]" />
               <span className="text-[#26ae90] font-semibold text-sm uppercase tracking-[0.2em]">Our Purpose</span>
               <div className="w-8 h-[2px] bg-[#26ae90]" />
             </div>
-            <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#066a9c]">
+            <h2 className="font-[var(--font-poppins)] text-xl sm:text-4xl font-bold text-[#066a9c]">
               What We <span className="text-[#26ae90]">Stand For</span>
             </h2>
-            <p className="text-gray-400 text-sm mt-3">Building a stronger, more inclusive future together.</p>
+            <p className="text-gray-400 text-xs mt-1">Building a stronger, more inclusive future together.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6 items-stretch">
@@ -143,18 +143,18 @@ export default function VisionMissionPage() {
       </section>
 
       {/* Where We Focus — focus area cards with images */}
-      <section className="py-12 lg:py-16 bg-[#eef4fb]">
+      <section className="py-8 lg:py-10 bg-[#eef4fb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 mb-3">
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center gap-2 mb-2">
               <div className="w-8 h-[2px] bg-[#26ae90]" />
               <span className="text-[#26ae90] font-semibold text-sm uppercase tracking-[0.2em]">Focus Areas</span>
               <div className="w-8 h-[2px] bg-[#26ae90]" />
             </div>
-            <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#066a9c]">
+            <h2 className="font-[var(--font-poppins)] text-xl sm:text-3xl font-bold text-[#066a9c]">
               Where We <span className="text-[#26ae90]">Focus</span>
             </h2>
-            <p className="text-gray-400 text-sm mt-3">Creating meaningful impact across communities.</p>
+            <p className="text-gray-400 text-xs mt-2">Creating meaningful impact across communities.</p>
           </div>
 
           <div ref={focusRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -175,9 +175,9 @@ export default function VisionMissionPage() {
                     <h3 className="font-[var(--font-poppins)] font-bold text-[#066a9c] group-hover:text-white transition-colors duration-300">{a.title}</h3>
                   </div>
                   <p className="text-gray-400 text-sm leading-relaxed mb-4 group-hover:text-white/85 transition-colors duration-300">{a.desc}</p>
-                  <a href="#contact" className="text-[#26ae90] text-sm font-semibold flex items-center gap-1 group-hover:text-[#f2f231] transition-colors duration-300 group/link">
+                  {/* <a href="#contact" className="text-[#26ae90] text-sm font-semibold flex items-center gap-1 group-hover:text-[#f2f231] transition-colors duration-300 group/link">
                     Learn More <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             ))}

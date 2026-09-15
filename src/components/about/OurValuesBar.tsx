@@ -1,9 +1,13 @@
 "use client";
 
 import { Users, TrendingUp, Shield } from "lucide-react";
+import Achievements from "@/components/about/Achievements";
+
 
 export default function OurValuesBar() {
   return (
+    <>
+    <Achievements />
     <div className="relative w-full overflow-hidden" style={{ minHeight: "120px", backgroundColor: "#f0fdf9" }}>
 
       {/* Background — skyline full cover, vertically centered (large screens only; hidden on mobile/tablet where the strip is tall and narrow) */}
@@ -73,6 +77,9 @@ export default function OurValuesBar() {
 
         </div>
       </div>
+      
     </div>
+    <div className="h-[0.9] bg-gradient-to-r from-[#26ae90]  to-[#26ae90]" />
+    </>
   );
 }

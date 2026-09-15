@@ -45,7 +45,7 @@ export default function AboutPage() {
       />
 
       {/* Who I Am — Split layout */}
-      <section className="py-10 lg:py-16 bg-white">
+      <section className="py-8 lg:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-2 lg:px-2">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             {/* Left — Photo */}
@@ -64,7 +64,7 @@ export default function AboutPage() {
                 <div className="text-[#066a9c] text-[10px] mt-1">Years of leadership </div>
               </div> */}
               {/* Decorative */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#26ae90]/10 rounded-2xl -z-10" />
+              {/* <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#26ae90]/10 rounded-2xl -z-10" /> */}
             </div>
 
             {/* Right — Text Content */}
@@ -73,26 +73,26 @@ export default function AboutPage() {
                 <div className="w-8 h-[2px] bg-[#f28c28]" />
                 <span className="text-[#f28c28] font-semibold text-sm uppercase tracking-[0.2em]">About Me</span>
               </div>
-              <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#066a9c] leading-tight">
+              <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#066a9c] leading-tight pt-0">
                 Committed to Serve.
                 <br />
                 Working for <span className="text-[#26ae90]">Change.</span>
               </h2>
-              <p className="text-gray-500 leading-relaxed">
+              <p className="text-gray-500">
                 I am deeply committed to public service, inclusive growth and the
                 empowerment of every citizen. My journey is driven by the belief
                 that real development happens when we work together with honesty,
                 dedication and a clear vision for the future.
               </p>
-              <p className="text-gray-500 leading-relaxed">
+              <p className="text-gray-500 ">
                 From founding Indexia Group of Companies to serving as National Spokesperson
                 for Aam Aadmi Party, every step has been driven by a vision for transparent
                 governance and meaningful social impact.
               </p>
               {/* Values grid */}
-              <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="grid grid-cols-2 gap-0">
                 {values.map((v) => (
-                  <div key={v} className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3 hover:bg-[#26ae90]/5 transition-colors group">
+                  <div key={v} className="flex items-center gap-1 bg-gray-50 rounded-xl px-4 py-2 hover:bg-[#26ae90]/5 transition-colors group">
                     <div className="w-8 h-8 bg-[#26ae90]/15 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#26ae90]/25 transition-colors">
                       <CheckCircle className="w-4 h-4 text-[#26ae90]" />
                     </div>
@@ -147,7 +147,7 @@ export default function AboutPage() {
       </section>
 
       {/* From Vision to Action — Journey Timeline */}
-      <section className="py-16 lg:py-24 bg-gray-50">
+      <section className="py-8 lg:py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 mb-3">
@@ -194,7 +194,7 @@ export default function AboutPage() {
       </section>
 
       {/* My Vision — Quote section (single row) */}
-      <section className="py-14 lg:py-16 bg-[#066a9c] relative overflow-hidden">
+      <section className="py-8 lg:py-10 bg-[#066a9c] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full" />
         </div>

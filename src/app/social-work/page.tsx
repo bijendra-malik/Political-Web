@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import { useScrollStagger } from "@/hooks/useScrollReveal";
 import { Users, Heart, Megaphone, Wifi, GraduationCap, Stethoscope, Leaf, Building2, X, ChevronLeft, ChevronRight, ArrowUpRight, ArrowRight } from "lucide-react";
 
 const principles = [
@@ -31,6 +32,7 @@ const helpCards = [
 
 export default function SocialWorkPage() {
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const principlesGridRef = useScrollStagger<HTMLDivElement>({ direction: "up", delay: 120, duration: 600, threshold: 0.8, once: false });
 
   const openLightbox = (index: number) => setLightbox(index);
   const closeLightbox = () => setLightbox(null);
@@ -57,11 +59,11 @@ export default function SocialWorkPage() {
       {/* Principles */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div ref={principlesGridRef} className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {principles.map((p, i) => {
               const Icon = p.Icon;
               return (
-                <div key={i} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all relative overflow-hidden">
+                <div key={i} className="opacity-0 bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all relative overflow-hidden">
                   {/* Animated border on hover */}
                   <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
                     background: `linear-gradient(135deg, ${p.color}, #26ae90, ${p.color})`,
@@ -83,7 +85,7 @@ export default function SocialWorkPage() {
       </section>
 
       {/* Initiatives */}
-      <section className="py-12 lg:py-12 bg-[#f5f7fa]">
+      <section className="py-8 lg:py-10 bg-[#f5f7fa]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 mb-3">
@@ -123,10 +125,10 @@ export default function SocialWorkPage() {
                   <div className="p-6 relative z-10">
                     <h3 className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-base mb-2 group-hover:text-[#26ae90] transition-colors">{item.title}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed mb-3">{item.desc}</p>
-                    <a href="#" className="text-[#26ae90] text-sm font-semibold flex items-center gap-1 group/link">
+                    {/* <a href="#" className="text-[#26ae90] text-sm font-semibold flex items-center gap-1 group/link">
                       View Details
                       <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               );
@@ -136,7 +138,7 @@ export default function SocialWorkPage() {
       </section>
 
       {/* How You Can Help — get involved */}
-      <section className="py-8 lg:py-8 bg-white">
+      <section className="py-8 lg:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 mb-3">
@@ -167,7 +169,7 @@ export default function SocialWorkPage() {
       </section>
 
       {/* Quote — one row layout */}
-      <section className="py-10 bg-[#f5f7fa]">
+      <section className="pt-10 bg-[#f5f7fa]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-[#066a9c] to-[#286090] rounded-2xl p-6 lg:p-8 relative overflow-hidden shadow-xl">
             <div className="h-1 bg-gradient-to-r from-[#26ae90] via-[#f2f231] to-[#26ae90] absolute top-0 left-0 right-0" />
@@ -186,9 +188,9 @@ export default function SocialWorkPage() {
                   <div className="text-[#f2f231] font-[var(--font-poppins)] font-bold text-sm">Bijendra Malik</div>
                   <div className="text-white/50 text-xs">Political Leader & Entrepreneur</div>
                 </div>
-                <a href="/contact" className="bg-[#26ae90] hover:bg-[#26ae90]/90 text-white font-semibold px-4 py-2 rounded-lg text-xs uppercase tracking-wider transition-all whitespace-nowrap">
+                {/* <a href="/contact" className="bg-[#26ae90] hover:bg-[#26ae90]/90 text-white font-semibold px-4 py-2 rounded-lg text-xs uppercase tracking-wider transition-all whitespace-nowrap">
                   Get In Touch
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
