@@ -23,7 +23,7 @@ interface PageHeroProps {
    *  Example: panelJustify="end" pushes the panel to the bottom. */
   panelJustify?: "start" | "center" | "end";
   panelAlign?: "start" | "center" | "end";
-  /** Vertical placement on MOBILE only (desktop uses panelJustify/panelPosition). Default center. */
+  /** Vertical placement on MOBILE only (desktop uses panelJustify/panelPosition). */
   mobileJustify?: "start" | "center" | "end";
   /** Dims the background image on mobile only (desktop/tablet untouched). */
   mobileDimImage?: boolean;
@@ -36,7 +36,7 @@ interface PageHeroProps {
 // desktop objectPosition (bgPosition) is untouched on larger screens.
 // Literal class maps so Tailwind JIT can see every value used.
 const JUSTIFY_CLASS: Record<string, string> = { start: "md:justify-start", center: "md:justify-center", end: "md:justify-end" };
-const MOBILE_JUSTIFY_CLASS: Record<string, string> = { start: "justify-start", center: "justify-center", end: "justify-end" };
+const MOBILE_JUSTIFY_CLASS = "max-md:justify-end";
 const ALIGN_CLASS: Record<string, string> = { start: "md:items-start", center: "md:items-center", end: "md:items-end" };
 
 const MOBILE_BG_POSITION_CLASS: Record<string, string> = {
@@ -46,7 +46,7 @@ const MOBILE_BG_POSITION_CLASS: Record<string, string> = {
   center: "max-md:[--pagehero-bg-pos:center]",
 };
 
-export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "top", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign, mobileJustify = "center", mobileDimImage = false, panelWidth }: PageHeroProps) {
+export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "top", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign, mobileDimImage = false, panelWidth }: PageHeroProps) {
   const bg = backgroundImage || bgImage || "/images/public-rally.jpg";
   // Desktop placement of the text panel — fully per-page custom (9 combos).
   // Direct panelJustify/panelAlign values win; otherwise derive from panelPosition:
@@ -73,33 +73,33 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
       
       {/* Text layer — panel is positioned (left/top/bottom) on desktop, centered on mobile */}
       <div className="absolute inset-0 z-10 flex">
-        <div className={`max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col ${MOBILE_JUSTIFY_CLASS[mobileJustify]} items-center py-16 lg:py-20 ${vAlignClass} ${hAlignClass}`}>
+        <div className={`mx-auto w-full max-w-5xl h-full px-4 sm:px-6 lg:px-8 flex flex-col ${MOBILE_JUSTIFY_CLASS} items-center py-10 sm:py-16 lg:py-20 ${vAlignClass} ${hAlignClass}`}>
         {/* Dark highlight panel behind the text only */}
         <div
-          className={`w-fit max-w-full text-center md:text-center bg-black/55 border border-white/25 shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur-[2px] rounded-2xl p-4 lg:py-10  lg:px-15 animate-fadeInUp ${panelOffset ? "md:absolute" : ""}`}
+          className={`w-full max-w-[calc(100vw-2rem)] sm:w-fit sm:max-w-full text-center break-words bg-black/55 border border-white/25 shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur-[2px] rounded-2xl p-4 sm:p-5 lg:px-8 lg:py-8 animate-fadeInUp ${panelOffset ? "md:absolute" : ""}`}
           style={{ maxWidth: panelWidth, ...(panelOffset ? { top: panelOffset.top, right: panelOffset.right, bottom: panelOffset.bottom, left: panelOffset.left } : {}) }}
         >
         {label && (
           <div className="mb-4 inline-flex items-center gap-3 animate-fadeInLeft">
             <span className="h-px w-8 bg-[var(--saffron)]/90" />
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--saffron)] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm">
+            <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/20 bg-white/8 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--saffron)] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--saffron)]" />
               {label}
             </span>
             <span className="h-px w-8 bg-[var(--saffron)]/90" />
           </div>
         )}
-        <h1 className="font-[var(--font-poppins)] text-xl sm:text-xl lg:text-2xl font-bold text-white leading-tight max-w-xl animate-fadeInUp">
+        <h1 className="font-[var(--font-poppins)] text-lg sm:text-xl lg:text-2xl font-bold text-white leading-tight max-w-xl animate-fadeInUp">
           {title}{" "}
           {titleHighlight && (
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#26ae90] to-[#f2f231]">{titleHighlight}</span>
           )}
         </h1>
         {subtitle && (
-          <p className="text-white mt-6 text-xs font-[var(--font-poppins)] font-medium">{subtitle}</p>
+          <p className="text-white mt-4 sm:mt-6 text-xs sm:text-sm font-[var(--font-poppins)] font-medium">{subtitle}</p>
         )}
         {description && (
-          <p className="text-[#f2f231] mt-6 text-sm max-w-xl leading-relaxed">
+          <p className="text-[#f2f231] mt-4 sm:mt-6 text-xs sm:text-sm max-w-xl leading-relaxed">
             &quot;{Array.isArray(description) ? description.map((line, i) => (
               <span key={i}>{line}{i < description.length - 1 && <br />}</span>
             )) : description}&quot;
