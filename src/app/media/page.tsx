@@ -162,8 +162,9 @@ export default function MediaPage() {
   return (
     <main className="flex-1">
       <PageHero
-        title="Media & Updates"
-        subtitle="Latest News & Updates"
+        label="Media & Updates"
+        title="News, Coverage & Stories"
+        description="Latest updates, interviews, events and public announcements"
         bgImage="/images/media-press-banner.png"
         bgPosition="end"
         panelPosition="bottom-left"

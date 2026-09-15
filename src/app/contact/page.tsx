@@ -133,12 +133,13 @@ export default function ContactPage() {
   return (
     <main className="flex-1">
       <PageHero
-        title="Contact Us"
-        subtitle="We'd love to hear from you!"
-        description="Your suggestions, support and participation are always welcome."
+        label="Connect With Me"
+        title="Contact"
+        description="Share your ideas, feedback, or support — I would be glad to hear from you."
         bgImage="/images/contact-imgs.png"
-        panelPosition="top"
-        bgPosition="center"
+        bgPosition="end"
+        panelPosition="bottom-left"
+        panelAlign="center"
       />
 
       {/* Contact Form + Info */}

@@ -35,12 +35,12 @@ export default function AboutPage() {
         title=" Bijendra Malik"
         description={["A leader. An entrepreneur. A committed citizen."]}
         bgImage="/images/infrastructure-visit.png"
-        panelPosition="top"
+        panelPosition="bottom-left"
         panelAlign="center"
         // panelWidth="400px"
         mobileJustify="center"
         panelOffset={{ left: "520px" }}
-        bgPosition="top"
+        bgPosition="end"
         strongOverlay
       />
 

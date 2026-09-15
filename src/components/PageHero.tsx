@@ -76,16 +76,20 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
         <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col ${MOBILE_JUSTIFY_CLASS[mobileJustify]} items-center py-16 lg:py-20 ${vAlignClass} ${hAlignClass}`}>
         {/* Dark highlight panel behind the text only */}
         <div
-          className={`w-fit max-w-full text-center md:text-left backdrop-blur-xs rounded-2xl border border-white/50 p-4 sm:p-3 lg:p-6 ${strongOverlay ? "bg-black/65" : "bg-black/50"} ${panelOffset ? "md:absolute" : ""}`}
+          className={`w-fit max-w-full text-center md:text-left bg-black/55 border border-white/25 shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur-[2px] rounded-2xl p-4 lg:p-6 animate-fadeInUp ${panelOffset ? "md:absolute" : ""}`}
           style={{ maxWidth: panelWidth, ...(panelOffset ? { top: panelOffset.top, right: panelOffset.right, bottom: panelOffset.bottom, left: panelOffset.left } : {}) }}
         >
         {label && (
-          <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-[2px] bg-[var(--saffron)]" />
-            <span className="text-[var(--saffron)] font-semibold text-sm uppercase tracking-[0.2em]">{label}</span>
+          <div className="mb-4 inline-flex items-center gap-3 animate-fadeInLeft">
+            <span className="h-px w-8 bg-[var(--saffron)]/90" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--saffron)] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--saffron)]" />
+              {label}
+            </span>
+            <span className="h-px w-8 bg-[var(--saffron)]/90" />
           </div>
         )}
-        <h1 className="font-[var(--font-poppins)] text-xl sm:text-xl lg:text-2xl font-bold text-white leading-tight max-w-xl">
+        <h1 className="font-[var(--font-poppins)] text-xl sm:text-xl lg:text-2xl font-bold text-white leading-tight max-w-xl animate-fadeInUp">
           {title}{" "}
           {titleHighlight && (
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#26ae90] to-[#f2f231]">{titleHighlight}</span>
