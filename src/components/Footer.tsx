@@ -19,7 +19,7 @@ const focusAreas = [
   { name: "Empowering Communities", icon: Heart },
 ];
 
-export default function Footer() {
+export default function Footer() {    
   const year = new Date().getFullYear();
 
   return (
@@ -48,7 +48,7 @@ export default function Footer() {
             <p className="text-white/70 text-sm leading-relaxed mb-4">
               Committed to public service, inclusive development and building a stronger, better and self-reliant India.
             </p>
-            <div className="w-12 h-[3px] bg-[#f28c28] mb-5" />
+            <div className="w-12 h-[3px] bg-[#f2f231] mb-5" />
             <div className="flex flex-nowrap items-center gap-3 overflow-x-auto pb-1">
               {[
                 { name: "Facebook", href: "https://www.facebook.com/TeamBijendraMalik/", color: "#1877F2", Icon: FaFacebookF },
@@ -68,7 +68,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Quick Links</h4>
-            <div className="w-10 h-[3px] bg-[#f28c28] mb-5" />
+            <div className="w-10 h-[3px] bg-[#f2f231] mb-5" />
             <div className="space-y-3">
               {quickLinks.map((l) => (
                 <Link key={l.name} href={l.href} className="flex items-center gap-2 text-white/70 text-sm hover:text-[#26ae90] transition-colors group">
@@ -82,7 +82,7 @@ export default function Footer() {
           {/* My Focus */}
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">My Focus</h4>
-            <div className="w-10 h-[3px] bg-[#f28c28] mb-5" />
+            <div className="w-10 h-[3px] bg-[#f2f231] mb-5" />
             <div className="space-y-4">
               {focusAreas.map((item) => (
                 <div key={item.name} className="flex items-center gap-3">
@@ -98,7 +98,7 @@ export default function Footer() {
           {/* Get in Touch */}
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Get in Touch</h4>
-            <div className="w-10 h-[3px] bg-[#f28c28] mb-5" />
+            <div className="w-10 h-[3px] bg-[#f2f231] mb-5" />
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#26ae90] mt-0.5 flex-shrink-0" />
@@ -132,11 +132,11 @@ export default function Footer() {
         {/* Quote section */}
         <div className="border-t border-white/10 pt-8 mb-6">
           <div className="flex items-center justify-center gap-3 text-center">
-            <span className="text-[#f28c28] text-4xl font-serif leading-none">&ldquo;</span>
+            <span className="text-[#f2f231] text-4xl font-serif leading-none">&ldquo;</span>
             <p className="text-white/80 text-sm italic font-medium">
               Together, let&apos;s build a corruption free india.
             </p>
-            <span className="text-[#f28c28] text-4xl font-serif leading-none">&rdquo;</span>
+            <span className="text-[#f2f231] text-4xl font-serif leading-none">&rdquo;</span>
           </div>
         </div>
 

@@ -13,7 +13,7 @@ const profiles = [
     title: (
       <>
         Ex Chief Minister, Delhi
-        <br />National Convener, Aam Aadmi Party
+        <br /><span className="text-[#286090]">National Convener, Aam Aadmi Party</span>
       </>
     ),
     description:
@@ -31,7 +31,7 @@ const profiles = [
     title: (
       <>
         Member of Parliament, Rajya Sabha
-        <br />National Spokesperson, Aam Aadmi Party
+        <br /><span className="text-[#286090]">National Spokesperson, Aam Aadmi Party</span>
       </>
     ),
     description:
@@ -49,7 +49,7 @@ const profiles = [
     title: (
       <>
         Ex Deputy Chief Minister, Delhi
-        <br />Senior Leader, Aam Aadmi Party
+        <br /><span className="text-[#286090]">Senior Leader, Aam Aadmi Party</span>
       </>
     ),
     description:

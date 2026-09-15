@@ -7,7 +7,7 @@ import { ArrowRight, CheckCircle, Images } from "lucide-react";
 const journeySteps = [
   { icon: "📚", title: "Education", desc: "Shaped with strong academic values and a vision to make a positive difference.", color: "#066a9c" },
   { icon: "💼", title: "Professional Journey", desc: "Founder, Indexia Group of Companies. Director, Indexia Finance.", color: "#26ae90" },
-  { icon: "🏛️", title: "Political Journey", desc: "MLA Candidate — Shamli Constituency (2022). Aam Aadmi Party.", color: "#f28c28" },
+  { icon: "🏛️", title: "Political Journey", desc: "MLA Candidate — Shamli Constituency (2022). Aam Aadmi Party.", color: "#286090" },
   { icon: "❤️", title: "Social Work", desc: "Working continuously for community welfare and public development.", color: "#066a9c" },
 ];
 
@@ -33,13 +33,14 @@ export default function AboutPage() {
       <PageHero
         label="About Me"
         title=" Bijendra Malik"
-        description={["A leader. An entrepreneur. A committed citizen."]}
+        subtitle="A Leader. An Entrepreneur. A Committed Citizen."
+        description={["Serving people. Building a better future."]}
         bgImage="/images/infrastructure-visit.png"
         panelPosition="bottom-left"
         panelAlign="center"
         // panelWidth="400px"
         mobileJustify="center"
-        panelOffset={{ left: "520px" }}
+        // panelOffset={{ left: "520px" }}
         bgPosition="end"
         strongOverlay
       />
@@ -70,8 +71,8 @@ export default function AboutPage() {
             {/* Right — Text Content */}
             <div className="flex-1 space-y-6">
               <div className="inline-flex items-center gap-2">
-                <div className="w-8 h-[2px] bg-[#f28c28]" />
-                <span className="text-[#f28c28] font-semibold text-sm uppercase tracking-[0.2em]">About Me</span>
+                <div className="w-8 h-[2px] bg-[#26ae90]" />
+                <span className="text-[#26ae90] font-semibold text-sm uppercase tracking-[0.2em]">About Me</span>
               </div>
               <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#066a9c] leading-tight pt-0">
                 Committed to Serve.
@@ -151,9 +152,9 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 mb-3">
-              <div className="w-8 h-[2px] bg-[#f28c28]" />
-              <span className="text-[#f28c28] font-semibold text-sm uppercase tracking-[0.2em]">My Journey</span>
-              <div className="w-8 h-[2px] bg-[#f28c28]" />
+              <div className="w-8 h-[2px] bg-[#26ae90]" />
+              <span className="text-[#26ae90] font-semibold text-sm uppercase tracking-[0.2em]">My Journey</span>
+              <div className="w-8 h-[2px] bg-[#26ae90]" />
             </div>
             <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#066a9c]">
               From Vision to Action

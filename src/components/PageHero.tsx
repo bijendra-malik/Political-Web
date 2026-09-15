@@ -73,10 +73,10 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
       
       {/* Text layer — panel is positioned (left/top/bottom) on desktop, centered on mobile */}
       <div className="absolute inset-0 z-10 flex">
-        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col ${MOBILE_JUSTIFY_CLASS[mobileJustify]} items-center py-16 lg:py-20 ${vAlignClass} ${hAlignClass}`}>
+        <div className={`max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col ${MOBILE_JUSTIFY_CLASS[mobileJustify]} items-center py-16 lg:py-20 ${vAlignClass} ${hAlignClass}`}>
         {/* Dark highlight panel behind the text only */}
         <div
-          className={`w-fit max-w-full text-center md:text-left bg-black/55 border border-white/25 shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur-[2px] rounded-2xl p-4 lg:p-6 animate-fadeInUp ${panelOffset ? "md:absolute" : ""}`}
+          className={`w-fit max-w-full text-center md:text-center bg-black/55 border border-white/25 shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur-[2px] rounded-2xl p-4 lg:py-10  lg:px-15 animate-fadeInUp ${panelOffset ? "md:absolute" : ""}`}
           style={{ maxWidth: panelWidth, ...(panelOffset ? { top: panelOffset.top, right: panelOffset.right, bottom: panelOffset.bottom, left: panelOffset.left } : {}) }}
         >
         {label && (
@@ -96,13 +96,13 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
           )}
         </h1>
         {subtitle && (
-          <p className="text-white mt-1 text-md font-[var(--font-poppins)] font-medium">{subtitle}</p>
+          <p className="text-white mt-6 text-xs font-[var(--font-poppins)] font-medium">{subtitle}</p>
         )}
         {description && (
-          <p className="text-white/60 mt-2 text-sm max-w-xl leading-relaxed">
-            {Array.isArray(description) ? description.map((line, i) => (
+          <p className="text-[#f2f231] mt-6 text-sm max-w-xl leading-relaxed">
+            &quot;{Array.isArray(description) ? description.map((line, i) => (
               <span key={i}>{line}{i < description.length - 1 && <br />}</span>
-            )) : description}
+            )) : description}&quot;
           </p>
         )}
         </div>

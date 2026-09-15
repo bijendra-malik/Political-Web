@@ -166,6 +166,7 @@ export default function MediaPage() {
       <PageHero
         label="Media & Updates"
         title="News, Coverage & Stories"
+        subtitle="Stay updated with the latest news, interviews, events and public announcements"
         description="Latest updates, interviews, events and public announcements"
         bgImage="/images/media-press-banner.png"
         bgPosition="end"

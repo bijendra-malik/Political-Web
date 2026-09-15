@@ -111,7 +111,7 @@ export default function Hero() {
                   <img src="/bg-remove.png" alt="Bijendra Malik — Political Leader & Entrepreneur" className="w-full h-auto object-contain" />
                 </div>
                 {/* Highlight cards — right below portrait */}
-                <div className="mt-2 flex gap-6 w-full max-w-[450px] md:max-w-[300px] lg:max-w-[480px]">
+                <div className="mt-0 flex gap-6 w-full max-w-[450px] md:max-w-[300px] lg:max-w-[480px]">
                   {highlights.map((h, i) => (
                     <div key={i} className="flex-1 bg-[#066a9c]/90 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-[#066a90]/50 transition-all group cursor-default px-4 py-4 lg:p-4">
                       <div className="flex items-center gap-2">

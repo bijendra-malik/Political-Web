@@ -13,7 +13,7 @@ const milestones = [
     subtitle: "Aam Aadmi Party",
     desc: "Began my political journey with the Aam Aadmi Party and contested the Assembly election from Shamli, carrying a commitment to public service, development and accountable governance.",
     icon: Flag,
-    color: "#f28c28",
+    color: "#f2f231",
     image: "/images/campaign-event.jpg",
   },
   {
@@ -58,7 +58,7 @@ const milestones = [
     subtitle: "Rojgaar Do, Samajik Nyaay Do",
     desc: "Participated in the 'Rojgaar Do, Samajik Nyaay Do' padayatra across Uttar Pradesh, engaging with people and raising issues related to employment and social justice.",
     icon: MapPin,
-    color: "#f28c28",
+    color: "#f2f231",
     image: "/images/education-drive.jpg",
   },
 ];
@@ -124,6 +124,7 @@ export default function PoliticalJourneyPage() {
       <PageHero
         label="My Political Journey"
         title="Political Journey"
+        subtitle="A Journey of Dedication & Commitment"
         description="From a commitment to society to taking responsibility in public life — every step guided by the vision for a stronger, inclusive India."
         bgImage="/images/journey-hero.png"
         panelPosition="center"
@@ -138,9 +139,9 @@ export default function PoliticalJourneyPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div ref={headerRef}>
             <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-[2px] bg-[#f28c28]" />
-              <span className="text-[#f28c28] font-semibold text-sm uppercase tracking-[0.2em]">My Journey</span>
-              <div className="w-8 h-[2px] bg-[#f28c28]" />
+              <div className="w-8 h-[2px] bg-[#066a9c]" />
+              <span className="text-[#066a9c] font-semibold text-sm uppercase tracking-[0.2em]">My Journey</span>
+              <div className="w-8 h-[2px] bg-[#066a9c]" />
             </div>
             <h2 className="font-[var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#066a9c] mb-4">
               From Vision to <span className="text-[#26ae90]">Action</span>
@@ -160,7 +161,7 @@ export default function PoliticalJourneyPage() {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 overflow-hidden rounded-full bg-[#26ae90]/25">
               <div
                 ref={lineFillRef}
-                className="w-full bg-gradient-to-b from-[#066a9c] via-[#26ae90] to-[#f28c28]"
+                className="w-full bg-gradient-to-b from-[#066a9c] via-[#26ae90] to-[#f2f231]"
                 style={{ height: "0%" }}
               />
             </div>

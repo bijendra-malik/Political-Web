@@ -118,7 +118,7 @@ export default function ContactPage() {
   const contactInfo = [
     { Icon: Phone, label: "Phone", value: "+91 86918 86919", color: "#26ae90" },
     { Icon: PhoneCall, label: "Landline", value: "+91 11 4629 1155", color: "#f2f231" },
-    { Icon: Mail, label: "Email", value: CONTACT_EMAIL, color: "#f28c28", href: `mailto:${CONTACT_EMAIL}` },
+    { Icon: Mail, label: "Email", value: CONTACT_EMAIL, color: "#FF0000", href: `mailto:${CONTACT_EMAIL}` },
     { Icon: MapPin, label: "Location", value: "Shamli, Uttar Pradesh, India", color: "#ffffff" },
   ];
 
@@ -135,6 +135,7 @@ export default function ContactPage() {
       <PageHero
         label="Connect With Me"
         title="Contact"
+        subtitle="I would love to hear from you!"
         description="Share your ideas, feedback, or support — I would be glad to hear from you."
         bgImage="/images/contact-imgs.png"
         bgPosition="end"
