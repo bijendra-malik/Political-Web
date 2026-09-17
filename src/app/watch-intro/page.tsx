@@ -103,7 +103,7 @@ export default function WatchIntroPage() {
                 ) : (
                   <img
                     src="/images/about-me0mg/arvind-kejriwal-meeting-removebg-preview.png"
-                    alt="Meeting with Arvind Kejriwal"
+                    alt="Bijendra Malik meeting Arvind Kejriwal"
                     className="absolute inset-0 w-full h-full object-cover object-top"
                   />
                 )}

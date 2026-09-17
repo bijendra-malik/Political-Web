@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins, Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,6 +17,12 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#26ae90",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bijendramalik.com"),
@@ -62,6 +68,32 @@ export const metadata: Metadata = {
   },
 };
 
+// JSON-LD structured data — helps Google build a rich result / knowledge panel
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Bijendra Malik",
+  url: "https://bijendramalik.com",
+  image: "https://bijendramalik.com/og-image.jpg",
+  jobTitle: "Political Leader & Entrepreneur",
+  description:
+    "MLA Candidate Shamli, Aam Aadmi Party National Spokesperson, Founder Indexia Group of Companies.",
+  worksFor: { "@type": "Organization", name: "Indexia Group of Companies" },
+  memberOf: { "@type": "Organization", name: "Aam Aadmi Party" },
+  knowsAbout: [
+    "Public Service",
+    "Social Work",
+    "Entrepreneurship",
+    "Community Development",
+  ],
+  sameAs: [
+    "https://www.facebook.com/indexia.finance.3",
+    "https://x.com/FinanceIndexia",
+    "https://www.youtube.com/@FinanceIndexia",
+    "https://in.linkedin.com/company/indexiafinance",
+  ],
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -69,6 +101,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${poppins.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
         <Header />
         <CommonPageLayout>{children}</CommonPageLayout>
         <Footer />

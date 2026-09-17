@@ -157,7 +157,6 @@ export default function PoliticalJourneyPage() {
       <section className="py-12 lg:py-20 bg-[#f8f9fb]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={timelineRef} className="relative">
-            {/* Center line — desktop, green track that fills on scroll */}
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 overflow-hidden rounded-full bg-[#26ae90]/25">
               <div
                 ref={lineFillRef}
@@ -165,19 +164,16 @@ export default function PoliticalJourneyPage() {
                 style={{ height: "0%" }}
               />
             </div>
-            {/* Traveling pointer dot on the center line — pulses on each milestone */}
             <div
               ref={lineDotRef}
               className="hidden lg:block absolute left-1/2 top-0 w-3.5 h-3.5 -translate-x-1/2 -translate-y-1/2 z-[5]"
               style={{ top: "0%" }}
             >
-              {/* Ring burst — remounts (key) every time a milestone is reached */}
               <span
                 key={`dot-ring-${dotMilestone}`}
                 className="milestone-ring"
                 style={{ backgroundColor: milestones[dotMilestone].color }}
               />
-              {/* Dot core — picks up the current milestone's color */}
               <span
                 className="absolute inset-0 rounded-full border-[3px] border-white shadow-[0_0_0_1px_rgba(6,21,37,0.15),0_2px_6px_rgba(6,21,37,0.25)] transition-colors duration-300"
                 style={{ backgroundColor: milestones[dotMilestone].color }}

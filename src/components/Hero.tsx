@@ -54,7 +54,7 @@ export default function Hero() {
                 <span className="text-[#f2f231] font-semibold text-xs tracking-[0.15em] drop-shadow-lg">Dedicated to Public Service</span>
                 <div className="w-4 h-[2px] bg-[#f2f231] animate-pulse" />
               </div>
-              <h1 className="font-[var(--font-poppins)] font-bold text-white text-[22px] leading-[1.05] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">BIJENDRA MALIK</h1>
+              <div className="font-[var(--font-poppins)] font-bold text-white text-[22px] leading-[1.05] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">BIJENDRA MALIK</div>
               <p className="text-[12px] text-white/90 font-[var(--font-poppins)] font-medium">Political Leader. Entrepreneur. Social Contributor.</p>
               <p className="text-white/80 text-[10px] max-w-[260px] mx-auto">Working for the people, empowering communities and building a better tomorrow.</p>
               <div className="flex justify-center gap-2 pt-1">

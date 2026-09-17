@@ -12,8 +12,12 @@ const profiles = [
     url: "https://archive.aamaadmiparty.org/teams/arvind-kejriwal/",
     title: (
       <>
-        Ex Chief Minister, Delhi
-        <br /><span className="text-[#286090]">National Convener, Aam Aadmi Party</span>
+        <span className="inline-flex items-center rounded-full border border-[#26ae90]/30 bg-[#26ae90]/5 px-3 py-1 text-xs font-semibold tracking-[0.08em] text-[#26ae90] uppercase">
+          Ex Chief Minister, Delhi
+        </span>
+        <span className="text-[#066a9c] font-semibold text-sm block mt-2">
+          National Convener, Aam Aadmi Party
+        </span>
       </>
     ),
     description:
@@ -30,8 +34,12 @@ const profiles = [
     url: "https://delhi.gov.in/profile/shri-sanjay-singh",
     title: (
       <>
-        Member of Parliament, Rajya Sabha
-        <br /><span className="text-[#286090]">National Spokesperson, Aam Aadmi Party</span>
+        <span className="inline-flex items-center rounded-full border border-[#26ae90]/30 bg-[#26ae90]/5 px-3 py-1 text-xs font-semibold tracking-[0.08em] text-[#26ae90] uppercase">
+          Member of Parliament, Rajya Sabha
+        </span>
+        <span className="text-[#066a9c] font-semibold text-sm block mt-2">
+          National Spokesperson, Aam Aadmi Party
+        </span>
       </>
     ),
     description:
@@ -48,8 +56,12 @@ const profiles = [
     url: "https://archive.aamaadmiparty.org/teams/manish-sisodia/",
     title: (
       <>
-        Ex Deputy Chief Minister, Delhi
-        <br /><span className="text-[#286090]">Senior Leader, Aam Aadmi Party</span>
+        <span className="inline-flex items-center rounded-full border border-[#26ae90]/30 bg-[#26ae90]/5 px-3 py-1 text-xs font-semibold tracking-[0.08em] text-[#26ae90] uppercase">
+          Ex Deputy Chief Minister, Delhi
+        </span>
+        <span className="text-[#066a9c] font-semibold text-sm block mt-2">
+          Senior Leader, Aam Aadmi Party
+        </span>
       </>
     ),
     description:
@@ -214,8 +226,10 @@ export default function About() {
                 <div className="relative z-10 space-y-5">
                   <div className="space-y-2">
                     <h3 className="font-[var(--font-poppins)] text-4xl lg:text-5xl font-bold text-[#066a9c] leading-tight">{profile.name}</h3>
+                    <div className="text-sm sm:text-base font-semibold leading-relaxed" style={{ color: profile.accentColor }}>
+                      {profile.title}
+                    </div>
                   </div>
-                  <p className="text-base font-semibold" style={{ color: profile.accentColor }}>{profile.title}</p>
                   <div className="space-y-4 text-gray-600 leading-relaxed text-base">
                     <p><LinkedText text={profile.description} name={profile.name} url={profile.url} /></p>
                     <p>{profile.description2}</p>

@@ -65,7 +65,6 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Honeypot check — bots fill this, humans don't
     if (formData.honeypot) return;
 
     if (!validate()) return;

@@ -14,7 +14,7 @@ export default function CTABanner() {
       <div className="absolute inset-0">
         <img
           src="/images/infrastructure-visit.png"
-          alt="Join the Mission"
+          alt="Bijendra Malik inspecting infrastructure projects"
           className="w-full h-full object-cover object-center"
         />
       </div>

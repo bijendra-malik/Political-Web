@@ -297,7 +297,7 @@ export default function About() {
       <div className="relative h-20 sm:h-28 overflow-hidden opacity-25 pointer-events-none" style={{ backgroundColor: "#f3faf8" }}>
         <img
           src="/images/Imgs-AI/about-decor-skyline.png"
-          alt=""
+          alt="Decorative city skyline"
           className="w-full h-full object-cover object-bottom"
         />
       </div>

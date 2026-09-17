@@ -13,7 +13,7 @@ export default function OurValuesBar() {
       {/* Background — skyline full cover, anchored to the bottom on every screen size */}
       <img
         src="/images/Imgs-AI/about-decor-skyline.png"
-        alt=""
+        alt="Decorative city skyline"
         className="absolute inset-0 w-full h-full object-cover object-bottom"
       />
 
