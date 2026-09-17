@@ -29,6 +29,12 @@ interface PageHeroProps {
    *  mobile keeps mobileJustify. Example: tabletJustify="end" pins the panel to the
    *  bottom on tablets while desktop stays top-left. */
   tabletJustify?: "start" | "center" | "end";
+  /** Vertical placement on DESKTOP only (lg+). Overrides panelPosition on large screens.
+   *  Example: desktopJustify="start" puts the panel at the top on desktop. */
+  desktopJustify?: "start" | "center" | "end";
+  /** Horizontal alignment on DESKTOP only (lg+). Example: desktopAlign="start" keeps
+   *  the panel on the left edge on large screens. */
+  desktopAlign?: "start" | "center" | "end";
   /** Dims the background image on mobile only (desktop/tablet untouched). */
   mobileDimImage?: boolean;
   /** Caps the panel width, e.g. panelWidth="400px" — useful when the banner has faces/subjects
@@ -40,8 +46,15 @@ interface PageHeroProps {
 // desktop objectPosition (bgPosition) is untouched on larger screens.
 // Literal class maps so Tailwind JIT can see every value used.
 const JUSTIFY_CLASS: Record<string, string> = { start: "md:justify-start", center: "md:justify-center", end: "md:justify-end" };
+// Literal class maps — Tailwind JIT only generates classes it sees as literal strings,
+// so every variant below MUST stay written out (no template literals).
+const TABLET_JUSTIFY_CLASS: Record<string, string> = { start: "md:justify-start", center: "md:justify-center", end: "md:justify-end" };
+const DESKTOP_JUSTIFY_CLASS: Record<string, string> = { start: "lg:justify-start", center: "lg:justify-center", end: "lg:justify-end" };
 const MOBILE_JUSTIFY_CLASS = "max-md:justify-end";
 const ALIGN_CLASS: Record<string, string> = { start: "md:items-start", center: "md:items-center", end: "md:items-end" };
+// Desktop-only overrides — literal classes so Tailwind JIT generates them.
+const DESKTOP_JUSTIFY_OVERRIDE: Record<string, string> = { start: "lg:justify-start", center: "lg:justify-center", end: "lg:justify-end" };
+const DESKTOP_ALIGN_OVERRIDE: Record<string, string> = { start: "lg:items-start", center: "lg:items-center", end: "lg:items-end" };
 
 const MOBILE_BG_POSITION_CLASS: Record<string, string> = {
   "left-top": "max-md:[--pagehero-bg-pos:0%_0%]",
@@ -50,7 +63,7 @@ const MOBILE_BG_POSITION_CLASS: Record<string, string> = {
   center: "max-md:[--pagehero-bg-pos:center]",
 };
 
-export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "top", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign, mobileDimImage = false, panelWidth, tabletJustify }: PageHeroProps) {
+export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "top", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign, mobileDimImage = false, panelWidth, tabletJustify, desktopJustify, desktopAlign }: PageHeroProps) {
   const bg = backgroundImage || bgImage || "/images/public-rally.jpg";
   // Desktop placement of the text panel — fully per-page custom (9 combos).
   // Direct panelJustify/panelAlign values win; otherwise derive from panelPosition:
@@ -60,7 +73,7 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
   // Tablet override: re-sequence the cascade (md:<tablet> lg:<desktop>) so the two
   // ranges never fight — no specificity/order uncertainty.
   const tabletMatch = vAlignClassRaw.match(/^md:justify-(\w+)$/);
-  const vAlignClass = tabletJustify && tabletMatch ? `md:justify-${tabletJustify} lg:justify-${tabletMatch[1]}` : vAlignClassRaw;
+  const vAlignClass = tabletJustify && tabletMatch ? `${TABLET_JUSTIFY_CLASS[tabletJustify]} ${DESKTOP_JUSTIFY_CLASS[tabletMatch[1]]}` : vAlignClassRaw;
   const hAlignClass = panelAlign ? ALIGN_CLASS[panelAlign] : panelPosition.endsWith("right") ? "md:items-end" : panelPosition === "top" || panelPosition === "bottom" || panelPosition === "center" ? "md:items-center" : "md:items-start";
 
   return (
@@ -81,7 +94,7 @@ export default function PageHero({ label, title, titleHighlight, subtitle, descr
       
       {/* Text layer — panel is positioned (left/top/bottom) on desktop, centered on mobile */}
       <div className="absolute inset-0 z-10 flex">
-        <div className={`mx-auto w-full max-w-5xl h-full px-4 sm:px-6 lg:px-8 flex flex-col ${MOBILE_JUSTIFY_CLASS} items-center py-10 sm:py-16 lg:py-20 ${vAlignClass} ${hAlignClass}`}>
+        <div className={`mx-auto w-full max-w-7xl h-full px-4 sm:px-6 lg:px-8 flex flex-col ${MOBILE_JUSTIFY_CLASS} items-center py-10 sm:py-16 lg:py-20 ${vAlignClass} ${hAlignClass}${desktopJustify ? " " + DESKTOP_JUSTIFY_OVERRIDE[desktopJustify] : ""}${desktopAlign ? " " + DESKTOP_ALIGN_OVERRIDE[desktopAlign] : ""}`}>
         {/* Dark highlight panel behind the text only */}
         <div
           className={`w-full max-w-[calc(100vw-2rem)] sm:w-fit sm:max-w-full text-center break-words bg-black/55 border border-white/25 shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur-[2px] rounded-2xl p-4 sm:p-5 lg:px-8 lg:py-8 animate-fadeInUp ${panelOffset ? "md:absolute" : ""}`}

@@ -51,9 +51,9 @@ export default function VisionMissionPage() {
         description="A vision for inclusive growth and a mission to empower every citizen."
         bgImage="/images/rally-march-yellow-flags.jpg"
         bgPosition="top"
-        panelPosition="top-left"
-        tabletJustify="end"
-        mobileJustify="end"
+        panelPosition="bottom"
+        desktopJustify="start"
+        desktopAlign="start"
       />
 
       {/* What We Stand For — Vision & Mission cards */}

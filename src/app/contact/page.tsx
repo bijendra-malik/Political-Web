@@ -12,7 +12,7 @@ type FormData = {
   subject: string;
   otherSubject: string;
   message: string;
-  honeypot: string; // spam protection — must stay empty
+  honeypot: string; 
 };
 
 type FormStatus = "idle" | "loading" | "success" | "error";

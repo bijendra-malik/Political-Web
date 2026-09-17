@@ -8,13 +8,13 @@ const siteUrl = "https://bijendramalik.com";
  * @param title       Tab + preview card title
  * @param description Preview card description (shown under the title)
  * @param path        Route path, e.g. "/about"
- * @param image       Preview image under /public, e.g. "/og-about.jpg" (1200x630 recommended)
+ * @param image       Preview image under /public — site-wide common brand card by default
  */
 export function createPageMetadata(
   title: string,
   description: string,
   path: string,
-  image = "/og-home.jpg"
+  image = "/og-image.jpg"
 ): Metadata {
   const url = `${siteUrl}${path}`;
 

@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-home.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Bijendra Malik — Political Leader & Entrepreneur",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "Bijendra Malik | Political Leader • Entrepreneur",
     description:
       "Official website of Bijendra Malik — MLA Candidate Shamli, National Spokesperson, Founder Indexia Group.",
-    images: ["/og-home.jpg"],
+    images: ["/og-image.jpg"],
   },
 };
 
