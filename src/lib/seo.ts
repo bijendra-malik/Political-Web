@@ -14,7 +14,7 @@ export function createPageMetadata(
   title: string,
   description: string,
   path: string,
-  image = "/og-image.png"
+  image = "/og-image.jpg"
 ): Metadata {
   const url = `${siteUrl}${path}`;
 
