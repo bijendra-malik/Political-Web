@@ -49,7 +49,7 @@ export default function Footer() {
               Committed to public service, inclusive development and building a stronger, better and self-reliant India.
             </p>
             <div className="w-12 h-[3px] bg-[#f2f231] mb-5" />
-            <div className="flex flex-nowrap items-center gap-3 overflow-x-auto pb-1">
+            <div className="flex flex-nowrap items-center gap-3 overflow-x-auto py-5">
               {[
                 { name: "Facebook", href: "https://www.facebook.com/TeamBijendraMalik/", color: "#1877F2", Icon: FaFacebookF },
                 { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#111827", Icon: FaXTwitter },

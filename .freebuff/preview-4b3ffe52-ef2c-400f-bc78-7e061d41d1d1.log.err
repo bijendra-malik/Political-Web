@@ -1,22 +1,44 @@
 [browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] ./src/app/about/page.tsx:12:5
+Error: Unterminated string constant
+  10 |   { icon: "🏛️", title: "Political Journey", desc: "MLA Candidate — Shamli Constituency (202...
+  11 |   { icon: "❤️", title: "Social Work", desc: "Working continuously for community welfare and...
+> 12 |     " },
+     |     ^^^^
+  13 | ];
+  14 |
+  15 | const values = [
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/about/page.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/about/page.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Server Component] 
 [browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-⚠ Fast Refresh had to perform a full reload due to a runtime error.
-⨯ ReferenceError: FaLinkedIn is not defined
-    at Module.eval (src\components\Hero.tsx:18:126)
-  16 |   { name: "X", href: "https://twitter.com/MrBijendraMalik", color: "#FFFFFF", tip: "#000000", Icon: FaXTwitter },
-  17 |   { name: "YouTube", href: "https://www.youtube.com/@MrBijendraMalik", color: "#FF0000", tip: "#FF0000", Icon: FaYoutube },
-> 18 |   { name: "LinkedIn", href: "https://www.linkedin.com/in/bijendra-malik-123456789/", color: "#0077B5", tip: "#0077B5", Icon: FaLinkedIn },
-     |                                                                                                                              ^
-  19 | ];
-  20 |
-  21 | export default function Hero() { {
-  digest: '323288097'
-}
-[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] ./src/app/about/page.tsx:12:5
+Error: Unterminated string constant
+  10 |   { icon: "🏛️", title: "Political Journey", desc: "MLA Candidate — Shamli Constituency (202...
+  11 |   { icon: "❤️", title: "Social Work", desc: "Working continuously for community welfare and...
+> 12 |     " },
+     |     ^^^^
+  13 | ];
+  14 |
+  15 | const values = [
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./src/app/about/page.tsx [Client Component Browser]
+    ./src/app/about/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/about/page.tsx [Client Component SSR]
+    ./src/app/about/page.tsx [Server Component] 
 [browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
 [browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

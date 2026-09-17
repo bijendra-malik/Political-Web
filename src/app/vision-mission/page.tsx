@@ -52,6 +52,7 @@ export default function VisionMissionPage() {
         bgImage="/images/rally-march-yellow-flags.jpg"
         bgPosition="top"
         panelPosition="top-left"
+        tabletJustify="end"
         mobileJustify="end"
       />
 

@@ -1,0 +1,23 @@
+{
+  "name": "Bijendra Malik | Political Leader • Entrepreneur",
+  "short_name": "Bijendra Malik",
+  "description": "Official website of Bijendra Malik — MLA Candidate Shamli, Aam Aadmi Party National Spokesperson, Founder Indexia Group of Companies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1526",
+  "theme_color": "#26ae90",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

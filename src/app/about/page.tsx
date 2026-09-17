@@ -8,7 +8,7 @@ const journeySteps = [
   { icon: "📚", title: "Education", desc: "Shaped with strong academic values and a vision to make a positive difference.", color: "#066a9c" },
   { icon: "💼", title: "Professional Journey", desc: "Founder, Indexia Group of Companies. Director, Indexia Finance.", color: "#26ae90" },
   { icon: "🏛️", title: "Political Journey", desc: "MLA Candidate — Shamli Constituency (2022). Aam Aadmi Party.", color: "#286090" },
-  { icon: "❤️", title: "Social Work", desc: "Working continuously for community welfare and public development.", color: "#066a9c" },
+  { icon: "❤️", title: "Social Work", desc: "Working continuously for community welfare and public development.", color: "#26ae90" },
 ];
 
 const values = [
@@ -213,7 +213,7 @@ export default function AboutPage() {
                 </svg>
                 <div className="flex-1 max-w-2xl flex flex-col items-end">
                   <p className="text-white text-lg sm:text-xl font-[var(--font-poppins)] font-light italic leading-relaxed text-left w-full">
-                    &ldquo;To build a stronger, progressive and corruption free India,&rdquo;
+                    &ldquo;To build a stronger, progressive and corruption free India.&rdquo;
                   </p>
                   <div className="mt-4 text-[#f2f231] font-semibold font-[var(--font-poppins)] text-sm text-right w-full">— Bijendra Malik</div>
                 </div>

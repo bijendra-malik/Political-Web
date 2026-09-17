@@ -10,15 +10,15 @@ export default function OurValuesBar() {
     <Achievements />
     <div className="relative w-full overflow-hidden" style={{ minHeight: "120px", backgroundColor: "#f0fdf9" }}>
 
-      {/* Background — skyline full cover, vertically centered (large screens only; hidden on mobile/tablet where the strip is tall and narrow) */}
+      {/* Background — skyline full cover, anchored to the bottom on every screen size */}
       <img
         src="/images/Imgs-AI/about-decor-skyline.png"
         alt=""
-        className="hidden lg:block absolute inset-0 w-full h-full object-cover object-center"
+        className="absolute inset-0 w-full h-full object-cover object-bottom"
       />
 
-      {/* Light overlay so text stays readable (large screens only) */}
-      <div className="hidden lg:block absolute inset-0 bg-[#f0fdf9]/80" />
+      {/* Light overlay so text stays readable (all screens) */}
+      <div className="absolute inset-0 bg-[#f0fdf9]/80" />
 
       {/* Content — absolutely centered in the image */}
       <div className="relative z-10 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:gap-8 px-8 sm:px-12 lg:px-16 py-12 lg:py-14">

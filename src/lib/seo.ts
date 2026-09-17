@@ -2,7 +2,20 @@ import type { Metadata } from "next";
 
 const siteUrl = "https://bijendramalik.com";
 
-export function createPageMetadata(title: string, description: string, path: string): Metadata {
+/**
+ * WhatsApp / Facebook / X-style link-preview metadata for a page.
+ *
+ * @param title       Tab + preview card title
+ * @param description Preview card description (shown under the title)
+ * @param path        Route path, e.g. "/about"
+ * @param image       Preview image under /public, e.g. "/og-about.jpg" (1200x630 recommended)
+ */
+export function createPageMetadata(
+  title: string,
+  description: string,
+  path: string,
+  image = "/og-home.jpg"
+): Metadata {
   const url = `${siteUrl}${path}`;
 
   return {
@@ -13,7 +26,15 @@ export function createPageMetadata(title: string, description: string, path: str
       title,
       description,
       url,
+      siteName: "Bijendra Malik",
       type: "website",
+      images: [{ url: image, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
     },
   };
 }

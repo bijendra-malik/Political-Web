@@ -25,6 +25,10 @@ interface PageHeroProps {
   panelAlign?: "start" | "center" | "end";
   /** Vertical placement on MOBILE only (desktop uses panelJustify/panelPosition). */
   mobileJustify?: "start" | "center" | "end";
+  /** Vertical placement on TABLET only (md–lg range). Desktop keeps panelPosition,
+   *  mobile keeps mobileJustify. Example: tabletJustify="end" pins the panel to the
+   *  bottom on tablets while desktop stays top-left. */
+  tabletJustify?: "start" | "center" | "end";
   /** Dims the background image on mobile only (desktop/tablet untouched). */
   mobileDimImage?: boolean;
   /** Caps the panel width, e.g. panelWidth="400px" — useful when the banner has faces/subjects
@@ -46,13 +50,17 @@ const MOBILE_BG_POSITION_CLASS: Record<string, string> = {
   center: "max-md:[--pagehero-bg-pos:center]",
 };
 
-export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "top", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign, mobileDimImage = false, panelWidth }: PageHeroProps) {
+export default function PageHero({ label, title, titleHighlight, subtitle, description, bgImage, backgroundImage, bgPosition = "top", mobileBgPosition, strongOverlay = false, panelPosition = "left", panelOffset, panelJustify, panelAlign, mobileDimImage = false, panelWidth, tabletJustify }: PageHeroProps) {
   const bg = backgroundImage || bgImage || "/images/public-rally.jpg";
   // Desktop placement of the text panel — fully per-page custom (9 combos).
   // Direct panelJustify/panelAlign values win; otherwise derive from panelPosition:
   //   Vertical: top* => start, bottom* => end, else centered.
   //   Horizontal: *right => end, *center/top/bottom => centered, else (left) => start.
-  const vAlignClass = panelJustify ? JUSTIFY_CLASS[panelJustify] : panelPosition.startsWith("top") ? "md:justify-start" : panelPosition.startsWith("bottom") ? "md:justify-end" : "md:justify-center";
+  const vAlignClassRaw = panelJustify ? JUSTIFY_CLASS[panelJustify] : panelPosition.startsWith("top") ? "md:justify-start" : panelPosition.startsWith("bottom") ? "md:justify-end" : "md:justify-center";
+  // Tablet override: re-sequence the cascade (md:<tablet> lg:<desktop>) so the two
+  // ranges never fight — no specificity/order uncertainty.
+  const tabletMatch = vAlignClassRaw.match(/^md:justify-(\w+)$/);
+  const vAlignClass = tabletJustify && tabletMatch ? `md:justify-${tabletJustify} lg:justify-${tabletMatch[1]}` : vAlignClassRaw;
   const hAlignClass = panelAlign ? ALIGN_CLASS[panelAlign] : panelPosition.endsWith("right") ? "md:items-end" : panelPosition === "top" || panelPosition === "bottom" || panelPosition === "center" ? "md:items-center" : "md:items-start";
 
   return (

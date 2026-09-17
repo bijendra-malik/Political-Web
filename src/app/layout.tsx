@@ -27,14 +27,38 @@ export const metadata: Metadata = {
     "Bijendra Malik, MLA Shamli, Aam Aadmi Party, Indexia Group, Political Leader, Entrepreneur, Social Work, Public Representative",
   alternates: { canonical: "https://bijendramalik.com/" },
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Bijendra Malik | Political Leader • Entrepreneur • Public Representative",
     description:
       "Official website of Bijendra Malik — MLA Candidate Shamli, National Spokesperson, Founder Indexia Group.",
     url: "https://bijendramalik.com/",
+    siteName: "Bijendra Malik",
     type: "website",
+    images: [
+      {
+        url: "/og-home.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bijendra Malik — Political Leader & Entrepreneur",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bijendra Malik | Political Leader • Entrepreneur",
+    description:
+      "Official website of Bijendra Malik — MLA Candidate Shamli, National Spokesperson, Founder Indexia Group.",
+    images: ["/og-home.jpg"],
   },
 };
 

@@ -116,10 +116,10 @@ export default function ContactPage() {
   };
 
   const contactInfo = [
-    { Icon: Phone, label: "Phone", value: "+91 86918 86919", color: "#26ae90" },
+    { Icon: Phone, label: "Phone", value: "+91 86918 86919", color: "#f2f231" },
     { Icon: PhoneCall, label: "Landline", value: "+91 11 4629 1155", color: "#f2f231" },
-    { Icon: Mail, label: "Email", value: CONTACT_EMAIL, color: "#FF0000", href: `mailto:${CONTACT_EMAIL}` },
-    { Icon: MapPin, label: "Location", value: "Shamli, Uttar Pradesh, India", color: "#ffffff" },
+    { Icon: Mail, label: "Email", value: CONTACT_EMAIL, color: "#f2f231", href: `mailto:${CONTACT_EMAIL}` },
+    { Icon: MapPin, label: "Location", value: "Shamli, Uttar Pradesh, India", color: "#f2f231" },
   ];
 
   const socials = [
