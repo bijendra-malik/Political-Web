@@ -5,9 +5,16 @@ const siteUrl = "https://bijendramalik.com";
 /**
  * WhatsApp / Facebook / X-style link-preview metadata for a page.
  *
+ * Canonical URLs MUST match the real served URLs exactly. The site runs with
+ * `trailingSlash: true` (static export on GitHub Pages), so every page lives
+ * at `/path/` — the trailing slash is appended here automatically so the
+ * declared canonical, the sitemap and the served URL never disagree.
+ * A mismatched canonical is what causes Google's
+ * "Duplicate without user-selected canonical" indexing error.
+ *
  * @param title       Tab + preview card title
  * @param description Preview card description (shown under the title)
- * @param path        Route path, e.g. "/about"
+ * @param path        Route path, e.g. "/about" or "/about/" — both fine
  * @param image       Preview image under /public — site-wide common brand card by default
  */
 export function createPageMetadata(
@@ -16,7 +23,8 @@ export function createPageMetadata(
   path: string,
   image = "/og-image.jpg"
 ): Metadata {
-  const url = `${siteUrl}${path}`;
+  const normalizedPath = path.endsWith("/") ? path : `${path}/`;
+  const url = `${siteUrl}${normalizedPath}`;
 
   return {
     title,

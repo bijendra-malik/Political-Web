@@ -1,11 +1,21 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, type ComponentType } from "react";
 import PageHero from "@/components/PageHero";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Play, X, ChevronLeft, ChevronRight, LayoutGrid, Clapperboard, Film, Newspaper, Megaphone, Swords, Image as ImageIcon, Calendar, ArrowRight } from "lucide-react";
 
-const tabs = ["All", "News Coverage", "Press Releases", "Interviews", "Videos", "Photos"];
+const tabs = ["All", "Videos", "Event Highlights", "Debates", "News Coverage", "Press Releases", "Photos"];
+
+const tabIcons: Record<string, ComponentType<{ className?: string }>> = {
+  All: LayoutGrid,
+  Videos: Clapperboard,
+  "Event Highlights": Film,
+  Debates: Swords,
+  "News Coverage": Newspaper,
+  "Press Releases": Megaphone,
+  Photos: ImageIcon,
+};
 
 const newsItems = [
   { image: "/images/procession-tricolour.jpg", title: "Rally March with Supporters", desc: "Bijendra Malik leads a public rally as supporters carry party flags and the national flag.", date: "04 Sep 2026", source: "Rally Coverage", category: "News Coverage" },
@@ -20,9 +30,9 @@ const videos = [
   { id: "ivmAr-W9MU4", title: "India Wants Answers from the BJP Government", desc: "Bijendra Malik on the questions India is asking the BJP government.", date: "26 Dec 2023", duration: "01:30", source: "Bijendra Malik", category: "Videos" },
   { id: "NwQw03R-pVM", title: "Delhi Flood Situation — Bharat 24 News", desc: "Bijendra Malik on the Delhi flood situation.", date: "28 Dec 2023", duration: "01:09", source: "Bharat 24 News", category: "News Coverage" },
   { id: "kaDcvoCTmiM", title: "Delhi Flooded in Continuous Rain — Red Alert", desc: "Heavy rain turned Delhi streets into ponds; red alert across states. Bijendra Malik, AAP.", date: "21 Dec 2023", duration: "36:24", source: "Bijendra Malik", category: "Videos" },
-  { id: "6arCanHc8wA", title: "UP vs Punjab — Law & Order Debate", desc: "Bijendra Malik on law and order in Uttar Pradesh vs Punjab (News State).", date: "28 Dec 2023", duration: "02:35", source: "News State", category: "Interviews" },
-  { id: "pJv7wnSHc9c", title: "Delhi Floods — 'A Planned Conspiracy'? Rubika Liyaquat's Reply", desc: "AAP's Bijendra Malik in conversation with Rubika Liyaquat (Bharat 24).", date: "14 Jul 2023", duration: "04:24", source: "Bharat 24", category: "Interviews" },
-  { id: "1FndZigExqk", title: "AAP vs Shehzad Poonawalla — Full Debate", desc: "Latest debate between AAP's Bijendra Malik and BJP's Shehzad Poonawalla.", date: "21 Dec 2023", duration: "03:18", source: "Bijendra Malik", category: "Interviews" },
+  { id: "6arCanHc8wA", title: "UP vs Punjab — Law & Order Debate", desc: "Bijendra Malik on law and order in Uttar Pradesh vs Punjab (News State).", date: "28 Dec 2023", duration: "02:35", source: "News State", category: "Debates" },
+  { id: "pJv7wnSHc9c", title: "Delhi Floods — 'A Planned Conspiracy'? Rubika Liyaquat's Reply", desc: "AAP's Bijendra Malik in conversation with Rubika Liyaquat (Bharat 24).", date: "14 Jul 2023", duration: "04:24", source: "Bharat 24", category: "Debates" },
+  { id: "1FndZigExqk", title: "AAP vs Shehzad Poonawalla — Full Debate", desc: "Latest debate between AAP's Bijendra Malik and BJP's Shehzad Poonawalla.", date: "21 Dec 2023", duration: "03:18", source: "Bijendra Malik", category: "Debates" },
   { id: "v-hNOw-1GU8", title: "Satta Ka Temperature — Haryana Alert (Network10)", desc: "Network10's Satta Ka Temperature — alert on Haryana politics.", date: "21 Dec 2023", duration: "27:14", source: "Network10", category: "News Coverage" },
   { id: "h6Y0moAjYh4", title: "UP Election 2022 — Shamli Journey & Interview", desc: "Aam Aadmi Party's Shamli candidate Bijendra Malik on the 2022 UP election trail.", date: "11 Dec 2023", duration: "19:11", source: "Bijendra Malik", category: "Videos" },
 ];
@@ -110,6 +120,16 @@ const photos = [
 
 ];
 
+const tabCounts: Record<string, number> = {
+  All: newsItems.length + videos.length + localVideos.length + photos.length,
+  Videos: videos.length + localVideos.length,
+  "News Coverage": newsItems.filter(i => i.category === "News Coverage").length,
+  "Press Releases": newsItems.filter(i => i.category === "Press Releases").length,
+  "Event Highlights": localVideos.length,
+  Debates: videos.filter(i => i.category === "Debates").length,
+  Photos: photos.length,
+};
+
 export default function MediaPage() {
   const [activeTab, setActiveTab] = useState("All");
   const filterTabsRef = useScrollReveal<HTMLDivElement>({ direction: "up", delay: 100, duration: 600, threshold: 0.8, once: false });
@@ -129,14 +149,16 @@ export default function MediaPage() {
   const filteredNews = activeTab === "All" || activeTab === "News Coverage" || activeTab === "Press Releases" || activeTab === "Interviews"
     ? newsItems.filter(i => activeTab === "All" || i.category === activeTab)
     : [];
-  const filteredVideos = activeTab === "All" || activeTab === "Videos"
+  // YouTube gallery: All tab or Videos tab
+  const showYouTubeGallery = activeTab === "All" || activeTab === "Videos";
+  // Local ground videos: All tab or their own "Event Highlights" tab
+  const showEventHighlights = activeTab === "All" || activeTab === "Event Highlights";
+  const filteredVideos = activeTab === "Debates"
+    ? videos.filter(i => i.category === "Debates")
+    : showYouTubeGallery
     ? videos
-    : activeTab === "Interviews"
-    ? videos.filter(i => i.category === "Interviews")
     : [];
-  const filteredLocalVideos = activeTab === "All" || activeTab === "Videos"
-    ? localVideos.filter(i => activeTab === "All" || i.category === activeTab)
-    : [];
+  const filteredLocalVideos = showEventHighlights ? localVideos : [];
   const filteredPhotos = activeTab === "All" || activeTab === "Photos"
     ? photos
     : [];
@@ -161,6 +183,8 @@ export default function MediaPage() {
   const totalYtPages = Math.ceil(filteredVideos.length / ytPerPage);
   const paginatedVideos = filteredVideos.slice((ytPage - 1) * ytPerPage, ytPage * ytPerPage);
 
+  const nothingToShow = filteredNews.length === 0 && filteredVideos.length === 0 && filteredLocalVideos.length === 0 && filteredPhotos.length === 0;
+
   return (
     <main className="flex-1">
       <PageHero
@@ -174,319 +198,387 @@ export default function MediaPage() {
         panelAlign="center"
       />
 
-      {/* Filter Tabs */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-10">
-          <div ref={filterTabsRef} className="opacity-0 bg-white rounded-2xl shadow-lg p-3 flex flex-wrap gap-2 border border-gray-100">
-            {tabs.map((tab) => (
-              <button key={tab} onClick={() => { setActiveTab(tab); setPhotoPage(1); setVideoPage(1); setYtPage(1); }}
-                className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
-                  activeTab === tab
-                    ? "bg-[#066a9c] text-white shadow-md shadow-[#066a9c]/30"
-                    : "text-gray-500 hover:bg-[#066a9c]/10 hover:text-[#066a9c]"
-                }`}>
-                {tab}
-              </button>
-            ))}
+      {/* Sidebar nav (left) + content (right) */}
+      <section className="py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:gap-8">
+
+            {/* Left sidebar nav — click a tab, data shows on the right */}
+            <aside className="lg:w-60 flex-shrink-0 mb-6 lg:mb-0">
+              <div ref={filterTabsRef} className="opacity-0 lg:sticky lg:top-24">
+                <p className="hidden lg:block text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 px-2 mb-2">Browse</p>
+                <nav className="bg-white rounded-2xl shadow-lg border border-gray-100 p-3 flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible">
+                  {tabs.map((tab) => {
+                    const Icon = tabIcons[tab];
+                    const active = activeTab === tab;
+                    return (
+                      <button key={tab} onClick={() => { setActiveTab(tab); setPhotoPage(1); setVideoPage(1); setYtPage(1); }}
+                        className={`whitespace-nowrap lg:w-full flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all group ${
+                          active
+                            ? "bg-gradient-to-r from-[#066a9c] to-[#066a9c]/85 text-white shadow-md shadow-[#066a9c]/30"
+                            : "text-gray-500 hover:bg-[#066a9c]/10 hover:text-[#066a9c]"
+                        }`}>
+                        <span className="flex items-center gap-2.5 min-w-0">
+                          <Icon className={`w-4 h-4 flex-shrink-0 transition-colors ${active ? "text-[#f2f231]" : "text-gray-400 group-hover:text-[#26ae90]"}`} />
+                          <span className="truncate">{tab}</span>
+                        </span>
+                        <span className={`text-[10px] px-2 py-0.5 rounded-full flex-shrink-0 transition-colors ${active ? "bg-white/20 text-white" : "bg-gray-100 text-gray-400 group-hover:bg-[#26ae90]/15 group-hover:text-[#26ae90]"}`}>{tabCounts[tab]}</span>
+                      </button>
+                    );
+                  })}
+                </nav>
+              </div>
+            </aside>
+
+            {/* Right content */}
+            <div className="flex-1 min-w-0">
+              <div key={activeTab} className="space-y-12 animate-fadeInUp">
+
+                {/* Video Gallery — first section */}
+                {filteredVideos.length > 0 && (
+                  <div>
+                    <div className="flex items-center justify-between gap-3 mb-6">
+                      <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
+                        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#26ae90] to-[#066a9c] flex items-center justify-center shadow-md shadow-[#26ae90]/25 flex-shrink-0">
+                          <Clapperboard className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                        </div>
+                        <div className="min-w-0">
+                          <h2 className="font-[var(--font-poppins)] text-lg sm:text-2xl font-bold text-[#066a9c] leading-tight">Video Gallery</h2>
+                          <p className="text-gray-400 text-[11px] sm:text-xs mt-0.5">Latest YouTube coverage, debates & interviews</p>
+                        </div>
+                      </div>
+                      <span className="hidden sm:inline-flex items-center rounded-full bg-[#066a9c]/10 text-[#066a9c] px-3 py-1 text-xs font-semibold">{filteredVideos.length} Videos</span>
+                    </div>
+                    <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                      {paginatedVideos.map((v, i) => (
+                        <div key={(ytPage - 1) * ytPerPage + i} className="relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-[#26ae90]/30 hover:-translate-y-1 transition-all group cursor-pointer flex flex-col" onClick={() => setPlayingVideo(v.id)}>
+                          <span className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#26ae90] to-[#f2f231] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 z-10" />
+                          <div className="relative h-44 overflow-hidden bg-gray-100">
+                            <img src={`https://img.youtube.com/vi/${v.id}/mqdefault.jpg`} alt={v.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div className="absolute inset-0 bg-[#066a9c]/30 group-hover:bg-[#066a9c]/50 transition-all flex items-center justify-center">
+                              <div className="w-14 h-14 bg-[#26ae90] rounded-full flex items-center justify-center shadow-lg ring-4 ring-white/20 group-hover:scale-110 group-hover:ring-[#f2f231]/40 transition-all">
+                                <Play className="w-6 h-6 text-white ml-0.5" fill="currentColor" />
+                              </div>
+                            </div>
+                            <div className="absolute top-2 right-2 bg-[#26ae90] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">{v.source}</div>
+                            <div className="absolute bottom-3 right-3 bg-[#066a9c]/80 text-white text-[10px] font-bold px-2 py-1 rounded">{v.duration}</div>
+                          </div>
+                          <div className="p-5 flex flex-col flex-1">
+                            <h3 className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-sm mb-2 group-hover:text-[#26ae90] transition-colors leading-snug line-clamp-2">{v.title}</h3>
+                            <p className="text-gray-400 text-xs leading-relaxed mb-4 line-clamp-2">{v.desc}</p>
+                            <div className="mt-auto">
+                              <div className="h-px bg-gradient-to-r from-gray-100 via-gray-100 to-transparent mb-3" />
+                              <div className="flex items-center justify-between">
+                                <span className="text-gray-300 text-xs inline-flex items-center gap-1.5">
+                                  <Calendar className="w-3 h-3" /> {v.date}
+                                </span>
+                                <span className="text-[#26ae90] text-xs font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                  Watch Now <ArrowRight className="w-3.5 h-3.5" />
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Pagination */}
+                    {totalYtPages > 1 && (
+                      <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-8 overflow-x-auto max-w-full pb-1 px-2">
+                        <button
+                          onClick={() => setYtPage(p => Math.max(1, p - 1))}
+                          disabled={ytPage === 1}
+                          className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${ytPage === 1 ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#26ae90] border border-gray-200 hover:bg-[#26ae90] hover:text-white hover:border-[#26ae90] shadow-sm"}`}
+                        >
+                          <ChevronLeft className="w-4 h-4" />
+                        </button>
+                        {Array.from({ length: totalYtPages }, (_, idx) => idx + 1).map(page => (
+                          <button
+                            key={page}
+                            onClick={() => setYtPage(page)}
+                            className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${ytPage === page ? "bg-[#26ae90] text-white shadow-md shadow-[#26ae90]/30" : "bg-white text-gray-500 border border-gray-200 hover:bg-[#26ae90]/10 hover:text-[#26ae90]"}`}
+                          >
+                            {page}
+                          </button>
+                        ))}
+                        <button
+                          onClick={() => setYtPage(p => Math.min(totalYtPages, p + 1))}
+                          disabled={ytPage === totalYtPages}
+                          className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${ytPage === totalYtPages ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#26ae90] border border-gray-200 hover:bg-[#26ae90] hover:text-white hover:border-[#26ae90] shadow-sm"}`}
+                        >
+                          <ChevronRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    )}
+            <div className="text-center mt-2 sm:mt-3">
+              <span className="text-gray-300 text-[11px] sm:text-xs">Showing {(ytPage - 1) * ytPerPage + 1}–{Math.min(ytPage * ytPerPage, filteredVideos.length)} of {filteredVideos.length} videos</span>
+            </div>
+                  </div>
+                )}
+
+                {/* Event Highlights — local videos */}
+                {filteredLocalVideos.length > 0 && (
+                  <div>
+                    <div className="flex items-center justify-between gap-3 mb-6">
+                      <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
+                        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#f28c28] to-[#c2410c] flex items-center justify-center shadow-md shadow-[#f28c28]/25 flex-shrink-0">
+                          <Film className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                        </div>
+                        <div className="min-w-0">
+                          <h2 className="font-[var(--font-poppins)] text-lg sm:text-2xl font-bold text-[#066a9c] leading-tight">Event Highlights</h2>
+                          <p className="text-gray-400 text-[11px] sm:text-xs mt-0.5">Ground videos from rallies, meetings & celebrations</p>
+                        </div>
+                      </div>
+                      <span className="hidden sm:inline-flex items-center rounded-full bg-[#066a9c]/10 text-[#066a9c] px-3 py-1 text-xs font-semibold">{filteredLocalVideos.length} Videos</span>
+                    </div>
+                    <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                      {paginatedLocalVideos.map((v, i) => (
+                        <div key={(videoPage - 1) * videosPerPage + i} className="relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-[#f28c28]/30 hover:-translate-y-1 transition-all group flex flex-col">
+                          <span className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#f28c28] to-[#f2f231] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 z-10" />
+                          <div className="relative bg-black">
+                            {v.youtube ? (
+                              <>
+                                <iframe
+                                  src={`https://www.youtube.com/embed/${v.youtube}?rel=0`}
+                                  title={v.title}
+                                  className="w-full aspect-video"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                  allowFullScreen
+                                />
+                                <div className="absolute top-2 right-2 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase pointer-events-none">YouTube</div>
+                              </>
+                            ) : (
+                              <>
+                                <video
+                                  ref={el => { videoRefs.current[(videoPage - 1) * videosPerPage + i] = el; }}
+                                  src={v.src}
+                                  poster={v.thumbnail}
+                                  controls={activeLocalVideo === (videoPage - 1) * videosPerPage + i}
+                                  playsInline
+                                  preload="metadata"
+                                  onEnded={() => setActiveLocalVideo(null)}
+                                  className="w-full aspect-video object-cover object-top"
+                                />
+                                {activeLocalVideo !== (videoPage - 1) * videosPerPage + i && (
+                                  <button type="button" aria-label={`Play ${v.title}`} onClick={() => playLocalVideo((videoPage - 1) * videosPerPage + i)} className="absolute inset-0 cursor-pointer group/th">
+                                    <img src={v.thumbnail} alt={v.title} className="w-full aspect-video object-cover object-top" />
+                                    <span className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover/th:bg-black/5 transition-colors">
+                                      <span className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover/th:scale-110 transition-transform">
+                                        <Play className="w-6 h-6 text-[#066a9c] ml-0.5" fill="currentColor" />
+                                      </span>
+                                    </span>
+                                  </button>
+                                )}
+                                <div className="absolute top-2 right-2 bg-[#f28c28] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase pointer-events-none">Video</div>
+                              </>
+                            )}
+                          </div>
+                          <div className="p-4 sm:p-5 flex-1 flex flex-col">
+                            <h3 className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-sm mb-2 group-hover:text-[#f28c28] transition-colors leading-snug line-clamp-2">{v.title}</h3>
+                            <p className="text-gray-400 text-xs leading-relaxed mb-4 line-clamp-2">{v.desc}</p>
+                            <div className="mt-auto">
+                              <div className="h-px bg-gradient-to-r from-gray-100 via-gray-100 to-transparent mb-3" />
+                              <div className="flex items-center justify-between">
+                                <span className="text-gray-300 text-xs inline-flex items-center gap-1.5">
+                                  <Calendar className="w-3 h-3" /> {v.date}
+                                </span>
+                                <span className="w-8 h-8 rounded-full bg-[#f28c28]/10 text-[#f28c28] inline-flex items-center justify-center group-hover:bg-[#f28c28] group-hover:text-white group-hover:scale-110 transition-all">
+                                  <Play className="w-3.5 h-3.5 ml-0.5" fill="currentColor" />
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Pagination */}
+                    {totalVideoPages > 1 && (
+                      <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-8 overflow-x-auto max-w-full pb-1 px-2">
+                        <button
+                          onClick={() => setVideoPage(p => Math.max(1, p - 1))}
+                          disabled={videoPage === 1}
+                          className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${videoPage === 1 ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#f28c28] border border-gray-200 hover:bg-[#f28c28] hover:text-white hover:border-[#f28c28] shadow-sm"}`}
+                        >
+                          <ChevronLeft className="w-4 h-4" />
+                        </button>
+                        {Array.from({ length: totalVideoPages }, (_, idx) => idx + 1).map(page => (
+                          <button
+                            key={page}
+                            onClick={() => setVideoPage(page)}
+                            className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${videoPage === page ? "bg-[#f28c28] text-white shadow-md shadow-[#f28c28]/30" : "bg-white text-gray-500 border border-gray-200 hover:bg-[#f28c28]/10 hover:text-[#f28c28]"}`}
+                          >
+                            {page}
+                          </button>
+                        ))}
+                        <button
+                          onClick={() => setVideoPage(p => Math.min(totalVideoPages, p + 1))}
+                          disabled={videoPage === totalVideoPages}
+                          className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${videoPage === totalVideoPages ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#f28c28] border border-gray-200 hover:bg-[#f28c28] hover:text-white hover:border-[#f28c28] shadow-sm"}`}
+                        >
+                          <ChevronRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    )}
+            <div className="text-center mt-2 sm:mt-3">
+              <span className="text-gray-300 text-[11px] sm:text-xs">Showing {(videoPage - 1) * videosPerPage + 1}–{Math.min(videoPage * videosPerPage, filteredLocalVideos.length)} of {filteredLocalVideos.length} videos</span>
+            </div>
+                  </div>
+                )}
+
+                {/* News Cards — with lightbox on click */}
+                {filteredNews.length > 0 && (
+                  <div>
+                    <div className="flex items-center gap-2.5 sm:gap-3.5 mb-6">
+                      <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#f28c28] to-[#c2410c] flex items-center justify-center shadow-md shadow-[#f28c28]/25 flex-shrink-0">
+                        <Newspaper className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                      </div>
+                      <div className="min-w-0">
+                        <h2 className="font-[var(--font-poppins)] text-lg sm:text-2xl font-bold text-[#066a9c] leading-tight">News & Press</h2>
+                        <p className="text-gray-400 text-[11px] sm:text-xs mt-0.5">Press moments & media presence</p>
+                      </div>
+                    </div>
+                    <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                      {filteredNews.map((item, i) => (
+                        <div key={i} className="relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-[#26ae90]/30 hover:-translate-y-1 transition-all group flex flex-col">
+                          <span className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#f28c28] to-[#f2f231] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 z-10" />
+                          <div className="relative h-44 overflow-hidden bg-gray-100 cursor-pointer" onClick={() => setLightboxNews(i)}>
+                            <img src={item.image} alt={item.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                              <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-lg transform scale-75 group-hover:scale-100">
+                                <svg className="w-5 h-5 text-[#066a9c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                              </div>
+                            </div>
+                            <div className="absolute top-3 left-3 bg-[#f28c28] text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">{item.source}</div>
+                          </div>
+                          <div className="p-5 flex flex-col flex-1">
+                            <h3 className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-sm mb-2 group-hover:text-[#26ae90] transition-colors leading-snug line-clamp-2">{item.title}</h3>
+                            <p className="text-gray-400 text-xs leading-relaxed mb-4 line-clamp-2">{item.desc}</p>
+                            <div className="mt-auto">
+                              <div className="h-px bg-gradient-to-r from-gray-100 via-gray-100 to-transparent mb-3" />
+                              <div className="flex items-center justify-between">
+                                <span className="text-gray-300 text-xs inline-flex items-center gap-1.5">
+                                  <Calendar className="w-3 h-3" /> {item.date}
+                                </span>
+                                <span className="text-[#26ae90] text-xs font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
+                                  View Image <ArrowRight className="w-3.5 h-3.5" />
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Photo Gallery — with pagination + lightbox */}
+                {filteredPhotos.length > 0 && (
+                  <div>
+                    <div className="flex items-center justify-between gap-3 mb-6">
+                      <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
+                        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#066a9c] to-[#1e3a8a] flex items-center justify-center shadow-md shadow-[#066a9c]/25 flex-shrink-0">
+                          <ImageIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                        </div>
+                        <div className="min-w-0">
+                          <h2 className="font-[var(--font-poppins)] text-lg sm:text-2xl font-bold text-[#066a9c] leading-tight">Photo Gallery</h2>
+                          <p className="text-gray-400 text-[11px] sm:text-xs mt-0.5">Moments from rallies, meetings & events</p>
+                        </div>
+                      </div>
+                      <span className="hidden sm:inline-flex items-center rounded-full bg-[#066a9c]/10 text-[#066a9c] px-3 py-1 text-xs font-semibold">{filteredPhotos.length} Photos</span>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                      {paginatedPhotos.map((photo, i) => {
+                        const globalIndex = (photoPage - 1) * photosPerPage + i;
+                        return (
+                          <div key={globalIndex} className="group cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 hover:border-[#26ae90]/30" onClick={() => setLightboxPhoto(globalIndex)}>
+                            <div className="relative aspect-square overflow-hidden">
+                              <img src={photo.image} alt={photo.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                                  <svg className="w-5 h-5 text-[#066a9c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                                </div>
+                              </div>
+                              <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h4 className="font-[var(--font-poppins)] font-bold text-white text-xs leading-snug">{photo.title}</h4>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Pagination */}
+                    {totalPhotoPages > 1 && (
+                      <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-8 overflow-x-auto max-w-full pb-1 px-2">
+                        <button
+                          onClick={() => setPhotoPage(p => Math.max(1, p - 1))}
+                          disabled={photoPage === 1}
+                          className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${
+                            photoPage === 1
+                              ? "bg-gray-100 text-gray-300 cursor-not-allowed"
+                              : "bg-white text-[#066a9c] border border-gray-200 hover:bg-[#066a9c] hover:text-white hover:border-[#066a9c] shadow-sm"
+                          }`}
+                        >
+                          <ChevronLeft className="w-4 h-4" />
+                        </button>
+                        {Array.from({ length: totalPhotoPages }, (_, idx) => idx + 1).map(page => (
+                          <button
+                            key={page}
+                            onClick={() => setPhotoPage(page)}
+                            className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${
+                              photoPage === page
+                                ? "bg-[#066a9c] text-white shadow-md shadow-[#066a9c]/30"
+                                : "bg-white text-gray-500 border border-gray-200 hover:bg-[#066a9c]/10 hover:text-[#066a9c]"
+                            }`}
+                          >
+                            {page}
+                          </button>
+                        ))}
+                        <button
+                          onClick={() => setPhotoPage(p => Math.min(totalPhotoPages, p + 1))}
+                          disabled={photoPage === totalPhotoPages}
+                          className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${
+                            photoPage === totalPhotoPages
+                              ? "bg-gray-100 text-gray-300 cursor-not-allowed"
+                              : "bg-white text-[#066a9c] border border-gray-200 hover:bg-[#066a9c] hover:text-white hover:border-[#066a9c] shadow-sm"
+                          }`}
+                        >
+                          <ChevronRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    )}
+            <div className="text-center mt-2 sm:mt-3">
+              <span className="text-gray-300 text-[11px] sm:text-xs">Showing {(photoPage - 1) * photosPerPage + 1}–{Math.min(photoPage * photosPerPage, filteredPhotos.length)} of {filteredPhotos.length}</span>
+            </div>
+                  </div>
+                )}
+
+                {/* Empty state — tab has no content */}
+                {nothingToShow && (
+                  <div className="rounded-2xl border border-dashed border-gray-200 py-16 text-center">
+                    <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[#066a9c]/10 flex items-center justify-center">
+                      <Newspaper className="w-6 h-6 text-[#066a9c]" />
+                    </div>
+                    <p className="text-gray-400 text-sm font-medium">No updates in this category yet.</p>
+                    <p className="text-gray-300 text-xs mt-1">Check back soon — new coverage is added regularly.</p>
+                  </div>
+                )}
+
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* News Cards — with lightbox on click */}
-      {filteredNews.length > 0 && (
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-1.5 h-8 bg-[#f28c28] rounded-full" />
-              <h2 className="font-[var(--font-poppins)] text-2xl font-bold text-[#066a9c]">News & Press</h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredNews.map((item, i) => (
-                <div key={i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-[#26ae90]/30 transition-all group">
-                  <div className="relative h-44 overflow-hidden bg-gray-100 cursor-pointer" onClick={() => setLightboxNews(i)}>
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                      <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-lg transform scale-75 group-hover:scale-100">
-                        <svg className="w-5 h-5 text-[#066a9c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
-                      </div>
-                    </div>
-                    <div className="absolute top-3 left-3 bg-[#f28c28] text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">{item.source}</div>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-sm mb-2 group-hover:text-[#26ae90] transition-colors leading-snug">{item.title}</h3>
-                    <p className="text-gray-400 text-xs leading-relaxed mb-3">{item.desc}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-300 text-xs">{item.date}</span>
-                      <span className="text-[#26ae90] text-xs font-semibold flex items-center gap-1 cursor-pointer">
-                        View Image <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Video Cards */}
-      {filteredVideos.length > 0 && (
-        <section className="py-10 bg-[#066a9c]/6">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-8 bg-[#26ae90] rounded-full" />
-                <h2 className="font-[var(--font-poppins)] text-2xl font-bold text-[#066a9c]">Videos</h2>
-              </div>
-              <span className="text-gray-400 text-sm font-medium">{filteredVideos.length} Videos</span>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {paginatedVideos.map((v, i) => (
-                <div key={(ytPage - 1) * ytPerPage + i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-[#26ae90]/30 transition-all group cursor-pointer" onClick={() => setPlayingVideo(v.id)}>
-                  <div className="relative h-44 overflow-hidden bg-gray-100">
-                    <img src={`https://img.youtube.com/vi/${v.id}/mqdefault.jpg`} alt={v.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-[#066a9c]/30 group-hover:bg-[#066a9c]/50 transition-all flex items-center justify-center">
-                      <div className="w-14 h-14 bg-[#26ae90] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <Play className="w-6 h-6 text-white ml-0.5" fill="currentColor" />
-                      </div>
-                    </div>
-                    <div className="absolute top-2 right-2 bg-[#26ae90] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">{v.source}</div>
-                    <div className="absolute bottom-3 right-3 bg-[#066a9c]/80 text-white text-[10px] font-bold px-2 py-1 rounded">{v.duration}</div>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-sm mb-2 group-hover:text-[#26ae90] transition-colors leading-snug">{v.title}</h3>
-                    <p className="text-gray-400 text-xs leading-relaxed mb-3">{v.desc}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-300 text-xs">{v.date}</span>
-                      <span className="text-[#26ae90] text-xs font-semibold flex items-center gap-1">
-                        Watch Now <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Pagination */}
-            {totalYtPages > 1 && (
-              <div className="flex items-center justify-center gap-2 mt-8">
-                <button
-                  onClick={() => setYtPage(p => Math.max(1, p - 1))}
-                  disabled={ytPage === 1}
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${ytPage === 1 ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#26ae90] border border-gray-200 hover:bg-[#26ae90] hover:text-white hover:border-[#26ae90] shadow-sm"}`}
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                {Array.from({ length: totalYtPages }, (_, idx) => idx + 1).map(page => (
-                  <button
-                    key={page}
-                    onClick={() => setYtPage(page)}
-                    className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${ytPage === page ? "bg-[#26ae90] text-white shadow-md shadow-[#26ae90]/30" : "bg-white text-gray-500 border border-gray-200 hover:bg-[#26ae90]/10 hover:text-[#26ae90]"}`}
-                  >
-                    {page}
-                  </button>
-                ))}
-                <button
-                  onClick={() => setYtPage(p => Math.min(totalYtPages, p + 1))}
-                  disabled={ytPage === totalYtPages}
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${ytPage === totalYtPages ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#26ae90] border border-gray-200 hover:bg-[#26ae90] hover:text-white hover:border-[#26ae90] shadow-sm"}`}
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            )}
-            <div className="text-center mt-3">
-              <span className="text-gray-300 text-xs">Showing {(ytPage - 1) * ytPerPage + 1}–{Math.min(ytPage * ytPerPage, filteredVideos.length)} of {filteredVideos.length} videos</span>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Local Video Cards */}
-      {filteredLocalVideos.length > 0 && (
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-8 bg-[#f28c28] rounded-full" />
-                <h2 className="font-[var(--font-poppins)] text-2xl font-bold text-[#066a9c]">Event Highlights</h2>
-              </div>
-              <span className="text-gray-400 text-sm font-medium">{filteredLocalVideos.length} Videos</span>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {paginatedLocalVideos.map((v, i) => (
-                <div key={(videoPage - 1) * videosPerPage + i} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-[#f28c28]/30 transition-all group flex flex-col">
-                  <div className="relative bg-black">
-                    {v.youtube ? (
-                      <>
-                        <iframe
-                          src={`https://www.youtube.com/embed/${v.youtube}?rel=0`}
-                          title={v.title}
-                          className="w-full aspect-video"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                        />
-                        <div className="absolute top-2 right-2 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase pointer-events-none">YouTube</div>
-                      </>
-                    ) : (
-                      <>
-                        <video
-                          ref={el => { videoRefs.current[(videoPage - 1) * videosPerPage + i] = el; }}
-                          src={v.src}
-                          poster={v.thumbnail}
-                          controls={activeLocalVideo === (videoPage - 1) * videosPerPage + i}
-                          playsInline
-                          preload="metadata"
-                          onEnded={() => setActiveLocalVideo(null)}
-                          className="w-full aspect-video object-cover object-top"
-                        />
-                        {activeLocalVideo !== (videoPage - 1) * videosPerPage + i && (
-                          <button type="button" aria-label={`Play ${v.title}`} onClick={() => playLocalVideo((videoPage - 1) * videosPerPage + i)} className="absolute inset-0 cursor-pointer group/th">
-                            <img src={v.thumbnail} alt={v.title} className="w-full aspect-video object-cover object-top" />
-                            <span className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover/th:bg-black/5 transition-colors">
-                              <span className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover/th:scale-110 transition-transform">
-                                <Play className="w-6 h-6 text-[#066a9c] ml-0.5" fill="currentColor" />
-                              </span>
-                            </span>
-                          </button>
-                        )}
-                        <div className="absolute top-2 right-2 bg-[#f28c28] text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase pointer-events-none">Video</div>
-                      </>
-                    )}
-                  </div>
-                  <div className="p-5 flex-1">
-                    <h3 className="font-[var(--font-poppins)] font-bold text-[#066a9c] text-sm mb-2 group-hover:text-[#f28c28] transition-colors leading-snug">{v.title}</h3>
-                    <p className="text-gray-400 text-xs leading-relaxed mb-3">{v.desc}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-300 text-xs">{v.date}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Pagination */}
-            {totalVideoPages > 1 && (
-              <div className="flex items-center justify-center gap-2 mt-8">
-                <button
-                  onClick={() => setVideoPage(p => Math.max(1, p - 1))}
-                  disabled={videoPage === 1}
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${videoPage === 1 ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#f28c28] border border-gray-200 hover:bg-[#f28c28] hover:text-white hover:border-[#f28c28] shadow-sm"}`}
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                {Array.from({ length: totalVideoPages }, (_, idx) => idx + 1).map(page => (
-                  <button
-                    key={page}
-                    onClick={() => setVideoPage(page)}
-                    className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${videoPage === page ? "bg-[#f28c28] text-white shadow-md shadow-[#f28c28]/30" : "bg-white text-gray-500 border border-gray-200 hover:bg-[#f28c28]/10 hover:text-[#f28c28]"}`}
-                  >
-                    {page}
-                  </button>
-                ))}
-                <button
-                  onClick={() => setVideoPage(p => Math.min(totalVideoPages, p + 1))}
-                  disabled={videoPage === totalVideoPages}
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${videoPage === totalVideoPages ? "bg-gray-100 text-gray-300 cursor-not-allowed" : "bg-white text-[#f28c28] border border-gray-200 hover:bg-[#f28c28] hover:text-white hover:border-[#f28c28] shadow-sm"}`}
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            )}
-            <div className="text-center mt-3">
-              <span className="text-gray-300 text-xs">Showing {(videoPage - 1) * videosPerPage + 1}–{Math.min(videoPage * videosPerPage, filteredLocalVideos.length)} of {filteredLocalVideos.length} videos</span>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Photo Gallery — with pagination + lightbox */}
-      {filteredPhotos.length > 0 && (
-        <section className="py-10 bg-[#286090]/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-8 bg-[#286090] rounded-full" />
-                <h2 className="font-[var(--font-poppins)] text-2xl font-bold text-[#066a9c]">Photo Gallery</h2>
-              </div>
-              <span className="text-gray-400 text-sm font-medium">{filteredPhotos.length} Photos</span>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {paginatedPhotos.map((photo, i) => {
-                const globalIndex = (photoPage - 1) * photosPerPage + i;
-                return (
-                  <div key={globalIndex} className="group cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100 hover:border-[#26ae90]/30" onClick={() => setLightboxPhoto(globalIndex)}>
-                    <div className="relative aspect-square overflow-hidden">
-                      <img src={photo.image} alt={photo.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                          <svg className="w-5 h-5 text-[#066a9c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
-                        </div>
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h4 className="font-[var(--font-poppins)] font-bold text-white text-xs leading-snug">{photo.title}</h4>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Pagination */}
-            {totalPhotoPages > 1 && (
-              <div className="flex items-center justify-center gap-2 mt-8">
-                <button
-                  onClick={() => setPhotoPage(p => Math.max(1, p - 1))}
-                  disabled={photoPage === 1}
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${
-                    photoPage === 1
-                      ? "bg-gray-100 text-gray-300 cursor-not-allowed"
-                      : "bg-white text-[#066a9c] border border-gray-200 hover:bg-[#066a9c] hover:text-white hover:border-[#066a9c] shadow-sm"
-                  }`}
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                {Array.from({ length: totalPhotoPages }, (_, idx) => idx + 1).map(page => (
-                  <button
-                    key={page}
-                    onClick={() => setPhotoPage(page)}
-                    className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${
-                      photoPage === page
-                        ? "bg-[#066a9c] text-white shadow-md shadow-[#066a9c]/30"
-                        : "bg-white text-gray-500 border border-gray-200 hover:bg-[#066a9c]/10 hover:text-[#066a9c]"
-                    }`}
-                  >
-                    {page}
-                  </button>
-                ))}
-                <button
-                  onClick={() => setPhotoPage(p => Math.min(totalPhotoPages, p + 1))}
-                  disabled={photoPage === totalPhotoPages}
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all text-sm font-semibold ${
-                    photoPage === totalPhotoPages
-                      ? "bg-gray-100 text-gray-300 cursor-not-allowed"
-                      : "bg-white text-[#066a9c] border border-gray-200 hover:bg-[#066a9c] hover:text-white hover:border-[#066a9c] shadow-sm"
-                  }`}
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            )}
-            <div className="text-center mt-3">
-              <span className="text-gray-300 text-xs">Showing {(photoPage - 1) * photosPerPage + 1}–{Math.min(photoPage * photosPerPage, filteredPhotos.length)} of {filteredPhotos.length}</span>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Newsletter */}
       <section className="py-10 bg-[#066a9c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 bg-[#f2f231] rounded-2xl flex items-center justify-center flex-shrink-0">
-              <svg className="w-7 h-7 text-[#066a9c]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              <svg className="w-7 h-7 text-[#066a9c] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
             </div>
             <div>
               <h3 className="font-[var(--font-poppins)] text-lg font-bold text-white">Stay Updated with Latest Updates</h3>
