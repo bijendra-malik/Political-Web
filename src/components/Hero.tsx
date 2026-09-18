@@ -88,7 +88,7 @@ export default function Hero() {
 
             {/* DESKTOP + TABLET — portrait on right + highlight cards below portrait */}
             <div className="hidden md:flex items-center justify-between gap-4 lg:gap-8">
-              <div ref={textRef} className="w-fit max-w-full space-y-4 bg-black/50 backdrop-blur-xm border border-white/90 rounded-2xl p-4 lg:p-6" style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
+              <div ref={textRef} className="w-fit max-w-full self-start mb-8 -mt-2 lg:-mt-3 space-y-4 bg-black/50 backdrop-blur-xm border border-white/90 rounded-2xl p-4 lg:p-6 text-left" style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
                 <div className="inline-flex items-center gap-2">
                   <div className="w-8 h-[2px] bg-[#f2f231] animate-pulse" />
                   <span className="text-[#f2f231] font-semibold text-xs tracking-[0.2em] drop-shadow-lg">Dedicated to Public Service</span>
