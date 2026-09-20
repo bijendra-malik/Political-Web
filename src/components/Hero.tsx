@@ -44,11 +44,11 @@ export default function Hero() {
       {/* Main Content */}
       <div className="relative z-10 flex-1 flex flex-col">
         <div className="flex-1 flex items-center">
-          <div className="w-full px-4 sm:px-8 lg:pl-16 lg:pr-10 xl:px-45 mt-24">
+          <div className="w-full px-4 sm:px-8 lg:pl-16 lg:pr-10 xl:px-40 mt-1">
 
             {/* MOBILE — text centered + portrait below + highlight cards */}
             <div ref={mobileTextRef} className="md:hidden space-y-2 px-2 text-center" style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
-              <div className="bg-black/20 backdrop-blur-xs rounded-xl px-3 py-3 space-y-2">
+              <div className="bg-black/20 backdrop-blur-xs rounded-xl px-3 py-3 space-y-2" >
               <div className="inline-flex items-center gap-1">
                 <div className="w-4 h-[2px] bg-[#f2f231] animate-pulse" />
                 <span className="text-[#f2f231] font-semibold text-xs tracking-[0.15em] drop-shadow-lg">Dedicated to Public Service</span>
@@ -87,15 +87,15 @@ export default function Hero() {
             </div>
 
             {/* DESKTOP + TABLET — portrait on right + highlight cards below portrait */}
-            <div className="hidden md:flex items-center justify-between gap-4 lg:gap-8">
-              <div ref={textRef} className="w-fit max-w-full self-start mb-8 -mt-2 lg:-mt-3 space-y-4 bg-black/50 backdrop-blur-xm border border-white/90 rounded-2xl p-4 lg:p-6 text-left" style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
+            <div className="hidden md:flex items-center justify-between gap-4 lg:gap-10">
+              <div ref={textRef} className="w-fit max-w-full self-start mb-10 -mt-[18px] md:-mt-[28px] lg:-mt-[48px] xl:-mt-[64px] space-y-4 bg-black/50 backdrop-blur-xm border border-white/90 rounded-2xl p-4 lg:p-6 text-left" style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease-out, transform 0.8s ease-out" }}>
                 <div className="inline-flex items-center gap-2">
                   <div className="w-8 h-[2px] bg-[#f2f231] animate-pulse" />
                   <span className="text-[#f2f231] font-semibold text-xs tracking-[0.2em] drop-shadow-lg">Dedicated to Public Service</span>
                 </div>
-                <h1 className="font-[var(--font-poppins)] font-bold text-white text-4xl lg:text-4xl xl:text-4xl leading-[1.05] whitespace-nowrap drop-shadow-[0_4px_20px_rgba(0,0,0,0.4)]">BIJENDRA MALIK</h1>
+                <h1 className="font-[var(--font-poppins)] font-bold text-white text-2xl lg:text-3xl xl:text-3xl leading-[1.05] whitespace-nowrap drop-shadow-[0_4px_20px_rgba(0,0,0,0.4)]">BIJENDRA MALIK</h1>
                 <p className="text-lg lg:text-xl text-white/95 font-[var(--font-poppins)] font-medium leading-snug">Political Leader. Entrepreneur. Social Contributor.</p>
-                <p className="text-white/90 max-w-md text-sm lg:text-base leading-relaxed">Working for the people, empowering communities and building a better tomorrow.</p>
+                <p className="text-white/90 max-w-md text-xs lg:text-base leading-relaxed">Working for the people, empowering communities and building a better tomorrow.</p>
                 <div className="flex flex-wrap gap-3 pt-1">
                   <Link href="/about" className="inline-flex items-center gap-2 bg-[#26ae90] hover:bg-[#26ae90]/90 text-white font-semibold px-6 py-3 lg:px-7 lg:py-3.5 rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-[#26ae90]/40 hover:scale-105 uppercase text-xs lg:text-sm tracking-wider group">
                     Explore My Journey <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
