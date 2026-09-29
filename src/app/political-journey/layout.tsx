@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
-import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = createPageMetadata("Political Journey | Bijendra Malik", "Discover Bijendra Malik's political journey, public responsibilities and grassroots leadership in Shamli and Uttar Pradesh.", "/political-journey");
+export const metadata: Metadata = {
+  title: "Political Journey of Bijendra Malik | Aam Aadmi Party",
+  description:
+    "Explore Bijendra Malik's political journey — from contesting the Shamli Assembly election with AAP in 2022 to becoming National Spokesperson and leading the UP-wide Padayatra.",
+  alternates: { canonical: "https://bijendramalik.com/political-journey/" },
+  openGraph: {
+    title: "Political Journey of Bijendra Malik | Aam Aadmi Party",
+    description:
+      "Explore Bijendra Malik's political journey — from contesting the Shamli Assembly election with AAP in 2022 to becoming National Spokesperson and leading the UP-wide Padayatra.",
+    url: "https://bijendramalik.com/political-journey/",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Bijendra Malik Political Journey" }],
+  },
+};
 
-export default function PoliticalJourneyLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return children;
+export default function PoliticalJourneyLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }

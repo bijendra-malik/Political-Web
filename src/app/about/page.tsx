@@ -1,8 +1,21 @@
-"use client";
-
+import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Images } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Bijendra Malik | Political Leader & Entrepreneur",
+  description:
+    "Learn about Bijendra Malik — MLA Candidate Shamli, Aam Aadmi Party National Spokesperson, and Founder of Indexia Group of Companies. His journey, values and vision.",
+  alternates: { canonical: "https://bijendramalik.com/about/" },
+  openGraph: {
+    title: "About Bijendra Malik | Political Leader & Entrepreneur",
+    description:
+      "Learn about Bijendra Malik — MLA Candidate Shamli, National Spokesperson AAP, and Founder of Indexia Group.",
+    url: "https://bijendramalik.com/about/",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Bijendra Malik" }],
+  },
+};
 
 const journeySteps = [
   { icon: "📚", title: "Education", desc: "Shaped with strong academic values and a vision to make a positive difference.", color: "#066a9c" },

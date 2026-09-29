@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
-import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = createPageMetadata("Media & Updates | Bijendra Malik", "Explore news coverage, videos, photographs and public events featuring Bijendra Malik.", "/media");
+export const metadata: Metadata = {
+  title: "Media & News Coverage | Bijendra Malik",
+  description:
+    "Latest news, videos, debates, interviews and event highlights featuring Bijendra Malik — AAP National Spokesperson and political leader from Shamli, Uttar Pradesh.",
+  alternates: { canonical: "https://bijendramalik.com/media/" },
+  openGraph: {
+    title: "Media & News Coverage | Bijendra Malik",
+    description:
+      "Latest news, videos, debates, interviews and event highlights featuring Bijendra Malik — AAP National Spokesperson and political leader from Shamli, Uttar Pradesh.",
+    url: "https://bijendramalik.com/media/",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Bijendra Malik Media Coverage" }],
+  },
+};
 
-export default function MediaLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return children;
+export default function MediaLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }
